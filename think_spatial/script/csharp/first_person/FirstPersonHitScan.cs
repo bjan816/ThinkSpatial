@@ -35,8 +35,8 @@ namespace ThinkSpatial.think_spatial.script.csharp.first_person
 
 		private void PerformHitScan(Camera3D camera)
 		{
-			var from = camera.Position;
-			var to = camera.Transform.Basis.Z * _attackDistance;
+			var from = camera.GlobalPosition;
+			var to = from - camera.GlobalTransform.Basis.Z * _attackDistance;
 
 			PhysicsRayQueryParameters3D rayQuery = PhysicsRayQueryParameters3D.Create(from, to);
 
