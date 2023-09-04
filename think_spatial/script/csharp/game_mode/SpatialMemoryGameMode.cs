@@ -29,7 +29,7 @@ namespace ThinkSpatial.think_spatial.script.csharp.game_mode
 			InitializeGame();
 		}
 
-		void SanitizeVariables()
+		private void SanitizeVariables()
 		{
 			_score = 0;
 			_numberOfRoundsPlayed = 0;
