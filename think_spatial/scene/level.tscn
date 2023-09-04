@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cergc7v0bksc7"]
+[gd_scene load_steps=5 format=3 uid="uid://cergc7v0bksc7"]
 
 [ext_resource type="PackedScene" uid="uid://diai5ecpte1ei" path="res://think_spatial/prefab/Level/shooting_range.tscn" id="1_ete8n"]
-[ext_resource type="PackedScene" uid="uid://bm47a2rltaput" path="res://think_spatial/prefab/Global/game_controller.tscn" id="2_4fuhd"]
 [ext_resource type="PackedScene" uid="uid://kk88u0bwf6xw" path="res://think_spatial/prefab/Camera/mouse_look.tscn" id="3_tlt5p"]
 [ext_resource type="PackedScene" uid="uid://2b45wom88153" path="res://think_spatial/prefab/Player/player.tscn" id="4_ox6qg"]
 [ext_resource type="PackedScene" uid="uid://csf8xbvitq8n8" path="res://think_spatial/prefab/Spawner/entity_spawner.tscn" id="5_uwdj4"]
@@ -9,9 +8,6 @@
 [node name="Level" type="Node3D"]
 
 [node name="ShootingRange" parent="." instance=ExtResource("1_ete8n")]
-
-[node name="GameController" parent="." node_paths=PackedStringArray("_mouseLook") instance=ExtResource("2_4fuhd")]
-_mouseLook = NodePath("../MouseLook")
 
 [node name="EntitySpawner" parent="." instance=ExtResource("5_uwdj4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -10)

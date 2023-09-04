@@ -1,4 +1,5 @@
 using Godot;
+using ThinkSpatial.think_spatial.script.csharp.framework;
 
 namespace ThinkSpatial.think_spatial.script.csharp.camera
 {
@@ -19,6 +20,8 @@ namespace ThinkSpatial.think_spatial.script.csharp.camera
 		public override void _Ready()
 		{
 			base._Ready();
+
+			GameController.Instance.MouseLook = this;
 
 			Input.MouseMode = Input.MouseModeEnum.Captured;
 		}
