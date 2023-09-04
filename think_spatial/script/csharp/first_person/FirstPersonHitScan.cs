@@ -9,6 +9,7 @@ namespace ThinkSpatial.think_spatial.script.csharp.first_person
 		[Export] private float _damagePerAttack = 1.0f;
 		[Export] private float _attackDistance = 100.0f;
 		[Export] private float _timeBetweenAttacks = 0.22f;
+		[Export] private AnimationPlayer _animationPlayer;
 
 		private float _nextTimeCanFire;
 
@@ -28,6 +29,8 @@ namespace ThinkSpatial.think_spatial.script.csharp.first_person
 
 		private void PerformAttack(Camera3D camera)
 		{
+			_animationPlayer.Play("Attack");
+
 			PerformHitScan(camera);
 
 			Attack.Send();
