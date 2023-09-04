@@ -1,5 +1,6 @@
 using Godot;
 using ThinkSpatial.think_spatial.script.csharp.event_system.event_handler;
+using ThinkSpatial.think_spatial.script.csharp.event_system.misc;
 
 namespace ThinkSpatial.think_spatial.script.csharp.event_system.behavior
 {
@@ -23,6 +24,25 @@ namespace ThinkSpatial.think_spatial.script.csharp.event_system.behavior
 			}
 		}
 
+		public EntityDeathHandler Death
+		{
+			get
+			{
+				if (_death == null)
+				{
+					_death = GetNodeOrNull<EntityDeathHandler>("EntityDeathHandler");
+				}
+
+				if (_death == null)
+				{
+					_death = GetNodeOrNull<EntityDeathHandler>("../EntityDeathHandler");
+				}
+
+				return _death;
+			}
+		}
+
 		private EntityEventHandler _entity;
+		private EntityDeathHandler _death;
 	}
 }

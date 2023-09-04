@@ -9,6 +9,11 @@ namespace ThinkSpatial.think_spatial.script.csharp.input_system
 		{
 			base._Input(@event);
 
+			if (Player.MouseInputBlocked.Is(true))
+			{
+				return;
+			}
+
 			if (Input.IsActionJustPressed("Attack"))
 			{
 				Player.AttackOnce.Try();

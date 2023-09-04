@@ -30,6 +30,11 @@ namespace ThinkSpatial.think_spatial.script.csharp.camera
 		{
 			base._Input(@event);
 
+			if (GameController.Instance.LocalPlayer.MouseMovementBlocked.Is(true))
+			{
+				return;
+			}
+
 			if (Input.IsActionJustPressed("ui_cancel"))
 			{
 				Input.MouseMode = Input.MouseMode == Input.MouseModeEnum.Captured ? Input.MouseModeEnum.Captured : Input.MouseModeEnum.Visible;
@@ -46,6 +51,12 @@ namespace ThinkSpatial.think_spatial.script.csharp.camera
 
 				UpdateLook();
 			}
+		}
+
+		public void Reset()
+		{
+			RotationDegrees = new Vector3();
+			_cameraPivot.RotationDegrees = new Vector3();
 		}
 
 		private void UpdateLook()

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ThinkSpatial"
-run/main_scene="res://think_spatial/scene/frontend.tscn"
+run/main_scene="res://think_spatial/scene/spatial_memory.tscn"
 config/features=PackedStringArray("4.1", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 

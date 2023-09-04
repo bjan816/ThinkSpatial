@@ -15,11 +15,11 @@ namespace ThinkSpatial.think_spatial.script.csharp.event_system.misc
 		{
 			if (Entity.Health.Get() <= 0.0f)
 			{
-				PerformDeath();
+				Die();
 			}
 		}
 
-		private void PerformDeath()
+		public void Die()
 		{
 			Entity.Death.Send();
 

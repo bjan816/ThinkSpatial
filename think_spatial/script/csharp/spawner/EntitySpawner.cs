@@ -1,50 +1,79 @@
+using System.Collections.Generic;
 using Godot;
 using ThinkSpatial.think_spatial.script.csharp.event_system.behavior;
+using ThinkSpatial.think_spatial.script.csharp.event_system.type;
 
 namespace ThinkSpatial.think_spatial.script.csharp.spawner
 {
 	public partial class EntitySpawner : Node3D
 	{
-		[Export] private int _entitiesToSpawn = 5;
-		[Export] private PackedScene _entityToSpawn;
+		[Export] public int EntitiesToSpawn = 3;
+		[Export] protected bool SpawnEntitiesImmediately = true;
+		[Export] protected PackedScene EntityToSpawn;
+		[Export] protected ShapeCast3D Shape;
 
-		[Export] private ShapeCast3D _shape;
-		private Aabb _spawnArea;
+		protected readonly List<EntityBehavior> SpawnedEntities = new List<EntityBehavior>();
+		protected Aabb SpawnArea;
+
+		public Message FinishedSpawningEntities = new Message();
 
 		public override void _Ready()
 		{
 			base._Ready();
 
-			if (_shape?.Shape is BoxShape3D boxShape)
+			if (Shape?.Shape is BoxShape3D boxShape)
 			{
-				var boxShapeSize = boxShape.Size * _shape.Transform.Basis.Scale;
-				_spawnArea = new Aabb(GlobalPosition - boxShapeSize / 2.0f, boxShapeSize);
+				Vector3 boxShapeSize = boxShape.Size * Shape.Transform.Basis.Scale;
+				SpawnArea = new Aabb(GlobalPosition - boxShapeSize / 2.0f, boxShapeSize);
 			}
 
-			for (int i = 0; i < _entitiesToSpawn; ++i)
+			if (SpawnEntitiesImmediately)
+			{
+				SpawnEntities();
+			}
+		}
+
+		public virtual void SpawnEntities()
+		{
+			for (int i = 0; i < EntitiesToSpawn; ++i)
 			{
 				SpawnEntity();
 			}
+
+			FinishedSpawningEntities.Send();
 		}
 
-		private void SpawnEntity()
+		public virtual void DestroyAllEntities()
 		{
-			EntityBehavior entityBehavior = _entityToSpawn.Instantiate<EntityBehavior>();
+			foreach (EntityBehavior entity in SpawnedEntities)
+			{
+				entity?.Death.Die();
+			}
 
-			entityBehavior.Entity.Death.AddListener(On_Death);
-
-			float x = (float)GD.RandRange(_spawnArea.Position.X, _spawnArea.Position.X + _spawnArea.Size.X);
-			float y = (float)GD.RandRange(_spawnArea.Position.Y, _spawnArea.Position.Y + _spawnArea.Size.Y);
-			float z = (float)GD.RandRange(_spawnArea.Position.Z, _spawnArea.Position.Z + _spawnArea.Size.Z);
-
-			AddChild(entityBehavior);
-
-			entityBehavior.GlobalPosition = new Vector3(x, y, z);
+			SpawnedEntities.Clear();
 		}
 
-		private void On_Death()
+		protected virtual EntityBehavior SpawnEntity()
 		{
-			SpawnEntity();
+			EntityBehavior entity = EntityToSpawn.Instantiate<EntityBehavior>();
+			SpawnedEntities.Add(entity);
+
+			entity.Entity.Death.AddListener(() => On_Death(entity));
+
+			float x = (float)GD.RandRange(SpawnArea.Position.X, SpawnArea.Position.X + SpawnArea.Size.X);
+			float y = (float)GD.RandRange(SpawnArea.Position.Y, SpawnArea.Position.Y + SpawnArea.Size.Y);
+			float z = (float)GD.RandRange(SpawnArea.Position.Z, SpawnArea.Position.Z + SpawnArea.Size.Z);
+
+			AddChild(entity);
+
+			entity.GlobalPosition = new Vector3(x, y, z);
+
+			return entity;
+		}
+
+		protected virtual void On_Death(EntityBehavior entity)
+		{
+			SpawnedEntities.Remove(entity);
 		}
 	}
 }
