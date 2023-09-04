@@ -1,6 +1,7 @@
 using Godot;
 using Godot.Collections;
 using ThinkSpatial.think_spatial.script.csharp.damage_system;
+using ThinkSpatial.think_spatial.script.csharp.framework;
 
 namespace ThinkSpatial.think_spatial.script.csharp.first_person
 {
@@ -45,6 +46,8 @@ namespace ThinkSpatial.think_spatial.script.csharp.first_person
 
 			Dictionary result = camera.GetWorld3D().DirectSpaceState.IntersectRay(rayQuery);
 
+			bool attackMiss = false;
+
 			if (result.Count > 0)
 			{
 				result.TryGetValue("collider", out var collider);
@@ -55,6 +58,19 @@ namespace ThinkSpatial.think_spatial.script.csharp.first_person
 					HealthEventData eventData = new HealthEventData(-_damagePerAttack);
 					hitBox.ReceiveDamage(eventData);
 				}
+				else
+				{
+					attackMiss = true;
+				}
+			}
+			else
+			{
+				attackMiss = true;
+			}
+
+			if (attackMiss)
+			{
+				GameController.Instance.LocalPlayer.AttackMiss.Send();
 			}
 		}
 	}

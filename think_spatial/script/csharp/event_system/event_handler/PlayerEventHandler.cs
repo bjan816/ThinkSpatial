@@ -9,6 +9,7 @@ namespace ThinkSpatial.think_spatial.script.csharp.event_system.event_handler
 		public readonly Value<bool> MouseMovementBlocked = new Value<bool>(false);
 
 		public readonly Attempt AttackOnce = new Attempt();
+		public readonly Message AttackMiss = new Message();
 
 		public override void _Ready()
 		{

@@ -34,6 +34,8 @@ namespace ThinkSpatial.think_spatial.script.csharp.game_mode
 			_score = 0;
 			_numberOfRoundsPlayed = 0;
 
+			_spatialMemoryUI.ScoreValueLabel.Text = _score.ToString();
+
 			GameController.Instance.CameraManager.MouseLook.Reset();
 		}
 

@@ -8,13 +8,14 @@ namespace ThinkSpatial.think_spatial.script.csharp.spawner
 	public partial class EntitySpawner : Node3D
 	{
 		[Export] public int EntitiesToSpawn = 3;
-		[Export] protected bool SpawnEntitiesImmediately = true;
+		[Export] protected bool SpawnEntitiesImmediately;
 		[Export] protected PackedScene EntityToSpawn;
 		[Export] protected ShapeCast3D Shape;
 
 		protected readonly List<EntityBehavior> SpawnedEntities = new List<EntityBehavior>();
 		protected Aabb SpawnArea;
 
+		public readonly Message<EntityBehavior> EntityDeath = new Message<EntityBehavior>();
 		public Message FinishedSpawningEntities = new Message();
 
 		public override void _Ready()
@@ -45,15 +46,15 @@ namespace ThinkSpatial.think_spatial.script.csharp.spawner
 
 		public virtual void DestroyAllEntities()
 		{
-			foreach (EntityBehavior entity in SpawnedEntities)
+			for (int i = SpawnedEntities.Count - 1; i >= 0; i--)
 			{
-				entity?.Death.Die();
+				SpawnedEntities[i]?.Death.Die();
 			}
 
 			SpawnedEntities.Clear();
 		}
 
-		protected virtual EntityBehavior SpawnEntity()
+		public virtual EntityBehavior SpawnEntity()
 		{
 			EntityBehavior entity = EntityToSpawn.Instantiate<EntityBehavior>();
 			SpawnedEntities.Add(entity);
@@ -73,7 +74,10 @@ namespace ThinkSpatial.think_spatial.script.csharp.spawner
 
 		protected virtual void On_Death(EntityBehavior entity)
 		{
-			SpawnedEntities.Remove(entity);
+			if (SpawnedEntities.Remove(entity))
+			{
+				EntityDeath.Send(entity);
+			}
 		}
 	}
 }
