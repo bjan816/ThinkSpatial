@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://think_spatial/script/csharp/event_system/event_handler/PlayerEventHandler.cs" id="1_abte0"]
 [ext_resource type="Script" path="res://think_spatial/script/csharp/input_system/PlayerInputHandler.cs" id="2_vk3k8"]
 [ext_resource type="Script" path="res://think_spatial/script/csharp/first_person/FirstPersonManager.cs" id="4_r1kk4"]
-[ext_resource type="PackedScene" uid="uid://d1gddhbcmtxyt" path="res://think_spatial/prefab/FirstPerson/FirstPersonHitScan.tscn" id="5_1pt3k"]
+[ext_resource type="PackedScene" uid="uid://d1gddhbcmtxyt" path="res://think_spatial/prefab/FirstPerson/first_person_hit_scan.tscn" id="5_1pt3k"]
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_26bx5")
