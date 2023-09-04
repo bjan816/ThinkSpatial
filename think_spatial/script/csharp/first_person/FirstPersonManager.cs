@@ -19,7 +19,7 @@ namespace ThinkSpatial.think_spatial.script.csharp.first_person
 		{
 			if (_equippedWeapon != null)
 			{
-				return _equippedWeapon.TryAttackOnce(GameController.Instance.Camera);
+				return _equippedWeapon.TryAttackOnce(GameController.Instance.CameraManager.MainCamera);
 			}
 
 			return false;

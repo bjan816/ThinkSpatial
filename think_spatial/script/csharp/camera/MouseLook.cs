@@ -21,7 +21,7 @@ namespace ThinkSpatial.think_spatial.script.csharp.camera
 		{
 			base._Ready();
 
-			GameController.Instance.MouseLook = this;
+			GameController.Instance.CameraManager.MouseLook = this;
 
 			Input.MouseMode = Input.MouseModeEnum.Captured;
 		}

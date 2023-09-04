@@ -8,10 +8,10 @@ namespace ThinkSpatial.think_spatial.script.csharp.framework
 		public static GameController Instance { get; private set; }
 
 		[Export] private SceneManager _sceneManager;
-		public MouseLook MouseLook;
+		[Export] private CameraManager _cameraManager;
 
 		public SceneManager SceneManager => _sceneManager;
-		public Camera3D Camera => MouseLook.Camera;
+		public CameraManager CameraManager => _cameraManager;
 
 		public override void _Ready()
 		{
