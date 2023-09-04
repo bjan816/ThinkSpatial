@@ -7,15 +7,22 @@ namespace ThinkSpatial.think_spatial.script.csharp.framework
 	{
 		public static GameController Instance { get; private set; }
 
+		[Export] private SceneManager _sceneManager;
 		[Export] private MouseLook _mouseLook;
 
+		public SceneManager SceneManager => _sceneManager;
 		public Camera3D Camera => _mouseLook.Camera;
 
-		public override void _Notification(int what)
+		public override void _Ready()
 		{
-			base._Notification(what);
+			base._Ready();
 
 			Instance = this;
+		}
+
+		public void QuitGame()
+		{
+			GetTree().Quit();
 		}
 	}
 }

@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bm47a2rltaput"]
+[gd_scene load_steps=3 format=3 uid="uid://bm47a2rltaput"]
 
 [ext_resource type="Script" path="res://think_spatial/script/csharp/framework/GameController.cs" id="1_qxuf5"]
+[ext_resource type="Script" path="res://think_spatial/script/csharp/framework/SceneManager.cs" id="2_1dntu"]
 
-[node name="GameController" type="Node"]
+[node name="GameController" type="Node" node_paths=PackedStringArray("_sceneManager")]
 script = ExtResource("1_qxuf5")
+_sceneManager = NodePath("SceneManager")
+
+[node name="SceneManager" type="Node" parent="."]
+script = ExtResource("2_1dntu")
