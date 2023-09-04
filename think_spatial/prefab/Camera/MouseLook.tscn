@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://kk88u0bwf6xw"]
+
+[ext_resource type="Script" path="res://think_spatial/script/csharp/camera/MouseLook.cs" id="1_6vdfc"]
+
+[node name="MouseLook" type="Node3D" node_paths=PackedStringArray("_cameraPivot", "_camera", "_raycast")]
+script = ExtResource("1_6vdfc")
+_cameraPivot = NodePath("CameraPivot")
+_camera = NodePath("CameraPivot/CameraBoom/Camera")
+_raycast = NodePath("CameraPivot/CameraBoom/Camera/Raycast")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+
+[node name="CameraBoom" type="Node3D" parent="CameraPivot"]
+
+[node name="Camera" type="Camera3D" parent="CameraPivot/CameraBoom"]
+
+[node name="Raycast" type="RayCast3D" parent="CameraPivot/CameraBoom/Camera"]
+target_position = Vector3(0, 0, -100)

@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://dl8r5oqex8wmc"]
+
+[ext_resource type="Script" path="res://think_spatial/script/csharp/event_system/event_handler/EntityEventHandler.cs" id="1_0h3kl"]
+[ext_resource type="Script" path="res://think_spatial/script/csharp/event_system/behavior/EntityBehavior.cs" id="1_73qwr"]
+[ext_resource type="Script" path="res://think_spatial/script/csharp/event_system/misc/EntityDeathHandler.cs" id="2_f6mrw"]
+[ext_resource type="Script" path="res://think_spatial/script/csharp/damage_system/HitBox.cs" id="2_faihg"]
+[ext_resource type="Script" path="res://think_spatial/script/csharp/damage_system/EntityVitals.cs" id="3_7rkhx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_htrr1"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7n58n"]
+
+[node name="Dummy" type="Node3D"]
+script = ExtResource("1_73qwr")
+
+[node name="EntityEventHandler" type="Node3D" parent="."]
+script = ExtResource("1_0h3kl")
+
+[node name="EntityDeathHandler" type="Node3D" parent="."]
+script = ExtResource("2_f6mrw")
+
+[node name="EntityVitals" type="Node3D" parent="."]
+script = ExtResource("3_7rkhx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+script = ExtResource("2_faihg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("SphereShape3D_htrr1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+mesh = SubResource("SphereMesh_7n58n")
