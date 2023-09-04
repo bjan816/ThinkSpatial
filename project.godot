@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameController="*res://think_spatial/prefab/Global/game_controller.tscn"
+GameController="*res://think_spatial/prefab/auto_load/game_controller.tscn"
 
 [dotnet]
 
