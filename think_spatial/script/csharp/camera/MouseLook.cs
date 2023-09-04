@@ -10,12 +10,10 @@ namespace ThinkSpatial.think_spatial.script.csharp.camera
 
 		[Export] private Node3D _cameraPivot;
 		[Export] private Camera3D _camera;
-		[Export] private RayCast3D _raycast;
 
 		private Vector2 _mouseInput;
 
 		public Camera3D Camera => _camera;
-		public RayCast3D RayCast => _raycast;
 
 		public override void _Ready()
 		{
