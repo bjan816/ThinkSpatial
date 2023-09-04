@@ -10,9 +10,14 @@ namespace ThinkSpatial.think_spatial.script.csharp.ui_system
 			GetNode<Button>("Button_Play").GrabFocus();
 		}
 
-		private void _on_button_play_pressed()
+		private void _on_button_play_spatial_precision_pressed()
 		{
-			GameController.Instance.SceneManager.SwitchScene("level", SceneManager.TransitionMode.Fade);
+			GameController.Instance.SceneManager.SwitchScene("spatial_precision", SceneManager.TransitionMode.Fade);
+		}
+
+		private void _on_button_play_spatial_memory_pressed()
+		{
+			GameController.Instance.SceneManager.SwitchScene("spatial_memory", SceneManager.TransitionMode.Fade);
 		}
 
 		private void _on_button_quit_pressed()

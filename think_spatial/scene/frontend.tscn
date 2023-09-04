@@ -27,15 +27,22 @@ size_flags_vertical = 4
 layout_mode = 2
 script = ExtResource("1_m5a12")
 
-[node name="Button_Play" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer"]
+[node name="Button_PlaySpatialPrecision" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
-text = "PLAY"
+text = "PLAY SPATIAL PRECISION"
+
+[node name="Button_PlaySpatialMemory" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "PLAY SPATIAL MEMORY
+"
 
 [node name="Button_Quit" type="Button" parent="PanelContainer/CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 text = "QUIT"
 
-[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Button_Play" to="PanelContainer/CenterContainer/VBoxContainer" method="_on_button_play_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Button_PlaySpatialPrecision" to="PanelContainer/CenterContainer/VBoxContainer" method="_on_button_play_spatial_precision_pressed"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Button_PlaySpatialMemory" to="PanelContainer/CenterContainer/VBoxContainer" method="_on_button_play_spatial_memory_pressed"]
 [connection signal="pressed" from="PanelContainer/CenterContainer/VBoxContainer/Button_Quit" to="PanelContainer/CenterContainer/VBoxContainer" method="_on_button_quit_pressed"]
