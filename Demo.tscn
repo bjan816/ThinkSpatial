@@ -1,44 +1,28 @@
-[gd_scene load_steps=31 format=3 uid="uid://d2xsxkmqbjjlb"]
+[gd_scene load_steps=27 format=3 uid="uid://uww8t3t8a8jx"]
 
+[ext_resource type="ArrayMesh" uid="uid://dui5dve2o0wjo" path="res://assets/Stump.obj" id="1_hm157"]
 [ext_resource type="Script" path="res://UI.gd" id="1_xxajf"]
 [ext_resource type="Script" path="res://Camera.gd" id="2_ooa0m"]
-[ext_resource type="ArrayMesh" uid="uid://lps7xdkdcs7x" path="res://assets/PineTree1.obj" id="3_gao8h"]
-[ext_resource type="Texture2D" uid="uid://ckp24kr0hfn7p" path="res://assets/AlienTreeTexture.png" id="4_j3oqt"]
-[ext_resource type="ArrayMesh" uid="uid://dsa55fis0iq0y" path="res://assets/PineTree2.obj" id="4_mwfos"]
-[ext_resource type="ArrayMesh" uid="uid://khuot8wexk8s" path="res://assets/PineTree1Snowy.obj" id="5_1wi1m"]
-[ext_resource type="ArrayMesh" uid="uid://dosydokvsixkq" path="res://assets/PineTree3.obj" id="5_qrohg"]
-[ext_resource type="Texture2D" uid="uid://bhhb6ae01rej6" path="res://assets/EvergreenTexture.png" id="6_r3khg"]
-[ext_resource type="ArrayMesh" uid="uid://dldt8mqms3r7l" path="res://assets/PineStump.obj" id="7_4sscn"]
-[ext_resource type="Texture2D" uid="uid://cv2cwmpkjdkbl" path="res://assets/PineTexture.png" id="7_ma4u5"]
+[ext_resource type="Texture2D" uid="uid://wnempbpncg6n" path="res://assets/AlienTreeTexture.png" id="4_j3oqt"]
+[ext_resource type="ArrayMesh" uid="uid://8ti15lc1r18l" path="res://assets/Tree2.obj" id="4_xmfij"]
+[ext_resource type="ArrayMesh" uid="uid://p6rwyqdyn8hp" path="res://assets/Tree3.obj" id="5_c44tj"]
+[ext_resource type="ArrayMesh" uid="uid://dwno2njqikni0" path="res://assets/Tree1Snowy.obj" id="6_lvjnu"]
+[ext_resource type="Texture2D" uid="uid://bk7fdq2jsinx6" path="res://assets/EvergreenTexture.png" id="6_r3khg"]
+[ext_resource type="Texture2D" uid="uid://dqdvutkkr74fy" path="res://assets/PineTexture.png" id="7_ma4u5"]
+[ext_resource type="ArrayMesh" uid="uid://uv2bci6mh8nw" path="res://assets/Tree1.obj" id="8_joibm"]
 [ext_resource type="Shader" path="res://View.gdshader" id="11_e2dbq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2fq5e"]
 shading_mode = 0
 albedo_texture = ExtResource("4_j3oqt")
 
-[sub_resource type="SphereMesh" id="SphereMesh_ecp20"]
-radius = 1.0
-height = 0.001
-rings = 2
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mr2fm"]
-shading_mode = 0
-albedo_color = Color(0.363281, 0.0546875, 0.449219, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ila7r"]
 shading_mode = 0
 albedo_texture = ExtResource("6_r3khg")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhiku"]
-shading_mode = 0
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4p2h7"]
 shading_mode = 0
 albedo_texture = ExtResource("7_ma4u5")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jnrdt"]
-shading_mode = 0
-albedo_color = Color(0.273438, 0.421875, 0.191406, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tfgku"]
 
@@ -90,93 +74,72 @@ orientation = 2
 
 [node name="Top" type="SubViewport" parent="."]
 size = Vector2i(1920, 1080)
-render_target_update_mode = 4
 
-[node name="Top" type="Node3D" parent="Top"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
-
-[node name="Camera3D" type="Camera3D" parent="Top/Top"]
+[node name="Camera3D" type="Camera3D" parent="Top"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+cull_mask = 1047556
 fov = 30.0
 far = 10.0
 
-[node name="TopTree" type="MeshInstance3D" parent="Top"]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 15, 0)
-mesh = ExtResource("7_4sscn")
+[node name="Stump" type="MeshInstance3D" parent="Top"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -1, 0)
+layers = 4
+mesh = ExtResource("1_hm157")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_2fq5e")
 
-[node name="TopTree1" type="MeshInstance3D" parent="Top"]
-transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0.5, 15, 0.5)
-mesh = ExtResource("3_gao8h")
+[node name="Tree1" type="MeshInstance3D" parent="Top"]
+transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0.5, -1, 0.5)
+layers = 4
+mesh = ExtResource("8_joibm")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_2fq5e")
 
-[node name="TopTree2" type="MeshInstance3D" parent="Top"]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.25, 15, -0.5)
-mesh = ExtResource("4_mwfos")
+[node name="Tree2" type="MeshInstance3D" parent="Top"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.25, -1, -0.5)
+layers = 4
+mesh = ExtResource("4_xmfij")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_2fq5e")
 
-[node name="TopTree3" type="MeshInstance3D" parent="Top"]
-transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, -0.4, 15, 0)
-mesh = ExtResource("5_qrohg")
+[node name="Tree3" type="MeshInstance3D" parent="Top"]
+transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, -0.4, -1, 0)
+layers = 4
+mesh = ExtResource("5_c44tj")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_2fq5e")
-
-[node name="TopFloor" type="MeshInstance3D" parent="Top"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
-mesh = SubResource("SphereMesh_ecp20")
-skeleton = NodePath("../TopTree")
-surface_material_override/0 = SubResource("StandardMaterial3D_mr2fm")
 
 [node name="Left" type="SubViewport" parent="."]
 size = Vector2i(1920, 1080)
-render_target_update_mode = 4
 
-[node name="Left" type="Node3D" parent="Left"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
-
-[node name="Camera3D" type="Camera3D" parent="Left/Left"]
+[node name="Camera3D" type="Camera3D" parent="Left"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+cull_mask = 1047560
 fov = 30.0
 far = 10.0
 
 [node name="LeftTree" type="MeshInstance3D" parent="Left"]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 16, -1, 0)
-mesh = ExtResource("5_1wi1m")
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -1, 0)
+layers = 8
+mesh = ExtResource("6_lvjnu")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_ila7r")
 
-[node name="LeftFloor" type="MeshInstance3D" parent="Left"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -1, 0)
-mesh = SubResource("SphereMesh_ecp20")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_rhiku")
-
 [node name="Front" type="SubViewport" parent="."]
 size = Vector2i(1920, 1080)
-render_target_update_mode = 4
 
-[node name="Front" type="Node3D" parent="Front"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
-
-[node name="Camera3D" type="Camera3D" parent="Front/Front"]
+[node name="Camera3D" type="Camera3D" parent="Front"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+cull_mask = 1047568
 fov = 30.0
 far = 10.0
 
 [node name="FrontTree" type="MeshInstance3D" parent="Front"]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -1, 16)
-mesh = ExtResource("3_gao8h")
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -1, 0)
+layers = 16
+mesh = ExtResource("8_joibm")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_4p2h7")
-
-[node name="FrontFloor" type="MeshInstance3D" parent="Front"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 16)
-mesh = SubResource("SphereMesh_ecp20")
-skeleton = NodePath("../FrontTree")
-surface_material_override/0 = SubResource("StandardMaterial3D_jnrdt")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -185,17 +148,24 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_xxajf")
 
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(1, 1, 1, 0)
+
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Camera" type="Node3D" parent="." node_paths=PackedStringArray("faces")]
+[node name="Camera" type="Node3D" parent="." node_paths=PackedStringArray("views")]
 script = ExtResource("2_ooa0m")
-faces = [NodePath("../Top/Top"), NodePath("../Left/Left"), NodePath("../Front/Front")]
+views = [NodePath("../Top/Camera3D"), NodePath("../Left/Camera3D"), NodePath("../Front/Camera3D")]
 
 [node name="Camera3D" type="Camera3D" parent="Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+cull_mask = 1047553
 fov = 30.0
 far = 10.0
 
