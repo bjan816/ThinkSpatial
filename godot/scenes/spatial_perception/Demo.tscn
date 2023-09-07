@@ -1,21 +1,21 @@
 [gd_scene load_steps=41 format=3 uid="uid://uww8t3t8a8jx"]
 
-[ext_resource type="ArrayMesh" uid="uid://dui5dve2o0wjo" path="res://assets/Stump.obj" id="1_hm157"]
-[ext_resource type="Script" path="res://Demo.gd" id="1_r3sfg"]
-[ext_resource type="Script" path="res://UI.gd" id="1_xxajf"]
-[ext_resource type="Texture2D" uid="uid://wnempbpncg6n" path="res://assets/AlienTreeTexture.png" id="4_j3oqt"]
-[ext_resource type="ArrayMesh" uid="uid://8ti15lc1r18l" path="res://assets/Tree2.obj" id="4_xmfij"]
-[ext_resource type="ArrayMesh" uid="uid://p6rwyqdyn8hp" path="res://assets/Tree3.obj" id="5_c44tj"]
-[ext_resource type="ArrayMesh" uid="uid://dwno2njqikni0" path="res://assets/Tree1Snowy.obj" id="6_lvjnu"]
-[ext_resource type="Texture2D" uid="uid://bk7fdq2jsinx6" path="res://assets/EvergreenTexture.png" id="6_r3khg"]
-[ext_resource type="Texture2D" uid="uid://dqdvutkkr74fy" path="res://assets/PineTexture.png" id="7_ma4u5"]
-[ext_resource type="ArrayMesh" uid="uid://dc36js8ly8s4u" path="res://assets/Axe.obj" id="8_3uqi0"]
-[ext_resource type="ArrayMesh" uid="uid://uv2bci6mh8nw" path="res://assets/Tree1.obj" id="8_joibm"]
-[ext_resource type="ArrayMesh" uid="uid://ce0u8x43u25qm" path="res://assets/Musket.obj" id="8_mepu7"]
-[ext_resource type="Texture2D" uid="uid://bcym211qk67b5" path="res://assets/ToolTexture.png" id="9_haxkr"]
-[ext_resource type="ArrayMesh" uid="uid://c85j11bflc8rt" path="res://assets/PistolAxe.obj" id="12_2f5n0"]
-[ext_resource type="Script" path="res://Puzzle.gd" id="12_68sid"]
-[ext_resource type="Script" path="res://Player.gd" id="14_j63ud"]
+[ext_resource type="Script" path="res://scenes/spatial_perception/Demo.gd" id="1_bc55g"]
+[ext_resource type="ArrayMesh" uid="uid://dui5dve2o0wjo" path="res://assets/Stump.obj" id="2_jyo2t"]
+[ext_resource type="Texture2D" uid="uid://wnempbpncg6n" path="res://assets/AlienTreeTexture.png" id="3_lwklw"]
+[ext_resource type="ArrayMesh" uid="uid://uv2bci6mh8nw" path="res://assets/Tree1.obj" id="4_s2w0y"]
+[ext_resource type="ArrayMesh" uid="uid://8ti15lc1r18l" path="res://assets/Tree2.obj" id="5_3aw4y"]
+[ext_resource type="ArrayMesh" uid="uid://p6rwyqdyn8hp" path="res://assets/Tree3.obj" id="6_cfduh"]
+[ext_resource type="Texture2D" uid="uid://dqdvutkkr74fy" path="res://assets/PineTexture.png" id="7_wug3s"]
+[ext_resource type="ArrayMesh" uid="uid://dc36js8ly8s4u" path="res://assets/Axe.obj" id="8_o1tcf"]
+[ext_resource type="Texture2D" uid="uid://bcym211qk67b5" path="res://assets/ToolTexture.png" id="9_6gejm"]
+[ext_resource type="ArrayMesh" uid="uid://dwno2njqikni0" path="res://assets/Tree1Snowy.obj" id="10_tqs36"]
+[ext_resource type="Texture2D" uid="uid://bk7fdq2jsinx6" path="res://assets/EvergreenTexture.png" id="11_ir10o"]
+[ext_resource type="ArrayMesh" uid="uid://ce0u8x43u25qm" path="res://assets/Musket.obj" id="12_jo6ut"]
+[ext_resource type="Script" path="res://scenes/spatial_perception/UI.gd" id="13_l8yek"]
+[ext_resource type="Script" path="res://scenes/spatial_perception/Puzzle.gd" id="14_3dc6w"]
+[ext_resource type="ArrayMesh" uid="uid://c85j11bflc8rt" path="res://assets/PistolAxe.obj" id="15_hviwd"]
+[ext_resource type="Script" path="res://scenes/spatial_perception/Player.gd" id="16_ex4xg"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_7pv4r"]
 top_radius = 1.0
@@ -28,7 +28,7 @@ albedo_color = Color(0.363281, 0.0546875, 0.449219, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2fq5e"]
 shading_mode = 0
-albedo_texture = ExtResource("4_j3oqt")
+albedo_texture = ExtResource("3_lwklw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fg846"]
 shading_mode = 0
@@ -36,22 +36,22 @@ albedo_color = Color(0.273438, 0.421875, 0.191406, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4p2h7"]
 shading_mode = 0
-albedo_texture = ExtResource("7_ma4u5")
+albedo_texture = ExtResource("7_wug3s")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_730xr"]
 shading_mode = 0
-albedo_texture = ExtResource("7_ma4u5")
+albedo_texture = ExtResource("7_wug3s")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3o0cn"]
 shading_mode = 0
-albedo_texture = ExtResource("9_haxkr")
+albedo_texture = ExtResource("9_6gejm")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gwsm7"]
 shading_mode = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ila7r"]
 shading_mode = 0
-albedo_texture = ExtResource("6_r3khg")
+albedo_texture = ExtResource("11_ir10o")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2xmd2"]
 size = Vector3(0.454277, 0.0778658, 0.0493724)
@@ -117,7 +117,7 @@ flip_faces = true
 orientation = 2
 
 [node name="Node" type="Node"]
-script = ExtResource("1_r3sfg")
+script = ExtResource("1_bc55g")
 
 [node name="Top" type="SubViewport" parent="."]
 render_target_update_mode = 4
@@ -135,22 +135,22 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gcx8a")
 
 [node name="Stump" type="MeshInstance3D" parent="Top" groups=["Top"]]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -1, 0)
-mesh = ExtResource("1_hm157")
+mesh = ExtResource("2_jyo2t")
 surface_material_override/0 = SubResource("StandardMaterial3D_2fq5e")
 
 [node name="Tree1" type="MeshInstance3D" parent="Top" groups=["Top"]]
 transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0.5, -1, 0.5)
-mesh = ExtResource("8_joibm")
+mesh = ExtResource("4_s2w0y")
 surface_material_override/0 = SubResource("StandardMaterial3D_2fq5e")
 
 [node name="Tree2" type="MeshInstance3D" parent="Top" groups=["Top"]]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.25, -1, -0.5)
-mesh = ExtResource("4_xmfij")
+mesh = ExtResource("5_3aw4y")
 surface_material_override/0 = SubResource("StandardMaterial3D_2fq5e")
 
 [node name="Tree3" type="MeshInstance3D" parent="Top" groups=["Top"]]
 transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, -0.4, -1, 0)
-mesh = ExtResource("5_c44tj")
+mesh = ExtResource("6_cfduh")
 surface_material_override/0 = SubResource("StandardMaterial3D_2fq5e")
 
 [node name="Front" type="SubViewport" parent="."]
@@ -169,17 +169,17 @@ surface_material_override/0 = SubResource("StandardMaterial3D_fg846")
 
 [node name="Tree" type="MeshInstance3D" parent="Front" groups=["Front"]]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -1, 0)
-mesh = ExtResource("8_joibm")
+mesh = ExtResource("4_s2w0y")
 surface_material_override/0 = SubResource("StandardMaterial3D_4p2h7")
 
 [node name="Tree2" type="MeshInstance3D" parent="Front" groups=["Front"]]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.25, -1, 0.5)
-mesh = ExtResource("1_hm157")
+mesh = ExtResource("2_jyo2t")
 surface_material_override/0 = SubResource("StandardMaterial3D_730xr")
 
 [node name="Axe" type="MeshInstance3D" parent="Front" groups=["Front"]]
 transform = Transform3D(-0.01, -0.0173205, 0, 0.0173205, -0.01, 0, 0, 0, 0.02, 0.75, -0.5, 0.5)
-mesh = ExtResource("8_3uqi0")
+mesh = ExtResource("8_o1tcf")
 skeleton = NodePath("../../Left")
 surface_material_override/0 = SubResource("StandardMaterial3D_3o0cn")
 
@@ -199,24 +199,24 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gwsm7")
 
 [node name="Tree" type="MeshInstance3D" parent="Left" groups=["Left"]]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -1, 0)
-mesh = ExtResource("6_lvjnu")
+mesh = ExtResource("10_tqs36")
 surface_material_override/0 = SubResource("StandardMaterial3D_ila7r")
 
 [node name="Tree2" type="MeshInstance3D" parent="Left" groups=["Left"]]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.25, -1, 0.5)
-mesh = ExtResource("1_hm157")
+mesh = ExtResource("2_jyo2t")
 surface_material_override/0 = SubResource("StandardMaterial3D_ila7r")
 
 [node name="Gun" type="MeshInstance3D" parent="Left" groups=["Left"]]
 transform = Transform3D(-0.0168755, -0.0107339, -1.74846e-09, -0.0107339, 0.0168755, 5.99538e-17, 1.4753e-09, 9.38389e-10, -0.02, 0.556722, -0.611589, 0.5)
-mesh = ExtResource("8_mepu7")
+mesh = ExtResource("12_jo6ut")
 skeleton = NodePath("../../Front")
 surface_material_override/0 = SubResource("StandardMaterial3D_3o0cn")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_xxajf")
+script = ExtResource("13_l8yek")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Control"]
 layout_mode = 0
@@ -237,13 +237,13 @@ far = 10.0
 [node name="Puzzle" type="StaticBody3D" parent="Control/SubViewportContainer/SubViewport" node_paths=PackedStringArray("pieces")]
 transform = Transform3D(-0.843776, -0.536696, -1.50996e-07, -0.536696, 0.843776, 1.51927e-13, 1.27407e-07, 8.10389e-08, -1, 0.41767, -0.700035, 0.5)
 visible = false
-script = ExtResource("12_68sid")
+script = ExtResource("14_3dc6w")
 pieces = [NodePath("../../../../Front/Axe"), NodePath("../../../../Left/Gun")]
 
 [node name="AxeGun" type="MeshInstance3D" parent="Control/SubViewportContainer/SubViewport/Puzzle"]
 transform = Transform3D(0.02, -6.92205e-17, 0, 6.92205e-17, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
 layers = 512
-mesh = ExtResource("12_2f5n0")
+mesh = ExtResource("15_hviwd")
 surface_material_override/0 = SubResource("StandardMaterial3D_3o0cn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Control/SubViewportContainer/SubViewport/Puzzle"]
@@ -262,7 +262,7 @@ offset_bottom = 8000.0
 color = Color(1, 1, 1, 0)
 
 [node name="Player" type="Node3D" parent="." node_paths=PackedStringArray("views")]
-script = ExtResource("14_j63ud")
+script = ExtResource("16_ex4xg")
 views = [NodePath("../Top/TopCamera"), NodePath("../Left/LeftCamera"), NodePath("../Front/FrontCamera")]
 
 [node name="Camera" type="Camera3D" parent="Player"]
