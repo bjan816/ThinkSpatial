@@ -18,6 +18,6 @@ func _process(delta:float):
 func check(your_cam:Vector3):
   var my_cam:Vector3 = get_node("../Camera").global_position
   if my_cam.distance_to(your_cam) < 1:
-    show()
     for piece in pieces: piece.hide()
+    show()
     animate = true
