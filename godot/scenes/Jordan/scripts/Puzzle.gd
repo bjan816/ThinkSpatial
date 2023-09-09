@@ -2,8 +2,13 @@ extends Node3D
 
 const RAY_LENGTH = 100
 
+var target
+
 func _ready():
-	pass # Replace with function body.
+	
+	set_target()
+	set_light()
+	set_objects(5)
 	
 func _input(event):
 	
@@ -11,6 +16,40 @@ func _input(event):
 		
 		print(guess())
 
+func set_target():
+	
+	var cameras = get_tree().get_nodes_in_group("Cameras")
+	var rand_num = randi() % cameras.size()
+	var camera = cameras[randi() % cameras.size()]
+	camera.make_current()
+	
+	var targets = get_tree().get_nodes_in_group("Targets")
+	target = targets[rand_num]
+	
+func set_light():
+	
+	$Light.rotation_degrees.y = randf_range(0, 360)
+	
+func set_objects(num):
+	
+	var objects = get_tree().get_nodes_in_group("ToSpawn")
+	var max_range = Vector3(10, 5, 10)
+	var min_range = Vector3(-10, 0, -10)
+	
+	for i in range(num):
+		
+		var to_spawn = objects[randi() % objects.size()].duplicate()
+		
+		var spawn_position = Vector3(
+			randf_range(min_range.x, max_range.x),
+			randf_range(min_range.y, max_range.y),
+			randf_range(min_range.z, max_range.z)
+		)
+		
+		self.add_child(to_spawn)
+		to_spawn.add_to_group("Spawned")
+		to_spawn.transform.origin = spawn_position
+	
 func guess():
 	
 	var camera = $Player.get_node("Neck/Camera3D")
