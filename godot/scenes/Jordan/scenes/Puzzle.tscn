@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://dbg7pthmiyomc"]
+[gd_scene load_steps=25 format=3 uid="uid://dbg7pthmiyomc"]
 
+[ext_resource type="Script" path="res://scenes/Jordan/scripts/Puzzle.gd" id="1_8mpvj"]
 [ext_resource type="PackedScene" uid="uid://dd5yqxho3sgkk" path="res://scenes/Jordan/scenes/Player.tscn" id="1_bii0i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w5bh7"]
@@ -51,6 +52,7 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [sub_resource type="BoxMesh" id="BoxMesh_egwu1"]
 
 [node name="Puzzle" type="Node3D"]
+script = ExtResource("1_8mpvj")
 
 [node name="Light" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
