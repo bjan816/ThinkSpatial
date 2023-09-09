@@ -5,12 +5,15 @@ const RAY_LENGTH = 200
 var target
 var level = 1
 var lives = 3
+var puzzle_time = 60
 
 func _ready():
 	
 	set_target()
 	set_light()
 	set_objects(level)
+	set_level_text(level)
+	set_lives_text(lives)
 	
 func _input(event):
 	
@@ -47,6 +50,8 @@ func reset_puzzle(num):
 	set_target()
 	set_light()
 	set_objects(num)
+	set_level_text(level)
+	set_lives_text(lives)
 	
 	$Player.transform.origin = Vector3(0, 0, 20)
 	$Player/Neck.rotation = Vector3(0, 0, 0)
@@ -100,3 +105,34 @@ func guess():
 	var collided = space.intersect_ray(ray)
 	
 	return collided["collider"]
+	
+func set_level_text(level_num):
+	
+	var level_text = "Level: %d" % level_num
+	$UI/MarginContainer/VBoxContainer/HBoxContainer2/Level.text = level_text
+	
+func set_lives_text(lives_num):
+	
+	var lives_text = "Lives: %d" % lives_num
+	$UI/MarginContainer/VBoxContainer/HBoxContainer2/Lives.text = lives_text
+
+func _on_puzzle_timer_timeout():
+	
+	puzzle_time -= 1
+	var puzzle_time_label = $UI/MarginContainer/VBoxContainer/HBoxContainer/Time
+	puzzle_time_label.text = str(puzzle_time)
+	
+	if puzzle_time <= 10:
+		
+		puzzle_time_label.add_theme_color_override("font_color", Color(1, 0, 0))
+		
+	if puzzle_time == 0:
+		
+		lives -= 1
+		
+		if lives == 0:
+			
+			get_tree().quit()
+			
+		reset_puzzle(level)
+	

@@ -290,7 +290,8 @@ alignment = 1
 
 [node name="Time" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "n/a"
+theme_override_font_sizes/font_size = 20
+text = "60"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -298,8 +299,13 @@ alignment = 1
 
 [node name="Level" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "n/a"
+theme_override_font_sizes/font_size = 20
 
 [node name="Lives" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "n/a"
+theme_override_font_sizes/font_size = 20
+
+[node name="PuzzleTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="PuzzleTimer" to="." method="_on_puzzle_timer_timeout"]
