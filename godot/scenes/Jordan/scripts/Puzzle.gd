@@ -53,6 +53,7 @@ func reset_puzzle(num):
 	set_objects(num)
 	set_level_text(level)
 	set_lives_text(lives)
+	puzzle_time = 60
 	set_time_text(puzzle_time)
 	
 	$Player.transform.origin = Vector3(0, 0, 20)
@@ -63,7 +64,7 @@ func set_target():
 	
 	var cameras = get_tree().get_nodes_in_group("Cameras")
 	var rand_num = randi() % cameras.size()
-	var camera = cameras[randi() % cameras.size()]
+	var camera = cameras[rand_num]
 	camera.make_current()
 	
 	var targets = get_tree().get_nodes_in_group("Targets")

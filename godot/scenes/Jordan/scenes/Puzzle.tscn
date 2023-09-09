@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dbg7pthmiyomc"]
+[gd_scene load_steps=37 format=3 uid="uid://dbg7pthmiyomc"]
 
 [ext_resource type="Script" path="res://scenes/Jordan/scripts/Puzzle.gd" id="1_8mpvj"]
 [ext_resource type="PackedScene" uid="uid://dd5yqxho3sgkk" path="res://scenes/Jordan/scenes/Player.tscn" id="1_bii0i"]
@@ -80,6 +80,9 @@ albedo_color = Color(1, 0.466667, 1, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_xfd5e"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_2hfhm"]
+viewport_path = NodePath("Cameras")
+
 [node name="Puzzle" type="Node3D"]
 script = ExtResource("1_8mpvj")
 
@@ -115,6 +118,7 @@ mesh = ExtResource("3_uirat")
 shape = SubResource("ConcavePolygonShape3D_g008l")
 
 [node name="Cameras" type="SubViewport" parent="."]
+size = Vector2i(1000, 1000)
 
 [node name="Camera3D1" type="Camera3D" parent="Cameras" groups=["Cameras"]]
 transform = Transform3D(-4.37114e-08, -0.573576, 0.819152, 0, 0.819152, 0.573576, -1, 2.50718e-08, -3.58063e-08, 20, 10, 0)
@@ -124,9 +128,9 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_gmd7t")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cameras/Camera3D1/Target1" groups=["Targets"]]
+[node name="StaticBody3D1" type="StaticBody3D" parent="Cameras/Camera3D1/Target1" groups=["Targets"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D1/Target1/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D1/Target1/StaticBody3D1"]
 shape = SubResource("BoxShape3D_nmyj5")
 
 [node name="Camera3D2" type="Camera3D" parent="Cameras" groups=["Cameras"]]
@@ -137,9 +141,9 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_pvxqs")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cameras/Camera3D2/Target2" groups=["Targets"]]
+[node name="StaticBody3D2" type="StaticBody3D" parent="Cameras/Camera3D2/Target2" groups=["Targets"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D2/Target2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D2/Target2/StaticBody3D2"]
 shape = SubResource("BoxShape3D_0mtkn")
 
 [node name="Camera3D3" type="Camera3D" parent="Cameras" groups=["Cameras"]]
@@ -150,9 +154,9 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_4wj6v")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cameras/Camera3D3/Target3" groups=["Targets"]]
+[node name="StaticBody3D3" type="StaticBody3D" parent="Cameras/Camera3D3/Target3" groups=["Targets"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D3/Target3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D3/Target3/StaticBody3D3"]
 shape = SubResource("BoxShape3D_try0m")
 
 [node name="Camera3D4" type="Camera3D" parent="Cameras" groups=["Cameras"]]
@@ -163,9 +167,9 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_it35y")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cameras/Camera3D4/Target4" groups=["Targets"]]
+[node name="StaticBody3D4" type="StaticBody3D" parent="Cameras/Camera3D4/Target4" groups=["Targets"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D4/Target4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D4/Target4/StaticBody3D4"]
 shape = SubResource("BoxShape3D_y82d1")
 
 [node name="Camera3D5" type="Camera3D" parent="Cameras" groups=["Cameras"]]
@@ -176,9 +180,9 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_bh822")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cameras/Camera3D5/Target5" groups=["Targets"]]
+[node name="StaticBody3D5" type="StaticBody3D" parent="Cameras/Camera3D5/Target5" groups=["Targets"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D5/Target5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D5/Target5/StaticBody3D5"]
 shape = SubResource("BoxShape3D_mn72p")
 
 [node name="Camera3D6" type="Camera3D" parent="Cameras" groups=["Cameras"]]
@@ -189,9 +193,9 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_ig721")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cameras/Camera3D6/Target6" groups=["Targets"]]
+[node name="StaticBody3D6" type="StaticBody3D" parent="Cameras/Camera3D6/Target6" groups=["Targets"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D6/Target6/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D6/Target6/StaticBody3D6"]
 shape = SubResource("BoxShape3D_nfwv1")
 
 [node name="Camera3D7" type="Camera3D" parent="Cameras" groups=["Cameras"]]
@@ -202,9 +206,9 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_pxeoy")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cameras/Camera3D7/Target7" groups=["Targets"]]
+[node name="StaticBody3D7" type="StaticBody3D" parent="Cameras/Camera3D7/Target7" groups=["Targets"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D7/Target7/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D7/Target7/StaticBody3D7"]
 shape = SubResource("BoxShape3D_vm5wc")
 
 [node name="Camera3D8" type="Camera3D" parent="Cameras" groups=["Cameras"]]
@@ -215,9 +219,9 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_84e1m")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cameras/Camera3D8/Target8" groups=["Targets"]]
+[node name="StaticBody3D8" type="StaticBody3D" parent="Cameras/Camera3D8/Target8" groups=["Targets"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D8/Target8/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D8/Target8/StaticBody3D8"]
 shape = SubResource("BoxShape3D_2ngqo")
 
 [node name="SpawnableObjects" type="Node3D" parent="."]
@@ -247,6 +251,12 @@ mesh = SubResource("PrismMesh_yq604")
 transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_tq6ri")
 mesh = SubResource("SphereMesh_xfd5e")
+
+[node name="Screen" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.38147, 16)
+cast_shadow = 0
+double_sided = false
+texture = SubResource("ViewportTexture_2hfhm")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
