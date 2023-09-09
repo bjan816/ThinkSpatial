@@ -14,7 +14,24 @@ func _input(event):
 	
 	if (event.is_action_pressed("click")):
 		
-		print(guess())
+		reset_puzzle(5)
+		
+func reset_puzzle(num):
+	
+	var spawned = get_tree().get_nodes_in_group("Spawned")
+	
+	for element in spawned:
+		
+		element.remove_from_group("Spawned")
+		element.queue_free()
+		
+	set_target()
+	set_light()
+	set_objects(num)
+	
+	$Player.transform.origin = Vector3(0, 0, 20)
+	$Player/Neck.rotation = Vector3(0, 0, 0)
+	$Player/Neck/Camera3D.rotation = Vector3(0,0,0)
 
 func set_target():
 	
