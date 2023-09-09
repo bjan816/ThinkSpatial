@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbg7pthmiyomc"]
+
+[ext_resource type="PackedScene" uid="uid://dd5yqxho3sgkk" path="res://scenes/Jordan/scenes/Player.tscn" id="1_bii0i"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w5bh7"]
+
+[sub_resource type="Sky" id="Sky_8kn7g"]
+sky_material = SubResource("ProceduralSkyMaterial_w5bh7")
+
+[sub_resource type="Environment" id="Environment_npkoq"]
+background_mode = 2
+sky = SubResource("Sky_8kn7g")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kscfq"]
+
+[node name="Puzzle" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_bii0i")]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_npkoq")
+
+[node name="Floor" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
+mesh = SubResource("PlaneMesh_kscfq")
