@@ -14,6 +14,7 @@ func _ready():
 	set_objects(level)
 	set_level_text(level)
 	set_lives_text(lives)
+	set_time_text(puzzle_time)
 	
 func _input(event):
 	
@@ -52,6 +53,7 @@ func reset_puzzle(num):
 	set_objects(num)
 	set_level_text(level)
 	set_lives_text(lives)
+	set_time_text(puzzle_time)
 	
 	$Player.transform.origin = Vector3(0, 0, 20)
 	$Player/Neck.rotation = Vector3(0, 0, 0)
@@ -115,6 +117,10 @@ func set_lives_text(lives_num):
 	
 	var lives_text = "Lives: %d" % lives_num
 	$UI/MarginContainer/VBoxContainer/HBoxContainer2/Lives.text = lives_text
+	
+func set_time_text(time_num):
+	
+	$UI/MarginContainer/VBoxContainer/HBoxContainer/Time.text = str(time_num)
 
 func _on_puzzle_timer_timeout():
 	
