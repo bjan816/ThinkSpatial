@@ -11,7 +11,7 @@ func _ready():
 	
 	set_target()
 	set_light()
-	set_objects(level)
+	set_objects(11 - level)
 	set_level_text(level)
 	set_lives_text(lives)
 	set_time_text(puzzle_time)
@@ -27,7 +27,7 @@ func _input(event):
 			if player_guess == target:
 				
 				level += 1
-				reset_puzzle(level)
+				reset_puzzle(11 - level)
 				
 			elif player_guess != target:
 				
@@ -37,7 +37,7 @@ func _input(event):
 					
 					get_tree().quit()
 					
-				reset_puzzle(level)
+				reset_puzzle(11 - level)
 		
 func reset_puzzle(num):
 	

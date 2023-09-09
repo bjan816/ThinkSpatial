@@ -91,7 +91,8 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_bii0i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -16)
+visible = false
 
 [node name="Environment" type="Node3D" parent="."]
 
@@ -122,9 +123,11 @@ size = Vector2i(1000, 1000)
 
 [node name="Camera3D1" type="Camera3D" parent="Cameras" groups=["Cameras"]]
 transform = Transform3D(-4.37114e-08, -0.573576, 0.819152, 0, 0.819152, 0.573576, -1, 2.50718e-08, -3.58063e-08, 20, 10, 0)
+cull_mask = 1048573
 
 [node name="Target1" type="MeshInstance3D" parent="Cameras/Camera3D1"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
 cast_shadow = 0
 mesh = SubResource("SphereMesh_gmd7t")
 
@@ -135,9 +138,11 @@ shape = SubResource("BoxShape3D_nmyj5")
 
 [node name="Camera3D2" type="Camera3D" parent="Cameras" groups=["Cameras"]]
 transform = Transform3D(0.707107, -0.40558, 0.579228, 0, 0.819152, 0.573576, -0.707107, -0.40558, 0.579228, 14.14, 10, 14.14)
+cull_mask = 1048573
 
 [node name="Target2" type="MeshInstance3D" parent="Cameras/Camera3D2"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
 cast_shadow = 0
 mesh = SubResource("SphereMesh_pvxqs")
 
@@ -148,9 +153,11 @@ shape = SubResource("BoxShape3D_0mtkn")
 
 [node name="Camera3D3" type="Camera3D" parent="Cameras" groups=["Cameras"]]
 transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 0, 10, 20)
+cull_mask = 1048573
 
 [node name="Target3" type="MeshInstance3D" parent="Cameras/Camera3D3"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
 cast_shadow = 0
 mesh = SubResource("SphereMesh_4wj6v")
 
@@ -161,9 +168,11 @@ shape = SubResource("BoxShape3D_try0m")
 
 [node name="Camera3D4" type="Camera3D" parent="Cameras" groups=["Cameras"]]
 transform = Transform3D(0.707107, 0.40558, -0.579228, 0, 0.819152, 0.573576, 0.707107, -0.40558, 0.579228, -14.14, 10, 14.14)
+cull_mask = 1048573
 
 [node name="Target4" type="MeshInstance3D" parent="Cameras/Camera3D4"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
 cast_shadow = 0
 mesh = SubResource("SphereMesh_it35y")
 
@@ -174,9 +183,11 @@ shape = SubResource("BoxShape3D_y82d1")
 
 [node name="Camera3D5" type="Camera3D" parent="Cameras" groups=["Cameras"]]
 transform = Transform3D(-4.37114e-08, 0.573576, -0.819152, 0, 0.819152, 0.573576, 1, 2.50718e-08, -3.58063e-08, -20, 10, 0)
+cull_mask = 1048573
 
 [node name="Target5" type="MeshInstance3D" parent="Cameras/Camera3D5"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
 cast_shadow = 0
 mesh = SubResource("SphereMesh_bh822")
 
@@ -187,9 +198,11 @@ shape = SubResource("BoxShape3D_mn72p")
 
 [node name="Camera3D6" type="Camera3D" parent="Cameras" groups=["Cameras"]]
 transform = Transform3D(-0.707107, 0.40558, -0.579228, 0, 0.819152, 0.573576, 0.707107, 0.40558, -0.579228, -14.14, 10, -14.14)
+cull_mask = 1048573
 
 [node name="Target6" type="MeshInstance3D" parent="Cameras/Camera3D6"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
 cast_shadow = 0
 mesh = SubResource("SphereMesh_ig721")
 
@@ -200,9 +213,11 @@ shape = SubResource("BoxShape3D_nfwv1")
 
 [node name="Camera3D7" type="Camera3D" parent="Cameras" groups=["Cameras"]]
 transform = Transform3D(-1, -5.01436e-08, 7.16125e-08, 0, 0.819152, 0.573576, -8.74228e-08, 0.573576, -0.819152, 0, 10, -20)
+cull_mask = 1048573
 
 [node name="Target7" type="MeshInstance3D" parent="Cameras/Camera3D7"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
 cast_shadow = 0
 mesh = SubResource("SphereMesh_pxeoy")
 
@@ -213,9 +228,11 @@ shape = SubResource("BoxShape3D_vm5wc")
 
 [node name="Camera3D8" type="Camera3D" parent="Cameras" groups=["Cameras"]]
 transform = Transform3D(-0.707107, -0.40558, 0.579228, 0, 0.819152, 0.573576, -0.707107, 0.40558, -0.579228, 14.14, 10, -14.14)
+cull_mask = 1048573
 
 [node name="Target8" type="MeshInstance3D" parent="Cameras/Camera3D8"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
 cast_shadow = 0
 mesh = SubResource("SphereMesh_84e1m")
 
@@ -226,6 +243,7 @@ shape = SubResource("BoxShape3D_2ngqo")
 
 [node name="SpawnableObjects" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.50347, 0)
+visible = false
 
 [node name="MeshInstance3D1" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
 transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
@@ -253,7 +271,8 @@ material_override = SubResource("StandardMaterial3D_tq6ri")
 mesh = SubResource("SphereMesh_xfd5e")
 
 [node name="Screen" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.38147, 16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.38147, -24.9375)
+layers = 2
 cast_shadow = 0
 double_sided = false
 texture = SubResource("ViewportTexture_2hfhm")
