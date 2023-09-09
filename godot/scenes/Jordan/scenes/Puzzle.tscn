@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dbg7pthmiyomc"]
+[gd_scene load_steps=36 format=3 uid="uid://dbg7pthmiyomc"]
 
 [ext_resource type="Script" path="res://scenes/Jordan/scripts/Puzzle.gd" id="1_8mpvj"]
 [ext_resource type="PackedScene" uid="uid://dd5yqxho3sgkk" path="res://scenes/Jordan/scenes/Player.tscn" id="1_bii0i"]
@@ -55,7 +55,30 @@ data = PackedVector3Array(0.55, -0.4866, -0.5672, 0.5499, -0.4878, -0.5671, 0.42
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ngqo"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nxje"]
+albedo_color = Color(1, 0.466667, 1, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_egwu1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8xkm"]
+albedo_color = Color(1, 0.466667, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5yjf5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_myeoj"]
+albedo_color = Color(1, 0.466667, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xniec"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y7mfl"]
+albedo_color = Color(1, 0.466667, 1, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_yq604"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tq6ri"]
+albedo_color = Color(1, 0.466667, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_xfd5e"]
 
 [node name="Puzzle" type="Node3D"]
 script = ExtResource("1_8mpvj")
@@ -97,6 +120,7 @@ shape = SubResource("ConcavePolygonShape3D_g008l")
 transform = Transform3D(-4.37114e-08, -0.573576, 0.819152, 0, 0.819152, 0.573576, -1, 2.50718e-08, -3.58063e-08, 20, 10, 0)
 
 [node name="Target1" type="MeshInstance3D" parent="Cameras/Camera3D1"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_gmd7t")
 
@@ -109,6 +133,7 @@ shape = SubResource("BoxShape3D_nmyj5")
 transform = Transform3D(0.707107, -0.40558, 0.579228, 0, 0.819152, 0.573576, -0.707107, -0.40558, 0.579228, 14.14, 10, 14.14)
 
 [node name="Target2" type="MeshInstance3D" parent="Cameras/Camera3D2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_pvxqs")
 
@@ -121,6 +146,7 @@ shape = SubResource("BoxShape3D_0mtkn")
 transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 0, 10, 20)
 
 [node name="Target3" type="MeshInstance3D" parent="Cameras/Camera3D3"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_4wj6v")
 
@@ -133,6 +159,7 @@ shape = SubResource("BoxShape3D_try0m")
 transform = Transform3D(0.707107, 0.40558, -0.579228, 0, 0.819152, 0.573576, 0.707107, -0.40558, 0.579228, -14.14, 10, 14.14)
 
 [node name="Target4" type="MeshInstance3D" parent="Cameras/Camera3D4"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_it35y")
 
@@ -145,6 +172,7 @@ shape = SubResource("BoxShape3D_y82d1")
 transform = Transform3D(-4.37114e-08, 0.573576, -0.819152, 0, 0.819152, 0.573576, 1, 2.50718e-08, -3.58063e-08, -20, 10, 0)
 
 [node name="Target5" type="MeshInstance3D" parent="Cameras/Camera3D5"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_bh822")
 
@@ -157,6 +185,7 @@ shape = SubResource("BoxShape3D_mn72p")
 transform = Transform3D(-0.707107, 0.40558, -0.579228, 0, 0.819152, 0.573576, 0.707107, 0.40558, -0.579228, -14.14, 10, -14.14)
 
 [node name="Target6" type="MeshInstance3D" parent="Cameras/Camera3D6"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_ig721")
 
@@ -169,6 +198,7 @@ shape = SubResource("BoxShape3D_nfwv1")
 transform = Transform3D(-1, -5.01436e-08, 7.16125e-08, 0, 0.819152, 0.573576, -8.74228e-08, 0.573576, -0.819152, 0, 10, -20)
 
 [node name="Target7" type="MeshInstance3D" parent="Cameras/Camera3D7"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_pxeoy")
 
@@ -181,6 +211,7 @@ shape = SubResource("BoxShape3D_vm5wc")
 transform = Transform3D(-0.707107, -0.40558, 0.579228, 0, 0.819152, 0.573576, -0.707107, 0.40558, -0.579228, 14.14, 10, -14.14)
 
 [node name="Target8" type="MeshInstance3D" parent="Cameras/Camera3D8"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
 mesh = SubResource("SphereMesh_84e1m")
 
@@ -192,5 +223,27 @@ shape = SubResource("BoxShape3D_2ngqo")
 [node name="SpawnableObjects" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.50347, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
+[node name="MeshInstance3D1" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
+transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_7nxje")
 mesh = SubResource("BoxMesh_egwu1")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
+transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_i8xkm")
+mesh = SubResource("CapsuleMesh_5yjf5")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
+transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_myeoj")
+mesh = SubResource("CylinderMesh_xniec")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
+transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_y7mfl")
+mesh = SubResource("PrismMesh_yq604")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
+transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_tq6ri")
+mesh = SubResource("SphereMesh_xfd5e")
