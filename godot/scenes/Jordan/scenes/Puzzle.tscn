@@ -5,6 +5,8 @@
 [ext_resource type="ArrayMesh" uid="uid://dn4go8fgu1jgh" path="res://scenes/Jordan/assets/Enclosure.obj" id="3_uirat"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w5bh7"]
+sun_angle_max = 360.0
+sun_curve = 2.08932
 
 [sub_resource type="Sky" id="Sky_8kn7g"]
 sky_material = SubResource("ProceduralSkyMaterial_w5bh7")
