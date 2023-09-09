@@ -3,18 +3,37 @@ extends Node3D
 const RAY_LENGTH = 100
 
 var target
+var level = 1
+var lives = 3
 
 func _ready():
 	
 	set_target()
 	set_light()
-	set_objects(5)
+	set_objects(level)
 	
 func _input(event):
 	
 	if (event.is_action_pressed("click")):
 		
-		reset_puzzle(5)
+		var player_guess = guess()
+		
+		if player_guess.is_in_group("Targets"):
+			
+			if player_guess == target:
+				
+				level += 1
+				reset_puzzle(level)
+				
+			elif player_guess != target:
+				
+				lives -= 1
+				
+				if lives == 0:
+					
+					get_tree().quit()
+					
+				reset_puzzle(level)
 		
 func reset_puzzle(num):
 	
