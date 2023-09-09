@@ -1,6 +1,6 @@
 extends Node3D
 
-const RAY_LENGTH = 100
+const RAY_LENGTH = 200
 
 var target
 var level = 1
