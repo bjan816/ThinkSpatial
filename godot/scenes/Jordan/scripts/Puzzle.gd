@@ -1,6 +1,6 @@
 extends Node3D
 
-const RAY_LENGTH = 200
+const RAY_LENGTH = 100
 
 var target
 var level = 1
@@ -56,7 +56,7 @@ func reset_puzzle(num):
 	puzzle_time = 60
 	set_time_text(puzzle_time)
 	
-	$Player.transform.origin = Vector3(0, 0, 20)
+	$Player.transform.origin = Vector3(0, 1, -16)
 	$Player/Neck.rotation = Vector3(0, 0, 0)
 	$Player/Neck/Camera3D.rotation = Vector3(0,0,0)
 
@@ -105,9 +105,9 @@ func guess():
 	var ray = PhysicsRayQueryParameters3D.create(origin, end)
 	ray.collide_with_areas = true
 		
-	var collided = space.intersect_ray(ray)
+	var guessed = space.intersect_ray(ray)
 	
-	return collided["collider"]
+	return guessed["collider"]
 	
 func set_level_text(level_num):
 	
