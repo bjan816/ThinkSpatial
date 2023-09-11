@@ -7,6 +7,11 @@ var level = 1
 var lives = 3
 var puzzle_time = 60
 
+@onready var fps_label = $UI/Label
+
+func _process(_delta):
+	fps_label.text = str(Engine.get_frames_per_second())
+
 func _ready():
 	
 	set_target()
@@ -125,14 +130,14 @@ func set_time_text(time_num):
 
 func _on_puzzle_timer_timeout():
 	
-	puzzle_time -= 1
+	puzzle_time -= 0.10
 	var puzzle_time_label = $UI/MarginContainer/VBoxContainer/HBoxContainer/Time
-	puzzle_time_label.text = str(puzzle_time)
-	
+	puzzle_time_label.text = "%.1f" % puzzle_time
+		
 	if puzzle_time <= 10:
 		
 		puzzle_time_label.add_theme_color_override("font_color", Color(1, 0, 0))
-		
+	
 	if puzzle_time == 0:
 		
 		lives -= 1
@@ -141,5 +146,5 @@ func _on_puzzle_timer_timeout():
 			
 			get_tree().quit()
 			
-		reset_puzzle(level)
+		reset_puzzle(11 - level)
 	
