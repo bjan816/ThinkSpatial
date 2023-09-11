@@ -1,16 +1,13 @@
 extends Node3D
 
+#🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝
+
 const RAY_LENGTH = 100
 
 var target
 var level = 1
 var lives = 3
 var puzzle_time = 60
-
-@onready var fps_label = $UI/Label
-
-func _process(_delta):
-	fps_label.text = str(Engine.get_frames_per_second())
 
 func _ready():
 	
@@ -31,10 +28,24 @@ func _input(event):
 			
 			if player_guess == target:
 				
+				player_guess.get_parent().material_override.albedo_color = Color(0, 1, 0)
+				
+				$PuzzleTimer.stop()
+				await get_tree().create_timer(3).timeout
+				
+				player_guess.get_parent().material_override.albedo_color = Color(1, 1, 1)
+				
 				level += 1
 				reset_puzzle(11 - level)
 				
 			elif player_guess != target:
+				
+				player_guess.get_parent().material_override.albedo_color = Color(1, 0, 0)
+				
+				$PuzzleTimer.stop()
+				await get_tree().create_timer(3).timeout
+				
+				player_guess.get_parent().material_override.albedo_color = Color(1, 1, 1)
 				
 				lives -= 1
 				
@@ -64,6 +75,8 @@ func reset_puzzle(num):
 	$Player.transform.origin = Vector3(0, 1, -16)
 	$Player/Neck.rotation = Vector3(0, 0, 0)
 	$Player/Neck/Camera3D.rotation = Vector3(0,0,0)
+	
+	$PuzzleTimer.start()
 
 func set_target():
 	

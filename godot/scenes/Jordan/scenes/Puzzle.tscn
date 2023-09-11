@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dbg7pthmiyomc"]
+[gd_scene load_steps=45 format=3 uid="uid://dbg7pthmiyomc"]
 
 [ext_resource type="Script" path="res://scenes/Jordan/scripts/Puzzle.gd" id="1_8mpvj"]
 [ext_resource type="PackedScene" uid="uid://dd5yqxho3sgkk" path="res://scenes/Jordan/scenes/Player.tscn" id="1_bii0i"]
@@ -26,33 +26,49 @@ data = PackedVector3Array(0.55, -0.4866, -0.5672, 0.5499, -0.4878, -0.5671, 0.42
 [sub_resource type="ViewportTexture" id="ViewportTexture_2hfhm"]
 viewport_path = NodePath("Cameras")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brx43"]
+
 [sub_resource type="SphereMesh" id="SphereMesh_gmd7t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nmyj5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ogvto"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_pvxqs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0mtkn"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sstl2"]
+
 [sub_resource type="SphereMesh" id="SphereMesh_4wj6v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_try0m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57sxa"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_it35y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y82d1"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0f0v"]
+
 [sub_resource type="SphereMesh" id="SphereMesh_bh822"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mn72p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dnv4a"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_ig721"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nfwv1"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iu6ag"]
+
 [sub_resource type="SphereMesh" id="SphereMesh_pxeoy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vm5wc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f6qea"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_84e1m"]
 
@@ -127,7 +143,6 @@ texture = SubResource("ViewportTexture_2hfhm")
 
 [node name="Cameras" type="SubViewport" parent="."]
 size = Vector2i(1000, 1000)
-render_target_update_mode = 1
 
 [node name="Camera3D1" type="Camera3D" parent="Cameras" groups=["Cameras"]]
 transform = Transform3D(-4.37114e-08, -0.573576, 0.819152, 0, 0.819152, 0.573576, -1, 2.50718e-08, -3.58063e-08, 20, 10, 0)
@@ -136,6 +151,7 @@ cull_mask = 1048573
 [node name="Target1" type="MeshInstance3D" parent="Cameras/Camera3D1"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 layers = 2
+material_override = SubResource("StandardMaterial3D_brx43")
 cast_shadow = 0
 mesh = SubResource("SphereMesh_gmd7t")
 
@@ -152,6 +168,7 @@ current = true
 [node name="Target2" type="MeshInstance3D" parent="Cameras/Camera3D2"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 layers = 2
+material_override = SubResource("StandardMaterial3D_ogvto")
 cast_shadow = 0
 mesh = SubResource("SphereMesh_pvxqs")
 
@@ -167,6 +184,7 @@ cull_mask = 1048573
 [node name="Target3" type="MeshInstance3D" parent="Cameras/Camera3D3"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 layers = 2
+material_override = SubResource("StandardMaterial3D_sstl2")
 cast_shadow = 0
 mesh = SubResource("SphereMesh_4wj6v")
 
@@ -182,6 +200,7 @@ cull_mask = 1048573
 [node name="Target4" type="MeshInstance3D" parent="Cameras/Camera3D4"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 layers = 2
+material_override = SubResource("StandardMaterial3D_57sxa")
 cast_shadow = 0
 mesh = SubResource("SphereMesh_it35y")
 
@@ -197,6 +216,7 @@ cull_mask = 1048573
 [node name="Target5" type="MeshInstance3D" parent="Cameras/Camera3D5"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 layers = 2
+material_override = SubResource("StandardMaterial3D_e0f0v")
 cast_shadow = 0
 mesh = SubResource("SphereMesh_bh822")
 
@@ -212,6 +232,7 @@ cull_mask = 1048573
 [node name="Target6" type="MeshInstance3D" parent="Cameras/Camera3D6"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 layers = 2
+material_override = SubResource("StandardMaterial3D_dnv4a")
 cast_shadow = 0
 mesh = SubResource("SphereMesh_ig721")
 
@@ -227,6 +248,7 @@ cull_mask = 1048573
 [node name="Target7" type="MeshInstance3D" parent="Cameras/Camera3D7"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 layers = 2
+material_override = SubResource("StandardMaterial3D_iu6ag")
 cast_shadow = 0
 mesh = SubResource("SphereMesh_pxeoy")
 
@@ -242,6 +264,7 @@ cull_mask = 1048573
 [node name="Target8" type="MeshInstance3D" parent="Cameras/Camera3D8"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 layers = 2
+material_override = SubResource("StandardMaterial3D_f6qea")
 cast_shadow = 0
 mesh = SubResource("SphereMesh_84e1m")
 
