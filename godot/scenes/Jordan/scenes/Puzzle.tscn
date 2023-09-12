@@ -143,21 +143,24 @@ texture = SubResource("ViewportTexture_2hfhm")
 
 [node name="Cameras" type="SubViewport" parent="."]
 size = Vector2i(1000, 1000)
+render_target_update_mode = 4
 
 [node name="Camera3D1" type="Camera3D" parent="Cameras" groups=["Cameras"]]
 transform = Transform3D(-4.37114e-08, -0.573576, 0.819152, 0, 0.819152, 0.573576, -1, 2.50718e-08, -3.58063e-08, 20, 10, 0)
 cull_mask = 1048573
 
 [node name="Target1" type="MeshInstance3D" parent="Cameras/Camera3D1"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(2, 0, 0, 0, 2, -1.79546e-15, 0, -1.79546e-15, 2, 0, 0, 0)
 layers = 2
 material_override = SubResource("StandardMaterial3D_brx43")
 cast_shadow = 0
 mesh = SubResource("SphereMesh_gmd7t")
 
 [node name="StaticBody3D1" type="StaticBody3D" parent="Cameras/Camera3D1/Target1" groups=["Targets"]]
+transform = Transform3D(1, 0, 0, 0, 1, -8.97729e-16, 0, -8.97729e-16, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D1/Target1/StaticBody3D1"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.97729e-16, 0, -8.97729e-16, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_nmyj5")
 
 [node name="Camera3D2" type="Camera3D" parent="Cameras" groups=["Cameras"]]
@@ -311,18 +314,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Crosshair" type="Label" parent="UI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-text = "+"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="MarginContainer" type="MarginContainer" parent="UI"]
 layout_mode = 1
 anchors_preset = 15
@@ -340,11 +331,14 @@ layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 alignment = 1
 
 [node name="Time" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -353,15 +347,30 @@ alignment = 1
 [node name="Level" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Lives" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label" type="Label" parent="UI"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="CenterContainer" type="CenterContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Crosshair" type="Label" parent="UI/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PuzzleTimer" type="Timer" parent="."]
 wait_time = 0.1
