@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://clppp4avxfvwu"]
+[gd_scene load_steps=3 format=3 uid="uid://clppp4avxfvwu"]
 
+[ext_resource type="Script" path="res://scenes/Jordan/scripts/TutorialBox.gd" id="1_exrve"]
 [ext_resource type="VideoStream" path="res://scenes/Jordan/assets/TutorialBoxVideo.ogv" id="1_nxxyo"]
 
 [node name="TutorialBox" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_exrve")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -46,6 +48,14 @@ expand = true
 
 [node name="Label" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Donec in efficitur leo. Vestibulum et felis ex. Maecenas interdum ante eget felis aliquam, id porttitor ex suscipit. Donec tincidunt, erat eget feugiat aliquet, nisl est viverra leo, a tristique ante libero in augue. Aenean at facilisis odio. Donec ornare egestas varius. Nullam lobortis, nisi ut pulvinar pellentesque, orci metus bibendum velit, et adipiscing felis sapien fermentum dui. Mauris feugiat, libero ac tincidunt cursus, ex arcu cursus est, non tincidunt turpis magna id quam.
+"
+autowrap_mode = 2
 
 [node name="Button" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+text = "Understood, I'm ready"
+
+[connection signal="finished" from="CenterContainer/Panel/MarginContainer/VBoxContainer/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="CenterContainer/Panel/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
