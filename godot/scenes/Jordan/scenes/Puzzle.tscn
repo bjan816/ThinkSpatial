@@ -1,8 +1,9 @@
-[gd_scene load_steps=45 format=3 uid="uid://dbg7pthmiyomc"]
+[gd_scene load_steps=46 format=3 uid="uid://dbg7pthmiyomc"]
 
 [ext_resource type="Script" path="res://scenes/Jordan/scripts/Puzzle.gd" id="1_8mpvj"]
 [ext_resource type="PackedScene" uid="uid://dd5yqxho3sgkk" path="res://scenes/Jordan/scenes/Player.tscn" id="1_bii0i"]
 [ext_resource type="ArrayMesh" uid="uid://dn4go8fgu1jgh" path="res://scenes/Jordan/assets/Enclosure.obj" id="3_uirat"]
+[ext_resource type="PackedScene" uid="uid://clppp4avxfvwu" path="res://scenes/Jordan/scenes/TutorialBox.tscn" id="4_fev2r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w5bh7"]
 sun_angle_max = 360.0
@@ -374,6 +375,7 @@ vertical_alignment = 1
 
 [node name="PuzzleTimer" type="Timer" parent="."]
 wait_time = 0.1
-autostart = true
+
+[node name="TutorialBox" parent="." instance=ExtResource("4_fev2r")]
 
 [connection signal="timeout" from="PuzzleTimer" to="." method="_on_puzzle_timer_timeout"]

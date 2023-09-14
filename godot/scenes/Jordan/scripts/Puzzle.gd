@@ -22,6 +22,10 @@ func _input(event):
 	
 	if (event.is_action_pressed("click")):
 		
+		if puzzle_time == 60:
+		
+			$PuzzleTimer.start()
+		
 		var player_guess = guess()
 		
 		if player_guess.is_in_group("Targets"):
