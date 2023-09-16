@@ -51,6 +51,6 @@
 30. A
 
 ### Questions 31-33
-31. ![Question 31 answer](<Screenshot 2023-09-16 at 10.20.47 PM.png>)
-32. ![Question 32 answer](<Screenshot 2023-09-16 at 10.22.06 PM.png>)
-33. ![Question 33 answer](<Screenshot 2023-09-16 at 10.22.51 PM.png>)
+31. ![Question 31 answer](<q31.png>)
+32. ![Question 32 answer](<q32.png>)
+33. ![Question 33 answer](<q33.png>)
