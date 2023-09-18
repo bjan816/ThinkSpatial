@@ -99,17 +99,19 @@ func set_light():
 func set_objects(num):
 	
 	var objects = get_tree().get_nodes_in_group("ToSpawn")
-	var max_range = Vector3(10, 5, 10)
-	var min_range = Vector3(-10, 0, -10)
 	
 	for i in range(num):
 		
 		var to_spawn = objects[randi() % objects.size()].duplicate()
 		
+		var distance = 9 * sqrt(randf_range(0, 1))
+		var degree = randf_range(0, 360)
+		var height = randf_range(0, 4)
+		
 		var spawn_position = Vector3(
-			randf_range(min_range.x, max_range.x),
-			randf_range(min_range.y, max_range.y),
-			randf_range(min_range.z, max_range.z)
+			distance * cos(deg_to_rad(degree)),
+			height,
+			distance * sin(deg_to_rad(degree))
 		)
 		
 		self.add_child(to_spawn)
