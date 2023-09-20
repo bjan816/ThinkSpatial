@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://xanvybi2rb5w"]
+
+[ext_resource type="Script" path="res://interface/FinalMenu.gd" id="1_i5yi7"]
+[ext_resource type="FontFile" uid="uid://b74wj7a61oel6" path="res://interface/fonts/Montserrat-ExtraBold.ttf" id="1_iqqih"]
+
+[node name="FullMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i5yi7")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Column" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CenterContainer/Column"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqqih")
+theme_override_font_sizes/font_size = 48
+text = "Success!
+"
+horizontal_alignment = 1
+
+[node name="Time" type="Label" parent="CenterContainer/Column"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqqih")
+theme_override_font_sizes/font_size = 32
+text = "Your time was: 1m 1s"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="CenterContainer/Column"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqqih")
+theme_override_font_sizes/font_size = 32
+text = "Your score was: "
+horizontal_alignment = 1
+
+[node name="Row" type="HBoxContainer" parent="CenterContainer/Column"]
+layout_mode = 2
+
+[node name="TryAgain" type="Button" parent="CenterContainer/Column/Row"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_iqqih")
+theme_override_font_sizes/font_size = 32
+text = "Try again
+"
+
+[node name="Exit" type="Button" parent="CenterContainer/Column/Row"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_iqqih")
+theme_override_font_sizes/font_size = 32
+text = "Exit
+"
+
+[connection signal="pressed" from="CenterContainer/Column/Row/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="CenterContainer/Column/Row/Exit" to="." method="_on_exit_pressed"]

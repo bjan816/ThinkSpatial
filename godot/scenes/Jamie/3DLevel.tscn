@@ -1,0 +1,104 @@
+[gd_scene load_steps=11 format=3 uid="uid://cerjluhbpwtbr"]
+
+[ext_resource type="PackedScene" uid="uid://daxmxrvjpnmyt" path="res://player/Player.tscn" id="1_en333"]
+[ext_resource type="Script" path="res://3DLevel.gd" id="1_w7n7s"]
+[ext_resource type="PackedScene" uid="uid://bd7e1mh4hfhnm" path="res://world/Level1.tscn" id="2_re2fu"]
+[ext_resource type="PackedScene" uid="uid://xanvybi2rb5w" path="res://interface/FinalMenu.tscn" id="3_xyihg"]
+[ext_resource type="Texture2D" uid="uid://o4kulm4235gb" path="res://map.png" id="5_tuc4h"]
+[ext_resource type="Script" path="res://world/Timer.gd" id="5_wv3c1"]
+[ext_resource type="Script" path="res://Scoreboard.gd" id="6_32f17"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oe43y"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_8crvg"]
+sky_material = SubResource("ProceduralSkyMaterial_oe43y")
+
+[sub_resource type="Environment" id="Environment_mx3ex"]
+background_mode = 2
+sky = SubResource("Sky_8crvg")
+tonemap_mode = 2
+glow_enabled = true
+adjustment_enabled = true
+adjustment_brightness = 1.4
+adjustment_contrast = 1.2
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_w7n7s")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mx3ex")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_en333")]
+transform = Transform3D(-0.00130906, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00130906, 14.7119, 1.08666, 38.3666)
+
+[node name="Level1" parent="." instance=ExtResource("2_re2fu")]
+visible = false
+
+[node name="Level2" parent="." instance=ExtResource("2_re2fu")]
+
+[node name="FinalMenu" parent="." instance=ExtResource("3_xyihg")]
+visible = false
+
+[node name="Timer" type="Panel" parent="."]
+offset_left = 1102.0
+offset_top = 11.0
+offset_right = 1268.0
+offset_bottom = 44.0
+script = ExtResource("5_wv3c1")
+
+[node name="Minutes" type="Label" parent="Timer"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 5.0
+offset_right = 71.0
+offset_bottom = 60.0
+text = "00:"
+horizontal_alignment = 2
+
+[node name="Seconds" type="Label" parent="Timer"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 5.0
+offset_right = 94.0
+offset_bottom = 31.0
+text = "00:"
+horizontal_alignment = 2
+
+[node name="Msecs" type="Label" parent="Timer"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 5.0
+offset_right = 121.0
+offset_bottom = 31.0
+text = "00:"
+horizontal_alignment = 2
+
+[node name="Scoreboard" type="Panel" parent="."]
+offset_left = 1102.0
+offset_top = 52.0
+offset_right = 1268.0
+offset_bottom = 85.0
+script = ExtResource("6_32f17")
+
+[node name="Score" type="Label" parent="Scoreboard"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 5.0
+offset_right = 139.0
+offset_bottom = 31.0
+text = "Score:"
+
+[node name="Map" type="Sprite2D" parent="."]
+position = Vector2(151.192, 145.125)
+scale = Vector2(0.289409, 0.276601)
+texture = ExtResource("5_tuc4h")
+
+[connection signal="level_completed" from="Level1" to="." method="_on_level_1_level_completed"]
+[connection signal="level_completed" from="Level2" to="." method="_on_level_1_level_completed"]
+[connection signal="retried" from="FinalMenu" to="." method="_on_final_menu_retried"]
