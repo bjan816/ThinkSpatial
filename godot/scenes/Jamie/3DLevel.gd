@@ -9,6 +9,7 @@ class_name Game
 
 var levels = ["res://scenes/Jamie/world/Levels/Level1.tscn", "res://scenes/Jamie/world/Levels/Level2.tscn"]
 var level1 = load(levels[0]).instantiate()
+var level2 = load(levels[1]).instantiate()
 
 var play_time : = 0.0
 var reset_position = Vector3(14.7119, 1.08666, 38.3666)
@@ -35,3 +36,7 @@ func _on_level_completed():
 
 func _on_final_menu_retried():
 	get_tree().reload_current_scene()
+
+func _on_final_menu_next():
+	get_node("/root").remove_child(level1)
+	get_tree().root.add_child.call_deferred(level2)

@@ -93,4 +93,5 @@ position = Vector2(151.192, 145.125)
 scale = Vector2(0.289409, 0.276601)
 texture = ExtResource("5_tuc4h")
 
+[connection signal="next" from="FinalMenu" to="." method="_on_final_menu_next"]
 [connection signal="retried" from="FinalMenu" to="." method="_on_final_menu_retried"]

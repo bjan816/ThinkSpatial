@@ -2,6 +2,7 @@ extends Control
 class_name FinalMenu
 
 signal retried()
+signal next()
 
 @onready var time : = $CenterContainer/Column/Time
 @onready var score_obj : = $CenterContainer/Column/Score
@@ -32,3 +33,9 @@ func _on_try_again_pressed():
 
 func _on_exit_pressed():
 	get_tree().quit()
+
+
+func _on_next_level_pressed():
+	get_tree().paused = false
+	emit_signal("next")
+	emit_signal("retried")
