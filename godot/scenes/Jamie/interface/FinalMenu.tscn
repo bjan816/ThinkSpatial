@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://xanvybi2rb5w"]
 
-[ext_resource type="Script" path="res://interface/FinalMenu.gd" id="1_i5yi7"]
-[ext_resource type="FontFile" uid="uid://b74wj7a61oel6" path="res://interface/fonts/Montserrat-ExtraBold.ttf" id="1_iqqih"]
+[ext_resource type="Script" path="res://scenes/Jamie/interface/FinalMenu.gd" id="1_i5yi7"]
+[ext_resource type="FontFile" uid="uid://b74wj7a61oel6" path="res://scenes/Jamie/interface/fonts/Montserrat-ExtraBold.ttf" id="1_iqqih"]
 
 [node name="FullMenu" type="Control"]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

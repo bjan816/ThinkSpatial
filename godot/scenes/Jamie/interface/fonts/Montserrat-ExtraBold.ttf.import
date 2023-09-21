@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b74wj7a61oel6"
-path="res://.godot/imported/Montserrat-ExtraBold.ttf-c6130494c1ffd8f471b046346134dd59.fontdata"
+path="res://.godot/imported/Montserrat-ExtraBold.ttf-7e4a1d1bf7a044fab27a72c1b088d2ef.fontdata"
 
 [deps]
 
-source_file="res://interface/fonts/Montserrat-ExtraBold.ttf"
-dest_files=["res://.godot/imported/Montserrat-ExtraBold.ttf-c6130494c1ffd8f471b046346134dd59.fontdata"]
+source_file="res://scenes/Jamie/interface/fonts/Montserrat-ExtraBold.ttf"
+dest_files=["res://.godot/imported/Montserrat-ExtraBold.ttf-7e4a1d1bf7a044fab27a72c1b088d2ef.fontdata"]
 
 [params]
 

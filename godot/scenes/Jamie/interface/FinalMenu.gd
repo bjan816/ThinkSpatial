@@ -27,6 +27,7 @@ func initialize(total_play_time : float) -> void:
 	show()
 
 func _on_try_again_pressed():
+	get_tree().paused = false
 	emit_signal("retried")
 
 func _on_exit_pressed():

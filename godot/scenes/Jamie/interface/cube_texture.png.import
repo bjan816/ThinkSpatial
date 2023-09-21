@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhpbs31may5he"
-path.s3tc="res://.godot/imported/cube_texture.png-e61210632c37c7c869493c39d9ff45f4.s3tc.ctex"
+path.s3tc="res://.godot/imported/cube_texture.png-5cf5a91999627a69588fac36f5ff95b9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://interface/cube_texture.png"
-dest_files=["res://.godot/imported/cube_texture.png-e61210632c37c7c869493c39d9ff45f4.s3tc.ctex"]
+source_file="res://scenes/Jamie/interface/cube_texture.png"
+dest_files=["res://.godot/imported/cube_texture.png-5cf5a91999627a69588fac36f5ff95b9.s3tc.ctex"]
 
 [params]
 
