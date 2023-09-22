@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://cerjluhbpwtbr"]
+[gd_scene load_steps=12 format=3 uid="uid://cerjluhbpwtbr"]
 
 [ext_resource type="PackedScene" uid="uid://daxmxrvjpnmyt" path="res://scenes/Jamie/player/Player.tscn" id="1_en333"]
 [ext_resource type="Script" path="res://scenes/Jamie/3DLevel.gd" id="1_w7n7s"]
 [ext_resource type="PackedScene" uid="uid://xanvybi2rb5w" path="res://scenes/Jamie/interface/FinalMenu.tscn" id="3_xyihg"]
-[ext_resource type="Texture2D" uid="uid://o4kulm4235gb" path="res://scenes/Jamie/map.png" id="5_tuc4h"]
 [ext_resource type="Script" path="res://scenes/Jamie/world/Timer.gd" id="5_wv3c1"]
 [ext_resource type="Script" path="res://scenes/Jamie/Scoreboard.gd" id="6_32f17"]
+[ext_resource type="Texture2D" uid="uid://bstkvm0dlli1g" path="res://scenes/Jamie/hard_level_map1.png" id="6_l3t6y"]
+[ext_resource type="Texture2D" uid="uid://dr4oh7gvjo0pe" path="res://scenes/Jamie/hard_level_map2.png" id="7_vaku3"]
+[ext_resource type="Texture2D" uid="uid://c5p7iyjq5bm6w" path="res://scenes/Jamie/hard_level_map3.png" id="8_4kcb4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oe43y"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -40,58 +42,68 @@ transform = Transform3D(-0.00130906, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.0013
 visible = false
 
 [node name="Timer" type="Panel" parent="."]
-offset_left = 1102.0
-offset_top = 11.0
-offset_right = 1268.0
-offset_bottom = 44.0
+offset_left = 9.0
+offset_top = 344.0
+offset_right = 297.0
+offset_bottom = 377.0
 script = ExtResource("5_wv3c1")
 
 [node name="Minutes" type="Label" parent="Timer"]
 layout_mode = 0
-offset_left = 34.0
+offset_left = 105.0
 offset_top = 5.0
-offset_right = 71.0
+offset_right = 142.0
 offset_bottom = 60.0
 text = "00:"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
 [node name="Seconds" type="Label" parent="Timer"]
 layout_mode = 0
-offset_left = 68.0
+offset_left = 134.0
 offset_top = 5.0
-offset_right = 94.0
+offset_right = 160.0
 offset_bottom = 31.0
 text = "00:"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
 [node name="Msecs" type="Label" parent="Timer"]
 layout_mode = 0
-offset_left = 81.0
+offset_left = 151.0
 offset_top = 5.0
-offset_right = 121.0
+offset_right = 191.0
 offset_bottom = 31.0
 text = "00:"
-horizontal_alignment = 2
+horizontal_alignment = 1
 
 [node name="Scoreboard" type="Panel" parent="."]
-offset_left = 1102.0
-offset_top = 52.0
-offset_right = 1268.0
-offset_bottom = 85.0
+offset_left = 9.0
+offset_top = 301.0
+offset_right = 297.0
+offset_bottom = 334.0
 script = ExtResource("6_32f17")
 
 [node name="Score" type="Label" parent="Scoreboard"]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 5.0
-offset_right = 139.0
-offset_bottom = 31.0
+offset_left = 105.0
+offset_top = 4.0
+offset_right = 204.0
+offset_bottom = 30.0
 text = "Score:"
 
-[node name="Map1" type="Sprite2D" parent="."]
-position = Vector2(151.192, 145.125)
-scale = Vector2(0.289409, 0.276601)
-texture = ExtResource("5_tuc4h")
+[node name="Hard1" type="Sprite2D" parent="."]
+position = Vector2(153.05, 145.226)
+scale = Vector2(0.39882, 0.376524)
+texture = ExtResource("6_l3t6y")
+
+[node name="Hard2" type="Sprite2D" parent="."]
+position = Vector2(152.917, 145.305)
+scale = Vector2(0.399169, 0.376319)
+texture = ExtResource("7_vaku3")
+
+[node name="Hard3" type="Sprite2D" parent="."]
+position = Vector2(152.214, 144.609)
+scale = Vector2(0.395763, 0.37553)
+texture = ExtResource("8_4kcb4")
 
 [connection signal="next" from="FinalMenu" to="." method="_on_final_menu_next"]
 [connection signal="retried" from="FinalMenu" to="." method="_on_final_menu_retried"]

@@ -18,6 +18,15 @@ func _process(delta) -> void:
 
 func get_time_formateed() -> String:
 	return "%02d:%02d.%03d" % [minutes, seconds, msec]
-	
+
+func reset():
+	time = 0.0
+	minutes = 0
+	seconds = 0
+	msec = 0
+
 func hideTimer():
 	self.visible = false
+
+func showTimer():
+	self.visible = true

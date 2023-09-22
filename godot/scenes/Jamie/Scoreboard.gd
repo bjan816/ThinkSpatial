@@ -15,3 +15,6 @@ func _process(delta) -> void:
 	
 func hideScore():
 	self.visible = false
+
+func showScore():
+	self.visible = true

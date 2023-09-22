@@ -26,6 +26,9 @@ func initialize(total_play_time : float) -> void:
 	time.text = time_text
 	score_obj.text = score_text
 	show()
+	
+func r1():
+	hide()
 
 func _on_try_again_pressed():
 	get_tree().paused = false

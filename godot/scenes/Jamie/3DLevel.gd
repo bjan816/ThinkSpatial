@@ -4,8 +4,11 @@ class_name Game
 @onready var final_menu : = $FinalMenu
 @onready var player : = $Player
 @onready var timer : = $Timer
-@onready var map : = $Map1
 @onready var scoreboard : = $Scoreboard
+
+@onready var hard_map1 : = $Hard1
+@onready var hard_map2 : = $Hard2
+@onready var hard_map3 : = $Hard3
 
 var hard_levels_dir = ["res://scenes/Jamie/world/Levels/Level1.tscn", "res://scenes/Jamie/world/Levels/Level2.tscn", "res://scenes/Jamie/world/Levels/Level3.tscn"]
 var hard_levels = [load(hard_levels_dir[0]).instantiate(), load(hard_levels_dir[1]).instantiate(), load(hard_levels_dir[2]).instantiate()]
@@ -20,6 +23,7 @@ var current_lev = 1
 func _ready():
 	self.add_child(hard_levels[current_lev - 1])
 	reset_pos(current_lev)
+	map_visible(current_lev)
 	
 	
 func _process(delta):
@@ -42,16 +46,18 @@ func _on_level_completed():
 	final_menu.initialize(play_time)
 	timer.hideTimer()
 	scoreboard.hideScore()
-	map.visible = false
-	current_lev += 1
+	map_visible(current_lev)
 
 func _on_final_menu_retried():
-	get_tree().reload_current_scene()
+	reload()
+	reset_pos(current_lev)
 
 func _on_final_menu_next():
+	current_lev += 1
 	self.add_child(hard_levels[current_lev - 1])
 	self.remove_child(hard_levels[current_lev - 2])
 	hard_levels[current_lev - 2].queue_free()
+	reload()
 	reset_pos(current_lev)
 	get_tree().paused = false
 	
@@ -79,3 +85,26 @@ func reset_pos(lev):
 	
 func test_pos(lev):
 	player.global_transform.origin = hard_level_test_pos[lev - 1]
+
+func reload():
+	play_time = 0.0
+	scoreboard.score = 1000
+	final_menu.r1()
+	timer.reset()
+	timer.showTimer()
+	scoreboard.showScore()
+	map_visible(current_lev)
+
+func map_visible(lev):
+	if lev == 1:
+		hard_map1.visible = true
+		hard_map2.visible = false
+		hard_map3.visible = false
+	if lev == 2:
+		hard_map1.visible = false
+		hard_map2.visible = true
+		hard_map3.visible = false
+	if lev == 3:
+		hard_map1.visible = false
+		hard_map2.visible = false
+		hard_map3.visible = true
