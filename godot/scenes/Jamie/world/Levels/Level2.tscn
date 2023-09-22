@@ -31,10 +31,6 @@ data = {
 }
 
 [node name="Goal" parent="." instance=ExtResource("2_vm1a7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7852, 1.72622, -42.2203)
-
-[node name="Goal2" parent="." instance=ExtResource("2_vm1a7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0586, 1.72622, 44.758)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.997, 1.72622, -42.0205)
 
 [connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]
-[connection signal="body_entered" from="Goal2" to="." method="_on_goal_body_entered"]

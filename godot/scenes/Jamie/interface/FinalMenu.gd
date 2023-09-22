@@ -10,7 +10,7 @@ signal next()
 var score: int = 1000
 var resetButtonPressed = false
 
-func _process(delta) -> void:
+func _process() -> void:
 	if Input.is_action_pressed('reset') and !resetButtonPressed:
 		if score > 0:
 			score -= 100

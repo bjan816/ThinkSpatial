@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://bd7e1mh4hfhnm"]
+[gd_scene load_steps=5 format=3 uid="uid://bd7e1mh4hfhnm"]
 
-[ext_resource type="Script" path="res://scenes/Jamie/world/Levels/Level1.gd" id="1_gwsb2"]
 [ext_resource type="MeshLibrary" uid="uid://s81od3ptk34r" path="res://scenes/Jamie/world/texture_1.meshlib" id="2_1cvpx"]
 [ext_resource type="PackedScene" uid="uid://b6jfiywsongok" path="res://scenes/Jamie/world/Goal.tscn" id="2_vm1a7"]
 
@@ -11,7 +10,6 @@ size = Vector2(105, 105)
 data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
 
 [node name="Level1" type="Node3D"]
-script = ExtResource("1_gwsb2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_5ekj1")
@@ -31,10 +29,6 @@ data = {
 }
 
 [node name="Goal" parent="." instance=ExtResource("2_vm1a7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7852, 1.72622, -42.2203)
-
-[node name="Goal2" parent="." instance=ExtResource("2_vm1a7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0331, 1.72622, 31.2049)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9638, 1.72622, -34.117)
 
 [connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]
-[connection signal="body_entered" from="Goal2" to="." method="_on_goal_body_entered"]
