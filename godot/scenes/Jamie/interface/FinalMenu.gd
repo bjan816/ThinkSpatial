@@ -38,4 +38,4 @@ func _on_exit_pressed():
 func _on_next_level_pressed():
 	get_tree().paused = false
 	emit_signal("next")
-	emit_signal("retried")
+

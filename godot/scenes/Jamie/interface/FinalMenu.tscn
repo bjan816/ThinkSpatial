@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://b74wj7a61oel6" path="res://scenes/Jamie/interface/fonts/Montserrat-ExtraBold.ttf" id="1_iqqih"]
 
 [node name="FullMenu" type="Control"]
-process_mode = 2
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
