@@ -7,22 +7,18 @@ class_name Game
 @onready var map : = $Map1
 @onready var scoreboard : = $Scoreboard
 
-var hard_levels = ["res://scenes/Jamie/world/Levels/Level1.tscn", "res://scenes/Jamie/world/Levels/Level2.tscn"]
-var hard_level1 = load(hard_levels[0]).instantiate()
-var hard_level2 = load(hard_levels[1]).instantiate()
-var hard_level_reset_pos = [Vector3(14, 1, 38), Vector3(-30, 1, 14)]
-var hard_level_reset_angle = [Vector3(0, 90, 0), Vector3(0, 270, 0)]
-var hard_level_test_pos = [Vector3(-26, 1, -38), Vector3(30, 1, -42)]
+var hard_levels_dir = ["res://scenes/Jamie/world/Levels/Level1.tscn", "res://scenes/Jamie/world/Levels/Level2.tscn", "res://scenes/Jamie/world/Levels/Level3.tscn"]
+var hard_levels = [load(hard_levels_dir[0]).instantiate(), load(hard_levels_dir[1]).instantiate(), load(hard_levels_dir[2]).instantiate()]
+var hard_level_reset_pos = [Vector3(14, 1, 38), Vector3(-30, 1, 14), Vector3(30, 1, -2)]
+var hard_level_reset_angle = [Vector3(0, 90, 0), Vector3(0, 270, 0), Vector3(0, 0, 0)]
+var hard_level_test_pos = [Vector3(-26, 1, -38), Vector3(30, 1, -42), Vector3(-32.5, 1, 46)]
 
 var play_time : = 0.0
-var lev1_reset_position = Vector3(14.7119, 1.08666, 38.3666)
-var free = false
-
 
 var current_lev = 1
 
 func _ready():
-	self.add_child(hard_level1)
+	self.add_child(hard_levels[current_lev - 1])
 	reset_pos(current_lev)
 	
 	
@@ -53,9 +49,9 @@ func _on_final_menu_retried():
 	get_tree().reload_current_scene()
 
 func _on_final_menu_next():
-	self.add_child(hard_level2)
-	self.remove_child(hard_level1)
-	hard_level1.queue_free()
+	self.add_child(hard_levels[current_lev - 1])
+	self.remove_child(hard_levels[current_lev - 2])
+	hard_levels[current_lev - 2].queue_free()
 	reset_pos(current_lev)
 	get_tree().paused = false
 	
@@ -68,6 +64,11 @@ func check_goal_lev(lev):
 			return false
 	elif lev == 2:
 		if (player.global_transform.origin.x > 36 and player.global_transform.origin.x < 40) and (player.global_transform.origin.z > -44 and player.global_transform.origin.z < -40):
+			return true
+		else:
+			return false
+	elif lev == 3:
+		if (player.global_transform.origin.x > -40 and player.global_transform.origin.x < -36) and (player.global_transform.origin.z > 44 and player.global_transform.origin.z < 48):
 			return true
 		else:
 			return false

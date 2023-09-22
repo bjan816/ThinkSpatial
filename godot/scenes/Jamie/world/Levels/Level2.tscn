@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://c614x68dobcpr"]
+[gd_scene load_steps=5 format=3 uid="uid://c614x68dobcpr"]
 
-[ext_resource type="Script" path="res://scenes/Jamie/world/Levels/Level2.gd" id="1_fgocw"]
 [ext_resource type="MeshLibrary" uid="uid://s81od3ptk34r" path="res://scenes/Jamie/world/texture_1.meshlib" id="2_1cvpx"]
 [ext_resource type="PackedScene" uid="uid://b6jfiywsongok" path="res://scenes/Jamie/world/Goal.tscn" id="2_vm1a7"]
 
@@ -11,7 +10,6 @@ size = Vector2(105, 105)
 data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
 
 [node name="Level2" type="Node3D"]
-script = ExtResource("1_fgocw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_5ekj1")
