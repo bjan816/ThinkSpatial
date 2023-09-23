@@ -12,12 +12,12 @@ namespace ThinkSpatial.think_spatial.script.csharp.ui_system
 
 		private void _on_button_play_spatial_precision_pressed()
 		{
-			GameController.Instance.SceneManager.SwitchScene("spatial_precision", SceneManager.TransitionMode.Fade);
+			GameController.Instance.SceneManager.SwitchScene("spatial_precision/spatial_precision", SceneManager.TransitionMode.Fade);
 		}
 
 		private void _on_button_play_spatial_memory_pressed()
 		{
-			GameController.Instance.SceneManager.SwitchScene("spatial_memory", SceneManager.TransitionMode.Fade);
+			GameController.Instance.SceneManager.SwitchScene("spatial_memory/spatial_memory", SceneManager.TransitionMode.Fade);
 		}
 
 		private void _on_button_quit_pressed()
