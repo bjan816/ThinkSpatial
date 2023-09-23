@@ -11,6 +11,7 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.ui_system
 		public static readonly string TitleAnimationName = "Title";
 		public static readonly string WaitingAnimationName = "Waiting";
 		public static readonly string CountdownAnimationName = "Countdown";
+		public static readonly string InGameAnimationName = "InGame";
 		public static readonly string CorrectAnimationName = "Correct";
 		public static readonly string IncorrectAnimationName = "Incorrect";
 		public static readonly string ScoreAnimationName = "Score";

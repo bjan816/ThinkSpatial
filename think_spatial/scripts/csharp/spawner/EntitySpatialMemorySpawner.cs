@@ -10,6 +10,7 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 
 		private int _numberOfSuccessfulConsectiveDeaths;
 
+		public Message ConsectiveDeath = new Message();
 		public Message<int> SpatialMemoryResult = new Message<int>();
 
 		public override void _Ready()
@@ -59,6 +60,8 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 			if (SpawnedEntities[0] == entity)
 			{
 				++_numberOfSuccessfulConsectiveDeaths;
+
+				ConsectiveDeath.Send();
 
 				if (_numberOfSuccessfulConsectiveDeaths >= EntitiesToSpawn)
 				{

@@ -18,6 +18,7 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.game_mode
 			base._Ready();
 
 			_spatialMemorySpawner.FinishedSpawningEntities.AddListener(PreInGame);
+			_spatialMemorySpawner.ConsectiveDeath.AddListener(OnConsectiveDeath);
 			_spatialMemorySpawner.SpatialMemoryResult.AddListener(EndGame);
 
 			_spatialMemoryUI.TitleAnimationFinished.AddListener(PreGame);
@@ -27,6 +28,13 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.game_mode
 			_spatialMemoryUI.ScoreAnimationFinished.AddListener(PostGame);
 
 			InitializeGame();
+		}
+
+		private void OnConsectiveDeath()
+		{
+			++_score;
+
+			_spatialMemoryUI.ScoreValueLabel.Text = _score.ToString();
 		}
 
 		private void SanitizeVariables()
@@ -73,6 +81,8 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.game_mode
 
 		private void InGame()
 		{
+			_spatialMemoryUI.PlayAnimation(SpatialMemoryUI.InGameAnimationName);
+
 			GameController.Instance.LocalPlayer.MouseInputBlocked.Set(false);
 			GameController.Instance.LocalPlayer.MouseMovementBlocked.Set(false);
 		}
@@ -85,9 +95,6 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.game_mode
 				GameController.Instance.LocalPlayer.MouseMovementBlocked.Set(true);
 			}
 
-			_score += spatialMemoryResult;
-
-			_spatialMemoryUI.ScoreValueLabel.Text = _score.ToString();
 			_spatialMemoryUI.PlayAnimation(spatialMemoryResult == _spatialMemorySpawner.EntitiesToSpawn ? SpatialMemoryUI.CorrectAnimationName : SpatialMemoryUI.IncorrectAnimationName);
 		}
 
