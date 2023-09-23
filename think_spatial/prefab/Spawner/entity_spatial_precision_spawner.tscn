@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://caukaolcm2v14"]
 
 [ext_resource type="Script" path="res://think_spatial/scripts/csharp/spawner/EntitySpatialPrecisionSpawner.cs" id="1_bs2nc"]
-[ext_resource type="PackedScene" uid="uid://dl8r5oqex8wmc" path="res://think_spatial/prefab/Dummy/Dummy.tscn" id="2_723xk"]
+[ext_resource type="PackedScene" uid="uid://dl8r5oqex8wmc" path="res://think_spatial/prefab/dummy/Dummy.tscn" id="2_723xk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1hgxa"]
 

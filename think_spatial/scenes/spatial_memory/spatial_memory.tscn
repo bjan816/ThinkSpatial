@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://davlunk7onym5"]
 
 [ext_resource type="Script" path="res://think_spatial/scripts/csharp/game_mode/SpatialMemoryGameMode.cs" id="1_qhb3v"]
-[ext_resource type="PackedScene" uid="uid://diai5ecpte1ei" path="res://think_spatial/prefab/Level/shooting_range.tscn" id="1_uxut0"]
-[ext_resource type="PackedScene" uid="uid://70ovs0t6q3ic" path="res://think_spatial/prefab/Spawner/entity_spatial_memory_spawner.tscn" id="2_mfju1"]
-[ext_resource type="PackedScene" uid="uid://kk88u0bwf6xw" path="res://think_spatial/prefab/Camera/mouse_look.tscn" id="4_ttwyu"]
+[ext_resource type="PackedScene" uid="uid://diai5ecpte1ei" path="res://think_spatial/prefab/level/shooting_range.tscn" id="1_uxut0"]
+[ext_resource type="PackedScene" uid="uid://70ovs0t6q3ic" path="res://think_spatial/prefab/spawner/entity_spatial_memory_spawner.tscn" id="2_mfju1"]
+[ext_resource type="PackedScene" uid="uid://kk88u0bwf6xw" path="res://think_spatial/prefab/camera/mouse_look.tscn" id="4_ttwyu"]
 [ext_resource type="PackedScene" uid="uid://xdnktcxv2a1r" path="res://think_spatial/prefab/ui/spatial_memory/spatial_memory_ui.tscn" id="5_oyvu2"]
 [ext_resource type="PackedScene" uid="uid://2b45wom88153" path="res://think_spatial/prefab/player/player.tscn" id="5_qd8jw"]
 
