@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://xdnktcxv2a1r"]
 
-[ext_resource type="Script" path="res://think_spatial/script/csharp/ui_system/SpatialMemoryUI.cs" id="1_iudx3"]
+[ext_resource type="Script" path="res://think_spatial/scripts/csharp/ui_system/SpatialMemoryUI.cs" id="1_iudx3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hc51h"]
 font_size = 128

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cht3sxht17pk2"]
 
-[ext_resource type="Script" path="res://think_spatial/script/csharp/ui_system/FrontendNavigation.cs" id="1_m5a12"]
+[ext_resource type="Script" path="res://think_spatial/scripts/csharp/ui_system/FrontendNavigation.cs" id="1_m5a12"]
 
 [node name="frontend" type="Control"]
 layout_mode = 3
