@@ -60,7 +60,7 @@ namespace ThinkSpatial.think_spatial.script.csharp.framework
 		{
 			CurrentScene.Free();
 
-			PackedScene nextScene = (PackedScene)GD.Load($"res://think_spatial/scene/{sceneName}.tscn");
+			PackedScene nextScene = (PackedScene)GD.Load($"res://think_spatial/scenes/{sceneName}.tscn");
 
 			CurrentScene = nextScene.Instantiate();
 
