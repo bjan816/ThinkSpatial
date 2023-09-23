@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://diai5ecpte1ei"]
 
-[ext_resource type="Texture2D" uid="uid://bie1p6tojfbl1" path="res://think_spatial/art/texture.png" id="1_8oi3j"]
+[ext_resource type="Texture2D" uid="uid://bie1p6tojfbl1" path="res://think_spatial/arts/texture.png" id="1_8oi3j"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n3noi"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

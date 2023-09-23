@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d1gddhbcmtxyt"]
 
 [ext_resource type="Script" path="res://think_spatial/script/csharp/first_person/FirstPersonHitScan.cs" id="1_k55kx"]
-[ext_resource type="Texture2D" uid="uid://cl5bq872oq538" path="res://think_spatial/art/crosshair.png" id="2_rpcx7"]
+[ext_resource type="Texture2D" uid="uid://cl5bq872oq538" path="res://think_spatial/arts/crosshair.png" id="2_rpcx7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_by72q"]
 
