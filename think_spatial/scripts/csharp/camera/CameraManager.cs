@@ -1,6 +1,6 @@
 ﻿using Godot;
 
-namespace ThinkSpatial.think_spatial.script.csharp.camera
+namespace ThinkSpatial.think_spatial.scripts.csharp.camera
 {
 	public partial class CameraManager : Node
 	{

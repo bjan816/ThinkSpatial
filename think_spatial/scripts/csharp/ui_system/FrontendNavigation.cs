@@ -1,7 +1,7 @@
 using Godot;
-using ThinkSpatial.think_spatial.script.csharp.framework;
+using ThinkSpatial.think_spatial.scripts.csharp.framework;
 
-namespace ThinkSpatial.think_spatial.script.csharp.ui_system
+namespace ThinkSpatial.think_spatial.scripts.csharp.ui_system
 {
 	public partial class FrontendNavigation : Node
 	{

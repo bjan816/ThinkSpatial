@@ -1,6 +1,6 @@
-using ThinkSpatial.think_spatial.script.csharp.event_system.event_handler;
+using ThinkSpatial.think_spatial.scripts.csharp.event_system.event_handler;
 
-namespace ThinkSpatial.think_spatial.script.csharp.event_system.behavior
+namespace ThinkSpatial.think_spatial.scripts.csharp.event_system.behavior
 {
 	public partial class PlayerBehavior : EntityBehavior
 	{

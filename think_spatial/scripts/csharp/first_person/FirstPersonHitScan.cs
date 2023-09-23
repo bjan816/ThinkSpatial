@@ -1,9 +1,9 @@
 using Godot;
 using Godot.Collections;
-using ThinkSpatial.think_spatial.script.csharp.damage_system;
-using ThinkSpatial.think_spatial.script.csharp.framework;
+using ThinkSpatial.think_spatial.scripts.csharp.damage_system;
+using ThinkSpatial.think_spatial.scripts.csharp.framework;
 
-namespace ThinkSpatial.think_spatial.script.csharp.first_person
+namespace ThinkSpatial.think_spatial.scripts.csharp.first_person
 {
 	public partial class FirstPersonHitScan : FirstPersonWeapon
 	{

@@ -1,4 +1,4 @@
-﻿namespace ThinkSpatial.think_spatial.script.csharp.input_system
+﻿namespace ThinkSpatial.think_spatial.scripts.csharp.input_system
 {
 	public class InputManager
 	{

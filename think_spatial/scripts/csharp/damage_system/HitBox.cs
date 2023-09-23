@@ -1,8 +1,8 @@
 using Godot;
-using ThinkSpatial.think_spatial.script.csharp.event_system.behavior;
-using ThinkSpatial.think_spatial.script.csharp.event_system.event_handler;
+using ThinkSpatial.think_spatial.scripts.csharp.event_system.behavior;
+using ThinkSpatial.think_spatial.scripts.csharp.event_system.event_handler;
 
-namespace ThinkSpatial.think_spatial.script.csharp.damage_system
+namespace ThinkSpatial.think_spatial.scripts.csharp.damage_system
 {
 	public partial class HitBox : Node3D
 	{

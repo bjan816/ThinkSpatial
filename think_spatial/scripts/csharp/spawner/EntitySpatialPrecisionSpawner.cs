@@ -1,4 +1,4 @@
-﻿namespace ThinkSpatial.think_spatial.script.csharp.spawner
+﻿namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 {
 	public partial class EntitySpatialPrecisionSpawner : EntitySpawner
 	{

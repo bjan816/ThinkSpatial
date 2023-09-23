@@ -1,7 +1,7 @@
 ﻿using System;
 using Godot;
 
-namespace ThinkSpatial.think_spatial.script.csharp.event_system.type
+namespace ThinkSpatial.think_spatial.scripts.csharp.event_system.type
 {
 	public partial class Value<T> : Node
 	{

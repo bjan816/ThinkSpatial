@@ -1,7 +1,7 @@
 using Godot;
-using ThinkSpatial.think_spatial.script.csharp.event_system.behavior;
+using ThinkSpatial.think_spatial.scripts.csharp.event_system.behavior;
 
-namespace ThinkSpatial.think_spatial.script.csharp.input_system
+namespace ThinkSpatial.think_spatial.scripts.csharp.input_system
 {
 	public partial class PlayerInputHandler : PlayerBehavior
 	{

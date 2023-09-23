@@ -1,7 +1,7 @@
-using ThinkSpatial.think_spatial.script.csharp.event_system.type;
-using ThinkSpatial.think_spatial.script.csharp.framework;
+using ThinkSpatial.think_spatial.scripts.csharp.event_system.type;
+using ThinkSpatial.think_spatial.scripts.csharp.framework;
 
-namespace ThinkSpatial.think_spatial.script.csharp.event_system.event_handler
+namespace ThinkSpatial.think_spatial.scripts.csharp.event_system.event_handler
 {
 	public partial class PlayerEventHandler : EntityEventHandler
 	{

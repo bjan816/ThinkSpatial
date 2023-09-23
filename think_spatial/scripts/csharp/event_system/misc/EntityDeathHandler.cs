@@ -1,6 +1,6 @@
-﻿using ThinkSpatial.think_spatial.script.csharp.event_system.behavior;
+﻿using ThinkSpatial.think_spatial.scripts.csharp.event_system.behavior;
 
-namespace ThinkSpatial.think_spatial.script.csharp.event_system.misc
+namespace ThinkSpatial.think_spatial.scripts.csharp.event_system.misc
 {
 	public partial class EntityDeathHandler : EntityBehavior
 	{

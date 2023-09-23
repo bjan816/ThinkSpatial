@@ -1,7 +1,7 @@
 ﻿using System;
 using Godot;
 
-namespace ThinkSpatial.think_spatial.script.csharp.helper
+namespace ThinkSpatial.think_spatial.scripts.csharp.helper
 {
 	public class GTween
 	{

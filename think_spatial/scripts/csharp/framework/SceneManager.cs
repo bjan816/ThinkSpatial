@@ -1,9 +1,9 @@
 ﻿using System;
 using Godot;
-using ThinkSpatial.think_spatial.script.csharp.event_system.type;
-using ThinkSpatial.think_spatial.script.csharp.helper;
+using ThinkSpatial.think_spatial.scripts.csharp.event_system.type;
+using ThinkSpatial.think_spatial.scripts.csharp.helper;
 
-namespace ThinkSpatial.think_spatial.script.csharp.framework
+namespace ThinkSpatial.think_spatial.scripts.csharp.framework
 {
 	public partial class SceneManager : Node
 	{

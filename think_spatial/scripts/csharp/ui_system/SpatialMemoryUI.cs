@@ -1,7 +1,7 @@
 using Godot;
-using ThinkSpatial.think_spatial.script.csharp.event_system.type;
+using ThinkSpatial.think_spatial.scripts.csharp.event_system.type;
 
-namespace ThinkSpatial.think_spatial.script.csharp.ui_system
+namespace ThinkSpatial.think_spatial.scripts.csharp.ui_system
 {
 	public partial class SpatialMemoryUI : Control
 	{

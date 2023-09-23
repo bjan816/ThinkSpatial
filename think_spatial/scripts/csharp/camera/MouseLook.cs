@@ -1,7 +1,7 @@
 using Godot;
-using ThinkSpatial.think_spatial.script.csharp.framework;
+using ThinkSpatial.think_spatial.scripts.csharp.framework;
 
-namespace ThinkSpatial.think_spatial.script.csharp.camera
+namespace ThinkSpatial.think_spatial.scripts.csharp.camera
 {
 	public partial class MouseLook : Node3D
 	{

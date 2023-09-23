@@ -1,9 +1,9 @@
 using Godot;
-using ThinkSpatial.think_spatial.script.csharp.framework;
-using ThinkSpatial.think_spatial.script.csharp.spawner;
-using ThinkSpatial.think_spatial.script.csharp.ui_system;
+using ThinkSpatial.think_spatial.scripts.csharp.framework;
+using ThinkSpatial.think_spatial.scripts.csharp.spawner;
+using ThinkSpatial.think_spatial.scripts.csharp.ui_system;
 
-namespace ThinkSpatial.think_spatial.script.csharp.game_mode
+namespace ThinkSpatial.think_spatial.scripts.csharp.game_mode
 {
 	public partial class SpatialMemoryGameMode : Node3D
 	{

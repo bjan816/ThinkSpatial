@@ -1,8 +1,8 @@
 using Godot;
-using ThinkSpatial.think_spatial.script.csharp.event_system.behavior;
-using ThinkSpatial.think_spatial.script.csharp.framework;
+using ThinkSpatial.think_spatial.scripts.csharp.event_system.behavior;
+using ThinkSpatial.think_spatial.scripts.csharp.framework;
 
-namespace ThinkSpatial.think_spatial.script.csharp.first_person
+namespace ThinkSpatial.think_spatial.scripts.csharp.first_person
 {
 	public partial class FirstPersonManager : PlayerBehavior
 	{

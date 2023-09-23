@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using Godot;
-using ThinkSpatial.think_spatial.script.csharp.event_system.behavior;
-using ThinkSpatial.think_spatial.script.csharp.event_system.type;
+using ThinkSpatial.think_spatial.scripts.csharp.event_system.behavior;
+using ThinkSpatial.think_spatial.scripts.csharp.event_system.type;
 using ThinkSpatial.think_spatial.scripts.csharp.math;
 
-namespace ThinkSpatial.think_spatial.script.csharp.spawner
+namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 {
 	public partial class EntitySpawner : Node3D
 	{

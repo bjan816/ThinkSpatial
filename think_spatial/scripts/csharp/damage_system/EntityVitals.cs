@@ -1,6 +1,6 @@
-using ThinkSpatial.think_spatial.script.csharp.event_system.behavior;
+using ThinkSpatial.think_spatial.scripts.csharp.event_system.behavior;
 
-namespace ThinkSpatial.think_spatial.script.csharp.damage_system
+namespace ThinkSpatial.think_spatial.scripts.csharp.damage_system
 {
 	public partial class EntityVitals : EntityBehavior
 	{
