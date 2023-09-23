@@ -94,6 +94,7 @@ namespace ThinkSpatial.think_spatial.script.csharp.game_mode
 		private void PostEndGame_Success()
 		{
 			++_numberOfRoundsPlayed;
+			++_spatialMemorySpawner.EntitiesToSpawn;
 
 			PreGame();
 		}
