@@ -89,6 +89,8 @@ func reset_puzzle(num):
 	$Player/Neck.rotation = Vector3(0, 0, 0)
 	$Player/Neck/Camera3D.rotation = Vector3(0,0,0)
 	
+	$Player.SPEED = 5.0
+	
 	$PuzzleTimer.start()
 
 func set_target():
@@ -195,4 +197,5 @@ func _on_puzzle_timer_timeout():
 			
 func _on_tutorial_box_play():
 	
+	$Player.SPEED = 5.0
 	$PuzzleTimer.start()
