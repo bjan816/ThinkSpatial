@@ -9,6 +9,7 @@ var level = 1
 var lives = 3
 var puzzle_time = 60
 var is_moving
+var movement_time = 10
 
 func _ready():
 	
@@ -19,12 +20,11 @@ func _ready():
 	set_lives_text(lives)
 	set_time_text(puzzle_time)
 	
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	
 	if (Input.is_action_pressed("backward") or Input.is_action_pressed("forward") or Input.is_action_pressed("left") or Input.is_action_pressed("right")):
 		
 		is_moving = true
-		print("is moving")
 		
 	else: is_moving = false
 	
@@ -176,6 +176,9 @@ func _on_puzzle_timer_timeout():
 			get_tree().quit()
 			
 		reset_puzzle(11 - level)
+		
+	if is_moving == true:
+		movement_time -= 0.1
 
 func _on_tutorial_box_play():
 	$PuzzleTimer.start()
