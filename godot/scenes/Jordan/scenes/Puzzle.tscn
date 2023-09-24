@@ -379,3 +379,4 @@ wait_time = 0.1
 [node name="TutorialBox" parent="." instance=ExtResource("4_fev2r")]
 
 [connection signal="timeout" from="PuzzleTimer" to="." method="_on_puzzle_timer_timeout"]
+[connection signal="play" from="TutorialBox" to="." method="_on_tutorial_box_play"]

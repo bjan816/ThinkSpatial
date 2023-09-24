@@ -22,10 +22,6 @@ func _input(event):
 	
 	if (event.is_action_pressed("click")):
 		
-		if puzzle_time == 60:
-		
-			$PuzzleTimer.start()
-		
 		var player_guess = guess()
 		
 		if player_guess.is_in_group("Targets"):
@@ -170,4 +166,6 @@ func _on_puzzle_timer_timeout():
 			get_tree().quit()
 			
 		reset_puzzle(11 - level)
-	
+
+func _on_tutorial_box_play():
+	$PuzzleTimer.start()
