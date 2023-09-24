@@ -8,6 +8,7 @@ var target
 var level = 1
 var lives = 3
 var puzzle_time = 60
+var is_moving
 
 func _ready():
 	
@@ -17,6 +18,15 @@ func _ready():
 	set_level_text(level)
 	set_lives_text(lives)
 	set_time_text(puzzle_time)
+	
+func _unhandled_input(event):
+	
+	if (Input.is_action_pressed("backward") or Input.is_action_pressed("forward") or Input.is_action_pressed("left") or Input.is_action_pressed("right")):
+		
+		is_moving = true
+		print("is moving")
+		
+	else: is_moving = false
 	
 func _input(event):
 	
