@@ -360,7 +360,6 @@ vertical_alignment = 1
 [node name="MovementTime" type="Label" parent="UI/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "10.0"
 
 [node name="CenterContainer" type="CenterContainer" parent="UI"]
 layout_mode = 1

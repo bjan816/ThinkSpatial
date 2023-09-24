@@ -186,8 +186,13 @@ func _on_puzzle_timer_timeout():
 		
 	if is_moving == true:
 		
-		movement_time -= 0.1
-		set_movement_time_text("%.1f" % movement_time)
+		if movement_time > 0.1:
 
+			movement_time -= 0.1
+			set_movement_time_text("%.1f" % movement_time)
+			
+		else: $Player.SPEED = 0
+			
 func _on_tutorial_box_play():
+	
 	$PuzzleTimer.start()
