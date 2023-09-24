@@ -19,6 +19,7 @@ func _ready():
 	set_level_text(level)
 	set_lives_text(lives)
 	set_time_text(puzzle_time)
+	set_movement_time_text(movement_time)
 	
 func _unhandled_input(_event):
 	
@@ -81,6 +82,8 @@ func reset_puzzle(num):
 	set_lives_text(lives)
 	puzzle_time = 60
 	set_time_text(puzzle_time)
+	movement_time = 10
+	set_movement_time_text(movement_time)
 	
 	$Player.transform.origin = Vector3(0, 1, -16)
 	$Player/Neck.rotation = Vector3(0, 0, 0)
@@ -152,6 +155,10 @@ func set_lives_text(lives_num):
 func set_time_text(time_num):
 	
 	$UI/MarginContainer/VBoxContainer/HBoxContainer/Time.text = " " + str(time_num)
+	
+func set_movement_time_text(time_num):
+	
+	$UI/MarginContainer/VBoxContainer/MovementTime.text = " " + str(time_num)
 
 func _on_puzzle_timer_timeout():
 	
@@ -178,7 +185,9 @@ func _on_puzzle_timer_timeout():
 		reset_puzzle(11 - level)
 		
 	if is_moving == true:
+		
 		movement_time -= 0.1
+		set_movement_time_text("%.1f" % movement_time)
 
 func _on_tutorial_box_play():
 	$PuzzleTimer.start()
