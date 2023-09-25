@@ -147,25 +147,25 @@ func guess():
 func set_level_text(level_num):
 	
 	var level_text = "Level: %d" % level_num
-	$UI/MarginContainer/VBoxContainer/HBoxContainer2/Level.text = level_text
+	$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Level.text = level_text
 
 func set_lives_text(lives_num):
 	
 	var lives_text = "Lives: %d" % lives_num
-	$UI/MarginContainer/VBoxContainer/HBoxContainer2/Lives.text = lives_text
+	$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Lives.text = lives_text
 	
 func set_time_text(time_num):
 	
-	$UI/MarginContainer/VBoxContainer/HBoxContainer/Time.text = " " + str(time_num)
+	$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Time.text = " " + str(time_num)
 	
 func set_movement_time_text(time_num):
 	
-	$UI/MarginContainer/VBoxContainer/MovementTime.text = " " + str(time_num)
+	$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MovementTime.text = " " + str(time_num)
 
 func _on_puzzle_timer_timeout():
 	
 	puzzle_time -= 0.1
-	var puzzle_time_label = $UI/MarginContainer/VBoxContainer/HBoxContainer/Time
+	var puzzle_time_label = $UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Time
 	puzzle_time_label.text = " %.1f" % puzzle_time
 		
 	if puzzle_time <= 10:
