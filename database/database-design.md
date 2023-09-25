@@ -17,7 +17,5 @@
 
 ### Kishora's Game
 
-### Jamie's Game
-
 ### Sun's Game
 
