@@ -38,6 +38,7 @@ theme_override_constants/margin_bottom = 25
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -48,8 +49,7 @@ expand = true
 
 [node name="Label" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Donec in efficitur leo. Vestibulum et felis ex. Maecenas interdum ante eget felis aliquam, id porttitor ex suscipit. Donec tincidunt, erat eget feugiat aliquet, nisl est viverra leo, a tristique ante libero in augue. Aenean at facilisis odio. Donec ornare egestas varius. Nullam lobortis, nisi ut pulvinar pellentesque, orci metus bibendum velit, et adipiscing felis sapien fermentum dui. Mauris feugiat, libero ac tincidunt cursus, ex arcu cursus est, non tincidunt turpis magna id quam.
-"
+text = "In this game, you are presented with eight cameras, each represented as a sphere. Of these, only one camera is actively projecting its view onto the screen. Using cues from the environment and your spatial skills you need to identify the active camera. Once you have identified the correct camera, simply click it. You have 60 seconds for each level, you're allowed to move for a combined total of 10 seconds. There are 10 levels in total."
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer"]
