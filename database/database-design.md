@@ -9,13 +9,14 @@
 - Turn (int)
 
 ### Jordan's Game:
-
 - time taken (dbl)
 - movement time (int)
 - level number (int)
 - number of lives remaining (int)
 
 ### Kishora's Game
+- score (int)
+- time taken (dbl)
 
 ### Sun's Game
 
