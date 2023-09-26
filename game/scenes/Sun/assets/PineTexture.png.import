@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk7fdq2jsinx6"
-path.s3tc="res://.godot/imported/EvergreenTexture.png-c5a4606820e36eca664ebef055132c42.s3tc.ctex"
+uid="uid://dqdvutkkr74fy"
+path.s3tc="res://.godot/imported/PineTexture.png-aceb2b5aa8d479389ef3d02ed7968540.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/EvergreenTexture.png"
-dest_files=["res://.godot/imported/EvergreenTexture.png-c5a4606820e36eca664ebef055132c42.s3tc.ctex"]
+source_file="res://scenes/Sun/assets/PineTexture.png"
+dest_files=["res://.godot/imported/PineTexture.png-aceb2b5aa8d479389ef3d02ed7968540.s3tc.ctex"]
 
 [params]
 

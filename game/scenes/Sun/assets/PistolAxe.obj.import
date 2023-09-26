@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c85j11bflc8rt"
+path="res://.godot/imported/PistolAxe.obj-25928e4d7bfe9603d9a52ddff11724dc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/PistolAxe.obj-25928e4d7bfe9603d9a52ddff11724dc.mesh"]
+
+source_file="res://scenes/Sun/assets/PistolAxe.obj"
+dest_files=["res://.godot/imported/PistolAxe.obj-25928e4d7bfe9603d9a52ddff11724dc.mesh", "res://.godot/imported/PistolAxe.obj-25928e4d7bfe9603d9a52ddff11724dc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
