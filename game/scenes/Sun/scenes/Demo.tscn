@@ -195,7 +195,11 @@ surface_material_override/0 = ExtResource("9_shkyn")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("9_ls8pd")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Control"]
@@ -234,11 +238,15 @@ shape = SubResource("BoxShape3D_2xmd2")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+text = "5"
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
-layout_mode = 0
-offset_right = 8000.0
-offset_bottom = 8000.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
 [node name="Player" type="Node3D" parent="." node_paths=PackedStringArray("views")]

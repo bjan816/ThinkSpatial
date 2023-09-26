@@ -1,6 +1,11 @@
 extends Node3D
 
 
+@onready var ui:Control = get_node("../Control")
+
+var health:= 5
+
+
 # INPUT
 # ——————————————————————————————————————————————————————————————————————————————
 @export var views:Array[Camera3D]
@@ -15,7 +20,15 @@ func _input(event:InputEvent):
     var to   = cam.project_ray_normal(event.position) * 10 + from
     var query = PhysicsRayQueryParameters3D.create(from, to)
     # Check query
-    if collide(query): collide(query).collider.check(cam.global_position)
+    if collide(query):
+      # Incorrect transformation
+      if not collide(query).collider.check(cam.global_position):
+        health -= 1
+    else:
+      health -= 1
+    ui.update(health)
+    if health < 1:
+      get_tree().change_scene_to_file("res://scenes/Menu/Menu.tscn")
   
   # Move
   if event is InputEventMouseMotion and Input.is_action_pressed("M2"):
