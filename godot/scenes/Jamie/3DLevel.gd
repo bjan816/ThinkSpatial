@@ -20,16 +20,32 @@ var play_time : = 0.0
 
 var current_lev = 1
 
+#Player's Distance Variables
+var playerStartPosition = Vector3(0, 0, 0)
+var playerTotalDistance = 0.0
+var currentPos = 0.0
+var distanceMoved = 0.0
+
+
 func _ready():
-	self.add_child(hard_levels[current_lev - 1])
+	self.add_child(hard_levels[current_lev - 1])	
 	reset_pos(current_lev)
 	map_visible(current_lev)
+	playerStartPosition = player.global_transform.origin
 	
 	
 func _process(delta):
+	
+	#Calculates player's movement
+	currentPos = player.global_transform.origin
+	distanceMoved = currentPos.distance_to(playerStartPosition)
+	playerTotalDistance += distanceMoved
+	playerStartPosition = currentPos
+	
+	#Calculates play time
 	play_time += delta
-	print('x = ' + str(player.global_transform.origin.x))
-	print('z = ' + str(player.global_transform.origin.z))
+	#print('x = ' + str(player.global_transform.origin.x))
+	#print('z = ' + str(player.global_transform.origin.z))
 	
 	if Input.is_action_pressed('reset'):	
 		reset_pos(current_lev)
@@ -41,6 +57,8 @@ func _process(delta):
 		_on_level_completed()
 
 func _on_level_completed():
+	print("Total distance moved: ", playerTotalDistance)
+
 	get_tree().paused = true
 	final_menu.score = scoreboard.score
 	final_menu.initialize(play_time)
@@ -60,7 +78,8 @@ func _on_final_menu_next():
 	reload()
 	reset_pos(current_lev)
 	get_tree().paused = false
-	
+	playerStartPosition = player.global_transform.origin
+	playerTotalDistance = 0
 
 func check_goal_lev(lev):
 	if lev == 1:
