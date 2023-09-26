@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqdvutkkr74fy"
-path.s3tc="res://.godot/imported/PineTexture.png-9139b0b87ef9d8cb28f03f0539837567.s3tc.ctex"
+uid="uid://bcym211qk67b5"
+path.s3tc="res://.godot/imported/ToolTexture.png-9dae6e940b07a86a93e44901e9ab7f4b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/PineTexture.png"
-dest_files=["res://.godot/imported/PineTexture.png-9139b0b87ef9d8cb28f03f0539837567.s3tc.ctex"]
+source_file="res://scenes/Sun/assets/ToolTexture.png"
+dest_files=["res://.godot/imported/ToolTexture.png-9dae6e940b07a86a93e44901e9ab7f4b.s3tc.ctex"]
 
 [params]
 
