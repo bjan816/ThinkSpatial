@@ -1,3 +1,6 @@
+# https://www.youtube.com/watch?v=v4IEPi1c0eE&list=LL&index=7
+# I used the above yt tutorial for this scene
+
 extends CharacterBody3D
 
 var SPEED = 0.0
