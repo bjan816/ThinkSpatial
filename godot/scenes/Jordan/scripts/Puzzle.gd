@@ -2,6 +2,8 @@ extends Node3D
 
 #🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝🍝
 
+var random = RandomNumberGenerator.new()
+
 const RAY_LENGTH = 100
 
 var target
@@ -13,9 +15,11 @@ var movement_time = 10
 
 func _ready():
 	
+	random.randomize()
+	
 	set_target()
 	set_light()
-	set_objects(11 - level)
+	set_objects()
 	set_level_text(level)
 	set_lives_text(lives)
 	set_time_text(puzzle_time)
@@ -47,7 +51,7 @@ func _input(event):
 				player_guess.get_parent().material_override.albedo_color = Color(1, 1, 1)
 				
 				level += 1
-				reset_puzzle(11 - level)
+				reset_puzzle()
 				
 			elif player_guess != target:
 				
@@ -64,9 +68,9 @@ func _input(event):
 					
 					get_tree().quit()
 					
-				reset_puzzle(11 - level)
+				reset_puzzle()
 		
-func reset_puzzle(num):
+func reset_puzzle():
 	
 	var spawned = get_tree().get_nodes_in_group("Spawned")
 	
@@ -77,7 +81,7 @@ func reset_puzzle(num):
 		
 	set_target()
 	set_light()
-	set_objects(num)
+	set_objects()
 	set_level_text(level)
 	set_lives_text(lives)
 	puzzle_time = 60
@@ -96,7 +100,7 @@ func reset_puzzle(num):
 func set_target():
 	
 	var cameras = get_tree().get_nodes_in_group("Cameras")
-	var rand_num = randi() % cameras.size()
+	var rand_num = random.randi_range(0, cameras.size()-1)
 	var camera = cameras[rand_num]
 	camera.make_current()
 	
@@ -107,13 +111,14 @@ func set_light():
 	
 	$Light.rotation_degrees.y = randf_range(0, 360)
 	
-func set_objects(num):
+func set_objects():
 	
 	var objects = get_tree().get_nodes_in_group("ToSpawn")
+	var num = random.randi_range(5, 10)
 	
 	for i in range(num):
 		
-		var to_spawn = objects[randi() % objects.size()].duplicate()
+		var to_spawn = objects[random.randi_range(0, objects.size()-1)].duplicate()
 		
 		var distance = 9 * sqrt(randf_range(0, 1))
 		var degree = randf_range(0, 360)
@@ -184,7 +189,7 @@ func _on_puzzle_timer_timeout():
 			
 			get_tree().quit()
 			
-		reset_puzzle(11 - level)
+		reset_puzzle()
 		
 	if is_moving == true:
 		
