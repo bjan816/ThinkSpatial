@@ -1,6 +1,8 @@
 extends Node3D
 class_name Game
 
+#Time, 5 minutes = 1000
+
 @onready var final_menu : = $FinalMenu
 @onready var player : = $Player
 @onready var timer : = $Timer
@@ -65,9 +67,8 @@ func _process(delta):
 
 func _on_level_completed():
 	print("Total distance moved: ", playerTotalDistance)
-	distanceScore(current_lev)
 	get_tree().paused = true
-	final_menu.score = scoreboard.score
+	final_menu.score = scoreboard.score + distanceScore(current_lev)
 	final_menu.initialize(play_time)
 	timer.hideTimer()
 	scoreboard.hideScore()
@@ -142,12 +143,15 @@ func distanceScore(lev):
 		lev1Score = round(1000 * (54 / (playerTotalDistance / 4)))
 		if lev1Score > 1000:
 			lev1Score = 1000
+		return lev1Score
 	elif lev == 2:
 		lev2Score = round(1000 * (33 / (playerTotalDistance / 4)))
 		print(lev2Score)
 		if lev2Score > 1000:
 			lev2Score = 1000
+		return lev2Score
 	elif lev == 3:
 		lev3Score = round(1000 * (49 / (playerTotalDistance / 4)))
 		if lev3Score > 1000:
 			lev3Score = 1000
+		return lev3Score
