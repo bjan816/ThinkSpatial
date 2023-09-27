@@ -72,7 +72,11 @@ func _process(delta):
 func _on_level_completed():
 	print("Total distance moved: ", playerTotalDistance)
 	get_tree().paused = true
-	final_menu.score = scoreboard.score + distanceScore(current_lev) + timeScore(current_lev)
+	
+	final_menu.level_score = scoreboard.score
+	final_menu.distance_score = distanceScore(current_lev)
+	final_menu.time_score = timeScore(current_lev)
+	
 	final_menu.initialize(play_time)
 	timer.hideTimer()
 	scoreboard.hideScore()

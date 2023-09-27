@@ -5,26 +5,34 @@ signal retried()
 signal next()
 
 @onready var time : = $CenterContainer/Column/Time
-@onready var score_obj : = $CenterContainer/Column/Score
+@onready var levelScore : = $CenterContainer/Column/LevelScore
+@onready var distanceScore : = $CenterContainer/Column/DistanceScore
+@onready var timeScore : = $CenterContainer/Column/TimeScore
+@onready var totalScore : = $CenterContainer/Column/TotalScore
 
-var score: int = 1000
+var level_score: int = 1000
+var distance_score: int = 1000
+var time_score: int = 1000
+var total_score: int = 0
 var resetButtonPressed = false
-
-func _process(delta) -> void:
-	if Input.is_action_pressed('reset') and !resetButtonPressed:
-		if score > 0:
-			score -= 100
-		resetButtonPressed = true
-	elif !Input.is_action_pressed('reset'):
-		resetButtonPressed = false
 
 func initialize(total_play_time : float) -> void:
 	var minutes : String = str(int(total_play_time / 60.0))
 	var seconds : String = str(int(fmod(total_play_time, 60.0)))
+	
 	var time_text = "Total time: %s m %s s" % [minutes, seconds]
-	var score_text = "Total Score: %s" % [score]
+	var level_score_text = "Level Score: %s" % [level_score]
+	var distance_score_text = "   - Distance Score: %s" % [distance_score]
+	total_score = level_score + distance_score + time_score
+	var time_score_text = "   - Time Score: %s" % [time_score] 
+	var total_score_text = "Total Score: %s" % [total_score]
+	
 	time.text = time_text
-	score_obj.text = score_text
+	levelScore.text = level_score_text
+	distanceScore.text = distance_score_text
+	timeScore.text = time_score_text
+	totalScore.text = total_score_text
+	
 	show()
 	
 func r1():

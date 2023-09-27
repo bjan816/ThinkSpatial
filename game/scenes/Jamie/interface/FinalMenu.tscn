@@ -39,11 +39,35 @@ theme_override_font_sizes/font_size = 32
 text = "Your time was: 1m 1s"
 horizontal_alignment = 1
 
-[node name="Score" type="Label" parent="CenterContainer/Column"]
+[node name="LevelScore" type="Label" parent="CenterContainer/Column"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_iqqih")
 theme_override_font_sizes/font_size = 32
-text = "Your score was: "
+text = "Level Score:"
+
+[node name="BonusScore" type="Label" parent="CenterContainer/Column"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqqih")
+theme_override_font_sizes/font_size = 32
+text = "+ Bonus Score:"
+
+[node name="DistanceScore" type="Label" parent="CenterContainer/Column"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqqih")
+theme_override_font_sizes/font_size = 32
+text = "   - Distance Score:"
+
+[node name="TimeScore" type="Label" parent="CenterContainer/Column"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqqih")
+theme_override_font_sizes/font_size = 32
+text = "   - Time Score:"
+
+[node name="TotalScore" type="Label" parent="CenterContainer/Column"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iqqih")
+theme_override_font_sizes/font_size = 32
+text = "Total Score: "
 horizontal_alignment = 1
 
 [node name="Row" type="HBoxContainer" parent="CenterContainer/Column"]
