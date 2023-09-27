@@ -192,8 +192,3 @@ func _on_puzzle_timer_timeout():
 			set_movement_time_text("%.1f" % movement_time)
 			
 		else: $Player.SPEED = 0
-			
-func _on_tutorial_box_play():
-	
-	$Player.SPEED = 5.0
-	$PuzzleTimer.start()
