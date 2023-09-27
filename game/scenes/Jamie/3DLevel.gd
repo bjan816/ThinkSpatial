@@ -23,9 +23,13 @@ var play_time : = 0.0
 var current_lev = 1
 
 #Player's Score per level
-var lev1Score = 0
-var lev2Score = 0
-var lev3Score = 0
+var lev1DistanceScore = 0
+var lev2DistanceScore = 0
+var lev3DistanceScore = 0
+
+var lev1TimeScore = 0
+var lev2TimeScore = 0
+var lev3TimeScore = 0
 
 #Player's Distance Variables
 var playerStartPosition = Vector3(0, 0, 0)
@@ -68,7 +72,7 @@ func _process(delta):
 func _on_level_completed():
 	print("Total distance moved: ", playerTotalDistance)
 	get_tree().paused = true
-	final_menu.score = scoreboard.score + distanceScore(current_lev)
+	final_menu.score = scoreboard.score + distanceScore(current_lev) + timeScore(current_lev)
 	final_menu.initialize(play_time)
 	timer.hideTimer()
 	scoreboard.hideScore()
@@ -140,18 +144,32 @@ func map_visible(lev):
 
 func distanceScore(lev):
 	if lev == 1:
-		lev1Score = round(1000 * (54 / (playerTotalDistance / 4)))
-		if lev1Score > 1000:
-			lev1Score = 1000
-		return lev1Score
+		lev1DistanceScore = round(1000 * (54 / (playerTotalDistance / 4)))
+		if lev1DistanceScore > 1000:
+			lev1DistanceScore = 1000
+		return lev1DistanceScore
 	elif lev == 2:
-		lev2Score = round(1000 * (33 / (playerTotalDistance / 4)))
-		print(lev2Score)
-		if lev2Score > 1000:
-			lev2Score = 1000
-		return lev2Score
+		lev2DistanceScore = round(1000 * (33 / (playerTotalDistance / 4)))
+		print(lev2DistanceScore)
+		if lev2DistanceScore > 1000:
+			lev2DistanceScore = 1000
+		return lev2DistanceScore
 	elif lev == 3:
-		lev3Score = round(1000 * (49 / (playerTotalDistance / 4)))
-		if lev3Score > 1000:
-			lev3Score = 1000
-		return lev3Score
+		lev3DistanceScore = round(1000 * (49 / (playerTotalDistance / 4)))
+		if lev3DistanceScore > 1000:
+			lev3DistanceScore = 1000
+		return lev3DistanceScore
+
+func timeScore(lev):
+	var s = round(1000 * (180 / play_time))
+	if s > 1000:
+		s = 1000
+	if lev == 1:
+		lev1TimeScore = s
+		return lev1TimeScore
+	elif lev == 2:
+		lev2TimeScore = s
+		return lev2TimeScore
+	elif lev == 3:
+		lev3TimeScore = s
+		return lev3TimeScore
