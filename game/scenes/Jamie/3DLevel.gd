@@ -20,6 +20,11 @@ var play_time : = 0.0
 
 var current_lev = 1
 
+#Player's Score per level
+var lev1Score = 0
+var lev2Score = 0
+var lev3Score = 0
+
 #Player's Distance Variables
 var playerStartPosition = Vector3(0, 0, 0)
 var playerTotalDistance = 0.0
@@ -41,6 +46,7 @@ func _process(delta):
 	distanceMoved = currentPos.distance_to(playerStartPosition)
 	playerTotalDistance += distanceMoved
 	playerStartPosition = currentPos
+	print(playerTotalDistance)
 	
 	#Calculates play time
 	play_time += delta
@@ -49,6 +55,7 @@ func _process(delta):
 	
 	if Input.is_action_pressed('reset'):	
 		reset_pos(current_lev)
+		playerTotalDistance = 0
 		
 	if Input.is_action_pressed('test'):	
 		test_pos(current_lev)
@@ -58,7 +65,7 @@ func _process(delta):
 
 func _on_level_completed():
 	print("Total distance moved: ", playerTotalDistance)
-
+	distanceScore(current_lev)
 	get_tree().paused = true
 	final_menu.score = scoreboard.score
 	final_menu.initialize(play_time)
@@ -69,6 +76,8 @@ func _on_level_completed():
 func _on_final_menu_retried():
 	reload()
 	reset_pos(current_lev)
+	playerStartPosition = player.global_transform.origin
+	playerTotalDistance = 0
 
 func _on_final_menu_next():
 	current_lev += 1
@@ -119,11 +128,26 @@ func map_visible(lev):
 		hard_map1.visible = true
 		hard_map2.visible = false
 		hard_map3.visible = false
-	if lev == 2:
+	elif lev == 2:
 		hard_map1.visible = false
 		hard_map2.visible = true
 		hard_map3.visible = false
-	if lev == 3:
+	elif lev == 3:
 		hard_map1.visible = false
 		hard_map2.visible = false
 		hard_map3.visible = true
+
+func distanceScore(lev):
+	if lev == 1:
+		lev1Score = round(1000 * (54 / (playerTotalDistance / 4)))
+		if lev1Score > 1000:
+			lev1Score = 1000
+	elif lev == 2:
+		lev2Score = round(1000 * (33 / (playerTotalDistance / 4)))
+		print(lev2Score)
+		if lev2Score > 1000:
+			lev2Score = 1000
+	elif lev == 3:
+		lev3Score = round(1000 * (49 / (playerTotalDistance / 4)))
+		if lev3Score > 1000:
+			lev3Score = 1000
