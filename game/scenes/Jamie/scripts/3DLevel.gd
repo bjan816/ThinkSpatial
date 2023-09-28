@@ -2,7 +2,7 @@ extends Node3D
 class_name Game
 
 #Difficulty Menu
-@onready var diff : = $Difficulty
+@onready var diff : = $DifficultyMenu
 
 #Final Menu
 @onready var final_menu : = $FinalMenu

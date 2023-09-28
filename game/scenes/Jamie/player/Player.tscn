@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://daxmxrvjpnmyt"]
+[gd_scene load_steps=5 format=3 uid="uid://d4k5er881yygp"]
 
-[ext_resource type="Script" path="res://scenes/Jamie/player/Player.gd" id="1_4u42m"]
+[ext_resource type="Script" path="res://scenes/Jamie/scripts/Player.gd" id="1_upi6a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6pjp"]
 albedo_color = Color(1, 0, 0, 1)
@@ -13,7 +13,7 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5693, 1.08666, -25.6873)
-script = ExtResource("1_4u42m")
+script = ExtResource("1_upi6a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0, 0, 0)

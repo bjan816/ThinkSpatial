@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5p7iyjq5bm6w"
-path="res://.godot/imported/hard_level_map3.png-7f2b83d13bf720f03010788b58e72041.ctex"
+uid="uid://sphdbbwnkjmj"
+path="res://.godot/imported/normal_level_map2.png-0cc0ffe5f559a062d8baa2152b6ed862.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Jamie/hard_level_map3.png"
-dest_files=["res://.godot/imported/hard_level_map3.png-7f2b83d13bf720f03010788b58e72041.ctex"]
+source_file="res://scenes/Jamie/maps/normal_level_map2.png"
+dest_files=["res://.godot/imported/normal_level_map2.png-0cc0ffe5f559a062d8baa2152b6ed862.ctex"]
 
 [params]
 
