@@ -265,26 +265,31 @@ visible = false
 [node name="MeshInstance3D1" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
 transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_7nxje")
+cast_shadow = 0
 mesh = SubResource("BoxMesh_egwu1")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
 transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_i8xkm")
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_5yjf5")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
 transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_myeoj")
+cast_shadow = 0
 mesh = SubResource("CylinderMesh_xniec")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
 transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_y7mfl")
+cast_shadow = 0
 mesh = SubResource("PrismMesh_yq604")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
 transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_tq6ri")
+cast_shadow = 0
 mesh = SubResource("SphereMesh_xfd5e")
 
 [node name="UI" type="Control" parent="."]
