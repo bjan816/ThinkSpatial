@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://xanvybi2rb5w"]
+[gd_scene load_steps=4 format=3 uid="uid://xanvybi2rb5w"]
 
 [ext_resource type="Script" path="res://scenes/Jamie/interface/FinalMenu.gd" id="1_i5yi7"]
 [ext_resource type="FontFile" uid="uid://b74wj7a61oel6" path="res://scenes/Jamie/interface/fonts/Montserrat-ExtraBold.ttf" id="1_iqqih"]
+[ext_resource type="Texture2D" uid="uid://baojvvyqqxcya" path="res://scenes/Jamie/interface/cube_texture_2.png" id="2_ja4bo"]
 
 [node name="FullMenu" type="Control"]
 process_mode = 3
@@ -12,6 +13,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i5yi7")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 541)
+scale = Vector2(30.125, 17)
+texture = ExtResource("2_ja4bo")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1

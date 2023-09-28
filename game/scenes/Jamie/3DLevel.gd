@@ -1,45 +1,64 @@
 extends Node3D
 class_name Game
 
-#Time, 5 minutes = 1000
+#Difficulty Menu
+@onready var diff : = $Difficulty
 
+#Final Menu
 @onready var final_menu : = $FinalMenu
+
+#Player
 @onready var player : = $Player
+
+#Timer
 @onready var timer : = $Timer
+
+#Scoreboard
 @onready var scoreboard : = $Scoreboard
 
-@onready var normal_map1 : = $Normal1
-@onready var normal_map2 : = $Normal2
-@onready var normal_map3 : = $Normal3
-@onready var hard_map1 : = $Hard1
-@onready var hard_map2 : = $Hard2
-@onready var hard_map3 : = $Hard3
+#Map variables
+@onready var maps : = $Maps
+@onready var normal_map1 : = $Maps/Normal1
+@onready var normal_map2 : = $Maps/Normal2
+@onready var normal_map3 : = $Maps/Normal3
+@onready var hard_map1 : = $Maps/Hard1
+@onready var hard_map2 : = $Maps/Hard2
+@onready var hard_map3 : = $Maps/Hard3
 
+#Goal
 @onready var goal : = $Goal
 
+#Load levels
 var hard_level = load("res://scenes/Jamie/world/HardLevel.tscn").instantiate()
 var normal_level = load("res://scenes/Jamie/world/NormalLevel.tscn").instantiate()
 
-var hard_level_reset_pos = [Vector3(-10, 1, -34), Vector3(-30, 1, 14), Vector3(30, 1, -2)]
-var hard_level_reset_angle = [Vector3(0, 270, 0), Vector3(0, 270, 0), Vector3(0, 0, 0)]
-var hard_level_test_pos = [Vector3(30, 1, 46), Vector3(30, 1, -42), Vector3(-32, 1, 46)]
-var hard_level_goal_pos = [Vector3(30, 2, 38), Vector3(38, 2, -42), Vector3(-38, 2, 46)]
-
+#Normal levels setting
 var normal_level_reset_pos = [Vector3(14, 1, -14), Vector3(46, 1, 14), Vector3(6, 1, 2)]
 var normal_level_reset_angle = [Vector3(0, 180, 0), Vector3(0, 90, 0), Vector3(0, 90, 0)]
 var normal_level_test_pos = [Vector3(-34, 1, 42), Vector3(42, 1, -42), Vector3(-18, 1, 46)]
 var normal_level_goal_pos = [Vector3(-34, 2, 46), Vector3(38, 2, -42), Vector3(-22, 2, 46)]
 
+#Hard levels setting
+var hard_level_reset_pos = [Vector3(-10, 1, -34), Vector3(-30, 1, 14), Vector3(30, 1, -2)]
+var hard_level_reset_angle = [Vector3(0, 270, 0), Vector3(0, 270, 0), Vector3(0, 0, 0)]
+var hard_level_test_pos = [Vector3(30, 1, 46), Vector3(30, 1, -42), Vector3(-32, 1, 46)]
+var hard_level_goal_pos = [Vector3(30, 2, 38), Vector3(38, 2, -42), Vector3(-38, 2, 46)]
+
+#Game play time
 var play_time : = 0.0
 
-var difficulty = 2
+#Difficulty of the game
+var difficulty = 1
+
+#Current level
 var current_lev = 1
 
-#Player's Score per level
+#Player's distance score per level
 var lev1DistanceScore = 0
 var lev2DistanceScore = 0
 var lev3DistanceScore = 0
 
+#Player's time score per level
 var lev1TimeScore = 0
 var lev2TimeScore = 0
 var lev3TimeScore = 0
@@ -51,15 +70,6 @@ var currentPos = 0.0
 var distanceMoved = 0.0
 
 
-func _ready():
-	if difficulty == 1:
-		self.add_child(normal_level)
-	else:
-		self.add_child(hard_level)
-	reset_pos(current_lev)
-	map_visible(current_lev)
-	playerStartPosition = player.global_transform.origin
-	
 func _process(delta):
 	#Calculates player's movement
 	currentPos = player.global_transform.origin
@@ -82,7 +92,27 @@ func _process(delta):
 		
 	if check_goal_lev(current_lev):
 		_on_level_completed()
+		
+func _on_normal_pressed():
+	difficulty = 1
+	self.add_child(normal_level)
+	diff.hide()
+	reset_pos(current_lev)
+	map_visible(current_lev)
+	playerStartPosition = player.global_transform.origin
+	timer.show()
+	scoreboard.show()
 
+func _on_hard_pressed():
+	difficulty = 2
+	self.add_child(hard_level)
+	diff.hide()
+	reset_pos(current_lev)
+	map_visible(current_lev)
+	playerStartPosition = player.global_transform.origin
+	timer.show()
+	scoreboard.show()
+	
 func _on_level_completed():
 	get_tree().paused = true
 	if current_lev == 3:
@@ -90,11 +120,10 @@ func _on_level_completed():
 	final_menu.level_score = scoreboard.score
 	final_menu.distance_score = distanceScore(current_lev)
 	final_menu.time_score = timeScore(current_lev)
-	
+	maps.hide()
 	final_menu.initialize(play_time)
 	timer.hideTimer()
 	scoreboard.hideScore()
-	map_visible(current_lev)
 
 func _on_final_menu_retried():
 	reload()
@@ -170,6 +199,7 @@ func reload():
 	map_visible(current_lev)
 
 func map_visible(lev):
+	maps.show()
 	if difficulty == 1:
 		if lev == 1:
 			normal_map1.visible = true
