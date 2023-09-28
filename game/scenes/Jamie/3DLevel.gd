@@ -12,12 +12,15 @@ class_name Game
 @onready var hard_map2 : = $Hard2
 @onready var hard_map3 : = $Hard3
 
+@onready var goal : = $Goal
+
 var hard_levels_dir = ["res://scenes/Jamie/world/Levels/Level1.tscn", "res://scenes/Jamie/world/Levels/Level2.tscn", "res://scenes/Jamie/world/Levels/Level3.tscn"]
 var hard_levels = [load(hard_levels_dir[0]).instantiate(), load(hard_levels_dir[1]).instantiate(), load(hard_levels_dir[2]).instantiate()]
-var hard_level_reset_pos = [Vector3(14, 1, 38), Vector3(-30, 1, 14), Vector3(30, 1, -2)]
-var hard_level_reset_angle = [Vector3(0, 90, 0), Vector3(0, 270, 0), Vector3(0, 0, 0)]
-var hard_level_test_pos = [Vector3(-26, 1, -38), Vector3(30, 1, -42), Vector3(-32.5, 1, 46)]
 
+var hard_level_reset_pos = [Vector3(-10, 1, -34), Vector3(-30, 1, 14), Vector3(30, 1, -2)]
+var hard_level_reset_angle = [Vector3(0, 270, 0), Vector3(0, 270, 0), Vector3(0, 0, 0)]
+var hard_level_test_pos = [Vector3(30, 1, 46), Vector3(30, 1, -42), Vector3(-32.5, 1, 46)]
+var hard_level_goal_pos = [Vector3(30, 2, 38), Vector3(38, 2, -42), Vector3(-38, 2, 46)]
 var play_time : = 0.0
 
 var current_lev = 1
@@ -39,20 +42,18 @@ var distanceMoved = 0.0
 
 
 func _ready():
-	self.add_child(hard_levels[current_lev - 1])	
+	self.add_child(hard_levels[current_lev])	
 	reset_pos(current_lev)
 	map_visible(current_lev)
 	playerStartPosition = player.global_transform.origin
 	
-	
 func _process(delta):
-	
 	#Calculates player's movement
 	currentPos = player.global_transform.origin
 	distanceMoved = currentPos.distance_to(playerStartPosition)
 	playerTotalDistance += distanceMoved
 	playerStartPosition = currentPos
-	print(playerTotalDistance)
+	#print(playerTotalDistance)
 	
 	#Calculates play time
 	play_time += delta
@@ -70,7 +71,6 @@ func _process(delta):
 		_on_level_completed()
 
 func _on_level_completed():
-	print("Total distance moved: ", playerTotalDistance)
 	get_tree().paused = true
 	
 	final_menu.level_score = scoreboard.score
@@ -90,9 +90,6 @@ func _on_final_menu_retried():
 
 func _on_final_menu_next():
 	current_lev += 1
-	self.add_child(hard_levels[current_lev - 1])
-	self.remove_child(hard_levels[current_lev - 2])
-	hard_levels[current_lev - 2].queue_free()
 	reload()
 	reset_pos(current_lev)
 	get_tree().paused = false
@@ -101,17 +98,17 @@ func _on_final_menu_next():
 
 func check_goal_lev(lev):
 	if lev == 1:
-		if (player.global_transform.origin.x > -28 and player.global_transform.origin.x < -24) and (player.global_transform.origin.z > -36 and player.global_transform.origin.z < -32):
+		if (player.global_transform.origin.x > 29 and player.global_transform.origin.x < 31) and (player.global_transform.origin.z > 37 and player.global_transform.origin.z < 39):
 			return true
 		else:
 			return false
 	elif lev == 2:
-		if (player.global_transform.origin.x > 36 and player.global_transform.origin.x < 40) and (player.global_transform.origin.z > -44 and player.global_transform.origin.z < -40):
+		if (player.global_transform.origin.x > 37 and player.global_transform.origin.x < 39) and (player.global_transform.origin.z > -43 and player.global_transform.origin.z < -41):
 			return true
 		else:
 			return false
 	elif lev == 3:
-		if (player.global_transform.origin.x > -40 and player.global_transform.origin.x < -36) and (player.global_transform.origin.z > 44 and player.global_transform.origin.z < 48):
+		if (player.global_transform.origin.x > -39 and player.global_transform.origin.x < -37) and (player.global_transform.origin.z > 45 and player.global_transform.origin.z < 47):
 			return true
 		else:
 			return false
@@ -119,6 +116,7 @@ func check_goal_lev(lev):
 func reset_pos(lev):
 	player.global_transform.origin = hard_level_reset_pos[lev - 1]
 	player.rotation_degrees = hard_level_reset_angle[lev - 1]
+	goal.global_transform.origin = hard_level_goal_pos[lev - 1]
 	
 func test_pos(lev):
 	player.global_transform.origin = hard_level_test_pos[lev - 1]
@@ -154,7 +152,6 @@ func distanceScore(lev):
 		return lev1DistanceScore
 	elif lev == 2:
 		lev2DistanceScore = round(1000 * (33 / (playerTotalDistance / 4)))
-		print(lev2DistanceScore)
 		if lev2DistanceScore > 1000:
 			lev2DistanceScore = 1000
 		return lev2DistanceScore
