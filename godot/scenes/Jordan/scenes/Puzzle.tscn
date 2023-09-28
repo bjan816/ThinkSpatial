@@ -23,9 +23,6 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vrppo"]
 data = PackedVector3Array(-0.1625, -0.8507, 0.5, 0, -1, 0, 0.4253, -0.8507, 0.309, 0.8506, -0.5257, 0, 0.7236, -0.4472, 0.5257, 0.4253, -0.8507, 0.309, -0.5257, -0.8507, 0, 0, -1, 0, -0.1625, -0.8507, 0.5, -0.1625, -0.8507, -0.5, 0, -1, 0, -0.5257, -0.8507, 0, 0.4253, -0.8507, -0.309, 0, -1, 0, -0.1625, -0.8507, -0.5, 0.9511, 0, 0.309, 0.7236, -0.4472, 0.5257, 0.8506, -0.5257, 0, 0, 0, 1, -0.2764, -0.4472, 0.8506, 0.2629, -0.5257, 0.809, -0.9511, 0, 0.309, -0.8944, -0.4472, 0, -0.6882, -0.5257, 0.5, -0.5878, 0, -0.809, -0.2764, -0.4472, -0.8506, -0.6882, -0.5257, -0.5, 0.5878, 0, -0.809, 0.7236, -0.4472, -0.5257, 0.2629, -0.5257, -0.809, 0.5878, 0, 0.809, 0.7236, -0.4472, 0.5257, 0.9511, 0, 0.309, -0.5878, 0, 0.809, -0.2764, -0.4472, 0.8506, 0, 0, 1, -0.9511, 0, -0.309, -0.8944, -0.4472, 0, -0.9511, 0, 0.309, 0, 0, -1, -0.2764, -0.4472, -0.8506, -0.5878, 0, -0.809, 0.9511, 0, -0.309, 0.7236, -0.4472, -0.5257, 0.5878, 0, -0.809, 0.1625, 0.8507, 0.5, 0.2764, 0.4472, 0.8506, 0.6882, 0.5257, 0.5, -0.4253, 0.8507, 0.309, -0.7236, 0.4472, 0.5257, -0.2629, 0.5257, 0.809, -0.4253, 0.8507, -0.309, -0.7236, 0.4472, -0.5257, -0.8506, 0.5257, 0, 0.1625, 0.8507, -0.5, 0.2764, 0.4472, -0.8506, -0.2629, 0.5257, -0.809, 0.5257, 0.8507, 0, 0.8944, 0.4472, 0, 0.6882, 0.5257, -0.5, 0, 1, 0, 0.5257, 0.8507, 0, 0.1625, 0.8507, -0.5, 0.1625, 0.8507, -0.5, 0.5257, 0.8507, 0, 0.6882, 0.5257, -0.5, 0.1625, 0.8507, -0.5, 0.6882, 0.5257, -0.5, 0.2764, 0.4472, -0.8506, 0, 1, 0, 0.1625, 0.8507, -0.5, -0.4253, 0.8507, -0.309, -0.4253, 0.8507, -0.309, 0.1625, 0.8507, -0.5, -0.2629, 0.5257, -0.809, -0.4253, 0.8507, -0.309, -0.2629, 0.5257, -0.809, -0.7236, 0.4472, -0.5257, 0, 1, 0, -0.4253, 0.8507, -0.309, -0.4253, 0.8507, 0.309, -0.4253, 0.8507, 0.309, -0.4253, 0.8507, -0.309, -0.8506, 0.5257, 0, -0.4253, 0.8507, 0.309, -0.8506, 0.5257, 0, -0.7236, 0.4472, 0.5257, 0, 1, 0, -0.4253, 0.8507, 0.309, 0.1625, 0.8507, 0.5, 0.1625, 0.8507, 0.5, -0.4253, 0.8507, 0.309, -0.2629, 0.5257, 0.809, 0.1625, 0.8507, 0.5, -0.2629, 0.5257, 0.809, 0.2764, 0.4472, 0.8506, 0, 1, 0, 0.1625, 0.8507, 0.5, 0.5257, 0.8507, 0, 0.5257, 0.8507, 0, 0.1625, 0.8507, 0.5, 0.6882, 0.5257, 0.5, 0.5257, 0.8507, 0, 0.6882, 0.5257, 0.5, 0.8944, 0.4472, 0, 0.8944, 0.4472, 0, 0.9511, 0, -0.309, 0.6882, 0.5257, -0.5, 0.6882, 0.5257, -0.5, 0.9511, 0, -0.309, 0.5878, 0, -0.809, 0.6882, 0.5257, -0.5, 0.5878, 0, -0.809, 0.2764, 0.4472, -0.8506, 0.2764, 0.4472, -0.8506, 0, 0, -1, -0.2629, 0.5257, -0.809, -0.2629, 0.5257, -0.809, 0, 0, -1, -0.5878, 0, -0.809, -0.2629, 0.5257, -0.809, -0.5878, 0, -0.809, -0.7236, 0.4472, -0.5257, -0.7236, 0.4472, -0.5257, -0.9511, 0, -0.309, -0.8506, 0.5257, 0, -0.8506, 0.5257, 0, -0.9511, 0, -0.309, -0.9511, 0, 0.309, -0.8506, 0.5257, 0, -0.9511, 0, 0.309, -0.7236, 0.4472, 0.5257, -0.7236, 0.4472, 0.5257, -0.5878, 0, 0.809, -0.2629, 0.5257, 0.809, -0.2629, 0.5257, 0.809, -0.5878, 0, 0.809, 0, 0, 1, -0.2629, 0.5257, 0.809, 0, 0, 1, 0.2764, 0.4472, 0.8506, 0.2764, 0.4472, 0.8506, 0.5878, 0, 0.809, 0.6882, 0.5257, 0.5, 0.6882, 0.5257, 0.5, 0.5878, 0, 0.809, 0.9511, 0, 0.309, 0.6882, 0.5257, 0.5, 0.9511, 0, 0.309, 0.8944, 0.4472, 0, 0.2764, 0.4472, -0.8506, 0.5878, 0, -0.809, 0, 0, -1, 0, 0, -1, 0.5878, 0, -0.809, 0.2629, -0.5257, -0.809, 0, 0, -1, 0.2629, -0.5257, -0.809, -0.2764, -0.4472, -0.8506, -0.7236, 0.4472, -0.5257, -0.5878, 0, -0.809, -0.9511, 0, -0.309, -0.9511, 0, -0.309, -0.5878, 0, -0.809, -0.6882, -0.5257, -0.5, -0.9511, 0, -0.309, -0.6882, -0.5257, -0.5, -0.8944, -0.4472, 0, -0.7236, 0.4472, 0.5257, -0.9511, 0, 0.309, -0.5878, 0, 0.809, -0.5878, 0, 0.809, -0.9511, 0, 0.309, -0.6882, -0.5257, 0.5, -0.5878, 0, 0.809, -0.6882, -0.5257, 0.5, -0.2764, -0.4472, 0.8506, 0.2764, 0.4472, 0.8506, 0, 0, 1, 0.5878, 0, 0.809, 0.5878, 0, 0.809, 0, 0, 1, 0.2629, -0.5257, 0.809, 0.5878, 0, 0.809, 0.2629, -0.5257, 0.809, 0.7236, -0.4472, 0.5257, 0.8944, 0.4472, 0, 0.9511, 0, 0.309, 0.9511, 0, -0.309, 0.9511, 0, -0.309, 0.9511, 0, 0.309, 0.8506, -0.5257, 0, 0.9511, 0, -0.309, 0.8506, -0.5257, 0, 0.7236, -0.4472, -0.5257, 0.7236, -0.4472, -0.5257, 0.4253, -0.8507, -0.309, 0.2629, -0.5257, -0.809, 0.2629, -0.5257, -0.809, 0.4253, -0.8507, -0.309, -0.1625, -0.8507, -0.5, 0.2629, -0.5257, -0.809, -0.1625, -0.8507, -0.5, -0.2764, -0.4472, -0.8506, -0.2764, -0.4472, -0.8506, -0.1625, -0.8507, -0.5, -0.6882, -0.5257, -0.5, -0.6882, -0.5257, -0.5, -0.1625, -0.8507, -0.5, -0.5257, -0.8507, 0, -0.6882, -0.5257, -0.5, -0.5257, -0.8507, 0, -0.8944, -0.4472, 0, -0.8944, -0.4472, 0, -0.5257, -0.8507, 0, -0.6882, -0.5257, 0.5, -0.6882, -0.5257, 0.5, -0.5257, -0.8507, 0, -0.1625, -0.8507, 0.5, -0.6882, -0.5257, 0.5, -0.1625, -0.8507, 0.5, -0.2764, -0.4472, 0.8506, 0.7236, -0.4472, -0.5257, 0.8506, -0.5257, 0, 0.4253, -0.8507, -0.309, 0.4253, -0.8507, -0.309, 0.8506, -0.5257, 0, 0.4253, -0.8507, 0.309, 0.4253, -0.8507, -0.309, 0.4253, -0.8507, 0.309, 0, -1, 0, -0.2764, -0.4472, 0.8506, -0.1625, -0.8507, 0.5, 0.2629, -0.5257, 0.809, 0.2629, -0.5257, 0.809, -0.1625, -0.8507, 0.5, 0.4253, -0.8507, 0.309, 0.2629, -0.5257, 0.809, 0.4253, -0.8507, 0.309, 0.7236, -0.4472, 0.5257)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_2hfhm"]
-viewport_path = NodePath("Cameras")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brx43"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_gmd7t"]
@@ -73,6 +70,9 @@ viewport_path = NodePath("Cameras")
 [sub_resource type="SphereMesh" id="SphereMesh_84e1m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ngqo"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2hfhm"]
+viewport_path = NodePath("Cameras")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nxje"]
 albedo_color = Color(1, 0.466667, 1, 1)
@@ -135,6 +135,114 @@ mesh = ExtResource("3_pad1q")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Enclosure/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_vrppo")
 
+[node name="Targets" type="Node3D" parent="."]
+
+[node name="Target1" type="MeshInstance3D" parent="Targets"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
+material_override = SubResource("StandardMaterial3D_brx43")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_gmd7t")
+skeleton = NodePath("../../Cameras/Camera")
+
+[node name="StaticBody3D1" type="StaticBody3D" parent="Targets/Target1" groups=["Targets"]]
+transform = Transform3D(1, 0, 0, 0, 1, -8.97729e-16, 0, -8.97729e-16, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target1/StaticBody3D1"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.97729e-16, 0, -8.97729e-16, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_nmyj5")
+
+[node name="Target2" type="MeshInstance3D" parent="Targets"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
+material_override = SubResource("StandardMaterial3D_ogvto")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_pvxqs")
+skeleton = NodePath("")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Targets/Target2" groups=["Targets"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target2/StaticBody3D2"]
+shape = SubResource("BoxShape3D_0mtkn")
+
+[node name="Target3" type="MeshInstance3D" parent="Targets"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
+material_override = SubResource("StandardMaterial3D_sstl2")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_4wj6v")
+skeleton = NodePath("")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Targets/Target3" groups=["Targets"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target3/StaticBody3D3"]
+shape = SubResource("BoxShape3D_try0m")
+
+[node name="Target4" type="MeshInstance3D" parent="Targets"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
+material_override = SubResource("StandardMaterial3D_57sxa")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_it35y")
+skeleton = NodePath("")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Targets/Target4" groups=["Targets"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target4/StaticBody3D4"]
+shape = SubResource("BoxShape3D_y82d1")
+
+[node name="Target5" type="MeshInstance3D" parent="Targets"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
+material_override = SubResource("StandardMaterial3D_e0f0v")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_bh822")
+skeleton = NodePath("")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Targets/Target5" groups=["Targets"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target5/StaticBody3D5"]
+shape = SubResource("BoxShape3D_mn72p")
+
+[node name="Target6" type="MeshInstance3D" parent="Targets"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
+material_override = SubResource("StandardMaterial3D_dnv4a")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_ig721")
+skeleton = NodePath("")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="Targets/Target6" groups=["Targets"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target6/StaticBody3D6"]
+shape = SubResource("BoxShape3D_nfwv1")
+
+[node name="Target7" type="MeshInstance3D" parent="Targets"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
+material_override = SubResource("StandardMaterial3D_iu6ag")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_pxeoy")
+skeleton = NodePath("")
+
+[node name="StaticBody3D7" type="StaticBody3D" parent="Targets/Target7" groups=["Targets"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target7/StaticBody3D7"]
+shape = SubResource("BoxShape3D_vm5wc")
+
+[node name="Target8" type="MeshInstance3D" parent="Targets"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
+material_override = SubResource("StandardMaterial3D_f6qea")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_84e1m")
+skeleton = NodePath("")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="Targets/Target8" groups=["Targets"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target8/StaticBody3D8"]
+shape = SubResource("BoxShape3D_2ngqo")
+
 [node name="Screen" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.38147, -24.9375)
 layers = 2
@@ -146,136 +254,9 @@ texture = SubResource("ViewportTexture_2hfhm")
 size = Vector2i(1000, 1000)
 render_target_update_mode = 4
 
-[node name="Camera3D1" type="Camera3D" parent="Cameras" groups=["Cameras"]]
-transform = Transform3D(-4.37114e-08, -0.573576, 0.819152, 0, 0.819152, 0.573576, -1, 2.50718e-08, -3.58063e-08, 20, 10, 0)
+[node name="Camera" type="Camera3D" parent="Cameras" groups=["Cameras"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 cull_mask = 1048573
-
-[node name="Target1" type="MeshInstance3D" parent="Cameras/Camera3D1"]
-transform = Transform3D(2, 0, 0, 0, 2, -1.79546e-15, 0, -1.79546e-15, 2, 0, 0, 0)
-layers = 2
-material_override = SubResource("StandardMaterial3D_brx43")
-cast_shadow = 0
-mesh = SubResource("SphereMesh_gmd7t")
-
-[node name="StaticBody3D1" type="StaticBody3D" parent="Cameras/Camera3D1/Target1" groups=["Targets"]]
-transform = Transform3D(1, 0, 0, 0, 1, -8.97729e-16, 0, -8.97729e-16, 1, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D1/Target1/StaticBody3D1"]
-transform = Transform3D(1, 0, 0, 0, 1, -8.97729e-16, 0, -8.97729e-16, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_nmyj5")
-
-[node name="Camera3D2" type="Camera3D" parent="Cameras" groups=["Cameras"]]
-transform = Transform3D(0.707107, -0.40558, 0.579228, 0, 0.819152, 0.573576, -0.707107, -0.40558, 0.579228, 14.14, 10, 14.14)
-cull_mask = 1048573
-current = true
-
-[node name="Target2" type="MeshInstance3D" parent="Cameras/Camera3D2"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-layers = 2
-material_override = SubResource("StandardMaterial3D_ogvto")
-cast_shadow = 0
-mesh = SubResource("SphereMesh_pvxqs")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="Cameras/Camera3D2/Target2" groups=["Targets"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D2/Target2/StaticBody3D2"]
-shape = SubResource("BoxShape3D_0mtkn")
-
-[node name="Camera3D3" type="Camera3D" parent="Cameras" groups=["Cameras"]]
-transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 0, 10, 20)
-cull_mask = 1048573
-
-[node name="Target3" type="MeshInstance3D" parent="Cameras/Camera3D3"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-layers = 2
-material_override = SubResource("StandardMaterial3D_sstl2")
-cast_shadow = 0
-mesh = SubResource("SphereMesh_4wj6v")
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="Cameras/Camera3D3/Target3" groups=["Targets"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D3/Target3/StaticBody3D3"]
-shape = SubResource("BoxShape3D_try0m")
-
-[node name="Camera3D4" type="Camera3D" parent="Cameras" groups=["Cameras"]]
-transform = Transform3D(0.707107, 0.40558, -0.579228, 0, 0.819152, 0.573576, 0.707107, -0.40558, 0.579228, -14.14, 10, 14.14)
-cull_mask = 1048573
-
-[node name="Target4" type="MeshInstance3D" parent="Cameras/Camera3D4"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-layers = 2
-material_override = SubResource("StandardMaterial3D_57sxa")
-cast_shadow = 0
-mesh = SubResource("SphereMesh_it35y")
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="Cameras/Camera3D4/Target4" groups=["Targets"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D4/Target4/StaticBody3D4"]
-shape = SubResource("BoxShape3D_y82d1")
-
-[node name="Camera3D5" type="Camera3D" parent="Cameras" groups=["Cameras"]]
-transform = Transform3D(-4.37114e-08, 0.573576, -0.819152, 0, 0.819152, 0.573576, 1, 2.50718e-08, -3.58063e-08, -20, 10, 0)
-cull_mask = 1048573
-
-[node name="Target5" type="MeshInstance3D" parent="Cameras/Camera3D5"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-layers = 2
-material_override = SubResource("StandardMaterial3D_e0f0v")
-cast_shadow = 0
-mesh = SubResource("SphereMesh_bh822")
-
-[node name="StaticBody3D5" type="StaticBody3D" parent="Cameras/Camera3D5/Target5" groups=["Targets"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D5/Target5/StaticBody3D5"]
-shape = SubResource("BoxShape3D_mn72p")
-
-[node name="Camera3D6" type="Camera3D" parent="Cameras" groups=["Cameras"]]
-transform = Transform3D(-0.707107, 0.40558, -0.579228, 0, 0.819152, 0.573576, 0.707107, 0.40558, -0.579228, -14.14, 10, -14.14)
-cull_mask = 1048573
-
-[node name="Target6" type="MeshInstance3D" parent="Cameras/Camera3D6"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-layers = 2
-material_override = SubResource("StandardMaterial3D_dnv4a")
-cast_shadow = 0
-mesh = SubResource("SphereMesh_ig721")
-
-[node name="StaticBody3D6" type="StaticBody3D" parent="Cameras/Camera3D6/Target6" groups=["Targets"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D6/Target6/StaticBody3D6"]
-shape = SubResource("BoxShape3D_nfwv1")
-
-[node name="Camera3D7" type="Camera3D" parent="Cameras" groups=["Cameras"]]
-transform = Transform3D(-1, -5.01436e-08, 7.16125e-08, 0, 0.819152, 0.573576, -8.74228e-08, 0.573576, -0.819152, 0, 10, -20)
-cull_mask = 1048573
-
-[node name="Target7" type="MeshInstance3D" parent="Cameras/Camera3D7"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-layers = 2
-material_override = SubResource("StandardMaterial3D_iu6ag")
-cast_shadow = 0
-mesh = SubResource("SphereMesh_pxeoy")
-
-[node name="StaticBody3D7" type="StaticBody3D" parent="Cameras/Camera3D7/Target7" groups=["Targets"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D7/Target7/StaticBody3D7"]
-shape = SubResource("BoxShape3D_vm5wc")
-
-[node name="Camera3D8" type="Camera3D" parent="Cameras" groups=["Cameras"]]
-transform = Transform3D(-0.707107, -0.40558, 0.579228, 0, 0.819152, 0.573576, -0.707107, 0.40558, -0.579228, 14.14, 10, -14.14)
-cull_mask = 1048573
-
-[node name="Target8" type="MeshInstance3D" parent="Cameras/Camera3D8"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-layers = 2
-material_override = SubResource("StandardMaterial3D_f6qea")
-cast_shadow = 0
-mesh = SubResource("SphereMesh_84e1m")
-
-[node name="StaticBody3D8" type="StaticBody3D" parent="Cameras/Camera3D8/Target8" groups=["Targets"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cameras/Camera3D8/Target8/StaticBody3D8"]
-shape = SubResource("BoxShape3D_2ngqo")
 
 [node name="SpawnableObjects" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.50347, 0)
