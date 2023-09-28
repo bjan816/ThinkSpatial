@@ -10,13 +10,17 @@
 sky_material = SubResource("ProceduralSkyMaterial_sf5xj")
 
 [sub_resource type="Environment" id="Environment_fqvnf"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.121569, 0.121569, 0.121569, 1)
 sky = SubResource("Sky_eavij")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.25
 
 [sub_resource type="BoxMesh" id="BoxMesh_ig00c"]
 size = Vector3(10, 10, 10)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5266x"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r50vq"]
 cull_mode = 1
 
 [sub_resource type="BoxMesh" id="BoxMesh_smrat"]
@@ -63,7 +67,7 @@ far = 20.0
 
 [node name="Room" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_ig00c")
-surface_material_override/0 = SubResource("StandardMaterial3D_5266x")
+surface_material_override/0 = SubResource("StandardMaterial3D_r50vq")
 
 [node name="Center" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5, 0)
