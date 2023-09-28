@@ -71,7 +71,8 @@ func reset_puzzle():
 		
 		element.remove_from_group("Spawned")
 		element.queue_free()
-		
+	
+	set_targets()
 	set_target()
 	set_light()
 	set_objects()
@@ -92,13 +93,32 @@ func reset_puzzle():
 
 func set_target():
 	
-	var cameras = get_tree().get_nodes_in_group("Cameras")
-	var rand_num = random.randi_range(0, cameras.size()-1)
-	var camera = cameras[rand_num]
-	camera.make_current()
+	var targets = get_tree().get_nodes_in_group("Targets")
+	target = targets[random.randi_range(0, targets.size()-1)]
+	$Cameras/Camera.global_transform.origin = target.global_transform.origin
+	$Cameras/Camera.look_at(Vector3(0,0,0), Vector3.UP)
+	
+func set_targets():
 	
 	var targets = get_tree().get_nodes_in_group("Targets")
-	target = targets[rand_num]
+	
+	for i in range(targets.size()):
+		
+		target = targets[i].get_parent()
+		
+		var angle = randf_range(20, 160)
+		target.global_transform.origin = Vector3(
+			30 * sin(deg_to_rad(angle)),
+			30 * cos(deg_to_rad(angle)),
+			0
+		)
+		
+		var parent_rotation = i * 45
+		
+		$Targets.rotation_degrees.y = parent_rotation
+		var pos = target.global_transform.origin
+		$Targets.rotation_degrees.y = 0
+		target.global_transform.origin = pos
 	
 func set_light():
 	
