@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://co3kmwd3lex7h"]
+[gd_scene load_steps=17 format=3 uid="uid://co3kmwd3lex7h"]
 
+[ext_resource type="PackedScene" uid="uid://bvjsumvppm76p" path="res://scene/UI.tscn" id="1_hikvv"]
 [ext_resource type="PackedScene" uid="uid://b7k1lwjkncaaw" path="res://scene/Object.tscn" id="1_nfjew"]
-[ext_resource type="PackedScene" uid="uid://d0wc73k1jnaxl" path="res://scene/Level1.tscn" id="2_2jr8t"]
-[ext_resource type="PackedScene" uid="uid://baxo6kciihu1h" path="res://scene/Level2.tscn" id="3_70yaf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sf5xj"]
 
@@ -50,7 +49,9 @@ albedo_color = Color(1, 0.623529, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s1m5c"]
 albedo_color = Color(0, 0.74902, 1, 1)
 
-[node name="Node" type="Node"]
+[node name="Local" type="Node"]
+
+[node name="Control" parent="." instance=ExtResource("1_hikvv")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, 0.25, -0.433013, 0, 0.866025, 0.5, 0.5, -0.433013, 0.75, 0, 0, 0)
@@ -139,12 +140,12 @@ mesh = SubResource("BoxMesh_4h5kx")
 
 [node name="StaticBody3D" parent="." instance=ExtResource("1_nfjew")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1.4, 0)
-scene = ExtResource("2_2jr8t")
+path = "res://scene/Level1.tscn"
 mat = SubResource("StandardMaterial3D_e17oy")
 
 [node name="StaticBody3D2" parent="." instance=ExtResource("1_nfjew")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4, -4)
-scene = ExtResource("3_70yaf")
+path = "res://scene/Level2.tscn"
 mat = SubResource("StandardMaterial3D_s1m5c")
 
 [node name="StaticBody3D3" parent="." instance=ExtResource("1_nfjew")]

@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0wc73k1jnaxl"]
+[gd_scene load_steps=3 format=3 uid="uid://d0wc73k1jnaxl"]
+
+[ext_resource type="PackedScene" uid="uid://bvjsumvppm76p" path="res://scene/UI.tscn" id="1_u5css"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1d4rv"]
 
-[node name="Node" type="Node"]
+[node name="Local" type="Node"]
+
+[node name="Control" parent="." instance=ExtResource("1_u5css")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)

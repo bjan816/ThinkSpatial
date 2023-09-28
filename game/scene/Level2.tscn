@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://baxo6kciihu1h"]
+[gd_scene load_steps=3 format=3 uid="uid://baxo6kciihu1h"]
+
+[ext_resource type="PackedScene" uid="uid://bvjsumvppm76p" path="res://scene/UI.tscn" id="1_w5ag4"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_g1t41"]
 
-[node name="Node" type="Node"]
+[node name="Local" type="Node"]
+
+[node name="Control" parent="." instance=ExtResource("1_w5ag4")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
