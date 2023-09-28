@@ -133,9 +133,9 @@ func set_objects():
 		
 		var to_spawn = objects[random.randi_range(0, objects.size()-1)].duplicate()
 		
-		var distance = 9 * sqrt(randf_range(0, 1))
+		var distance = 14 * sqrt(randf_range(0, 1))
 		var degree = randf_range(0, 360)
-		var height = randf_range(0, 4)
+		var height = randf_range(-5, 5)
 		
 		var spawn_position = Vector3(
 			distance * cos(deg_to_rad(degree)),
@@ -143,9 +143,16 @@ func set_objects():
 			distance * sin(deg_to_rad(degree))
 		)
 		
+		var spawn_rotation = Vector3(
+			randf_range(0, 360),
+			randf_range(0, 360),
+			randf_range(0, 360)
+		)
+		
 		self.add_child(to_spawn)
 		to_spawn.add_to_group("Spawned")
 		to_spawn.transform.origin = spawn_position
+		to_spawn.rotation_degrees = spawn_rotation
 	
 func guess():
 	
