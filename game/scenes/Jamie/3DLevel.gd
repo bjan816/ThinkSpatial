@@ -14,8 +14,7 @@ class_name Game
 
 @onready var goal : = $Goal
 
-var hard_levels_dir = ["res://scenes/Jamie/world/Levels/Level1.tscn", "res://scenes/Jamie/world/Levels/Level2.tscn", "res://scenes/Jamie/world/Levels/Level3.tscn"]
-var hard_levels = [load(hard_levels_dir[0]).instantiate(), load(hard_levels_dir[1]).instantiate(), load(hard_levels_dir[2]).instantiate()]
+var level = load("res://scenes/Jamie/world/Level.tscn").instantiate()
 
 var hard_level_reset_pos = [Vector3(-10, 1, -34), Vector3(-30, 1, 14), Vector3(30, 1, -2)]
 var hard_level_reset_angle = [Vector3(0, 270, 0), Vector3(0, 270, 0), Vector3(0, 0, 0)]
@@ -42,7 +41,7 @@ var distanceMoved = 0.0
 
 
 func _ready():
-	self.add_child(hard_levels[current_lev])	
+	self.add_child(level)	
 	reset_pos(current_lev)
 	map_visible(current_lev)
 	playerStartPosition = player.global_transform.origin
@@ -72,7 +71,8 @@ func _process(delta):
 
 func _on_level_completed():
 	get_tree().paused = true
-	
+	if current_lev == 3:
+		final_menu.hide_next_button()
 	final_menu.level_score = scoreboard.score
 	final_menu.distance_score = distanceScore(current_lev)
 	final_menu.time_score = timeScore(current_lev)
@@ -124,7 +124,7 @@ func test_pos(lev):
 func reload():
 	play_time = 0.0
 	scoreboard.score = 1000
-	final_menu.r1()
+	final_menu.hide_menu()
 	timer.reset()
 	timer.showTimer()
 	scoreboard.showScore()

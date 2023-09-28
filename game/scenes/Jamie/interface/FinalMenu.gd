@@ -9,6 +9,7 @@ signal next()
 @onready var distanceScore : = $CenterContainer/Column/DistanceScore
 @onready var timeScore : = $CenterContainer/Column/TimeScore
 @onready var totalScore : = $CenterContainer/Column/TotalScore
+@onready var next_button : = $CenterContainer/Column/Row/NextLevel
 
 var level_score: int = 1000
 var distance_score: int = 1000
@@ -35,8 +36,11 @@ func initialize(total_play_time : float) -> void:
 	
 	show()
 	
-func r1():
+func hide_menu():
 	hide()
+	
+func hide_next_button():
+	next_button.hide()
 
 func _on_try_again_pressed():
 	get_tree().paused = false
