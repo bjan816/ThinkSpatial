@@ -11,7 +11,7 @@ var level = 1
 var lives = 3
 var puzzle_time = 60
 var is_moving
-var movement_time = 10
+var movement_time = 15
 
 var mirror_mod
 var ghost_mod
@@ -85,7 +85,7 @@ func reset_puzzle():
 	set_lives_text(lives)
 	puzzle_time = 60
 	set_time_text(puzzle_time)
-	movement_time = 10
+	movement_time = 15
 	set_movement_time_text(movement_time)
 	
 	$Player.transform.origin = Vector3(0, 1, -16)

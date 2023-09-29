@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dbg7pthmiyomc"]
+[gd_scene load_steps=47 format=3 uid="uid://dbg7pthmiyomc"]
 
 [ext_resource type="Script" path="res://scenes/Jordan/scripts/Puzzle.gd" id="1_8mpvj"]
 [ext_resource type="PackedScene" uid="uid://dd5yqxho3sgkk" path="res://scenes/Jordan/scenes/Player.tscn" id="1_bii0i"]
@@ -71,8 +71,13 @@ data = PackedVector3Array(-0.1625, -0.8507, 0.5, 0, -1, 0, 0.4253, -0.8507, 0.30
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ngqo"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_2hfhm"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ot3r3"]
 viewport_path = NodePath("Cameras")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ou6kr"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dvxse"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nxje"]
 albedo_color = Color(1, 0.466667, 1, 1)
@@ -108,7 +113,6 @@ shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_bii0i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -16)
-visible = false
 
 [node name="Environment" type="Node3D" parent="."]
 
@@ -249,7 +253,17 @@ layers = 2
 cast_shadow = 0
 transparent = false
 double_sided = false
-texture = SubResource("ViewportTexture_2hfhm")
+texture = SubResource("ViewportTexture_ot3r3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Screen"]
+transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, 0, 0, -0.01)
+visible = false
+mesh = SubResource("PlaneMesh_ou6kr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Screen/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Screen/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dvxse")
 
 [node name="Cameras" type="SubViewport" parent="."]
 size = Vector2i(1000, 1000)
