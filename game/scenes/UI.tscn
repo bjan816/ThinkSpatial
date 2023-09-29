@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bvjsumvppm76p"]
 
-[ext_resource type="Script" path="res://scenes/Menu/script/UI.gd" id="1_paola"]
+[ext_resource type="Script" path="res://scripts/UI.gd" id="1_paola"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

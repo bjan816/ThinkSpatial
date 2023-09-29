@@ -1,8 +1,8 @@
 [gd_scene load_steps=32 format=3 uid="uid://co3kmwd3lex7h"]
 
 [ext_resource type="PackedScene" uid="uid://bvjsumvppm76p" path="res://scenes/UI.tscn" id="1_hikvv"]
-[ext_resource type="Material" uid="uid://blf16jpvdnknl" path="res://scenes/Menu/asset/material/PaynesGray.tres" id="2_c3wly"]
-[ext_resource type="Script" path="res://scenes/Menu/script/Object.gd" id="3_7fxw7"]
+[ext_resource type="Material" uid="uid://blf16jpvdnknl" path="res://assets/material/PaynesGray.tres" id="2_c3wly"]
+[ext_resource type="Script" path="res://scripts/Object.gd" id="3_7fxw7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sf5xj"]
 
