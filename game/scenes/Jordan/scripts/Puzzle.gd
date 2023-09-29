@@ -37,7 +37,7 @@ func _unhandled_input(_event):
 			
 			$Screen.visible = false
 			memory_mod = false
-		
+
 func _input(event):
 	
 	if (event.is_action_pressed("click")):

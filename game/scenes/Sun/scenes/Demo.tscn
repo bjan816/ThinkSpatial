@@ -1,0 +1,318 @@
+[gd_scene load_steps=36 format=3 uid="uid://uww8t3t8a8jx"]
+
+[ext_resource type="Script" path="res://scenes/Sun/scripts/Demo.gd" id="1_xyglf"]
+[ext_resource type="ArrayMesh" uid="uid://dui5dve2o0wjo" path="res://scenes/Sun/assets/Stump.obj" id="2_lsqud"]
+[ext_resource type="ArrayMesh" uid="uid://uv2bci6mh8nw" path="res://scenes/Sun/assets/Tree1.obj" id="3_otsfk"]
+[ext_resource type="Material" uid="uid://cu2cnykutsykr" path="res://scenes/Sun/assets/AlienMaterial.tres" id="3_ucpvl"]
+[ext_resource type="ArrayMesh" uid="uid://8ti15lc1r18l" path="res://scenes/Sun/assets/Tree2.obj" id="4_28nq0"]
+[ext_resource type="ArrayMesh" uid="uid://p6rwyqdyn8hp" path="res://scenes/Sun/assets/Tree3.obj" id="5_a3ek2"]
+[ext_resource type="ArrayMesh" uid="uid://dc36js8ly8s4u" path="res://scenes/Sun/assets/Axe.obj" id="6_syoh2"]
+[ext_resource type="ArrayMesh" uid="uid://dwno2njqikni0" path="res://scenes/Sun/assets/Tree1Snowy.obj" id="7_c4lvq"]
+[ext_resource type="Material" uid="uid://bgwgxc1l4154r" path="res://scenes/Sun/assets/PineMaterial.tres" id="7_ra02v"]
+[ext_resource type="ArrayMesh" uid="uid://ce0u8x43u25qm" path="res://scenes/Sun/assets/Musket.obj" id="8_3p42g"]
+[ext_resource type="Script" path="res://scenes/Sun/scripts/UI.gd" id="9_ls8pd"]
+[ext_resource type="Material" uid="uid://ixbhnjwo7njf" path="res://scenes/Sun/assets/ToolMaterial.tres" id="9_shkyn"]
+[ext_resource type="Script" path="res://scenes/Sun/scripts/Puzzle.gd" id="10_1tisx"]
+[ext_resource type="ArrayMesh" uid="uid://c85j11bflc8rt" path="res://scenes/Sun/assets/PistolAxe.obj" id="11_pwge8"]
+[ext_resource type="Material" uid="uid://bvvrnvhc0aqyh" path="res://scenes/Sun/assets/EvergreenMaterial.tres" id="11_yqdpe"]
+[ext_resource type="Script" path="res://scenes/Sun/scripts/Player.gd" id="12_5xffj"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7pv4r"]
+top_radius = 1.0
+bottom_radius = 1.0
+height = 0.001
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gcx8a"]
+shading_mode = 0
+albedo_color = Color(0.363281, 0.0546875, 0.449219, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fg846"]
+shading_mode = 0
+albedo_color = Color(0.273438, 0.421875, 0.191406, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gwsm7"]
+shading_mode = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2xmd2"]
+size = Vector3(0.454277, 0.0778658, 0.0493724)
+
+[sub_resource type="QuadMesh" id="QuadMesh_yg8fc"]
+flip_faces = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tfgku"]
+
+[sub_resource type="Shader" id="Shader_jx5oh"]
+resource_local_to_scene = true
+code = "shader_type spatial;
+render_mode unshaded;
+uniform sampler2D tx : source_color;
+
+void fragment() {
+  ALBEDO = texture(tx,SCREEN_UV).rgb;
+}
+"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_h1qgo"]
+viewport_path = NodePath("Top")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_beuka"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_jx5oh")
+shader_parameter/tx = SubResource("ViewportTexture_h1qgo")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nnt05"]
+flip_faces = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jlglt"]
+orientation = 0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_p5itc"]
+viewport_path = NodePath("Left")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qf2ni"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_jx5oh")
+shader_parameter/tx = SubResource("ViewportTexture_p5itc")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gfh3w"]
+flip_faces = true
+orientation = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p7ivy"]
+orientation = 2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_f3ikt"]
+viewport_path = NodePath("Front")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kewoi"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_jx5oh")
+shader_parameter/tx = SubResource("ViewportTexture_f3ikt")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r1bsc"]
+flip_faces = true
+orientation = 2
+
+[node name="Node" type="Node"]
+script = ExtResource("1_xyglf")
+
+[node name="Top" type="SubViewport" parent="."]
+render_target_update_mode = 4
+
+[node name="TopCamera" type="Camera3D" parent="Top"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+cull_mask = 1047554
+fov = 30.0
+far = 10.0
+
+[node name="Floor" type="MeshInstance3D" parent="Top" groups=["Top"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_7pv4r")
+surface_material_override/0 = SubResource("StandardMaterial3D_gcx8a")
+
+[node name="Stump" type="MeshInstance3D" parent="Top" groups=["Top"]]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -1, 0)
+mesh = ExtResource("2_lsqud")
+surface_material_override/0 = ExtResource("3_ucpvl")
+
+[node name="Tree1" type="MeshInstance3D" parent="Top" groups=["Top"]]
+transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0.5, -1, 0.5)
+mesh = ExtResource("3_otsfk")
+surface_material_override/0 = ExtResource("3_ucpvl")
+
+[node name="Tree2" type="MeshInstance3D" parent="Top" groups=["Top"]]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.25, -1, -0.5)
+mesh = ExtResource("4_28nq0")
+surface_material_override/0 = ExtResource("3_ucpvl")
+
+[node name="Tree3" type="MeshInstance3D" parent="Top" groups=["Top"]]
+transform = Transform3D(-8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, -0.4, -1, 0)
+mesh = ExtResource("5_a3ek2")
+surface_material_override/0 = ExtResource("3_ucpvl")
+
+[node name="Front" type="SubViewport" parent="."]
+render_target_update_mode = 4
+
+[node name="FrontCamera" type="Camera3D" parent="Front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+cull_mask = 1047556
+fov = 30.0
+far = 10.0
+
+[node name="Floor" type="MeshInstance3D" parent="Front" groups=["Front"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_7pv4r")
+surface_material_override/0 = SubResource("StandardMaterial3D_fg846")
+
+[node name="Tree" type="MeshInstance3D" parent="Front" groups=["Front"]]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -1, 0)
+mesh = ExtResource("3_otsfk")
+surface_material_override/0 = ExtResource("7_ra02v")
+
+[node name="Tree2" type="MeshInstance3D" parent="Front" groups=["Front"]]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.25, -1, 0.5)
+mesh = ExtResource("2_lsqud")
+surface_material_override/0 = ExtResource("7_ra02v")
+
+[node name="Axe" type="MeshInstance3D" parent="Front" groups=["Front"]]
+transform = Transform3D(-0.01, -0.0173205, 0, 0.0173205, -0.01, 0, 0, 0, 0.02, 0.75, -0.5, 0.5)
+mesh = ExtResource("6_syoh2")
+skeleton = NodePath("../../Left")
+surface_material_override/0 = ExtResource("9_shkyn")
+
+[node name="Left" type="SubViewport" parent="."]
+render_target_update_mode = 4
+
+[node name="LeftCamera" type="Camera3D" parent="Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+cull_mask = 1047560
+fov = 30.0
+far = 10.0
+
+[node name="Floor" type="MeshInstance3D" parent="Left" groups=["Left"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_7pv4r")
+surface_material_override/0 = SubResource("StandardMaterial3D_gwsm7")
+
+[node name="Tree" type="MeshInstance3D" parent="Left" groups=["Left"]]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -1, 0)
+mesh = ExtResource("7_c4lvq")
+surface_material_override/0 = ExtResource("11_yqdpe")
+
+[node name="Tree2" type="MeshInstance3D" parent="Left" groups=["Left"]]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.25, -1, 0.5)
+mesh = ExtResource("2_lsqud")
+surface_material_override/0 = ExtResource("11_yqdpe")
+
+[node name="Gun" type="MeshInstance3D" parent="Left" groups=["Left"]]
+transform = Transform3D(-0.0168755, -0.0107339, -1.74846e-09, -0.0107339, 0.0168755, 5.99538e-17, 1.4753e-09, 9.38389e-10, -0.02, 0.556722, -0.611589, 0.5)
+mesh = ExtResource("8_3p42g")
+skeleton = NodePath("../../Front")
+surface_material_override/0 = ExtResource("9_shkyn")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_ls8pd")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Control"]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 512.0
+
+[node name="SubViewport" type="SubViewport" parent="Control/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera" type="Camera3D" parent="Control/SubViewportContainer/SubViewport"]
+transform = Transform3D(0.707107, -0.270598, 0.653282, 0, 0.92388, 0.382683, -0.707107, -0.270598, 0.653282, 5.22625, 3.06147, 5.22625)
+cull_mask = 1048064
+fov = 30.0
+far = 10.0
+
+[node name="Puzzle" type="StaticBody3D" parent="Control/SubViewportContainer/SubViewport" node_paths=PackedStringArray("pieces")]
+transform = Transform3D(-0.843776, -0.536696, -1.50996e-07, -0.536696, 0.843776, 1.51927e-13, 1.27407e-07, 8.10389e-08, -1, 0.41767, -0.700035, 0.5)
+visible = false
+script = ExtResource("10_1tisx")
+pieces = [NodePath("../../../../Front/Axe"), NodePath("../../../../Left/Gun")]
+
+[node name="AxeGun" type="MeshInstance3D" parent="Control/SubViewportContainer/SubViewport/Puzzle"]
+transform = Transform3D(0.02, -6.92205e-17, 0, 6.92205e-17, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
+layers = 512
+mesh = ExtResource("11_pwge8")
+surface_material_override/0 = ExtResource("9_shkyn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control/SubViewportContainer/SubViewport/Puzzle"]
+transform = Transform3D(1, 1.03249e-14, 0, 1.03249e-14, 1, 0, 0, 2.13163e-14, 1, -0.0560878, 0, 0)
+shape = SubResource("BoxShape3D_2xmd2")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "5"
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Player" type="Node3D" parent="." node_paths=PackedStringArray("views")]
+script = ExtResource("12_5xffj")
+views = [NodePath("../Top/TopCamera"), NodePath("../Left/LeftCamera"), NodePath("../Front/FrontCamera")]
+
+[node name="Camera" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+cull_mask = 1047553
+fov = 30.0
+far = 10.0
+
+[node name="Face" type="MeshInstance3D" parent="Player/Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+mesh = SubResource("QuadMesh_yg8fc")
+
+[node name="Box" type="Node3D" parent="."]
+
+[node name="Top" type="MeshInstance3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("PlaneMesh_tfgku")
+surface_material_override/0 = SubResource("ShaderMaterial_beuka")
+
+[node name="Bottom" type="MeshInstance3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+visible = false
+mesh = SubResource("PlaneMesh_nnt05")
+
+[node name="Left" type="MeshInstance3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("PlaneMesh_jlglt")
+surface_material_override/0 = SubResource("ShaderMaterial_qf2ni")
+
+[node name="Right" type="MeshInstance3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+visible = false
+mesh = SubResource("PlaneMesh_gfh3w")
+
+[node name="Front" type="MeshInstance3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("PlaneMesh_p7ivy")
+surface_material_override/0 = SubResource("ShaderMaterial_kewoi")
+
+[node name="Back" type="MeshInstance3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+visible = false
+mesh = SubResource("PlaneMesh_r1bsc")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Box"]
+size = Vector3(2.1, 2.1, 2.1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Box/CSGBox3D"]
+operation = 2
+size = Vector3(2.1, 2, 2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Box/CSGBox3D"]
+operation = 2
+size = Vector3(2, 2.1, 2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Box/CSGBox3D"]
+operation = 2
+size = Vector3(2, 2, 2.1)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 2, 2, 2)
+light_energy = 16.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)

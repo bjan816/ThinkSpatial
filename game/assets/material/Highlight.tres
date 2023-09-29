@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cod6754mpl3ue"]
+
+[ext_resource type="Shader" path="res://assets/material/Highlight.gdshader" id="1_ppfay"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ppfay")
+shader_parameter/border = 0.1

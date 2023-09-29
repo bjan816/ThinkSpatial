@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcfb3s4dpyrqb"]
+
+[ext_resource type="Texture2D" uid="uid://bhpbs31may5he" path="res://scenes/Jamie/interface/wall/cube_texture.png" id="1_vtc30"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glqxk"]
+albedo_texture = ExtResource("1_vtc30")
+uv1_scale = Vector3(3, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pinjn"]
+material = SubResource("StandardMaterial3D_glqxk")
+size = Vector3(4, 5, 4)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1knnf"]
+data = PackedVector3Array(-2, 2.5, 2, 2, 2.5, 2, -2, -2.5, 2, 2, 2.5, 2, 2, -2.5, 2, -2, -2.5, 2, 2, 2.5, -2, -2, 2.5, -2, 2, -2.5, -2, -2, 2.5, -2, -2, -2.5, -2, 2, -2.5, -2, 2, 2.5, 2, 2, 2.5, -2, 2, -2.5, 2, 2, 2.5, -2, 2, -2.5, -2, 2, -2.5, 2, -2, 2.5, -2, -2, 2.5, 2, -2, -2.5, -2, -2, 2.5, 2, -2, -2.5, 2, -2, -2.5, -2, 2, 2.5, 2, -2, 2.5, 2, 2, 2.5, -2, -2, 2.5, 2, -2, 2.5, -2, 2, 2.5, -2, -2, -2.5, 2, 2, -2.5, 2, -2, -2.5, -2, 2, -2.5, 2, 2, -2.5, -2, -2, -2.5, -2)
+
+[node name="MeshLibrary" type="Node3D"]
+
+[node name="Wall" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_pinjn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_1knnf")
