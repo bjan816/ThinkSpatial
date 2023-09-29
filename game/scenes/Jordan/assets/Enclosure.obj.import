@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dn4go8fgu1jgh"
+path="res://.godot/imported/Enclosure.obj-f36722bc01eabcddf966c6926034266a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Enclosure.obj-f36722bc01eabcddf966c6926034266a.mesh"]
+
+source_file="res://scenes/Jordan/assets/Enclosure.obj"
+dest_files=["res://.godot/imported/Enclosure.obj-f36722bc01eabcddf966c6926034266a.mesh", "res://.godot/imported/Enclosure.obj-f36722bc01eabcddf966c6926034266a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
