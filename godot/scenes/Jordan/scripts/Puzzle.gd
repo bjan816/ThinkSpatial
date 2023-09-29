@@ -15,6 +15,7 @@ var movement_time = 15
 
 var mirror_mod
 var ghost_mod
+var memory_mod
 
 func _ready():
 	
@@ -29,6 +30,15 @@ func _unhandled_input(_event):
 		
 	else: is_moving = false
 	
+	if memory_mod == true:
+	
+		if $Player/Neck/Camera3D/RayCast3D.get_collider() != $Screen/MeshInstance3D/StaticBody3D:
+			
+			print($Player/Neck/Camera3D/RayCast3D.get_collider())
+			
+			$Screen.visible = false
+			memory_mod = false
+		
 func _input(event):
 	
 	if (event.is_action_pressed("click")):
@@ -98,13 +108,14 @@ func reset_puzzle():
 	
 func choose_modifier():
 	
-	var modifiers = ["none", "mirror_mod", "ghost_mod"]
+	var modifiers = ["none", "mirror_mod", "ghost_mod", "memory_mod"]
 	var modifier = modifiers[randi() % modifiers.size()]
 	print(modifier)
 	
 	if modifier == "none": return
 	elif modifier == "mirror_mod": mirror_mod = true
 	elif modifier == "ghost_mod": ghost_mod = true
+	elif modifier == "memory_mod": memory_mod = true
 	
 func set_screen():
 	
