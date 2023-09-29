@@ -14,6 +14,7 @@ var is_moving
 var movement_time = 10
 
 var mirror_mod
+var ghost_mod
 
 func _ready():
 	
@@ -97,11 +98,13 @@ func reset_puzzle():
 	
 func choose_modifier():
 	
-	var modifiers = ["mirror_mod"]
+	var modifiers = ["none", "mirror_mod", "ghost_mod"]
 	var modifier = modifiers[randi() % modifiers.size()]
 	print(modifier)
 	
-	if modifier == "mirror_mod": mirror_mod = true
+	if modifier == "none": return
+	elif modifier == "mirror_mod": mirror_mod = true
+	elif modifier == "ghost_mod": ghost_mod = true
 	
 func set_screen():
 	
@@ -175,6 +178,12 @@ func set_objects():
 		to_spawn.add_to_group("Spawned")
 		to_spawn.transform.origin = spawn_position
 		to_spawn.rotation_degrees = spawn_rotation
+		
+		if i >= round(num - num * 0.3) && ghost_mod == true:
+			
+			to_spawn.layers = 2
+			
+	ghost_mod = false
 	
 func guess():
 	
