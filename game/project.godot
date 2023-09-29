@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="ThinkSpatial"
-run/main_scene="res://scenes/Menu/Menu.tscn"
+run/main_scene="res://scenes/Home.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scripts/Global.gd"
 
 [display]
 

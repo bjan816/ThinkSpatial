@@ -1,8 +1,8 @@
 [gd_scene load_steps=32 format=3 uid="uid://co3kmwd3lex7h"]
 
-[ext_resource type="PackedScene" uid="uid://bvjsumvppm76p" path="res://scene/UI.tscn" id="1_hikvv"]
-[ext_resource type="Material" uid="uid://blf16jpvdnknl" path="res://asset/material/PaynesGray.tres" id="2_c3wly"]
-[ext_resource type="Script" path="res://script/Object.gd" id="3_7fxw7"]
+[ext_resource type="PackedScene" uid="uid://bvjsumvppm76p" path="res://scenes/UI.tscn" id="1_hikvv"]
+[ext_resource type="Material" uid="uid://blf16jpvdnknl" path="res://scenes/Menu/asset/material/PaynesGray.tres" id="2_c3wly"]
+[ext_resource type="Script" path="res://scenes/Menu/script/Object.gd" id="3_7fxw7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sf5xj"]
 
@@ -211,7 +211,7 @@ material = ExtResource("2_c3wly")
 [node name="Door" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, -2, 3)
 script = ExtResource("3_7fxw7")
-path = "res://scene/Quit.tscn"
+path = "res://scenes/Quit.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door"]
 shape = SubResource("BoxShape3D_c8gxf")
@@ -231,7 +231,7 @@ outline_size = 50
 [node name="Level1" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.9, 0)
 script = ExtResource("3_7fxw7")
-path = "res://scene/Level1.tscn"
+path = "res://scenes/Jamie/world/3DLevel.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level1"]
 shape = SubResource("BoxShape3D_a3h8b")
@@ -242,7 +242,7 @@ mesh = SubResource("BoxMesh_gico6")
 [node name="Level2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, -4)
 script = ExtResource("3_7fxw7")
-path = "res://scene/Level2.tscn"
+path = "res://scenes/Jordan/scenes/Puzzle.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level2"]
 shape = SubResource("BoxShape3D_a3h8b")
@@ -253,6 +253,7 @@ mesh = SubResource("BoxMesh_caspb")
 [node name="Level3" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
 script = ExtResource("3_7fxw7")
+path = "res://scenes/Sun/scenes/Demo.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level3"]
 shape = SubResource("BoxShape3D_a3h8b")

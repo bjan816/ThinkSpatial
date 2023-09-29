@@ -71,214 +71,214 @@ var distanceMoved = 0.0
 
 
 func _process(delta):
-	#Calculates player's movement
-	currentPos = player.global_transform.origin
-	distanceMoved = currentPos.distance_to(playerStartPosition)
-	playerTotalDistance += distanceMoved
-	playerStartPosition = currentPos
-	#print(playerTotalDistance)
-	
-	#Calculates play time
-	play_time += delta
-	#print('x = ' + str(player.global_transform.origin.x))
-	#print('z = ' + str(player.global_transform.origin.z))
-	
-	if Input.is_action_pressed('reset'):	
-		reset_pos(current_lev)
-		playerTotalDistance = 0
-		
-	if Input.is_action_pressed('test'):	
-		test_pos(current_lev)
-		
-	if check_goal_lev(current_lev):
-		_on_level_completed()
-		
+  #Calculates player's movement
+  currentPos = player.global_transform.origin
+  distanceMoved = currentPos.distance_to(playerStartPosition)
+  playerTotalDistance += distanceMoved
+  playerStartPosition = currentPos
+  #print(playerTotalDistance)
+  
+  #Calculates play time
+  play_time += delta
+  #print('x = ' + str(player.global_transform.origin.x))
+  #print('z = ' + str(player.global_transform.origin.z))
+  
+  if Input.is_action_pressed('reset'):	
+    reset_pos(current_lev)
+    playerTotalDistance = 0
+    
+  if Input.is_action_pressed('test'):	
+    test_pos(current_lev)
+    
+  if check_goal_lev(current_lev):
+    _on_level_completed()
+    
 func _on_normal_pressed():
-	difficulty = 1
-	self.add_child(normal_level)
-	diff.hide()
-	reset_pos(current_lev)
-	map_visible(current_lev)
-	playerStartPosition = player.global_transform.origin
-	timer.show()
-	scoreboard.show()
+  difficulty = 1
+  self.add_child(normal_level)
+  diff.hide()
+  reset_pos(current_lev)
+  map_visible(current_lev)
+  playerStartPosition = player.global_transform.origin
+  timer.show()
+  scoreboard.show()
 
 func _on_hard_pressed():
-	difficulty = 2
-	self.add_child(hard_level)
-	diff.hide()
-	reset_pos(current_lev)
-	map_visible(current_lev)
-	playerStartPosition = player.global_transform.origin
-	timer.show()
-	scoreboard.show()
-	
+  difficulty = 2
+  self.add_child(hard_level)
+  diff.hide()
+  reset_pos(current_lev)
+  map_visible(current_lev)
+  playerStartPosition = player.global_transform.origin
+  timer.show()
+  scoreboard.show()
+  
 func _on_level_completed():
-	get_tree().paused = true
-	if current_lev == 3:
-		final_menu.hide_next_button()
-	final_menu.level_score = scoreboard.score
-	final_menu.distance_score = distanceScore(current_lev)
-	final_menu.time_score = timeScore(current_lev)
-	maps.hide()
-	final_menu.initialize(play_time)
-	timer.hideTimer()
-	scoreboard.hideScore()
+  get_tree().paused = true
+  if current_lev == 3:
+    final_menu.hide_next_button()
+  final_menu.level_score = scoreboard.score
+  final_menu.distance_score = distanceScore(current_lev)
+  final_menu.time_score = timeScore(current_lev)
+  maps.hide()
+  final_menu.initialize(play_time)
+  timer.hideTimer()
+  scoreboard.hideScore()
 
 func _on_final_menu_retried():
-	reload()
-	reset_pos(current_lev)
-	playerStartPosition = player.global_transform.origin
-	playerTotalDistance = 0
+  reload()
+  reset_pos(current_lev)
+  playerStartPosition = player.global_transform.origin
+  playerTotalDistance = 0
 
 func _on_final_menu_next():
-	current_lev += 1
-	reload()
-	reset_pos(current_lev)
-	get_tree().paused = false
-	playerStartPosition = player.global_transform.origin
-	playerTotalDistance = 0
+  current_lev += 1
+  reload()
+  reset_pos(current_lev)
+  get_tree().paused = false
+  playerStartPosition = player.global_transform.origin
+  playerTotalDistance = 0
 
 func check_goal_lev(lev):
-	if difficulty == 1:
-		if lev == 1:
-			if (player.global_transform.origin.x > -35 and player.global_transform.origin.x < -33) and (player.global_transform.origin.z > 45 and player.global_transform.origin.z < 47):
-				return true
-			else:
-				return false
-		elif lev == 2:
-			if (player.global_transform.origin.x > 37 and player.global_transform.origin.x < 39) and (player.global_transform.origin.z > -43 and player.global_transform.origin.z < -41):
-				return true
-			else:
-				return false
-		elif lev == 3:
-			if (player.global_transform.origin.x > -23 and player.global_transform.origin.x < -21) and (player.global_transform.origin.z > 45 and player.global_transform.origin.z < 47):
-				return true
-			else:
-				return false
-	else:
-		if lev == 1:
-			if (player.global_transform.origin.x > 29 and player.global_transform.origin.x < 31) and (player.global_transform.origin.z > 37 and player.global_transform.origin.z < 39):
-				return true
-			else:
-				return false
-		elif lev == 2:
-			if (player.global_transform.origin.x > 37 and player.global_transform.origin.x < 39) and (player.global_transform.origin.z > -43 and player.global_transform.origin.z < -41):
-				return true
-			else:
-				return false
-		elif lev == 3:
-			if (player.global_transform.origin.x > -39 and player.global_transform.origin.x < -37) and (player.global_transform.origin.z > 45 and player.global_transform.origin.z < 47):
-				return true
-			else:
-				return false
+  if difficulty == 1:
+    if lev == 1:
+      if (player.global_transform.origin.x > -35 and player.global_transform.origin.x < -33) and (player.global_transform.origin.z > 45 and player.global_transform.origin.z < 47):
+        return true
+      else:
+        return false
+    elif lev == 2:
+      if (player.global_transform.origin.x > 37 and player.global_transform.origin.x < 39) and (player.global_transform.origin.z > -43 and player.global_transform.origin.z < -41):
+        return true
+      else:
+        return false
+    elif lev == 3:
+      if (player.global_transform.origin.x > -23 and player.global_transform.origin.x < -21) and (player.global_transform.origin.z > 45 and player.global_transform.origin.z < 47):
+        return true
+      else:
+        return false
+  else:
+    if lev == 1:
+      if (player.global_transform.origin.x > 29 and player.global_transform.origin.x < 31) and (player.global_transform.origin.z > 37 and player.global_transform.origin.z < 39):
+        return true
+      else:
+        return false
+    elif lev == 2:
+      if (player.global_transform.origin.x > 37 and player.global_transform.origin.x < 39) and (player.global_transform.origin.z > -43 and player.global_transform.origin.z < -41):
+        return true
+      else:
+        return false
+    elif lev == 3:
+      if (player.global_transform.origin.x > -39 and player.global_transform.origin.x < -37) and (player.global_transform.origin.z > 45 and player.global_transform.origin.z < 47):
+        return true
+      else:
+        return false
 
 func reset_pos(lev):
-	if difficulty == 1:
-		player.global_transform.origin = normal_level_reset_pos[lev - 1]
-		player.rotation_degrees = normal_level_reset_angle[lev - 1]
-		goal.global_transform.origin = normal_level_goal_pos[lev - 1]
-	else:
-		player.global_transform.origin = hard_level_reset_pos[lev - 1]
-		player.rotation_degrees = hard_level_reset_angle[lev - 1]
-		goal.global_transform.origin = hard_level_goal_pos[lev - 1]
-	
+  if difficulty == 1:
+    player.global_transform.origin = normal_level_reset_pos[lev - 1]
+    player.rotation_degrees = normal_level_reset_angle[lev - 1]
+    goal.global_transform.origin = normal_level_goal_pos[lev - 1]
+  else:
+    player.global_transform.origin = hard_level_reset_pos[lev - 1]
+    player.rotation_degrees = hard_level_reset_angle[lev - 1]
+    goal.global_transform.origin = hard_level_goal_pos[lev - 1]
+  
 func test_pos(lev):
-	if difficulty == 1:
-		player.global_transform.origin = normal_level_test_pos[lev - 1]
-	else:
-		player.global_transform.origin = hard_level_test_pos[lev - 1]
+  if difficulty == 1:
+    player.global_transform.origin = normal_level_test_pos[lev - 1]
+  else:
+    player.global_transform.origin = hard_level_test_pos[lev - 1]
 
 func reload():
-	play_time = 0.0
-	scoreboard.score = 1000
-	final_menu.hide_menu()
-	timer.reset()
-	timer.showTimer()
-	scoreboard.showScore()
-	map_visible(current_lev)
+  play_time = 0.0
+  scoreboard.score = 1000
+  final_menu.hide_menu()
+  timer.reset()
+  timer.showTimer()
+  scoreboard.showScore()
+  map_visible(current_lev)
 
 func map_visible(lev):
-	maps.show()
-	if difficulty == 1:
-		if lev == 1:
-			normal_map1.visible = true
-			normal_map2.visible = false
-			normal_map3.visible = false
-			hard_map1.visible = false
-			hard_map2.visible = false
-			hard_map3.visible = false
-		elif lev == 2:
-			normal_map1.visible = false
-			normal_map2.visible = true
-			normal_map3.visible = false
-			hard_map1.visible = false
-			hard_map2.visible = false
-			hard_map3.visible = false
-		elif lev == 3:
-			normal_map1.visible = false
-			normal_map2.visible = false
-			normal_map3.visible = true
-			hard_map1.visible = false
-			hard_map2.visible = false
-			hard_map3.visible = false
-	else:
-		if lev == 1:
-			normal_map1.visible = false
-			normal_map2.visible = false
-			normal_map3.visible = false
-			hard_map1.visible = true
-			hard_map2.visible = false
-			hard_map3.visible = false
-		elif lev == 2:
-			normal_map1.visible = false
-			normal_map2.visible = false
-			normal_map3.visible = false
-			hard_map1.visible = false
-			hard_map2.visible = true
-			hard_map3.visible = false
-		elif lev == 3:
-			normal_map1.visible = false
-			normal_map2.visible = false
-			normal_map3.visible = false
-			hard_map1.visible = false
-			hard_map2.visible = false
-			hard_map3.visible = true
-			
+  maps.show()
+  if difficulty == 1:
+    if lev == 1:
+      normal_map1.visible = true
+      normal_map2.visible = false
+      normal_map3.visible = false
+      hard_map1.visible = false
+      hard_map2.visible = false
+      hard_map3.visible = false
+    elif lev == 2:
+      normal_map1.visible = false
+      normal_map2.visible = true
+      normal_map3.visible = false
+      hard_map1.visible = false
+      hard_map2.visible = false
+      hard_map3.visible = false
+    elif lev == 3:
+      normal_map1.visible = false
+      normal_map2.visible = false
+      normal_map3.visible = true
+      hard_map1.visible = false
+      hard_map2.visible = false
+      hard_map3.visible = false
+  else:
+    if lev == 1:
+      normal_map1.visible = false
+      normal_map2.visible = false
+      normal_map3.visible = false
+      hard_map1.visible = true
+      hard_map2.visible = false
+      hard_map3.visible = false
+    elif lev == 2:
+      normal_map1.visible = false
+      normal_map2.visible = false
+      normal_map3.visible = false
+      hard_map1.visible = false
+      hard_map2.visible = true
+      hard_map3.visible = false
+    elif lev == 3:
+      normal_map1.visible = false
+      normal_map2.visible = false
+      normal_map3.visible = false
+      hard_map1.visible = false
+      hard_map2.visible = false
+      hard_map3.visible = true
+      
 func distanceScore(lev):
-	var distances = [0, 0, 0]
-	
-	if difficulty == 1:
-		distances = [54, 33, 49]
-	else:
-		distances = [54, 33, 49]
-		
-	if lev == 1:
-		lev1DistanceScore = round(1000 * (distances[0] / (playerTotalDistance / 4)))
-		if lev1DistanceScore > 1000:
-			lev1DistanceScore = 1000
-		return lev1DistanceScore
-	elif lev == 2:
-		lev2DistanceScore = round(1000 * (distances[1] / (playerTotalDistance / 4)))
-		if lev2DistanceScore > 1000:
-			lev2DistanceScore = 1000
-		return lev2DistanceScore
-	elif lev == 3:
-		lev3DistanceScore = round(1000 * (distances[2] / (playerTotalDistance / 4)))
-		if lev3DistanceScore > 1000:
-			lev3DistanceScore = 1000
-		return lev3DistanceScore
+  var distances = [0, 0, 0]
+  
+  if difficulty == 1:
+    distances = [54, 33, 49]
+  else:
+    distances = [54, 33, 49]
+    
+  if lev == 1:
+    lev1DistanceScore = round(1000 * (distances[0] / (playerTotalDistance / 4)))
+    if lev1DistanceScore > 1000:
+      lev1DistanceScore = 1000
+    return lev1DistanceScore
+  elif lev == 2:
+    lev2DistanceScore = round(1000 * (distances[1] / (playerTotalDistance / 4)))
+    if lev2DistanceScore > 1000:
+      lev2DistanceScore = 1000
+    return lev2DistanceScore
+  elif lev == 3:
+    lev3DistanceScore = round(1000 * (distances[2] / (playerTotalDistance / 4)))
+    if lev3DistanceScore > 1000:
+      lev3DistanceScore = 1000
+    return lev3DistanceScore
 
 func timeScore(lev):
-	var s = round(1000 * (180 / play_time))
-	if s > 1000:
-		s = 1000
-	if lev == 1:
-		lev1TimeScore = s
-		return lev1TimeScore
-	elif lev == 2:
-		lev2TimeScore = s
-		return lev2TimeScore
-	elif lev == 3:
-		lev3TimeScore = s
-		return lev3TimeScore
+  var s = round(1000 * (180 / play_time))
+  if s > 1000:
+    s = 1000
+  if lev == 1:
+    lev1TimeScore = s
+    return lev1TimeScore
+  elif lev == 2:
+    lev2TimeScore = s
+    return lev2TimeScore
+  elif lev == 3:
+    lev3TimeScore = s
+    return lev3TimeScore
