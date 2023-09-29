@@ -1,0 +1,125 @@
+[gd_scene load_steps=18 format=3 uid="uid://ck02t76dpy1er"]
+
+[ext_resource type="PackedScene" uid="uid://cog2qek7t51w6" path="res://player/PlayerBody.tscn" id="1_0davk"]
+[ext_resource type="PackedScene" uid="uid://do4cvl4wa636e" path="res://interface/Scenes/main_menu.tscn" id="2_0so7u"]
+[ext_resource type="PackedScene" uid="uid://b1j81876h1b5d" path="res://worldLevel/level_1.tscn" id="2_4tbu2"]
+[ext_resource type="PackedScene" uid="uid://ull1jwcqkm5o" path="res://worldLevel/house_walls.tscn" id="2_t3sh5"]
+[ext_resource type="PackedScene" uid="uid://cpjvv6hfr5qxj" path="res://worldLevel/level_2.tscn" id="3_0j473"]
+[ext_resource type="PackedScene" uid="uid://cg0kboxhxe3ra" path="res://interface/Scenes/end_menu.tscn" id="3_jppel"]
+[ext_resource type="PackedScene" uid="uid://td6blhncf62v" path="res://worldLevel/house_roof.tscn" id="3_qi0a1"]
+[ext_resource type="PackedScene" uid="uid://lq1yeiasdkfb" path="res://worldLevel/house_close.tscn" id="4_mbowx"]
+[ext_resource type="PackedScene" uid="uid://fqyi03d5y6nf" path="res://worldLevel/level_3.tscn" id="4_u6epi"]
+[ext_resource type="PackedScene" uid="uid://d0r8mhhcv086u" path="res://worldLevel/level_1_2.tscn" id="6_toybf"]
+[ext_resource type="PackedScene" uid="uid://vl6vuynkm46i" path="res://worldLevel/level_2_2.tscn" id="8_510bl"]
+[ext_resource type="PackedScene" uid="uid://buxwxac3dm6px" path="res://worldLevel/level_3_2.tscn" id="10_mkil4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ucmna"]
+
+[sub_resource type="Sky" id="Sky_86tps"]
+sky_material = SubResource("ProceduralSkyMaterial_ucmna")
+
+[sub_resource type="Environment" id="Environment_vw28c"]
+background_mode = 2
+sky = SubResource("Sky_86tps")
+glow_enabled = true
+adjustment_enabled = true
+adjustment_brightness = 1.52
+adjustment_contrast = 1.26
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_053jn"]
+size = Vector2(150, 150)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_b01uu"]
+data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
+
+[node name="Mental Rotation Game" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vw28c")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.25431, 0.684445, -0.683272, -0.238746, 0.729064, 0.641456, 0.937191, 0, 0.348817, -113.785, 56.1002, 113.325)
+light_energy = 0.198
+light_indirect_energy = 1.126
+light_volumetric_fog_energy = 0.874
+shadow_enabled = true
+directional_shadow_fade_start = 0.92
+directional_shadow_max_distance = 107.3
+sky_mode = 1
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_0davk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.93579)
+
+[node name="House" type="Node3D" parent="."]
+
+[node name="HouseWalls" parent="House" instance=ExtResource("2_t3sh5")]
+
+[node name="HouseRoof" parent="House" instance=ExtResource("3_qi0a1")]
+
+[node name="HouseClose" parent="House" instance=ExtResource("4_mbowx")]
+
+[node name="HouseLighting" type="Node3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="HouseLighting"]
+transform = Transform3D(0.74002, 0.160781, -0.653085, 0.0858223, 0.940497, 0.328784, 0.667087, -0.299356, 0.682188, -53.6727, 42.6521, 60.127)
+spot_range = 78.271
+spot_attenuation = 0.0853776
+spot_angle = 69.09
+spot_angle_attenuation = 0.15932
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="HouseLighting"]
+transform = Transform3D(0.800197, -0.261671, 0.539642, 0.0858223, 0.940497, 0.328784, -0.593566, -0.216779, 0.77504, 53.2204, 42.6521, 57.9604)
+spot_range = 101.716
+spot_attenuation = 0.203063
+spot_angle = 80.44
+spot_angle_attenuation = 0.170755
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="HouseLighting"]
+transform = Transform3D(-0.463324, -0.523048, 0.715368, -0.408386, 0.842437, 0.351455, -0.78648, -0.129309, -0.603927, 55.3459, 43.7049, -53.8386)
+spot_range = 100.619
+spot_attenuation = 0.378929
+spot_angle = 80.19
+spot_angle_attenuation = 0.217638
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="HouseLighting"]
+transform = Transform3D(-0.664507, 0.284439, -0.691032, 0.0141668, 0.929356, 0.368913, 0.747147, 0.235356, -0.621593, -56.3818, 42.9507, -59.0278)
+shadow_enabled = true
+spot_range = 99.429
+spot_attenuation = 0.138696
+spot_angle = 67.36
+spot_angle_attenuation = 0.267943
+
+[node name="Level 1" parent="." instance=ExtResource("2_4tbu2")]
+
+[node name="Level 1_2" parent="." instance=ExtResource("6_toybf")]
+visible = false
+
+[node name="Level 2" parent="." instance=ExtResource("3_0j473")]
+visible = false
+
+[node name="Level 2_2" parent="." instance=ExtResource("8_510bl")]
+visible = false
+
+[node name="Level 3" parent="." instance=ExtResource("4_u6epi")]
+visible = false
+
+[node name="Level 3_2" parent="." instance=ExtResource("10_mkil4")]
+visible = false
+
+[node name="MainMenu" parent="." instance=ExtResource("2_0so7u")]
+visible = false
+
+[node name="EndMenu" parent="." instance=ExtResource("3_jppel")]
+visible = false
+
+[node name="Platform" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform"]
+mesh = SubResource("PlaneMesh_053jn")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/MeshInstance3D/StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_b01uu")

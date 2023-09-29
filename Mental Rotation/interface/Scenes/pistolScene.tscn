@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3x8jn5ywb26v"]
+
+[ext_resource type="PackedScene" uid="uid://b5hi80yan08bb" path="res://3D Assets/9mm_pistol/scene.gltf" id="1_rqxj1"]
+
+[node name="Pistol" instance=ExtResource("1_rqxj1")]
+transform = Transform3D(0.37, 0, 0, 0, 0.37, 0, 0, 0, 0.37, 0, 0, 0)
+
+[node name="Cube_005_9m1_0" parent="Sketchfab_model/9mmPistol_fbx/RootNode/Cube_005" index="0"]
+cast_shadow = 0
+
+[node name="Cube_0052" parent="Sketchfab_model/9mmPistol_fbx/RootNode/Cube_005" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Cube_005_9m2_0" parent="Sketchfab_model/9mmPistol_fbx/RootNode/Cube_005/Cube_0052" index="0"]
+cast_shadow = 0

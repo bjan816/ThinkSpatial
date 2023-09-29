@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://buxwxac3dm6px"]
+
+[ext_resource type="PackedScene" uid="uid://dfvohnmsol32p" path="res://TetrisBlock/tetris_block_6.tscn" id="1_ievb1"]
+[ext_resource type="PackedScene" uid="uid://bc2n6aoyxthx1" path="res://TetrisBlock/tetris_block_6_mirror.tscn" id="2_mqaai"]
+[ext_resource type="PackedScene" uid="uid://cf5ijhtrusnix" path="res://worldLevel/mirror_button.tscn" id="3_4rbxp"]
+[ext_resource type="PackedScene" uid="uid://cr2uhegrgc701" path="res://worldLevel/same_button.tscn" id="4_kgejn"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1hqb2"]
+size = Vector2(150, 150)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_422g7"]
+data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
+
+[node name="Level 3_2" type="Node3D"]
+
+[node name="Platform" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform"]
+mesh = SubResource("PlaneMesh_1hqb2")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Platform/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/MeshInstance3D/StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_422g7")
+
+[node name="Tetris_block_6" parent="." instance=ExtResource("1_ievb1")]
+transform = Transform3D(0.932482, 0.0702413, -0.354322, -0.361218, 0.181328, -0.914681, 0, 0.980911, 0.194457, -9.8563, 11.6611, -19.8957)
+
+[node name="Tetris_block_6_mirror" parent="." instance=ExtResource("2_mqaai")]
+transform = Transform3D(1, 0, 0, 0, 0.0520222, 0.998646, 0, -0.998646, 0.0520222, 7.87994, 11.6656, -20.5126)
+
+[node name="MirrorButton" parent="." instance=ExtResource("3_4rbxp")]
+transform = Transform3D(-0.0134735, 0, 0.999909, 0, 1, 0, -0.999909, 0, -0.0134735, 6.22042, 0.271892, -1.39355)
+
+[node name="SameButton" parent="." instance=ExtResource("4_kgejn")]
+transform = Transform3D(-0.00171046, 0, -0.999999, 0, 1, 0, 0.999999, 0, -0.00171046, -5.27025, 0.287208, -1.80538)

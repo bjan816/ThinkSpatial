@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxpsd15kyyq1t"]
+
+[ext_resource type="PackedScene" uid="uid://c2p4jqn1j51xq" path="res://Blender Tetris/Tetris_block_4.blend" id="1_dpm11"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dp7qi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_maydk"]
+
+[node name="Tetris_block_4" instance=ExtResource("1_dpm11")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]
+physics_material_override = SubResource("PhysicsMaterial_dp7qi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_maydk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_001" index="0"]
+physics_material_override = SubResource("PhysicsMaterial_dp7qi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_001/StaticBody3D" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_maydk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_002" index="0"]
+physics_material_override = SubResource("PhysicsMaterial_dp7qi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_002/StaticBody3D" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_maydk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_003" index="0"]
+physics_material_override = SubResource("PhysicsMaterial_dp7qi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_003/StaticBody3D" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_maydk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_004" index="0"]
+physics_material_override = SubResource("PhysicsMaterial_dp7qi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_004/StaticBody3D" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_maydk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_005" index="0"]
+physics_material_override = SubResource("PhysicsMaterial_dp7qi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_005/StaticBody3D" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_maydk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_006" index="0"]
+physics_material_override = SubResource("PhysicsMaterial_dp7qi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_006/StaticBody3D" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_maydk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_007" index="0"]
+physics_material_override = SubResource("PhysicsMaterial_dp7qi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_007/StaticBody3D" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_maydk")

@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://do4cvl4wa636e"]
+
+[ext_resource type="Script" path="res://interface/Scripts/main_menu.gd" id="1_hkiis"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hkiis")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Introduction" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Message" type="Label" parent="CenterContainer/Introduction"]
+layout_mode = 2
+text = "Welcome To the Game!"
+horizontal_alignment = 1
+
+[node name="Task" type="Label" parent="CenterContainer/Introduction"]
+layout_mode = 2
+text = "Your task is to look at the 3D Object presented infront of you 
+and answer the questions by shooting either the two buttons 
+if it's the same or mirror to each other
+
+Left button is for 'same' and the right button is for 'mirror'
+
+Good Luck
+
+"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CenterContainer/Introduction"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="CenterContainer/Introduction/HBoxContainer"]
+layout_mode = 2
+text = "Start the puzzle"

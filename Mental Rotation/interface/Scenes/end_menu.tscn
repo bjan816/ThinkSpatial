@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg0kboxhxe3ra"]
+
+[ext_resource type="Script" path="res://interface/Scripts/end_menu.gd" id="1_ftrmp"]
+
+[node name="EndMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ftrmp")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = -1.0
+
+[node name="EndScene" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Message" type="Label" parent="CenterContainer/EndScene"]
+layout_mode = 2
+text = "Puzzle Finished
+Well Done!"
+horizontal_alignment = 1
+
+[node name="ScoreResults" type="Label" parent="CenterContainer/EndScene"]
+layout_mode = 2
+text = "Score:"
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="CenterContainer/EndScene"]
+layout_mode = 2
+
+[node name="TryAgain" type="Button" parent="CenterContainer/EndScene/Buttons"]
+layout_mode = 2
+text = "Try Again"
+
+[node name="Quit" type="Button" parent="CenterContainer/EndScene/Buttons"]
+layout_mode = 2
+text = "Quit Game"
+
+[connection signal="pressed" from="CenterContainer/EndScene/Buttons/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="CenterContainer/EndScene/Buttons/Quit" to="." method="_on_quit_pressed"]
