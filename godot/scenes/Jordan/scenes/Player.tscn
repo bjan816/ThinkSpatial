@@ -25,3 +25,4 @@ fov = 90.0
 
 [node name="RayCast3D" type="RayCast3D" parent="Neck/Camera3D"]
 transform = Transform3D(15, 0, 0, 0, -6.55671e-07, -15, 0, 15, -6.55671e-07, 0, 0, 0)
+collision_mask = 2

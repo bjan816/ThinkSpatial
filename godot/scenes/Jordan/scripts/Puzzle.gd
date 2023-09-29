@@ -35,8 +35,6 @@ func _unhandled_input(_event):
 	
 		if $Player/Neck/Camera3D/RayCast3D.get_collider() != $Screen/MeshInstance3D/StaticBody3D:
 			
-			print($Player/Neck/Camera3D/RayCast3D.get_collider())
-			
 			$Screen.visible = false
 			memory_mod = false
 		
@@ -207,7 +205,7 @@ func guess():
 	var end = origin + camera.project_ray_normal(mousepos) * RAY_LENGTH
 	var ray = PhysicsRayQueryParameters3D.create(origin, end)
 	ray.collide_with_areas = true
-	ray.set_exclude([$Environment/Floor/StaticBody3D.get_rid()])
+	ray.set_exclude([$Environment/Floor/StaticBody3D.get_rid(), $Screen/MeshInstance3D/StaticBody3D.get_rid()])
 		
 	var guessed = space.intersect_ray(ray)
 	

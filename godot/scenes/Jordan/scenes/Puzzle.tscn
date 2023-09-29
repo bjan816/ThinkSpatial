@@ -262,6 +262,8 @@ visible = false
 mesh = SubResource("PlaneMesh_ou6kr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Screen/MeshInstance3D"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Screen/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_dvxse")
