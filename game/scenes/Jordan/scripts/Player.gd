@@ -1,6 +1,9 @@
+# https://www.youtube.com/watch?v=v4IEPi1c0eE&list=LL&index=7
+# I used the above yt tutorial for this scene
+
 extends CharacterBody3D
 
-const SPEED = 5.0
+var SPEED = 0.0
 const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -21,8 +24,7 @@ func _unhandled_input(event):
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * 0.005)
 			camera.rotate_x(-event.relative.y * 0.005)
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
-
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 func _physics_process(delta):
 	# Add the gravity.
