@@ -19,6 +19,7 @@ var memory_mod
 
 func _ready():
 	
+	await get_tree().create_timer(0.05).timeout
 	random.randomize()
 	reset_puzzle()
 	

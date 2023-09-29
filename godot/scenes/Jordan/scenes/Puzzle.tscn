@@ -113,6 +113,7 @@ shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_bii0i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -16)
+visible = false
 
 [node name="Environment" type="Node3D" parent="."]
 
