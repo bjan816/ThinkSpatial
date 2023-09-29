@@ -1,21 +1,11 @@
 extends StaticBody3D
+class_name Trigger
 
 
 @export var path:String
 
-# TODO make exported variable "mesh", and the material attached to the mesh:
-# @export var mesh
-# @onready var mat = mesh.get_active_matieral()
-
-@export var mat:Material
-@onready var mesh:MeshInstance3D = get_node("MeshInstance3D")
-
+@onready var mat:Material = get_node("MeshInstance3D").get_active_material(0)
 @onready var hlt_mat:ShaderMaterial = preload("res://asset/material/Highlight.tres")
-
-
-func _ready():
-  if mat:     mesh.set_surface_override_material(0, mat)
-  else: mat = mesh.get_surface_override_material(0)
 
 
 func _input(event:InputEvent):
@@ -26,7 +16,9 @@ func _input(event:InputEvent):
 
 func _on_mouse_entered():
   mat.next_pass = hlt_mat
+  if get_node_or_null("Label3D"): $Label3D.show()
 
 
 func _on_mouse_exited():
   mat.next_pass = null
+  if get_node_or_null("Label3D"): $Label3D.hide()

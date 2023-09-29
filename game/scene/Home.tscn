@@ -1,9 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://co3kmwd3lex7h"]
+[gd_scene load_steps=32 format=3 uid="uid://co3kmwd3lex7h"]
 
 [ext_resource type="PackedScene" uid="uid://bvjsumvppm76p" path="res://scene/UI.tscn" id="1_hikvv"]
-[ext_resource type="PackedScene" uid="uid://b7k1lwjkncaaw" path="res://scene/Object.tscn" id="1_nfjew"]
 [ext_resource type="Material" uid="uid://blf16jpvdnknl" path="res://asset/material/PaynesGray.tres" id="2_c3wly"]
-[ext_resource type="Material" uid="uid://b8vd8l3gl4kr8" path="res://asset/material/SpaceCadet.tres" id="2_pthrx"]
+[ext_resource type="Script" path="res://script/Object.gd" id="3_7fxw7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sf5xj"]
 
@@ -68,11 +67,35 @@ size = Vector3(6.5, 0.5, 2.5)
 material = ExtResource("2_c3wly")
 size = Vector3(1.5, 1.5, 1.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ga5js"]
-albedo_color = Color(0.101961, 0.105882, 0.254902, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_c8gxf"]
+size = Vector3(0.25, 6, 2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_thvwe"]
-albedo_color = Color(0.101961, 0.105882, 0.254902, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t0jdq"]
+albedo_color = Color(0.345098, 0.392157, 0.486275, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_niigc"]
+material = SubResource("StandardMaterial3D_t0jdq")
+size = Vector3(0.25, 6, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a3h8b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0hesr"]
+albedo_color = Color(0, 0.121569, 0.247059, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gico6"]
+material = SubResource("StandardMaterial3D_0hesr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_04yuy"]
+albedo_color = Color(0, 0.121569, 0.247059, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_caspb"]
+material = SubResource("StandardMaterial3D_04yuy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7fuq"]
+albedo_color = Color(0, 0.121569, 0.247059, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_66o5t"]
+material = SubResource("StandardMaterial3D_a7fuq")
 
 [node name="Local" type="Node"]
 
@@ -185,16 +208,63 @@ operation = 2
 size = Vector3(1.25, 1.25, 1.25)
 material = ExtResource("2_c3wly")
 
-[node name="StaticBody3D" parent="." instance=ExtResource("1_nfjew")]
+[node name="Door" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, -2, 3)
+script = ExtResource("3_7fxw7")
+path = "res://scene/Quit.tscn"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door"]
+shape = SubResource("BoxShape3D_c8gxf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Door"]
+mesh = SubResource("BoxMesh_niigc")
+skeleton = NodePath("../..")
+
+[node name="Label3D" type="Label3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
+visible = false
+billboard = 1
+text = "Quit?"
+font_size = 100
+outline_size = 50
+
+[node name="Level1" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.9, 0)
+script = ExtResource("3_7fxw7")
 path = "res://scene/Level1.tscn"
-mat = ExtResource("2_pthrx")
 
-[node name="StaticBody3D2" parent="." instance=ExtResource("1_nfjew")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level1"]
+shape = SubResource("BoxShape3D_a3h8b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level1"]
+mesh = SubResource("BoxMesh_gico6")
+
+[node name="Level2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, -4)
+script = ExtResource("3_7fxw7")
 path = "res://scene/Level2.tscn"
-mat = SubResource("StandardMaterial3D_ga5js")
 
-[node name="StaticBody3D3" parent="." instance=ExtResource("1_nfjew")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level2"]
+shape = SubResource("BoxShape3D_a3h8b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level2"]
+mesh = SubResource("BoxMesh_caspb")
+
+[node name="Level3" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
-mat = SubResource("StandardMaterial3D_thvwe")
+script = ExtResource("3_7fxw7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level3"]
+shape = SubResource("BoxShape3D_a3h8b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level3"]
+mesh = SubResource("BoxMesh_66o5t")
+
+[connection signal="mouse_entered" from="Door" to="Door" method="_on_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="Door" to="Door" method="_on_mouse_exited" flags=18]
+[connection signal="mouse_entered" from="Level1" to="Level1" method="_on_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="Level1" to="Level1" method="_on_mouse_exited" flags=18]
+[connection signal="mouse_entered" from="Level2" to="Level2" method="_on_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="Level2" to="Level2" method="_on_mouse_exited" flags=18]
+[connection signal="mouse_entered" from="Level3" to="Level3" method="_on_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="Level3" to="Level3" method="_on_mouse_exited" flags=18]
