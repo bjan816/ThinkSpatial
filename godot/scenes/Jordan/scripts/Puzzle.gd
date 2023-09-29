@@ -13,6 +13,8 @@ var puzzle_time = 60
 var is_moving
 var movement_time = 10
 
+var mirror_mod
+
 func _ready():
 	
 	random.randomize()
@@ -90,6 +92,16 @@ func reset_puzzle():
 	$Player.SPEED = 5.0
 	
 	$PuzzleTimer.start()
+	
+func set_screen():
+	
+	$Screen.visible = true
+	$Screen.flip_h = false
+	
+	if mirror_mod == true:
+		
+		$Screen.flip_h = true
+		mirror_mod = false
 
 func set_target():
 	
