@@ -74,6 +74,8 @@ func reset_puzzle():
 		element.remove_from_group("Spawned")
 		element.queue_free()
 	
+	choose_modifier()
+	set_screen()
 	set_targets()
 	set_target()
 	set_light()
@@ -92,6 +94,14 @@ func reset_puzzle():
 	$Player.SPEED = 5.0
 	
 	$PuzzleTimer.start()
+	
+func choose_modifier():
+	
+	var modifiers = ["mirror_mod"]
+	var modifier = modifiers[randi() % modifiers.size()]
+	print(modifier)
+	
+	if modifier == "mirror_mod": mirror_mod = true
 	
 func set_screen():
 	
