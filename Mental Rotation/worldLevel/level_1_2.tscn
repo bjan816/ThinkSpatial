@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0r8mhhcv086u"]
+[gd_scene load_steps=9 format=3 uid="uid://d0r8mhhcv086u"]
 
 [ext_resource type="PackedScene" uid="uid://dv7raiqti6lsg" path="res://TetrisBlock/tetris_block_2.tscn" id="1_sd3bj"]
 [ext_resource type="PackedScene" uid="uid://ddsw53vt0box2" path="res://TetrisBlock/tetris_block_2_mirror.tscn" id="2_0qk1r"]
@@ -10,6 +10,12 @@ size = Vector2(150, 150)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_422g7"]
 data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_py1d2"]
+size = Vector3(0.5, 20, 15)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_n22v3"]
+data = PackedVector3Array(-0.25, 10, 7.5, 0.25, 10, 7.5, -0.25, -10, 7.5, 0.25, 10, 7.5, 0.25, -10, 7.5, -0.25, -10, 7.5, 0.25, 10, -7.5, -0.25, 10, -7.5, 0.25, -10, -7.5, -0.25, 10, -7.5, -0.25, -10, -7.5, 0.25, -10, -7.5, 0.25, 10, 7.5, 0.25, 10, -7.5, 0.25, -10, 7.5, 0.25, 10, -7.5, 0.25, -10, -7.5, 0.25, -10, 7.5, -0.25, 10, -7.5, -0.25, 10, 7.5, -0.25, -10, -7.5, -0.25, 10, 7.5, -0.25, -10, 7.5, -0.25, -10, -7.5, 0.25, 10, 7.5, -0.25, 10, 7.5, 0.25, 10, -7.5, -0.25, 10, 7.5, -0.25, 10, -7.5, 0.25, 10, -7.5, -0.25, -10, 7.5, 0.25, -10, 7.5, -0.25, -10, -7.5, 0.25, -10, 7.5, 0.25, -10, -7.5, -0.25, -10, -7.5)
 
 [node name="Level 1_2" type="Node3D"]
 
@@ -26,7 +32,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_422g7")
 
 [node name="Tetris_block_2" parent="." instance=ExtResource("1_sd3bj")]
-transform = Transform3D(-0.0312887, 0, -0.99951, -0.997131, 0.0689556, 0.0312142, 0.0689218, 0.99762, -0.00215753, -9.45641, 15.6439, -15.8159)
+transform = Transform3D(-0.0312887, 0, -0.99951, -0.997131, 0.0689556, 0.0312142, 0.0689218, 0.99762, -0.00215753, -10.6785, 15.6439, -15.8159)
 
 [node name="Tetris_block_2_mirror" parent="." instance=ExtResource("2_0qk1r")]
 transform = Transform3D(0.895572, 0, 0.444917, 0.440441, 0.141489, -0.886562, -0.0629507, 0.98994, 0.126713, 8.43078, 10.4881, -16.072)
@@ -36,3 +42,14 @@ transform = Transform3D(-0.0134735, 0, 0.999909, 0, 1, 0, -0.999909, 0, -0.01347
 
 [node name="SameButton" parent="." instance=ExtResource("4_j5ut4")]
 transform = Transform3D(-0.00171046, 0, -0.999999, 0, 1, 0, 0.999999, 0, -0.00171046, -5.27025, 0.287208, -1.80538)
+
+[node name="MiddlePole" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MiddlePole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.8365, -15.6322)
+mesh = SubResource("BoxMesh_py1d2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MiddlePole/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MiddlePole/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_n22v3")

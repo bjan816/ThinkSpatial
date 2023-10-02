@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://ck02t76dpy1er"]
+[gd_scene load_steps=19 format=3 uid="uid://ck02t76dpy1er"]
 
 [ext_resource type="PackedScene" uid="uid://cog2qek7t51w6" path="res://player/PlayerBody.tscn" id="1_0davk"]
+[ext_resource type="Script" path="res://3dscene.gd" id="1_kofm5"]
 [ext_resource type="PackedScene" uid="uid://do4cvl4wa636e" path="res://interface/Scenes/main_menu.tscn" id="2_0so7u"]
 [ext_resource type="PackedScene" uid="uid://b1j81876h1b5d" path="res://worldLevel/level_1.tscn" id="2_4tbu2"]
 [ext_resource type="PackedScene" uid="uid://ull1jwcqkm5o" path="res://worldLevel/house_walls.tscn" id="2_t3sh5"]
@@ -33,6 +34,7 @@ size = Vector2(150, 150)
 data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
 
 [node name="Mental Rotation Game" type="Node3D"]
+script = ExtResource("1_kofm5")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vw28c")
@@ -107,12 +109,12 @@ visible = false
 visible = false
 
 [node name="MainMenu" parent="." instance=ExtResource("2_0so7u")]
-visible = false
 
 [node name="EndMenu" parent="." instance=ExtResource("3_jppel")]
 visible = false
 
 [node name="Platform" type="Node3D" parent="."]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platform"]
 mesh = SubResource("PlaneMesh_053jn")

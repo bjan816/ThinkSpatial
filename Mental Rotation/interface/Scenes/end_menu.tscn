@@ -19,30 +19,53 @@ anchor_bottom = 1.0
 offset_right = 1.0
 offset_bottom = -1.0
 
-[node name="EndScene" type="VBoxContainer" parent="CenterContainer"]
+[node name="Panel" type="Panel" parent="CenterContainer"]
+custom_minimum_size = Vector2(500, 190)
 layout_mode = 2
 
-[node name="Message" type="Label" parent="CenterContainer/EndScene"]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.031
+anchor_bottom = 0.617
+offset_left = 1.0
+offset_top = 9.0
+offset_right = -14.5
+offset_bottom = 58.77
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="EndScene" type="VBoxContainer" parent="CenterContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Message" type="Label" parent="CenterContainer/Panel/MarginContainer/EndScene"]
 layout_mode = 2
 text = "Puzzle Finished
 Well Done!"
 horizontal_alignment = 1
 
-[node name="ScoreResults" type="Label" parent="CenterContainer/EndScene"]
+[node name="ScoreResults" type="Label" parent="CenterContainer/Panel/MarginContainer/EndScene"]
 layout_mode = 2
 text = "Score:"
 horizontal_alignment = 1
 
-[node name="Buttons" type="HBoxContainer" parent="CenterContainer/EndScene"]
+[node name="Buttons" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer/EndScene"]
 layout_mode = 2
 
-[node name="TryAgain" type="Button" parent="CenterContainer/EndScene/Buttons"]
+[node name="TryAgain" type="Button" parent="CenterContainer/Panel/MarginContainer/EndScene/Buttons"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Try Again"
 
-[node name="Quit" type="Button" parent="CenterContainer/EndScene/Buttons"]
+[node name="Quit" type="Button" parent="CenterContainer/Panel/MarginContainer/EndScene/Buttons"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Quit Game"
 
-[connection signal="pressed" from="CenterContainer/EndScene/Buttons/TryAgain" to="." method="_on_try_again_pressed"]
-[connection signal="pressed" from="CenterContainer/EndScene/Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/MarginContainer/EndScene/Buttons/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/MarginContainer/EndScene/Buttons/Quit" to="." method="_on_quit_pressed"]
