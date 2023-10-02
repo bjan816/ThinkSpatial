@@ -6,8 +6,8 @@ func _input(event:InputEvent):
 
 
 func to_home():
-  to("res://scenes/Home.tscn")
+  to(load("res://scenes/Home.tscn"))
 
 
-func to(file:String):
-  get_tree().change_scene_to_file(file)
+func to(packed:PackedScene):
+  get_tree().change_scene_to_packed(packed)

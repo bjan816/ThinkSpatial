@@ -1,8 +1,12 @@
-[gd_scene load_steps=32 format=3 uid="uid://co3kmwd3lex7h"]
+[gd_scene load_steps=36 format=3 uid="uid://co3kmwd3lex7h"]
 
 [ext_resource type="PackedScene" uid="uid://bvjsumvppm76p" path="res://scenes/UI.tscn" id="1_hikvv"]
 [ext_resource type="Material" uid="uid://blf16jpvdnknl" path="res://assets/material/PaynesGray.tres" id="2_c3wly"]
 [ext_resource type="Script" path="res://scripts/Object.gd" id="3_7fxw7"]
+[ext_resource type="PackedScene" uid="uid://uww8t3t8a8jx" path="res://scenes/Sun/scenes/Demo.tscn" id="4_2sqrc"]
+[ext_resource type="PackedScene" uid="uid://d087p72mrm060" path="res://scenes/Quit.tscn" id="4_5wmn3"]
+[ext_resource type="PackedScene" uid="uid://bhpkb8me38jf" path="res://scenes/Jamie/world/3DLevel.tscn" id="5_rg2ho"]
+[ext_resource type="PackedScene" uid="uid://dbg7pthmiyomc" path="res://scenes/Jordan/scenes/Puzzle.tscn" id="6_7k78k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sf5xj"]
 
@@ -85,17 +89,17 @@ albedo_color = Color(0, 0.121569, 0.247059, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_gico6"]
 material = SubResource("StandardMaterial3D_0hesr")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_04yuy"]
-albedo_color = Color(0, 0.121569, 0.247059, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_caspb"]
-material = SubResource("StandardMaterial3D_04yuy")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7fuq"]
 albedo_color = Color(0, 0.121569, 0.247059, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_66o5t"]
 material = SubResource("StandardMaterial3D_a7fuq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_04yuy"]
+albedo_color = Color(0, 0.121569, 0.247059, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_caspb"]
+material = SubResource("StandardMaterial3D_04yuy")
 
 [node name="Local" type="Node"]
 
@@ -211,7 +215,7 @@ material = ExtResource("2_c3wly")
 [node name="Door" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, -2, 3)
 script = ExtResource("3_7fxw7")
-path = "res://scenes/Quit.tscn"
+path = ExtResource("4_5wmn3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door"]
 shape = SubResource("BoxShape3D_c8gxf")
@@ -228,44 +232,44 @@ text = "Quit?"
 font_size = 100
 outline_size = 50
 
-[node name="Level1" type="StaticBody3D" parent="."]
+[node name="Sun" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.9, 0)
 script = ExtResource("3_7fxw7")
-path = "res://scenes/Jamie/world/3DLevel.tscn"
+path = ExtResource("4_2sqrc")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sun"]
 shape = SubResource("BoxShape3D_a3h8b")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level1"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sun"]
 mesh = SubResource("BoxMesh_gico6")
 
-[node name="Level2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, -4)
-script = ExtResource("3_7fxw7")
-path = "res://scenes/Jordan/scenes/Puzzle.tscn"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level2"]
-shape = SubResource("BoxShape3D_a3h8b")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level2"]
-mesh = SubResource("BoxMesh_caspb")
-
-[node name="Level3" type="StaticBody3D" parent="."]
+[node name="Jamie" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
 script = ExtResource("3_7fxw7")
-path = "res://scenes/Sun/scenes/Demo.tscn"
+path = ExtResource("5_rg2ho")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jamie"]
 shape = SubResource("BoxShape3D_a3h8b")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Level3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Jamie"]
 mesh = SubResource("BoxMesh_66o5t")
+
+[node name="Jordan" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, -4)
+script = ExtResource("3_7fxw7")
+path = ExtResource("6_7k78k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jordan"]
+shape = SubResource("BoxShape3D_a3h8b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Jordan"]
+mesh = SubResource("BoxMesh_caspb")
 
 [connection signal="mouse_entered" from="Door" to="Door" method="_on_mouse_entered" flags=18]
 [connection signal="mouse_exited" from="Door" to="Door" method="_on_mouse_exited" flags=18]
-[connection signal="mouse_entered" from="Level1" to="Level1" method="_on_mouse_entered" flags=18]
-[connection signal="mouse_exited" from="Level1" to="Level1" method="_on_mouse_exited" flags=18]
-[connection signal="mouse_entered" from="Level2" to="Level2" method="_on_mouse_entered" flags=18]
-[connection signal="mouse_exited" from="Level2" to="Level2" method="_on_mouse_exited" flags=18]
-[connection signal="mouse_entered" from="Level3" to="Level3" method="_on_mouse_entered" flags=18]
-[connection signal="mouse_exited" from="Level3" to="Level3" method="_on_mouse_exited" flags=18]
+[connection signal="mouse_entered" from="Sun" to="Sun" method="_on_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="Sun" to="Sun" method="_on_mouse_exited" flags=18]
+[connection signal="mouse_entered" from="Jamie" to="Jamie" method="_on_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="Jamie" to="Jamie" method="_on_mouse_exited" flags=18]
+[connection signal="mouse_entered" from="Jordan" to="Jordan" method="_on_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="Jordan" to="Jordan" method="_on_mouse_exited" flags=18]

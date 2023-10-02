@@ -2,7 +2,7 @@ extends StaticBody3D
 class_name Trigger
 
 
-@export var path:String
+@export var path:PackedScene
 
 @onready var mat:Material = get_node("MeshInstance3D").get_active_material(0)
 @onready var hlt_mat:ShaderMaterial = preload("res://assets/material/Highlight.tres")
@@ -10,7 +10,7 @@ class_name Trigger
 
 func _input(event:InputEvent):
   if event is InputEventMouseButton:
-    if path != ""  && mat.next_pass != null:
+    if path != null  && mat.next_pass != null:
       Global.to(path)
 
 
