@@ -27,8 +27,7 @@ func _input(event:InputEvent):
     else:
       health -= 1
     ui.update(health)
-    if health < 1:
-      get_tree().change_scene_to_file("res://scenes/Menu/Menu.tscn")
+    if health < 1: Global.to_home()
   
   # Move
   if event is InputEventMouseMotion and Input.is_action_pressed("M2"):
