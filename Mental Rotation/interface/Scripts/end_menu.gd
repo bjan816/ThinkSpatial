@@ -2,7 +2,7 @@ extends Control
 
 signal retried()
 
-@onready var Finalscore: = $CenterContainer/EndScene/ScoreResults
+@onready var Finalscore: = $CenterContainer/Panel/MarginContainer/EndScene/ScoreResults
 
 var score: int = 500
 var ResetButton = false

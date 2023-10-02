@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cog2qek7t51w6"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_wya44"]
-[ext_resource type="PackedScene" uid="uid://c3x8jn5ywb26v" path="res://interface/Scenes/pistolScene.tscn" id="2_mcbcp"]
+[ext_resource type="PackedScene" uid="uid://csk5xirq35pni" path="res://player/Scenes/pistolPixel.tscn" id="2_ol345"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ueugg"]
 
@@ -25,5 +25,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.73219, 0)
 [node name="Camera3D" type="Camera3D" parent="FirstPersonNeck"]
 fov = 90.0
 
-[node name="Pistol" parent="FirstPersonNeck/Camera3D" instance=ExtResource("2_mcbcp")]
-transform = Transform3D(0.0187873, 0, -0.349496, 0, 0.35, 0, 0.349496, 0, 0.0187873, 0.608723, -0.54568, -0.990329)
+[node name="Pistol" parent="FirstPersonNeck/Camera3D" instance=ExtResource("2_ol345")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.735199, -0.514585, -0.644378)
