@@ -1,9 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://b54x8dkfhyl1c"]
+[gd_scene load_steps=6 format=3 uid="uid://b54x8dkfhyl1c"]
+
+[ext_resource type="Script" path="res://player/Script/Scriptbullets.gd" id="1_sbbkw"]
+[ext_resource type="Material" uid="uid://d3snxogxov3sb" path="res://player/bulletsRayCast.tres" id="2_qxwd1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ywfme"]
 size = Vector3(0.05, 0.05, 1)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8nkiq"]
+direction = Vector3(0, 0, 1)
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_w8cna"]
+size = Vector3(0.04, 0.04, 0.04)
+
 [node name="Bullets" type="Node3D"]
+script = ExtResource("1_sbbkw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.540909)
 mesh = SubResource("BoxMesh_ywfme")
+surface_material_override/0 = ExtResource("2_qxwd1")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+visible = false
+target_position = Vector3(0, 0, 0.6)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+material_override = ExtResource("2_qxwd1")
+emitting = false
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_8nkiq")
+draw_pass_1 = SubResource("BoxMesh_w8cna")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

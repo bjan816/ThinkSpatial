@@ -15,12 +15,17 @@ var t_bobbing = 0.0
 const BASE_FOV = 93.0
 const FOV_CHANGE = 1.9
 
+#bullet property
+var bullet = load("res://player/Scenes/bullets.tscn")
+var instance
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var neck = $FirstPersonNeck
 @onready var camera = $FirstPersonNeck/Camera3D
 @onready var gun_anim = $FirstPersonNeck/Camera3D/Pistol/AnimationPlayer
+@onready var gun_barrel = $FirstPersonNeck/Camera3D/Pistol/RayCast3D
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -29,8 +34,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
-			neck.rotate_y(-event.relative.x * 0.01)
-			camera.rotate_x(-event.relative.y * 0.01)
+			neck.rotate_y(-event.relative.x * SENSITIVITY)
+			camera.rotate_x(-event.relative.y * SENSITIVITY)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
 
 func _physics_process(_delta: float) -> void:
@@ -78,6 +83,10 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("Mouse1"):
 		if !gun_anim.is_playing():
 			gun_anim.play("shooting")
+			instance = bullet.instantiate()
+			instance.position = gun_barrel.global_position
+			instance.transform.basis = gun_barrel.global_transform.basis
+			get_parent().add_child(instance)
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO

@@ -30,7 +30,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.01, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.5, 0, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.5), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_or1ky"]
@@ -44,7 +44,7 @@ _data = {
 transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 0, 0, 0)
 
 [node name="Pistol_5" parent="RootNode" index="0"]
-transform = Transform3D(100, 0, 0, 0, -3.88515e-06, 100, 0, -88.8819, -4.37114e-06, 0, 0, 0)
+transform = Transform3D(-4.37114e-06, -88.8819, -4.37114e-06, 0, -3.88515e-06, 100, -100, 3.88515e-06, 1.91069e-13, 0, 0, 0)
 surface_material_override/0 = ExtResource("2_vco41")
 surface_material_override/1 = SubResource("StandardMaterial3D_6eoj1")
 surface_material_override/2 = SubResource("StandardMaterial3D_uj2td")
@@ -52,6 +52,7 @@ surface_material_override/2 = SubResource("StandardMaterial3D_uj2td")
 [node name="StaticBody3D" type="StaticBody3D" parent="RootNode/Pistol_5" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode/Pistol_5/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -7.10543e-15, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_8whmq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
@@ -60,4 +61,5 @@ libraries = {
 }
 
 [node name="RayCast3D" type="RayCast3D" parent="." index="2"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.821403, 0.309821, 0)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0.305704, -0.821646)
+target_position = Vector3(0, 0, -1)
