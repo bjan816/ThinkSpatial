@@ -21,6 +21,13 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 		public readonly Message<EntityBehavior> EntityDeath = new Message<EntityBehavior>();
 		public Message FinishedSpawningEntities = new Message();
 
+		// New variables for grid and spacing
+		private float spacing = 2;
+		private int gridSize = 4;
+		private int zPosition = -10;
+		private List<Vector2> allPositions = new List<Vector2>();
+		protected int nextPositionIndex = 0;
+
 		public override void _Ready()
 		{
 			base._Ready();
@@ -31,9 +38,41 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 				SpawnArea = new Aabb(GlobalPosition - boxShapeSize / 2.0f, boxShapeSize);
 			}
 
+			// Generate all positions
+			GenerateAllPositions();		
+			// Shuffle positions once after generating them
+			ShufflePositions();
+
 			if (SpawnEntitiesImmediately)
 			{
 				SpawnEntities();
+			}
+		}
+
+		// Generate grid positions
+		private void GenerateAllPositions()
+		{
+			for (int y = 0; y < gridSize; ++y)
+			{
+				for (int x = -gridSize; x <= gridSize; ++x)
+				{
+					Vector2 position = new Vector2(x * spacing, y * spacing);
+					allPositions.Add(position);
+				}
+			}
+		}
+
+		// Shuffle grid positions
+		private void ShufflePositions()
+		{
+			int n = allPositions.Count;
+			while (n > 1)
+			{
+				n--;
+				int k = (int)GD.RandRange(0, n + 1);
+				Vector2 value = allPositions[k];
+				allPositions[k] = allPositions[n];
+				allPositions[n] = value;
 			}
 		}
 
@@ -45,6 +84,49 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 			}
 
 			FinishedSpawningEntities.Send();
+		}
+
+		// Modified
+		public virtual EntityBehavior SpawnEntity()
+		{
+			EntityBehavior entity = EntityToSpawn.Instantiate<EntityBehavior>();
+			SpawnedEntities.Add(entity);
+
+			entity.Entity.Death.AddListener(() => On_Death(entity));
+
+			// Use the next position from the shuffled list
+			Vector2 entityPosition = allPositions[nextPositionIndex];
+			nextPositionIndex++; // Increment the counter for the next call
+	
+			float x = (float) entityPosition.X;
+			float y = (float) entityPosition.Y;
+			float z = (float) zPosition;
+			
+			AddChild(entity);
+
+			// Setting the spawn position to the generated spawn location
+			entity.GlobalPosition = new Vector3(x, y, z);
+
+			// Generating the spawn scale
+			{
+				float minScale = 1.4f;
+				float maxScale = 1.5f;
+
+				float scale = GetScalingFactor(Level, minScale, maxScale);
+				scale = (float)GD.RandRange(minScale, scale);
+
+				entity.Scale = new Vector3(scale, scale, scale);
+			}
+
+			return entity;
+		}
+
+		protected virtual void On_Death(EntityBehavior entity)
+		{
+			if (SpawnedEntities.Remove(entity))
+			{
+				EntityDeath.Send(entity);
+			}
 		}
 
 		public virtual void DestroyAllEntities()
@@ -68,42 +150,6 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 			float lerp = Math.Lerp(minScale, maxScale, mix);
 
 			return lerp;
-		}
-
-		public virtual EntityBehavior SpawnEntity()
-		{
-			EntityBehavior entity = EntityToSpawn.Instantiate<EntityBehavior>();
-			SpawnedEntities.Add(entity);
-
-			entity.Entity.Death.AddListener(() => On_Death(entity));
-
-			float x = (float)GD.RandRange(SpawnArea.Position.X, SpawnArea.Position.X + SpawnArea.Size.X);
-			float y = (float)GD.RandRange(SpawnArea.Position.Y, SpawnArea.Position.Y + SpawnArea.Size.Y);
-			float z = (float)GD.RandRange(SpawnArea.Position.Z, SpawnArea.Position.Z + SpawnArea.Size.Z);
-
-			AddChild(entity);
-
-			entity.GlobalPosition = new Vector3(x, y, z);
-
-			{
-				float minScale = 0.3f;
-				float maxScale = 1.8f;
-
-				float scale = GetScalingFactor(Level, minScale, maxScale);
-				scale = (float)GD.RandRange(minScale, scale);
-
-				entity.Scale = new Vector3(scale, scale, scale);
-			}
-
-			return entity;
-		}
-
-		protected virtual void On_Death(EntityBehavior entity)
-		{
-			if (SpawnedEntities.Remove(entity))
-			{
-				EntityDeath.Send(entity);
-			}
 		}
 	}
 }
