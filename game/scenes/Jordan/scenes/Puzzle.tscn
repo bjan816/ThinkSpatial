@@ -346,6 +346,7 @@ theme_override_constants/margin_right = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = -4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -354,6 +355,13 @@ alignment = 1
 
 [node name="Time" type="Label" parent="UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MovementTime" type="Label" parent="UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -374,9 +382,11 @@ theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MovementTime" type="Label" parent="UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Modifier" type="Label" parent="UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="UI"]
 layout_mode = 1

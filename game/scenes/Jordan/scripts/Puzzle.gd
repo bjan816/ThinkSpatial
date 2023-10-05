@@ -118,11 +118,20 @@ func choose_modifier():
 	var modifier = modifiers[randi() % modifiers.size()]
 	print(modifier)
 	
-	if modifier == "none": return
-	elif modifier == "mirror_mod": mirror_mod = true
-	elif modifier == "ghost_mod": ghost_mod = true
-	elif modifier == "memory_mod": memory_mod = true
-	elif modifier == "blur_mod": blur_mod = true
+	if modifier == "none":
+		$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Modifier.text = "NONE"
+	elif modifier == "mirror_mod": 
+		mirror_mod = true
+		$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Modifier.text = "MIRROR"
+	elif modifier == "ghost_mod": 
+		ghost_mod = true
+		$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Modifier.text = "GHOST"
+	elif modifier == "memory_mod": 
+		memory_mod = true
+		$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Modifier.text = "MEMORY"
+	elif modifier == "blur_mod": 
+		blur_mod = true
+		$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Modifier.text = "BLUR"
 	
 func set_screen():
 	
@@ -242,7 +251,7 @@ func set_time_text(time_num):
 	
 func set_movement_time_text(time_num):
 	
-	$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MovementTime.text = " " + str(time_num)
+	$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MovementTime.text = " " + str(time_num)
 
 func _on_puzzle_timer_timeout():
 	
