@@ -17,6 +17,8 @@ var mirror_mod
 var ghost_mod
 var memory_mod
 
+var has_guessed = false
+
 func _ready():
 	
 	await get_tree().create_timer(0.05).timeout
@@ -44,7 +46,9 @@ func _input(event):
 		
 		var player_guess = guess()
 		
-		if player_guess.is_in_group("Targets"):
+		if player_guess.is_in_group("Targets") && has_guessed == false:
+			
+			has_guessed = true
 			
 			if player_guess == target:
 				
@@ -76,6 +80,8 @@ func _input(event):
 				reset_puzzle()
 		
 func reset_puzzle():
+	
+	has_guessed = false
 	
 	var spawned = get_tree().get_nodes_in_group("Spawned")
 	
