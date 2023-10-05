@@ -16,6 +16,7 @@ var movement_time = 15
 var mirror_mod
 var ghost_mod
 var memory_mod
+var blur_mod
 
 var has_guessed = false
 
@@ -113,7 +114,7 @@ func reset_puzzle():
 	
 func choose_modifier():
 	
-	var modifiers = ["none", "mirror_mod", "ghost_mod", "memory_mod"]
+	var modifiers = ["none", "mirror_mod", "ghost_mod", "memory_mod", "blur_mod"]
 	var modifier = modifiers[randi() % modifiers.size()]
 	print(modifier)
 	
@@ -121,6 +122,7 @@ func choose_modifier():
 	elif modifier == "mirror_mod": mirror_mod = true
 	elif modifier == "ghost_mod": ghost_mod = true
 	elif modifier == "memory_mod": memory_mod = true
+	elif modifier == "blur_mod": blur_mod = true
 	
 func set_screen():
 	
@@ -134,11 +136,18 @@ func set_screen():
 
 func set_target():
 	
+	$Cameras/Camera.attributes.dof_blur_far_enabled = false
+	
 	var targets = get_tree().get_nodes_in_group("Targets")
 	target = targets[random.randi_range(0, targets.size()-1)]
 	$Cameras/Camera.global_transform.origin = target.global_transform.origin
 	$Cameras/Camera.look_at(Vector3(0,0,0), Vector3.UP)
 	
+	if blur_mod == true:
+		
+		blur_mod = false
+		$Cameras/Camera.attributes.dof_blur_far_enabled = true
+		
 func set_targets():
 	
 	var targets = get_tree().get_nodes_in_group("Targets")
@@ -168,7 +177,7 @@ func set_light():
 func set_objects():
 	
 	var objects = get_tree().get_nodes_in_group("ToSpawn")
-	var num = random.randi_range(5, 10)
+	var num = random.randi_range(6, 10)
 	
 	for i in range(num):
 		
