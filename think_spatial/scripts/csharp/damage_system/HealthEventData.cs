@@ -1,4 +1,4 @@
-﻿namespace ThinkSpatial.think_spatial.scripts.csharp.damage_system
+namespace ThinkSpatial.think_spatial.scripts.csharp.damage_system
 {
 	public class HealthEventData
 	{
