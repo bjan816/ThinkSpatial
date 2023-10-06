@@ -15,6 +15,12 @@ Add functionality for data to be transferred directly from Godot to the server, 
 
 ### Database Design
 
+#### Database UML (Provisional)
+
+![](./Game%20Database%20Design.jpg)
+
+#### Database Keys & Variables
+
 **Key**: Unique ID given by database.
 **Username**: Optional name for player
 
@@ -37,7 +43,3 @@ Have a table for each game, so four tables and link them through unique ID.
 
 ### Borim's Game
 - score (int)
-
-### Database UML (Provisional)
-
-![](./Game%20Database%20Design.jpg)
