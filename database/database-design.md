@@ -17,7 +17,7 @@ Add functionality for data to be transferred directly from Godot to the server, 
 
 #### Database UML (Provisional)
 
-![](./Game%20Database%20Design.jpg)
+![](./GameDB-UML.jpg)
 
 #### Database Keys & Variables
 
