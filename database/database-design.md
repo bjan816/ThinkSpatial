@@ -22,14 +22,22 @@ Currently I am still designing the database, but this section indicates what is 
 
 ### Database Tables
 
-#### Player
+#### Player Table
 
-**Key**: Unique ID given by database.
-**Username**: Optional name for player.
+- playerID:int (Primary Key)
+    - a random integer assigned by the database.
+    - used for one-to-many relationship with other tables.
+- playerName:str (Optional)
+    - used to link primary key to a particular player.
+    - player gives a string name.
+    - without which, players are annoymous and double ups may occur. 
+    - Optional until future implementation of login service, have no capacity to force and maintain username yet.
 
 Have a table for each game, so four tables and link them through unique ID. All variables that are not used by other tables will be protected and thus not accessible by other classes. There are getter and setter methods, so that the values can be changed appropriately. 
 
 The username will be used to link the key to specific people, as the key is randomly generated, there is no way to be sure who scores what. Implementing a forced username with login credentials is part of the future implementation.
+
+*It may be beneficial to add an interface between Player and Game tables, but this will be explored further before going ahead with it.*
 
 #### Game Section 1 (Developed by Jamie)
 
@@ -45,6 +53,12 @@ Jamie's game has three variables that will need to be stored by the database. Th
 - turn:int
     - the number of turns taken.
     - increases incrementally.
+- date:dttm
+    - database creates this value, based on the entry of the data to the table.
+    - private, cannot be accessed outside of the table.
+    - used to avoid duplicates, and track progress more accurately.
+- playerID:int (Foreign Key)
+    - cannot be changed by the table, used to maintain one-to-many relationship.
 
 The game already has functions to collect the information above, the database just needs to store them. 
 
@@ -63,6 +77,12 @@ Jordan's game has a few more variables that will need to be collected and sotred
 - numLives:int
     - number of lives that are remaining.
     - decrements.
+- date:dttm
+    - database creates this value, based on the entry of the data to the table.
+    - private, cannot be accessed outside of the table.
+    - used to avoid duplicates, and track progress more accurately.
+- playerID:int (Foreign Key)
+    - cannot be changed by the table, used to maintain one-to-many relationship.
 
 Again, Jordan's game has the variables included in the game the database will need to collect and store these variables. 
 
@@ -73,6 +93,12 @@ This game is being co-developed by Kishora and Sun. This game will only have to 
     - the total score from the game..
 - time:dbl
     - the total time taken to solve the game.
+- date:dttm
+    - database creates this value, based on the entry of the data to the table.
+    - private, cannot be accessed outside of the table.
+    - used to avoid duplicates, and track progress more accurately.
+- playerID:int (Foreign Key)
+    - cannot be changed by the table, used to maintain one-to-many relationship.
 
 The database will only need to collect and store the data.
 
@@ -81,5 +107,11 @@ Borim's game will only have one vairable that will need to be collected and sotr
 
 - score:int
     - the total score from solving the game.
+- date:dttm
+    - database creates this value, based on the entry of the data to the table.
+    - private, cannot be accessed outside of the table.
+    - used to avoid duplicates, and track progress more accurately.
+- playerID:int (Foreign Key)
+    - cannot be changed by the table, used to maintain one-to-many relationship.
 
 These will be updated as the games get closer to being finished. We will need to think of further information that can be collected and analysed to give insight into whether people are doing well in one spatial skill and not so in the other.
