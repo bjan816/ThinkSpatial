@@ -3,9 +3,11 @@
 **Key**: Unique ID given by database.
 **Username**: Optional name for player
 
+Have a table for each game, so four tables and link them through unique ID.
+
 ### Jamie's Game:
-- Time (dbl)
-- Score (int)
+- Time (dbl) increment
+- Score (int) 
 - Turn (int)
 
 ### Jordan's Game:
@@ -14,9 +16,10 @@
 - level number (int)
 - number of lives remaining (int)
 
-### Kishora's Game
+### Kishora/Sun's Game
 - score (int)
 - time taken (dbl)
 
-### Sun's Game
+### Borim's Game
+- score (int)
 
