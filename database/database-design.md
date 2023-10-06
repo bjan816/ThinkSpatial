@@ -38,3 +38,6 @@ Have a table for each game, so four tables and link them through unique ID.
 ### Borim's Game
 - score (int)
 
+### Database UML (Provisional)
+
+![](./Game%20Database%20Design.jpg)
