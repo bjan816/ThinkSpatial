@@ -32,10 +32,10 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_422g7")
 
 [node name="Tetris_block_6" parent="." instance=ExtResource("1_ievb1")]
-transform = Transform3D(0.932482, 0.0702413, -0.354322, -0.361218, 0.181328, -0.914681, 0, 0.980911, 0.194457, -9.8563, 12.8323, -19.8957)
+transform = Transform3D(0.977735, -0.0187238, -0.20901, -0.209706, -0.123775, -0.969898, -0.00771041, 0.992134, -0.124946, -9.8563, 12.8323, -19.8957)
 
 [node name="Tetris_block_6_mirror" parent="." instance=ExtResource("2_mqaai")]
-transform = Transform3D(1, 0, 0, 0, 0.0520222, 0.998646, 0, -0.998646, 0.0520222, 7.87994, 11.6656, -20.5126)
+transform = Transform3D(-0.713068, 0.0570665, -0.698769, -0.701065, -0.0487851, 0.711427, 0.00650913, 0.997178, 0.0747944, 9.61733, 13.7765, -19.5048)
 
 [node name="MirrorButton" parent="." instance=ExtResource("3_4rbxp")]
 transform = Transform3D(-0.0134735, 0, 0.999909, 0, 1, 0, -0.999909, 0, -0.0134735, 6.22042, 0.271892, -1.39355)

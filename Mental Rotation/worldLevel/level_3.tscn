@@ -35,7 +35,7 @@ shape = SubResource("ConcavePolygonShape3D_422g7")
 transform = Transform3D(1, 0, 0, 0, 0.0332424, -0.999447, 0, 0.999447, 0.0332424, -8.08765, 14.3255, -13.9186)
 
 [node name="Tetris_block_5_mirror" parent="." instance=ExtResource("2_onpsl")]
-transform = Transform3D(-0.508471, -0.018559, 0.860879, -0.861079, 0.0109592, -0.508352, 0, -0.999768, -0.0215532, 9.96758, 11.2902, -14.2909)
+transform = Transform3D(-0.46297, -0.00576292, -0.886355, -0.88637, 0.000125793, 0.462977, -0.00255662, 0.999984, -0.0051663, 7.58306, 12.6524, -14.2909)
 
 [node name="MirrorButton" parent="." instance=ExtResource("3_ejmm0")]
 transform = Transform3D(-0.0134735, 0, 0.999909, 0, 1, 0, -0.999909, 0, -0.0134735, 6.22042, 0.271892, -1.39355)

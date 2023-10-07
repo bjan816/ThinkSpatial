@@ -86,7 +86,6 @@ spot_angle = 67.36
 spot_angle_attenuation = 0.267943
 
 [node name="Level 1" parent="." instance=ExtResource("2_4tbu2")]
-script = null
 
 [node name="Level 1_2" parent="." instance=ExtResource("6_toybf")]
 visible = false
