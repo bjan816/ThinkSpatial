@@ -1,4 +1,5 @@
 extends Node3D
+class_name Bullet
 
 const SPEED = 40.0
 

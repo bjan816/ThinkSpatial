@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr2uhegrgc701"]
+[gd_scene load_steps=6 format=3 uid="uid://cr2uhegrgc701"]
+
+[ext_resource type="Script" path="res://worldLevel/Script/same_button.gd" id="1_ryr1q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r1sp3"]
 albedo_color = Color(0.870588, 0, 0.027451, 1)
@@ -14,13 +16,14 @@ data = PackedVector3Array(0, 0.25, 0, 0, 0.25, 0, 0, 0.2489, 0.1331, 0, 0.25, 0,
 viewport_path = NodePath("MeshInstance3D/Node3D/SubViewport")
 
 [node name="SameButton" type="Node3D"]
+script = ExtResource("1_ryr1q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.00677181, -0.991975, 0, 0.999977, 0.00671762, 0, 0, 0, 1, 0, 1.13001, 0)
 material_override = SubResource("StandardMaterial3D_r1sp3")
 mesh = SubResource("SphereMesh_eh8ih")
 
-[node name="Same" type="StaticBody3D" parent="MeshInstance3D" groups=["Targets", "target_same"]]
+[node name="Same" type="StaticBody3D" parent="MeshInstance3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Same"]
 shape = SubResource("ConcavePolygonShape3D_bqfcc")
@@ -46,3 +49,5 @@ transform = Transform3D(0.131607, 4.35019e-09, 1.99567, 4.35019e-09, 2, -4.64652
 modulate = Color(0.592157, 0.164706, 0.0431373, 1)
 billboard = 2
 texture = SubResource("ViewportTexture_dry4b")
+
+[connection signal="child_entered_tree" from="MeshInstance3D/Same/CollisionShape3D" to="." method="_on_collision_shape_3d_child_entered_tree"]

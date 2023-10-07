@@ -20,7 +20,7 @@ transform = Transform3D(0.00677181, -0.991975, 0, 0.999977, 0.00671762, 0, 0, 0,
 material_override = SubResource("StandardMaterial3D_6i21v")
 mesh = SubResource("SphereMesh_eh8ih")
 
-[node name="Mirror" type="StaticBody3D" parent="MeshInstance3D" groups=["Targets", "target_mirror"]]
+[node name="Mirror" type="StaticBody3D" parent="MeshInstance3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Mirror"]
 shape = SubResource("ConcavePolygonShape3D_p7hyu")
