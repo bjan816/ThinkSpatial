@@ -20,9 +20,9 @@ transform = Transform3D(0.00677181, -0.991975, 0, 0.999977, 0.00671762, 0, 0, 0,
 material_override = SubResource("StandardMaterial3D_r1sp3")
 mesh = SubResource("SphereMesh_eh8ih")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="Same" type="StaticBody3D" parent="MeshInstance3D" groups=["Targets", "target_same"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Same"]
 shape = SubResource("ConcavePolygonShape3D_bqfcc")
 
 [node name="Node3D" type="Node3D" parent="MeshInstance3D"]
