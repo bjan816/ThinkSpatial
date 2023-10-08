@@ -108,7 +108,6 @@ visible = false
 visible = false
 
 [node name="Platform" type="Node3D" parent="."]
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platform"]
 mesh = SubResource("PlaneMesh_053jn")
