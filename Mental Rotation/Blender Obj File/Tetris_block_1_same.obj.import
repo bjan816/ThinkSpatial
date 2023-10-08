@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b126xkct2r6a"
+path="res://.godot/imported/Tetris_block_1_same.obj-db85cbe33b2db1cf44146a8aa88e8266.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Tetris_block_1_same.obj-db85cbe33b2db1cf44146a8aa88e8266.mesh"]
+
+source_file="res://Blender Obj File/Tetris_block_1_same.obj"
+dest_files=["res://.godot/imported/Tetris_block_1_same.obj-db85cbe33b2db1cf44146a8aa88e8266.mesh", "res://.godot/imported/Tetris_block_1_same.obj-db85cbe33b2db1cf44146a8aa88e8266.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

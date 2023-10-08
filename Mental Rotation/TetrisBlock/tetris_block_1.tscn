@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://vf5wgphdhvdx"]
 
-[ext_resource type="ArrayMesh" uid="uid://ct1wuj346r7d" path="res://Blender Tetris/Blender Obj File/Tetris_block_1.obj" id="1_vywln"]
+[ext_resource type="ArrayMesh" uid="uid://ct1wuj346r7d" path="res://Blender Obj File/Tetris_block_1.obj" id="1_vywln"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhahv"]
 albedo_color = Color(0.207843, 0, 0.301961, 1)

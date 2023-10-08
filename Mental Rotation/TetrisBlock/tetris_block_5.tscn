@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dw730tcpxxrmh"]
 
-[ext_resource type="ArrayMesh" uid="uid://01je76bkluqo" path="res://Blender Tetris/Blender Obj File/Tetris_block_5.obj" id="1_62enm"]
+[ext_resource type="ArrayMesh" uid="uid://01je76bkluqo" path="res://Blender Obj File/Tetris_block_5.obj" id="1_62enm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_weu6l"]
 resource_name = "Material"
