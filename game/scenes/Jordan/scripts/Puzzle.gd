@@ -105,11 +105,8 @@ func reset_puzzle():
 	set_movement_time_text(movement_time)
 	
 	$Player.transform.origin = Vector3(0, 1, -16)
-	$Player/Neck.rotation = Vector3(0, 0, 0)
-	$Player/Neck/Camera3D.rotation = Vector3(0,0,0)
-	
-	$Player.SPEED = 5.0
-	
+	$Player.rotation_degrees = Vector3.ZERO
+	$Player.SPEED = 6.25
 	$PuzzleTimer.start()
 	
 func choose_modifier():
