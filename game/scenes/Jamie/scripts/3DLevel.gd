@@ -70,6 +70,8 @@ var playerFinalDistance = 0.0
 var currentPos = 0.0
 var distanceMoved = 0.0
 
+var switch = false
+
 func _process(delta):
 	#Calculates player's movement
 	currentPos = player.global_transform.origin
@@ -96,7 +98,8 @@ func _process(delta):
 		_on_level_completed()
 
 #Runs normal level when normal button has pressed
-func _on_normal_pressed():
+
+func _on_play_pressed():
 	difficulty = 1
 	self.add_child(normal_level)
 	diff.hide()
@@ -105,26 +108,21 @@ func _on_normal_pressed():
 	reset_pos(current_lev)
 	map_visible(current_lev)
 	playerStartPosition = player.global_transform.origin
-	timer.show()
-	scoreboard.show()
-
-#Runs hard level when hard button has pressed
-func _on_hard_pressed():
-	difficulty = 2
-	self.add_child(hard_level)
-	diff.hide()
-	playerFinalDistance = 0.0
-	playerTotalDistance = 0.0
-	reset_pos(current_lev)
-	map_visible(current_lev)
-	playerStartPosition = player.global_transform.origin
+	timer.time = 0.0
+	play_time = 0.0
 	timer.show()
 	scoreboard.show()
 
 #When the level completed
 func _on_level_completed():
 	get_tree().paused = true
-	if current_lev == 3:
+	if current_lev == 3 and difficulty == 1:
+		difficulty = 2
+		current_lev = 1
+		normal_level.queue_free()
+		self.add_child(hard_level)
+		switch = true
+	if current_lev == 3 and difficulty == 2:
 		final_menu.hide_next_button()
 	final_menu.level_score = scoreboard.score
 	playerFinalDistance += playerTotalDistance
@@ -145,7 +143,10 @@ func _on_final_menu_retried():
 
 #When the player presses 'Next' button
 func _on_final_menu_next():
-	current_lev += 1
+	if !switch:
+		current_lev += 1
+	if switch == true:
+		switch = false
 	reload()
 	reset_pos(current_lev)
 	get_tree().paused = false
