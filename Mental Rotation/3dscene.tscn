@@ -85,23 +85,6 @@ spot_attenuation = 0.138696
 spot_angle = 67.36
 spot_angle_attenuation = 0.267943
 
-[node name="Level 1" parent="." instance=ExtResource("2_4tbu2")]
-
-[node name="Level 1_2" parent="." instance=ExtResource("6_toybf")]
-visible = false
-
-[node name="Level 2" parent="." instance=ExtResource("3_0j473")]
-visible = false
-
-[node name="Level 2_2" parent="." instance=ExtResource("8_510bl")]
-visible = false
-
-[node name="Level 3" parent="." instance=ExtResource("4_u6epi")]
-visible = false
-
-[node name="Level 3_2" parent="." instance=ExtResource("10_mkil4")]
-visible = false
-
 [node name="MainMenu" parent="." instance=ExtResource("2_0so7u")]
 
 [node name="EndMenu" parent="." instance=ExtResource("3_jppel")]
@@ -118,3 +101,20 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platform/MeshInstance3D/StaticBody3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_b01uu")
+
+[node name="Level 1" parent="." instance=ExtResource("2_4tbu2")]
+
+[node name="Level 1_2" parent="." instance=ExtResource("6_toybf")]
+visible = false
+
+[node name="Level 2" parent="." instance=ExtResource("3_0j473")]
+visible = false
+
+[node name="Level 2_2" parent="." instance=ExtResource("8_510bl")]
+visible = false
+
+[node name="Level 3" parent="." instance=ExtResource("4_u6epi")]
+visible = false
+
+[node name="Level 3_2" parent="." instance=ExtResource("10_mkil4")]
+visible = false
