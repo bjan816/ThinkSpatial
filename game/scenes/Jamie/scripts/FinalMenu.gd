@@ -23,9 +23,9 @@ func initialize(total_play_time : float) -> void:
 	
 	var time_text = "Total time: %s m %s s" % [minutes, seconds]
 	var level_score_text = "Level Score: %s" % [level_score]
-	var distance_score_text = "   - Distance Score: %s" % [distance_score]
+	var distance_score_text = "Distance Score: %s" % [distance_score]
 	total_score = level_score + distance_score + time_score
-	var time_score_text = "   - Time Score: %s" % [time_score] 
+	var time_score_text = "Time Score: %s" % [time_score] 
 	var total_score_text = "Total Score: %s" % [total_score]
 	
 	time.text = time_text

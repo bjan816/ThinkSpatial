@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://b74wj7a61oel6" path="res://scenes/Jamie/interface/fonts/Montserrat-ExtraBold.ttf" id="1_iqqih"]
 [ext_resource type="Script" path="res://scenes/Jamie/scripts/FinalMenu.gd" id="1_k5mra"]
-[ext_resource type="Texture2D" uid="uid://baojvvyqqxcya" path="res://scenes/Jamie/interface/wall/cube_texture_2.png" id="2_bm6ti"]
+[ext_resource type="Texture2D" uid="uid://bkbp0q2p3t186" path="res://scenes/Jamie/icon/background.png" id="2_l0l04"]
 
 [node name="FullMenu" type="Control"]
 process_mode = 3
@@ -14,10 +14,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_k5mra")
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(960, 541)
-scale = Vector2(30.125, 17)
-texture = ExtResource("2_bm6ti")
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_l0l04")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -29,9 +33,11 @@ grow_vertical = 2
 
 [node name="Column" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="Title" type="Label" parent="CenterContainer/Column"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_iqqih")
 theme_override_font_sizes/font_size = 48
 text = "Success!
@@ -40,6 +46,7 @@ horizontal_alignment = 1
 
 [node name="Time" type="Label" parent="CenterContainer/Column"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_iqqih")
 theme_override_font_sizes/font_size = 32
 text = "Your time was: 1m 1s"
@@ -47,30 +54,28 @@ horizontal_alignment = 1
 
 [node name="LevelScore" type="Label" parent="CenterContainer/Column"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_iqqih")
 theme_override_font_sizes/font_size = 32
 text = "Level Score:"
 
-[node name="BonusScore" type="Label" parent="CenterContainer/Column"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_iqqih")
-theme_override_font_sizes/font_size = 32
-text = "+ Bonus Score:"
-
 [node name="DistanceScore" type="Label" parent="CenterContainer/Column"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_iqqih")
 theme_override_font_sizes/font_size = 32
-text = "   - Distance Score:"
+text = "Distance Score:"
 
 [node name="TimeScore" type="Label" parent="CenterContainer/Column"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_iqqih")
 theme_override_font_sizes/font_size = 32
-text = "   - Time Score:"
+text = "Time Score:"
 
 [node name="TotalScore" type="Label" parent="CenterContainer/Column"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_iqqih")
 theme_override_font_sizes/font_size = 32
 text = "Total Score: "
