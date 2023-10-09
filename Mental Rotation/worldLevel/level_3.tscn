@@ -120,6 +120,7 @@ mesh = SubResource("BoxMesh_upxsk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MiddlePole/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_7qg10")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("5_43ekh")]
+[node name="CharacterBody3D" parent="." groups=["player"] instance=ExtResource("5_43ekh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.237842, 3.11779)
 
 [connection signal="area_entered" from="MirrorButton" to="." method="_on_mirror_button_area_entered"]

@@ -121,7 +121,7 @@ mesh = SubResource("BoxMesh_w3k5d")
 shape = SubResource("ConcavePolygonShape3D_38nrq")
 
 [node name="CharacterBody3D" parent="." groups=["player"] instance=ExtResource("6_ki5g0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.151229, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.151229, 3.11779)
 
+[connection signal="area_entered" from="MirrorButton" to="." method="_on_mirror_button_area_entered"]
 [connection signal="area_entered" from="SameButton" to="." method="_on_same_button_area_entered"]
-[connection signal="body_entered" from="SameButton" to="." method="_on_same_button_body_entered"]

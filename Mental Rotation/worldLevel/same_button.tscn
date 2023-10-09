@@ -1,14 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr2uhegrgc701"]
+[gd_scene load_steps=6 format=3 uid="uid://cr2uhegrgc701"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1ndrp"]
 radius = 1.08268
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_or1au"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_rqg1a"]
 viewport_path = NodePath("Node3D/SubViewport")
 
 [sub_resource type="SphereMesh" id="SphereMesh_8kel6"]
 radius = 1.0
 height = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1wo2g"]
+albedo_color = Color(0.560784, 0.00392157, 0.00392157, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0e6g0"]
 radius = 1.0
@@ -41,12 +44,13 @@ vertical_alignment = 1
 transform = Transform3D(0.131607, 4.35019e-09, 1.99567, 4.35019e-09, 2, -4.64652e-09, -1.99567, 4.64652e-09, 0.131607, 0, 0, 0)
 modulate = Color(0.592157, 0.164706, 0.0431373, 1)
 billboard = 2
-texture = SubResource("ViewportTexture_or1au")
+texture = SubResource("ViewportTexture_rqg1a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13, 0)
 mesh = SubResource("SphereMesh_8kel6")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_1wo2g")
 
 [node name="Same" type="StaticBody3D" parent="MeshInstance3D"]
 
