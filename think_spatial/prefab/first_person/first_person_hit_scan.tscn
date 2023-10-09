@@ -78,10 +78,6 @@ surface_material_override/2 = SubResource("StandardMaterial3D_buin5")
 surface_material_override/3 = SubResource("StandardMaterial3D_ornid")
 surface_material_override/8 = SubResource("StandardMaterial3D_jid8r")
 
-[node name="RayCast3D" type="RayCast3D" parent="Offset/MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
-target_position = Vector3(0, 0, -1)
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_8uuii")
