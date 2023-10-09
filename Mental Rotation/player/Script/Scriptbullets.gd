@@ -7,6 +7,7 @@ const SPEED = 40.0
 @onready var raycast = $RayCast3D
 @onready var particles = $GPUParticles3D
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -25,3 +26,10 @@ func _process(delta):
 
 func _on_timer_timeout():
 	queue_free()
+
+
+func _on_area_3d_body_entered(body):
+	if body.name == "Mirror":
+		print("Mirror chose")
+	elif body.name == "Same":
+		print("Same chose")

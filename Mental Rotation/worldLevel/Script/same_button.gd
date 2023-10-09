@@ -1,4 +1,5 @@
 extends Node3D
+class_name Same
 
 var bullet = preload("res://player/Scenes/bullets.tscn")
 
