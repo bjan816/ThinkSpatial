@@ -253,7 +253,7 @@ shape = SubResource("BoxShape3D_a3h8b")
 mesh = SubResource("BoxMesh_66o5t")
 
 [node name="Jordan" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.173716, -1.06992, -3.80883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.173716, -1.06992, -3.47733)
 script = ExtResource("3_7fxw7")
 path = ExtResource("7_ch370")
 
@@ -262,7 +262,7 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.395913, 0)
 shape = SubResource("SphereShape3D_1ux77")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Jordan"]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0.408826, 0.573031)
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0.408826, -0.036618)
 material_override = ExtResource("8_or0pi")
 mesh = ExtResource("9_64lqo")
 

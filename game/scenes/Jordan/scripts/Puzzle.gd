@@ -76,7 +76,7 @@ func _input(event):
 				
 				if lives == 0:
 					
-					get_tree().quit()
+					get_tree().change_scene_to_file("res://scenes/Home.tscn")
 					
 				reset_puzzle()
 		
@@ -270,7 +270,7 @@ func _on_puzzle_timer_timeout():
 		
 		if lives == 0:
 			
-			get_tree().quit()
+			get_tree().change_scene_to_file("res://scenes/Home.tscn")
 			
 		reset_puzzle()
 		
