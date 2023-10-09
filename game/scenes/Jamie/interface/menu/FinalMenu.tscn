@@ -97,7 +97,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_iqqih")
 theme_override_font_sizes/font_size = 32
-text = "Exit
+text = "Back to Menu
 "
 
 [node name="NextLevel" type="Button" parent="CenterContainer/Column/Row"]
