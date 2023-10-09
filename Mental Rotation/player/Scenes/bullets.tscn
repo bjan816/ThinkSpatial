@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://b54x8dkfhyl1c"]
+[gd_scene load_steps=7 format=3 uid="uid://b54x8dkfhyl1c"]
 
 [ext_resource type="Script" path="res://player/Script/Scriptbullets.gd" id="1_sbbkw"]
 [ext_resource type="Material" uid="uid://d3snxogxov3sb" path="res://player/bulletsRayCast.tres" id="2_qxwd1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ywfme"]
 size = Vector3(0.05, 0.05, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sjjes"]
+data = PackedVector3Array(-0.025, 0.025, 0.5, 0.025, 0.025, 0.5, -0.025, -0.025, 0.5, 0.025, 0.025, 0.5, 0.025, -0.025, 0.5, -0.025, -0.025, 0.5, 0.025, 0.025, -0.5, -0.025, 0.025, -0.5, 0.025, -0.025, -0.5, -0.025, 0.025, -0.5, -0.025, -0.025, -0.5, 0.025, -0.025, -0.5, 0.025, 0.025, 0.5, 0.025, 0.025, -0.5, 0.025, -0.025, 0.5, 0.025, 0.025, -0.5, 0.025, -0.025, -0.5, 0.025, -0.025, 0.5, -0.025, 0.025, -0.5, -0.025, 0.025, 0.5, -0.025, -0.025, -0.5, -0.025, 0.025, 0.5, -0.025, -0.025, 0.5, -0.025, -0.025, -0.5, 0.025, 0.025, 0.5, -0.025, 0.025, 0.5, 0.025, 0.025, -0.5, -0.025, 0.025, 0.5, -0.025, 0.025, -0.5, 0.025, 0.025, -0.5, -0.025, -0.025, 0.5, 0.025, -0.025, 0.5, -0.025, -0.025, -0.5, 0.025, -0.025, 0.5, 0.025, -0.025, -0.5, -0.025, -0.025, -0.5)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8nkiq"]
 direction = Vector3(0, 0, 1)
@@ -21,6 +24,11 @@ script = ExtResource("1_sbbkw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.540909)
 mesh = SubResource("BoxMesh_ywfme")
 surface_material_override/0 = ExtResource("2_qxwd1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_sjjes")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
