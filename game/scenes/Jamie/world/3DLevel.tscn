@@ -509,5 +509,6 @@ texture = ExtResource("14_1ed3j")
 [connection signal="gui_input" from="DifficultyMenu/InstructionPage1" to="DifficultyMenu" method="_on_instruction_page_1_gui_input"]
 [connection signal="gui_input" from="DifficultyMenu/InstructionPage2" to="DifficultyMenu" method="_on_instruction_page_2_gui_input"]
 [connection signal="gui_input" from="DifficultyMenu/InstructionPage3" to="DifficultyMenu" method="_on_instruction_page_3_gui_input"]
+[connection signal="exit" from="FinalMenu" to="." method="_on_final_menu_exit"]
 [connection signal="next" from="FinalMenu" to="." method="_on_final_menu_next"]
 [connection signal="retried" from="FinalMenu" to="." method="_on_final_menu_retried"]

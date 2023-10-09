@@ -3,6 +3,7 @@ class_name FinalMenu
 
 signal retried()
 signal next()
+signal exit()
 
 @onready var time : = $CenterContainer/Column/Time
 @onready var levelScore : = $CenterContainer/Column/LevelScore
@@ -47,6 +48,7 @@ func _on_try_again_pressed():
 	emit_signal("retried")
 
 func _on_exit_pressed():
+	emit_signal("exit")
 	get_tree().quit()
 
 
