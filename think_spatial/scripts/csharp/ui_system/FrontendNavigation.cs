@@ -7,7 +7,7 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.ui_system
 	{
 		public override void _Ready()
 		{
-			GetNode<Button>("Button_Play").GrabFocus();
+			GetNode<Button>("Button_PlaySpatialPrecision").GrabFocus();
 		}
 
 		private void _on_button_play_spatial_precision_pressed()
