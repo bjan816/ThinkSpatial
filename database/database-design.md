@@ -18,7 +18,7 @@ Currently I am still designing the database, but this section indicates what is 
 
 ### Database UML (Provisional)
 
-![](./gameDB-UML.jpg)
+![](./GameDB-UML.jpg)
 
 ### Database Tables
 
