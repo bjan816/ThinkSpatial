@@ -128,6 +128,3 @@ visible = false
 [node name="Grass" type="MeshInstance3D" parent="Node3D/grass"]
 mesh = SubResource("ArrayMesh_b00ug")
 skeleton = NodePath("")
-
-[node name="Tree1" type="MeshInstance3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -19.6811, 4.72536, -19.3955)
