@@ -97,8 +97,7 @@ func _process(delta):
 	if check_goal_lev(current_lev):
 		_on_level_completed()
 
-#Runs normal level when normal button has pressed
-
+#Runs game when play button pressed
 func _on_play_pressed():
 	difficulty = 1
 	self.add_child(normal_level)
@@ -106,22 +105,14 @@ func _on_play_pressed():
 	playerFinalDistance = 0.0
 	playerTotalDistance = 0.0
 	reset_pos(current_lev)
-	map_visible(current_lev)
 	playerStartPosition = player.global_transform.origin
-	timer.time = 0.0
-	play_time = 0.0
 	timer.show()
 	scoreboard.show()
+	reload()
 
 #When the level completed
 func _on_level_completed():
 	get_tree().paused = true
-	if current_lev == 3 and difficulty == 1:
-		difficulty = 2
-		current_lev = 1
-		normal_level.queue_free()
-		self.add_child(hard_level)
-		switch = true
 	if current_lev == 3 and difficulty == 2:
 		final_menu.hide_next_button()
 	final_menu.level_score = scoreboard.score
@@ -143,6 +134,12 @@ func _on_final_menu_retried():
 
 #When the player presses 'Next' button
 func _on_final_menu_next():
+	if current_lev == 3 and difficulty == 1:
+		difficulty = 2
+		current_lev = 1
+		normal_level.queue_free()
+		self.add_child(hard_level)
+		switch = true
 	if !switch:
 		current_lev += 1
 	if switch == true:
@@ -269,7 +266,7 @@ func distanceScore(lev):
 	var distances = [0, 0, 0]
 	
 	if difficulty == 1:
-		distances = [54, 33, 49]
+		distances = [39, 56, 48]
 	else:
 		distances = [54, 33, 49]
 		
@@ -291,7 +288,12 @@ func distanceScore(lev):
 
 #Calculating score based on time
 func timeScore(lev):
-	var s = round(1000 * (180 / play_time))
+	var t = 0
+	if difficulty == 1:
+		t = 45
+	else:
+		t = 90
+	var s = round(1000 * (t / play_time))
 	if s > 1000:
 		s = 1000
 	if lev == 1:

@@ -470,37 +470,37 @@ offset_bottom = 290.0
 
 [node name="Hard1" type="Sprite2D" parent="Maps"]
 visible = false
-position = Vector2(152.05, 145.226)
+position = Vector2(151.05, 144.226)
 scale = Vector2(0.39882, 0.376524)
 texture = ExtResource("9_0nipa")
 
 [node name="Hard2" type="Sprite2D" parent="Maps"]
 visible = false
-position = Vector2(151.917, 145.305)
+position = Vector2(150.917, 144.305)
 scale = Vector2(0.399169, 0.376319)
 texture = ExtResource("10_pwtep")
 
 [node name="Hard3" type="Sprite2D" parent="Maps"]
 visible = false
-position = Vector2(152.214, 145.109)
+position = Vector2(151.214, 145.109)
 scale = Vector2(0.398388, 0.37683)
 texture = ExtResource("11_j2i2d")
 
 [node name="Normal1" type="Sprite2D" parent="Maps"]
 visible = false
-position = Vector2(152.364, 144.997)
+position = Vector2(151.364, 143.997)
 scale = Vector2(0.437622, 0.417274)
 texture = ExtResource("12_0tk4q")
 
 [node name="Normal2" type="Sprite2D" parent="Maps"]
 visible = false
-position = Vector2(152.124, 144.479)
+position = Vector2(151.124, 143.479)
 scale = Vector2(0.438315, 0.415888)
 texture = ExtResource("13_o44vg")
 
 [node name="Normal3" type="Sprite2D" parent="Maps"]
 visible = false
-position = Vector2(152.261, 145.298)
+position = Vector2(151.261, 144.298)
 scale = Vector2(0.43792, 0.416407)
 texture = ExtResource("14_1ed3j")
 
