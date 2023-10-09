@@ -2,12 +2,18 @@
 
 ## Database Overview:
 
-**MVP**:
-The database will have one table per game, with one extra table for the player. The idea with this approach is so that one player can play different sections of the main game, with data collected and stored seperately, so that we can evaluate the progress made across each section. Then, this could be used to compare the averages across all players per section, as each section is focussed on particular spatial awareness skills. 
+### MVP
 
-The database will be using a one-to-many relationship built on MySQL (RDMS). This will be implemented on the AWS server that we have been setup with.
+The database will have six tables in total. There will be one for the player, this will consist of all the players that have either signued up or played the game. 
 
-**Future Implementation**: There could be an opportunity to include a teacher/admin class, allowing the teacher to access all data from the players in a simplified format - only seeing overviews.
+Then there will be another table for each games that a particular player will play. For instance, if the player attempts six games, even if they have not completeed the whole game - the entry will be in the database. These entries will provide an overview of the attempt of the game.
+
+The last four tables will be used for each section of the game. So there are four sections of the game with each section collecting its own set of data, thus each section must be stored seperately. These sections are targeting different spatial skills, and thus combining into one overall attempt would not be beneficial. These sections will have detailed information about level that the user completes. Although, not all of the sections have levels.
+
+The player can play many games, but a game cannot exist without the player. There is one game for all the four sections, and the sections comprise a part of the overall game. These four sections do not know about each other, there is no need to transfer any data across sections, rather just store the information in the section table with reference to the gameID.
+
+### Future Implementation
+There could be an opportunity to include a teacher/admin class, allowing the teacher to access all data from the players in a simplified format - only seeing overviews.
 
 Another implementation is to include a login service, so that we can be sure that a player is who they say they are, this can be used in schools and universities - using third party authentication like University of Auckland SSO.
 
