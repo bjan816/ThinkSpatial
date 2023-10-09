@@ -23,10 +23,10 @@ func initialize(total_play_time : float) -> void:
 	var seconds : String = str(int(fmod(total_play_time, 60.0)))
 	
 	var time_text = "Total time: %s m %s s" % [minutes, seconds]
-	var level_score_text = "Level Score: %s" % [level_score]
-	var distance_score_text = "Distance Score: %s" % [distance_score]
+	var level_score_text = "- Level Score: %s" % [level_score]
+	var distance_score_text = "- Distance Score: %s" % [distance_score]
 	total_score = level_score + distance_score + time_score
-	var time_score_text = "Time Score: %s" % [time_score] 
+	var time_score_text = "- Time Score: %s" % [time_score] 
 	var total_score_text = "Total Score: %s" % [total_score]
 	
 	time.text = time_text
@@ -49,7 +49,8 @@ func _on_try_again_pressed():
 
 func _on_exit_pressed():
 	emit_signal("exit")
-	get_tree().quit()
+	get_tree().paused = false
+	get_tree().change_scene_to_packed(load("res://scenes/Home.tscn"))
 
 
 func _on_next_level_pressed():

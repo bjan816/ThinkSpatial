@@ -27,3 +27,7 @@ func _on_instruction_page_3_gui_input(event):
 	if event is InputEventMouseButton:
 		page3.hide()
 		menu.show()
+
+
+func _on_menu_pressed():
+	get_tree().change_scene_to_packed(load("res://scenes/Home.tscn"))

@@ -53,26 +53,35 @@ var difficulty = 1
 #Current level
 var current_lev = 1
 
-var count = 1
+var playCount = 1
 
 #Player's stage score per level
-var lev1StageScore = 0
-var lev2StageScore = 0
-var lev3StageScore = 0
+var nLev1StageScore = 0
+var nLev2StageScore = 0
+var nLev3StageScore = 0
+var hLev1StageScore = 0
+var hLev2StageScore = 0
+var hLev3StageScore = 0
 var levStageTotalScore = 0
 var levStageScore = 0
 
 #Player's distance score per level
-var lev1DistanceScore = 0
-var lev2DistanceScore = 0
-var lev3DistanceScore = 0
+var nLev1DistanceScore = 0
+var nLev2DistanceScore = 0
+var nLev3DistanceScore = 0
+var hLev1DistanceScore = 0
+var hLev2DistanceScore = 0
+var hLev3DistanceScore = 0
 var levDistanceTotalScore = 0
 var levDistanceScore = 0
 
 #Player's time score per level
-var lev1TimeScore = 0
-var lev2TimeScore = 0
-var lev3TimeScore = 0
+var nLev1TimeScore = 0
+var nLev2TimeScore = 0
+var nLev3TimeScore = 0
+var hLev1TimeScore = 0
+var hLev2TimeScore = 0
+var hLev3TimeScore = 0
 var levTimeTotalScore = 0
 var levTimeScore = 0
 
@@ -163,15 +172,19 @@ func _on_final_menu_next():
 	playerStartPosition = player.global_transform.origin
 	playerFinalDistance = 0.0
 	playerTotalDistance = 0.0
-	count += 1
+	playCount += 1
 
 func _on_final_menu_exit():
-	levStageScore = levStageTotalScore/count
-	levDistanceScore = levDistanceTotalScore/count
-	levTimeScore = levTimeTotalScore/count
+	levStageScore = (nLev1StageScore+nLev2StageScore+nLev3StageScore+
+					hLev1StageScore+hLev2StageScore+hLev3StageScore)/playCount
+	levDistanceScore = (nLev1DistanceScore+nLev2DistanceScore+nLev3DistanceScore+
+						hLev1DistanceScore+hLev2DistanceScore+hLev3DistanceScore)/playCount
+	levTimeScore = (nLev1TimeScore+nLev2TimeScore+nLev3TimeScore+
+					hLev1TimeScore+hLev2TimeScore+hLev3TimeScore)/playCount
 	print("Average Score Score: ", levStageScore)
 	print("Average Distance Score: ", levDistanceScore)
 	print("Average Time Score: ", levTimeScore)
+	print("Played: ", playCount)
 	
 #Check the goal location by checking current_lev
 func check_goal_lev(lev):
@@ -285,52 +298,92 @@ func map_visible(lev):
 
 func stageScore(lev):
 	var s = scoreboard.score
-	levStageScore = s
-	levStageTotalScore += levStageScore
-	return levStageScore
+	if difficulty == 1:
+		if lev == 1:
+			nLev1StageScore = s
+			return nLev1StageScore
+		elif lev == 2:
+			nLev2StageScore = s
+			return nLev2StageScore
+		elif lev == 3:
+			nLev3StageScore = s
+			return nLev3StageScore
+	else:
+		if lev == 1:
+			hLev1StageScore = s
+			return hLev1StageScore
+		elif lev == 2:
+			hLev2StageScore = s
+			return hLev2StageScore
+		elif lev == 3:
+			hLev3StageScore = s
+			return hLev3StageScore
 
 #Calculating score based on distance
 func distanceScore(lev):
 	var distances = [0, 0, 0]
-	
 	if difficulty == 1:
 		distances = [39, 56, 48]
+		if lev == 1:
+			nLev1DistanceScore = round(1000 * (distances[0] / (playerFinalDistance / 4)))
+			if nLev1DistanceScore > 1000:
+				nLev1DistanceScore = 1000
+			return nLev1DistanceScore
+		elif lev == 2:
+			nLev2DistanceScore = round(1000 * (distances[1] / (playerFinalDistance / 4)))
+			if nLev2DistanceScore > 1000:
+				nLev2DistanceScore = 1000
+			return nLev2DistanceScore
+		elif lev == 3:
+			nLev3DistanceScore = round(1000 * (distances[2] / (playerFinalDistance / 4)))
+			if nLev3DistanceScore > 1000:
+				nLev3DistanceScore = 1000
+			return nLev3DistanceScore
 	else:
 		distances = [54, 33, 49]
-		
-	if lev == 1:
-		lev1DistanceScore = round(1000 * (distances[0] / (playerFinalDistance / 4)))
-		if lev1DistanceScore > 1000:
-			lev1DistanceScore = 1000
-		levDistanceTotalScore += lev1DistanceScore
-		return lev1DistanceScore
-	elif lev == 2:
-		lev2DistanceScore = round(1000 * (distances[1] / (playerFinalDistance / 4)))
-		if lev2DistanceScore > 1000:
-			lev2DistanceScore = 1000
-		levDistanceTotalScore += lev2DistanceScore
-		return lev2DistanceScore
-	elif lev == 3:
-		lev3DistanceScore = round(1000 * (distances[2] / (playerFinalDistance / 4)))
-		if lev3DistanceScore > 1000:
-			lev3DistanceScore = 1000
-		levDistanceTotalScore += lev3DistanceScore
-		return lev3DistanceScore
+		if lev == 1:
+			hLev1DistanceScore = round(1000 * (distances[0] / (playerFinalDistance / 4)))
+			if hLev1DistanceScore > 1000:
+				hLev1DistanceScore = 1000
+			return hLev1DistanceScore
+		elif lev == 2:
+			hLev2DistanceScore = round(1000 * (distances[1] / (playerFinalDistance / 4)))
+			if hLev2DistanceScore > 1000:
+				hLev2DistanceScore = 1000
+			return hLev2DistanceScore
+		elif lev == 3:
+			hLev3DistanceScore = round(1000 * (distances[2] / (playerFinalDistance / 4)))
+			if hLev3DistanceScore > 1000:
+				hLev3DistanceScore = 1000
+			return hLev3DistanceScore
 
 #Calculating score based on time
 func timeScore(lev):
-	var t = 0
-	
 	if difficulty == 1:
-		t = 45
+		var t = 45
+		var s = round(1000 * (t / play_time))
+		if s > 1000:
+			s = 1000
+		if lev == 1:
+			nLev1TimeScore = s
+			return nLev1TimeScore
+		elif lev == 2:
+			nLev2TimeScore = s
+			return nLev2TimeScore
+		elif lev == 3:
+			nLev3TimeScore = s
+			return nLev3TimeScore
 	else:
-		t = 90
-		
-	var s = round(1000 * (t / play_time))
-	
-	if s > 1000:
-		s = 1000
-		
-	levTimeScore = s
-	levTimeTotalScore += levTimeScore
-	return levTimeScore
+		var t = 90
+		var s = round(1000 * (t / play_time))
+		if s > 1000:
+			s = 1000
+		if lev == 1:
+			hLev1TimeScore = s
+			return hLev1TimeScore
+		elif lev == 2:
+			hLev2TimeScore = s
+			return hLev2TimeScore
+		elif lev == 3:
+			hLev3TimeScore = s
+			return hLev3TimeScore

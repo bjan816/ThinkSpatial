@@ -99,7 +99,7 @@ theme_override_font_sizes/font_size = 50
 text = "About
 "
 
-[node name="Button" type="Button" parent="DifficultyMenu/MiroMenu/Column"]
+[node name="Menu" type="Button" parent="DifficultyMenu/MiroMenu/Column"]
 modulate = Color(0.882353, 1, 1, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_jyl02")
@@ -439,9 +439,9 @@ horizontal_alignment = 1
 
 [node name="Msecs" type="Label" parent="Timer"]
 layout_mode = 0
-offset_left = 151.0
+offset_left = 148.0
 offset_top = 5.0
-offset_right = 191.0
+offset_right = 188.0
 offset_bottom = 31.0
 text = "00:"
 horizontal_alignment = 1
@@ -506,6 +506,7 @@ texture = ExtResource("14_1ed3j")
 
 [connection signal="pressed" from="DifficultyMenu/MiroMenu/Column/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="DifficultyMenu/MiroMenu/Column/About" to="DifficultyMenu" method="_on_about_pressed"]
+[connection signal="pressed" from="DifficultyMenu/MiroMenu/Column/Menu" to="DifficultyMenu" method="_on_menu_pressed"]
 [connection signal="gui_input" from="DifficultyMenu/InstructionPage1" to="DifficultyMenu" method="_on_instruction_page_1_gui_input"]
 [connection signal="gui_input" from="DifficultyMenu/InstructionPage2" to="DifficultyMenu" method="_on_instruction_page_2_gui_input"]
 [connection signal="gui_input" from="DifficultyMenu/InstructionPage3" to="DifficultyMenu" method="_on_instruction_page_3_gui_input"]
