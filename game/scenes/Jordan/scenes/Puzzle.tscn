@@ -8,12 +8,12 @@
 sun_angle_max = 360.0
 sun_curve = 2.08932
 
-[sub_resource type="Sky" id="Sky_8kn7g"]
+[sub_resource type="Sky" id="Sky_m7ax0"]
 sky_material = SubResource("ProceduralSkyMaterial_w5bh7")
 
 [sub_resource type="Environment" id="Environment_npkoq"]
 background_mode = 2
-sky = SubResource("Sky_8kn7g")
+sky = SubResource("Sky_m7ax0")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kscfq"]
 

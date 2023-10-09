@@ -1,7 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://clppp4avxfvwu"]
+[gd_scene load_steps=8 format=3 uid="uid://clppp4avxfvwu"]
 
 [ext_resource type="Script" path="res://scenes/Jordan/scripts/TutorialBox.gd" id="1_exrve"]
 [ext_resource type="VideoStream" path="res://scenes/Jordan/assets/TutorialBoxVideo.ogv" id="1_nxxyo"]
+[ext_resource type="ArrayMesh" uid="uid://c1m2lj5ys7f3w" path="res://scenes/Jordan/assets/golf ball.obj" id="3_hsxh0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rljsx"]
+albedo_color = Color(0.588235, 0.67451, 0.717647, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_txfru"]
+sun_angle_max = 360.0
+sun_curve = 2.08932
+
+[sub_resource type="Sky" id="Sky_8kn7g"]
+sky_material = SubResource("ProceduralSkyMaterial_txfru")
+
+[sub_resource type="Environment" id="Environment_pepi4"]
+background_mode = 2
+sky = SubResource("Sky_8kn7g")
 
 [node name="TutorialBox" type="Control"]
 layout_mode = 3
@@ -62,6 +77,24 @@ autowrap_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Understood, I'm ready"
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_rljsx")
+cast_shadow = 0
+mesh = ExtResource("3_hsxh0")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D"]
+environment = SubResource("Environment_pepi4")
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+
+[node name="Light" type="DirectionalLight3D" parent="Node3D"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
 
 [connection signal="finished" from="CenterContainer/Panel/MarginContainer/VBoxContainer/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
 [connection signal="pressed" from="CenterContainer/Panel/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
