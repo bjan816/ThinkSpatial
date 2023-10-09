@@ -13,7 +13,7 @@ func _process(delta):
 	pass
 
 
-func _on_mirror_button_area_entered(area):
+func _on_same_button_area_entered(area):
 	if area.is_in_group("bullet") and NEXT_LEVEL != "":
 		get_tree().change_scene_to_file(NEXT_LEVEL)
 		print("next level")

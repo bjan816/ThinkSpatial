@@ -1,11 +1,27 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1j81876h1b5d"]
+[gd_scene load_steps=17 format=3 uid="uid://b1j81876h1b5d"]
 
 [ext_resource type="PackedScene" uid="uid://vf5wgphdhvdx" path="res://TetrisBlock/tetris_block_1.tscn" id="1_7am4y"]
 [ext_resource type="Script" path="res://worldLevel/Script/level_1.gd" id="1_nhnn4"]
 [ext_resource type="PackedScene" uid="uid://c7n2ynodva3lo" path="res://TetrisBlock/tetris_block_1_same.tscn" id="2_3y2qm"]
+[ext_resource type="PackedScene" uid="uid://ull1jwcqkm5o" path="res://worldLevel/house_walls.tscn" id="2_g00h7"]
+[ext_resource type="PackedScene" uid="uid://td6blhncf62v" path="res://worldLevel/house_roof.tscn" id="3_gitu3"]
 [ext_resource type="PackedScene" uid="uid://cf5ijhtrusnix" path="res://worldLevel/mirror_button.tscn" id="3_w7iro"]
+[ext_resource type="PackedScene" uid="uid://lq1yeiasdkfb" path="res://worldLevel/house_close.tscn" id="4_d1l5d"]
 [ext_resource type="PackedScene" uid="uid://cr2uhegrgc701" path="res://worldLevel/same_button.tscn" id="4_ybx2p"]
 [ext_resource type="PackedScene" uid="uid://cog2qek7t51w6" path="res://player/PlayerBody.tscn" id="6_ki5g0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q556v"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_h3f6y"]
+sky_material = SubResource("ProceduralSkyMaterial_q556v")
+
+[sub_resource type="Environment" id="Environment_vhmq0"]
+background_mode = 2
+sky = SubResource("Sky_h3f6y")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1hqb2"]
 size = Vector2(150, 150)
@@ -22,6 +38,52 @@ data = PackedVector3Array(-0.25, 10, 7.5, 0.25, 10, 7.5, -0.25, -10, 7.5, 0.25, 
 [node name="Level 1" type="Node3D"]
 script = ExtResource("1_nhnn4")
 NEXT_LEVEL = "F:/Uni files/CS399/2023/Sem 2/Project/capstone-project-team-32/Mental Rotation/worldLevel/level_1_2.tscn"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vhmq0")
+
+[node name="House" type="Node3D" parent="."]
+
+[node name="HouseWalls" parent="House" instance=ExtResource("2_g00h7")]
+
+[node name="HouseRoof" parent="House" instance=ExtResource("3_gitu3")]
+
+[node name="HouseClose" parent="House" instance=ExtResource("4_d1l5d")]
+
+[node name="HouseLighting" type="Node3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="HouseLighting"]
+transform = Transform3D(0.74002, 0.160781, -0.653085, 0.0858223, 0.940497, 0.328784, 0.667087, -0.299356, 0.682188, -53.6727, 42.6521, 60.127)
+spot_range = 108.597
+spot_attenuation = 0.0853776
+spot_angle = 69.09
+spot_angle_attenuation = 0.15932
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="HouseLighting"]
+transform = Transform3D(0.800197, -0.261671, 0.539642, 0.0858223, 0.940497, 0.328784, -0.593566, -0.216779, 0.77504, 53.2204, 42.6521, 57.9604)
+spot_range = 115.952
+spot_attenuation = 0.176777
+spot_angle = 80.44
+spot_angle_attenuation = 0.170755
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="HouseLighting"]
+transform = Transform3D(-0.463324, -0.523048, 0.715368, -0.408386, 0.842437, 0.351455, -0.78648, -0.129309, -0.603927, 55.3459, 43.7049, -53.8386)
+spot_range = 114.025
+spot_attenuation = 0.378929
+spot_angle = 80.19
+spot_angle_attenuation = 0.217638
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="HouseLighting"]
+transform = Transform3D(-0.664507, 0.284439, -0.691032, 0.0141668, 0.929356, 0.368913, 0.747147, 0.235356, -0.621593, -56.3818, 42.9507, -59.0278)
+shadow_enabled = true
+spot_range = 112.677
+spot_attenuation = 0.138696
+spot_angle = 67.36
+spot_angle_attenuation = 0.267943
 
 [node name="Platform" type="Node3D" parent="."]
 
@@ -61,4 +123,5 @@ shape = SubResource("ConcavePolygonShape3D_38nrq")
 [node name="CharacterBody3D" parent="." groups=["player"] instance=ExtResource("6_ki5g0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.151229, 0)
 
+[connection signal="area_entered" from="SameButton" to="." method="_on_same_button_area_entered"]
 [connection signal="body_entered" from="SameButton" to="." method="_on_same_button_body_entered"]

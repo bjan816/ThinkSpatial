@@ -1,79 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://ck02t76dpy1er"]
+[gd_scene load_steps=5 format=3 uid="uid://ck02t76dpy1er"]
 
 [ext_resource type="Script" path="res://3dscene.gd" id="1_kofm5"]
 [ext_resource type="PackedScene" uid="uid://do4cvl4wa636e" path="res://interface/Scenes/main_menu.tscn" id="2_0so7u"]
 [ext_resource type="PackedScene" uid="uid://b1j81876h1b5d" path="res://worldLevel/level_1.tscn" id="2_4tbu2"]
-[ext_resource type="PackedScene" uid="uid://ull1jwcqkm5o" path="res://worldLevel/house_walls.tscn" id="2_t3sh5"]
-[ext_resource type="PackedScene" uid="uid://cpjvv6hfr5qxj" path="res://worldLevel/level_2.tscn" id="3_0j473"]
 [ext_resource type="PackedScene" uid="uid://cg0kboxhxe3ra" path="res://interface/Scenes/end_menu.tscn" id="3_jppel"]
-[ext_resource type="PackedScene" uid="uid://td6blhncf62v" path="res://worldLevel/house_roof.tscn" id="3_qi0a1"]
-[ext_resource type="PackedScene" uid="uid://lq1yeiasdkfb" path="res://worldLevel/house_close.tscn" id="4_mbowx"]
-[ext_resource type="PackedScene" uid="uid://fqyi03d5y6nf" path="res://worldLevel/level_3.tscn" id="4_u6epi"]
-[ext_resource type="PackedScene" uid="uid://d0r8mhhcv086u" path="res://worldLevel/level_1_2.tscn" id="6_toybf"]
-[ext_resource type="PackedScene" uid="uid://vl6vuynkm46i" path="res://worldLevel/level_2_2.tscn" id="8_510bl"]
-[ext_resource type="PackedScene" uid="uid://buxwxac3dm6px" path="res://worldLevel/level_3_2.tscn" id="10_mkil4"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n4r7v"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_h3f6y"]
-sky_material = SubResource("ProceduralSkyMaterial_n4r7v")
-
-[sub_resource type="Environment" id="Environment_rl5vs"]
-background_mode = 2
-sky = SubResource("Sky_h3f6y")
-tonemap_mode = 2
-glow_enabled = true
 
 [node name="Mental Rotation Game" type="Node3D"]
 script = ExtResource("1_kofm5")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_rl5vs")
-
-[node name="House" type="Node3D" parent="."]
-
-[node name="HouseWalls" parent="House" instance=ExtResource("2_t3sh5")]
-
-[node name="HouseRoof" parent="House" instance=ExtResource("3_qi0a1")]
-
-[node name="HouseClose" parent="House" instance=ExtResource("4_mbowx")]
-
-[node name="HouseLighting" type="Node3D" parent="."]
-
-[node name="SpotLight3D" type="SpotLight3D" parent="HouseLighting"]
-transform = Transform3D(0.74002, 0.160781, -0.653085, 0.0858223, 0.940497, 0.328784, 0.667087, -0.299356, 0.682188, -53.6727, 42.6521, 60.127)
-spot_range = 108.597
-spot_attenuation = 0.0853776
-spot_angle = 69.09
-spot_angle_attenuation = 0.15932
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="HouseLighting"]
-transform = Transform3D(0.800197, -0.261671, 0.539642, 0.0858223, 0.940497, 0.328784, -0.593566, -0.216779, 0.77504, 53.2204, 42.6521, 57.9604)
-spot_range = 115.952
-spot_attenuation = 0.176777
-spot_angle = 80.44
-spot_angle_attenuation = 0.170755
-
-[node name="SpotLight3D3" type="SpotLight3D" parent="HouseLighting"]
-transform = Transform3D(-0.463324, -0.523048, 0.715368, -0.408386, 0.842437, 0.351455, -0.78648, -0.129309, -0.603927, 55.3459, 43.7049, -53.8386)
-spot_range = 114.025
-spot_attenuation = 0.378929
-spot_angle = 80.19
-spot_angle_attenuation = 0.217638
-
-[node name="SpotLight3D4" type="SpotLight3D" parent="HouseLighting"]
-transform = Transform3D(-0.664507, 0.284439, -0.691032, 0.0141668, 0.929356, 0.368913, 0.747147, 0.235356, -0.621593, -56.3818, 42.9507, -59.0278)
-shadow_enabled = true
-spot_range = 112.677
-spot_attenuation = 0.138696
-spot_angle = 67.36
-spot_angle_attenuation = 0.267943
 
 [node name="MainMenu" parent="." instance=ExtResource("2_0so7u")]
 
@@ -81,18 +14,3 @@ spot_angle_attenuation = 0.267943
 visible = false
 
 [node name="Level 1" parent="." instance=ExtResource("2_4tbu2")]
-
-[node name="Level 1_2" parent="." instance=ExtResource("6_toybf")]
-visible = false
-
-[node name="Level 2" parent="." instance=ExtResource("3_0j473")]
-visible = false
-
-[node name="Level 3" parent="." instance=ExtResource("4_u6epi")]
-visible = false
-
-[node name="Level 2_2" parent="." instance=ExtResource("8_510bl")]
-visible = false
-
-[node name="Level 3_2" parent="." instance=ExtResource("10_mkil4")]
-visible = false
