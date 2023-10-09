@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cf5ijhtrusnix"]
 
-[ext_resource type="Script" path="res://worldLevel/Script/mirror_button.gd" id="1_dfmpx"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_b5l1d"]
+radius = 1.09294
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_44cl2"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_3apq5"]
 viewport_path = NodePath("Node3D/SubViewport")
 
 [sub_resource type="SphereMesh" id="SphereMesh_2u6rp"]
@@ -12,8 +13,11 @@ height = 2.0
 [sub_resource type="SphereShape3D" id="SphereShape3D_rtmwv"]
 radius = 1.0
 
-[node name="MirrorButton" type="Node3D"]
-script = ExtResource("1_dfmpx")
+[node name="mirrorButton" type="Area3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11629, 0)
+shape = SubResource("SphereShape3D_b5l1d")
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(0.999996, -3.72529e-09, 0, 2.468e-08, 1, 0, 0, 0, 1, 3.63216e-08, 2.89338, 0)
@@ -35,11 +39,12 @@ vertical_alignment = 1
 transform = Transform3D(0.131607, 4.35019e-09, 1.99567, 4.35019e-09, 2, -4.64652e-09, -1.99567, 4.64652e-09, 0.131607, 0, 0, 0)
 modulate = Color(0, 0.113725, 0.580392, 1)
 billboard = 2
-texture = SubResource("ViewportTexture_44cl2")
+texture = SubResource("ViewportTexture_3apq5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13, 0)
 mesh = SubResource("SphereMesh_2u6rp")
+skeleton = NodePath("")
 
 [node name="Mirror" type="StaticBody3D" parent="MeshInstance3D"]
 

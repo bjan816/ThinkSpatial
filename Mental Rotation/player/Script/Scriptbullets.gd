@@ -28,8 +28,10 @@ func _on_timer_timeout():
 	queue_free()
 
 
-func _on_area_3d_body_entered(body):
+func _on_bullet_body_entered(body):
 	if body.name == "Mirror":
 		print("Mirror chose")
 	elif body.name == "Same":
 		print("Same chose")
+	elif body.has_method("_on_same_button_body_entered"):
+		body._on_same_button_body_entered()
