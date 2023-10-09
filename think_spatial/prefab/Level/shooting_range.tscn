@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://diai5ecpte1ei"]
 
-[ext_resource type="Material" uid="uid://egpru16uvbme" path="res://think_spatial/arts/grass/Stylized3DGrass.tres" id="1_ij6my"]
+[ext_resource type="Material" uid="uid://dlix8widpolo2" path="res://think_spatial/arts/grass/Stylized3DGrass.tres" id="1_ij6my"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e80eu"]
 sky_top_color = Color(0.478431, 0.619608, 0.8, 1)
