@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1j81876h1b5d"]
+[gd_scene load_steps=10 format=3 uid="uid://b1j81876h1b5d"]
 
 [ext_resource type="PackedScene" uid="uid://vf5wgphdhvdx" path="res://TetrisBlock/tetris_block_1.tscn" id="1_7am4y"]
+[ext_resource type="Script" path="res://worldLevel/Script/level_1.gd" id="1_nhnn4"]
 [ext_resource type="PackedScene" uid="uid://c7n2ynodva3lo" path="res://TetrisBlock/tetris_block_1_same.tscn" id="2_3y2qm"]
 [ext_resource type="PackedScene" uid="uid://cf5ijhtrusnix" path="res://worldLevel/mirror_button.tscn" id="3_w7iro"]
 [ext_resource type="PackedScene" uid="uid://cr2uhegrgc701" path="res://worldLevel/same_button.tscn" id="4_ybx2p"]
@@ -18,6 +19,7 @@ size = Vector3(0.5, 20, 15)
 data = PackedVector3Array(-0.25, 10, 7.5, 0.25, 10, 7.5, -0.25, -10, 7.5, 0.25, 10, 7.5, 0.25, -10, 7.5, -0.25, -10, 7.5, 0.25, 10, -7.5, -0.25, 10, -7.5, 0.25, -10, -7.5, -0.25, 10, -7.5, -0.25, -10, -7.5, 0.25, -10, -7.5, 0.25, 10, 7.5, 0.25, 10, -7.5, 0.25, -10, 7.5, 0.25, 10, -7.5, 0.25, -10, -7.5, 0.25, -10, 7.5, -0.25, 10, -7.5, -0.25, 10, 7.5, -0.25, -10, -7.5, -0.25, 10, 7.5, -0.25, -10, 7.5, -0.25, -10, -7.5, 0.25, 10, 7.5, -0.25, 10, 7.5, 0.25, 10, -7.5, -0.25, 10, 7.5, -0.25, 10, -7.5, 0.25, 10, -7.5, -0.25, -10, 7.5, 0.25, -10, 7.5, -0.25, -10, -7.5, 0.25, -10, 7.5, 0.25, -10, -7.5, -0.25, -10, -7.5)
 
 [node name="Level 1" type="Node3D"]
+script = ExtResource("1_nhnn4")
 
 [node name="Platform" type="Node3D" parent="."]
 

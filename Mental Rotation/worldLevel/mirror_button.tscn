@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf5ijhtrusnix"]
+[gd_scene load_steps=7 format=3 uid="uid://cf5ijhtrusnix"]
+
+[ext_resource type="Script" path="res://worldLevel/Script/mirror_button.gd" id="1_dfmpx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6i21v"]
 albedo_color = Color(0.12549, 0.180392, 1, 1)
@@ -13,7 +15,12 @@ data = PackedVector3Array(0, 0.25, 0, 0, 0.25, 0, 0, 0.2489, 0.1331, 0, 0.25, 0,
 [sub_resource type="ViewportTexture" id="ViewportTexture_44cl2"]
 viewport_path = NodePath("MeshInstance3D/Node3D/SubViewport")
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jn676"]
+height = 0.418485
+radius = 1.44035
+
 [node name="MirrorButton" type="Node3D"]
+script = ExtResource("1_dfmpx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.00677181, -0.991975, 0, 0.999977, 0.00671762, 0, 0, 0, 1, 0, 1.13001, 0)
@@ -46,3 +53,11 @@ transform = Transform3D(0.131607, 4.35019e-09, 1.99567, 4.35019e-09, 2, -4.64652
 modulate = Color(0, 0.113725, 0.580392, 1)
 billboard = 2
 texture = SubResource("ViewportTexture_44cl2")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(-0.00343827, 0.999994, 0, -0.999994, -0.00343827, 0, 0, 0, 1, -0.0169059, 1.18703, 0)
+shape = SubResource("CylinderShape3D_jn676")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
