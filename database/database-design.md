@@ -46,7 +46,7 @@ The username will be used to link the key to specific people, as the key is rand
 *It may be beneficial to add an interface between Player and Game tables, but this will be explored further before going ahead with it.*
 
 #### Game Table (Attempts)
-The game table (attempts by the player) is where all the attempts by the player will be stored. It will store basic information like the gameID, a link to playerID. The idea with this table is to act like an interface between Player and Game. This way we are able to have many games per player, but also be able to store many levels for each section. Some of the sections in the game have levels to them, some do not. So it it needed that we have a way to store both information from each level per section, then link those to the game attempt. Then the game attempt will be linked to the player.
+The game table (attempts by the player) is where all the attempts by the player will be stored. It will store basic information like the gameID, a link to playerID. The idea with this table is to act like an interface between Player and Game. This way we are able to have many games per player, but also be able to store many levels for each section. Some of the sections in the game have levels to them, some do not. So we need to have a way to store both information from each level per section, then link those to the game attempt. Then the game attempt will be linked to the player.
 
 #### Section 1 (Developed by Jamie)
 
