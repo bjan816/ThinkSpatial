@@ -22,9 +22,13 @@ Add functionality for data to be transferred directly from Godot to the server, 
 ## Database Design
 Currently I am still designing the database, but this section indicates what is currently done. A UML diagram, along with descriptions of the games and the variables that they are using.
 
-### Database UML (Provisional)
+### Database UML Diagram (Provisional)
 
 ![](./GameDB-UML.jpg)
+
+### Database ER Diagram (Provisional)
+
+![](./GameDB-ER.jpg)
 
 ### Database Tables
 
