@@ -45,7 +45,10 @@ The username will be used to link the key to specific people, as the key is rand
 
 *It may be beneficial to add an interface between Player and Game tables, but this will be explored further before going ahead with it.*
 
-#### Game Section 1 (Developed by Jamie)
+#### Game Table (Attempts)
+The game table (attempts by the player) is where all the attempts by the player will be stored. It will store basic information like the gameID, a link to playerID. The idea with this table is to act like an interface between Player and Game. This way we are able to have many games per player, but also be able to store many levels for each section. Some of the sections in the game have levels to them, some do not. So it it needed that we have a way to store both information from each level per section, then link those to the game attempt. Then the game attempt will be linked to the player.
+
+#### Section 1 (Developed by Jamie)
 
 Jamie's game has three variables that will need to be stored by the database. They are:
 
@@ -68,7 +71,7 @@ Jamie's game has three variables that will need to be stored by the database. Th
 
 The game already has functions to collect the information above, the database just needs to store them. 
 
-#### Game Section 2 (Developed by Jordan)
+#### Section 2 (Developed by Jordan)
 Jordan's game has a few more variables that will need to be collected and sotred in the database, they differ to Jamie's game.
 
 - time:dbl
@@ -92,7 +95,7 @@ Jordan's game has a few more variables that will need to be collected and sotred
 
 Again, Jordan's game has the variables included in the game the database will need to collect and store these variables. 
 
-#### Game Section 3 (Co-developed by Kishora & Sun) 
+#### Section 3 (Co-developed by Kishora & Sun) 
 This game is being co-developed by Kishora and Sun. This game will only have to variabels in its table:
 
 - score:int
@@ -108,7 +111,7 @@ This game is being co-developed by Kishora and Sun. This game will only have to 
 
 The database will only need to collect and store the data.
 
-#### Game Section 4 (Developed by Borim) 
+#### Section 4 (Developed by Borim) 
 Borim's game will only have one vairable that will need to be collected and sotred by the database.
 
 - score:int
