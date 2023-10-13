@@ -12,6 +12,8 @@ The last four tables will be used for each section of the game. So there are fou
 
 The player can play many games, but a game cannot exist without the player. There is one game for all the four sections, and the sections comprise a part of the overall game. These four sections do not know about each other, there is no need to transfer any data across sections, rather just store the information in the section table with reference to the gameID.
 
+Currently the purpose of the database is to store data after someone has completed a game. So that the data can then be used elsewhere or evalutated to find the strengths and areas to work on for the player. The game at this stage will run directly on the computers, with a sight to move it to the web and scale up the database to include real time information and so that the game will use the databse rather than session memory - incase something happens before it is able to commit to the database.
+
 ### Future Implementation
 There could be an opportunity to include a teacher/admin class, allowing the teacher to access all data from the players in a simplified format - only seeing overviews.
 
@@ -76,7 +78,7 @@ Jamie's game has three variables that will need to be stored by the database. Th
 The game already has functions to collect the information above, the database just needs to store them. 
 
 #### Section 2 (Developed by Jordan)
-Jordan's game has a few more variables that will need to be collected and sotred in the database, they differ to Jamie's game.
+Jordan's game has a few more variables that will need to be collected and stored in the database, they differ to Jamie's game.
 
 - time:dbl
     - time taken to solve the puzzle.
