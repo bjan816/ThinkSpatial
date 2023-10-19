@@ -1002,3 +1002,7 @@ vertical_alignment = 1
 libraries = {
 "": SubResource("AnimationLibrary_fvyxm")
 }
+
+[node name="Correct" type="AudioStreamPlayer" parent="."]
+
+[node name="Game_Over" type="AudioStreamPlayer" parent="."]
