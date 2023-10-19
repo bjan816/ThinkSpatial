@@ -30,6 +30,7 @@ project/assembly_name="ThinkSpatial"
 
 [filesystem]
 
+import/blender/enabled=false
 import/fbx/enabled=false
 
 [input]
