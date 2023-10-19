@@ -20,3 +20,5 @@ script = ExtResource("4_r1kk4")
 _equippedWeapon = NodePath("../FirstPersonHitScan")
 
 [node name="FirstPersonHitScan" parent="." instance=ExtResource("5_1pt3k")]
+
+[node name="Pop" type="AudioStreamPlayer" parent="FirstPersonHitScan"]
