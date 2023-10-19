@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Godot;
 
 namespace ThinkSpatial.think_spatial.scripts.csharp.event_system.type

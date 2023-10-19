@@ -1,4 +1,4 @@
-﻿using ThinkSpatial.think_spatial.scripts.csharp.event_system.behavior;
+using ThinkSpatial.think_spatial.scripts.csharp.event_system.behavior;
 
 namespace ThinkSpatial.think_spatial.scripts.csharp.event_system.misc
 {
