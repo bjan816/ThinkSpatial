@@ -15,8 +15,13 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.game_mode
 
 		public override void _Ready()
 		{
+			
+			var soundEffect = GetNode<AudioStreamPlayer>("Background");
+			soundEffect.Stream = GD.Load<AudioStream>("res://think_spatial/arts/audio/background.ogg");
+			soundEffect.Play();
+			
 			base._Ready();
-
+			
 			_spatialMemorySpawner.FinishedSpawningEntities.AddListener(PreInGame);
 			_spatialMemorySpawner.ConsectiveDeath.AddListener(OnConsectiveDeath);
 			_spatialMemorySpawner.SpatialMemoryResult.AddListener(EndGame);

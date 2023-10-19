@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://davlunk7onym5"]
+[gd_scene load_steps=32 format=3 uid="uid://davlunk7onym5"]
 
 [ext_resource type="Script" path="res://think_spatial/scripts/csharp/game_mode/SpatialMemoryGameMode.cs" id="1_qhb3v"]
 [ext_resource type="PackedScene" uid="uid://diai5ecpte1ei" path="res://think_spatial/prefab/Level/shooting_range.tscn" id="1_uxut0"]
@@ -10,6 +10,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cgkli20sygyu0" path="res://think_spatial/arts/tree/FallTree.obj" id="7_wvqlh"]
 [ext_resource type="ArrayMesh" uid="uid://cebhhql56m0l" path="res://think_spatial/arts/tree/BulbFlower.obj" id="8_q4err"]
 [ext_resource type="ArrayMesh" uid="uid://dyiycfn3j26e8" path="res://think_spatial/arts/fence/model.obj" id="10_2apmc"]
+[ext_resource type="AudioStream" uid="uid://0jpk2a7sj4m1" path="res://think_spatial/arts/audio/background.ogg" id="11_gugx4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8k4w5"]
 albedo_color = Color(0.964706, 0.803922, 0.678431, 1)
@@ -84,6 +85,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -10)
 
 [node name="Bubble" type="AudioStreamPlayer" parent="EntitySpatialMemorySpawner"]
 stream = ExtResource("4_j2riy")
+volume_db = -5.0
 pitch_scale = 2.0
 
 [node name="MouseLook" parent="." instance=ExtResource("4_ttwyu")]
@@ -1158,3 +1160,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_j7lix")
 surface_material_override/1 = SubResource("StandardMaterial3D_ern0k")
 surface_material_override/2 = SubResource("StandardMaterial3D_ysxsf")
+
+[node name="Background" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_gugx4")
+volume_db = -5.0
