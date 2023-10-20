@@ -14,7 +14,7 @@ var is_moving
 var movement_time = 20
 
 var mirror_mod
-var ghost_mod
+var decoy_mod
 var memory_mod
 var blur_mod
 
@@ -111,7 +111,7 @@ func reset_puzzle():
 	
 func choose_modifier():
 	
-	var modifiers = ["none", "mirror_mod", "ghost_mod", "memory_mod", "blur_mod"]
+	var modifiers = ["none", "mirror_mod", "decoy_mod", "memory_mod"]
 	var modifier = modifiers[randi() % modifiers.size()]
 	print(modifier)
 	
@@ -120,9 +120,9 @@ func choose_modifier():
 	elif modifier == "mirror_mod": 
 		mirror_mod = true
 		$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Modifier.text = "MIRROR"
-	elif modifier == "ghost_mod": 
-		ghost_mod = true
-		$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Modifier.text = "GHOST"
+	elif modifier == "decoy_mod": 
+		decoy_mod = true
+		$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Modifier.text = "DECOY"
 	elif modifier == "memory_mod": 
 		memory_mod = true
 		$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Modifier.text = "MEMORY"
@@ -210,11 +210,11 @@ func set_objects():
 		to_spawn.transform.origin = spawn_position
 		to_spawn.rotation_degrees = spawn_rotation
 		
-		if i >= round(num - num * 0.3) && ghost_mod == true:
+		if i >= round(num - num * 0.3) && decoy_mod == true:
 			
 			to_spawn.layers = 2
 			
-	ghost_mod = false
+	decoy_mod = false
 	
 func guess():
 	

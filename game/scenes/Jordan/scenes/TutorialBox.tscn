@@ -64,10 +64,9 @@ expand = true
 
 [node name="Label" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "In this game, you are presented with eight cameras, each represented as a sphere. Of these, only one camera is actively projecting its view onto the screen. Using cues from the environment and your spatial skills you goal is to identify the active camera. Once you have identified the active camera, simply click it with your mouse. You have 60 seconds for each level, you're allowed to move for a combined total of 10 seconds. The challenge is randomly enhanced with gameplay modifiers:
-- Ghost : The screen is not an accurate depiction of the scene.
+text = "In this game, you are presented with eight cameras, each represented as a sphere. Of these, only one camera is actively projecting its view onto the screen. Using cues from the environment and your spatial skills you goal is to identify the active camera. Once you have identified the active camera, simply click it with your mouse. You have 180 seconds for each level, you're allowed to move for a combined total of 20 seconds. The challenge is randomly enhanced with gameplay modifiers:
+- Decoy : The screen is not an accurate depiction of the scene.
 - Mirror: The screen has been flipped horizonally.
-- Blur: The screen has become blurry.
 - Memory: The screen disappears when you look away, commit it to memory."
 horizontal_alignment = 1
 vertical_alignment = 1
