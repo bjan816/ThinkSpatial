@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://d1gddhbcmtxyt"]
+
+[ext_resource type="Script" path="res://think_spatial/scripts/csharp/first_person/FirstPersonHitScan.cs" id="1_k55kx"]
+[ext_resource type="Texture2D" uid="uid://cl5bq872oq538" path="res://think_spatial/arts/gun/crosshair.png" id="2_31rpf"]
+[ext_resource type="ArrayMesh" uid="uid://01o5n67piqb3" path="res://think_spatial/arts/gun/SteamPunkRifleModel.obj" id="2_72y8y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbfk8"]
+albedo_color = Color(0.682353, 0.635294, 0.941176, 1)
+metallic_specular = 0.7
+refraction_scale = -0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_145l2"]
+albedo_color = Color(0.666667, 0.564706, 0.858824, 1)
+metallic_specular = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_buin5"]
+albedo_color = Color(0.54902, 0.568627, 0.784314, 1)
+metallic_specular = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ornid"]
+albedo_color = Color(0.984314, 0.913725, 0.921569, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jid8r"]
+albedo_color = Color(0.65098, 0.666667, 0.847059, 1)
+metallic_specular = 1.0
+
+[sub_resource type="Animation" id="Animation_jtsgd"]
+resource_name = "Attack"
+length = 0.08
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Offset/MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.08),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.143), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2inqd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Offset/MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8uuii"]
+_data = {
+"Attack": SubResource("Animation_jtsgd"),
+"RESET": SubResource("Animation_2inqd")
+}
+
+[node name="FirstPersonHitScan" type="Node3D" node_paths=PackedStringArray("_animationPlayer")]
+script = ExtResource("1_k55kx")
+_animationPlayer = NodePath("AnimationPlayer")
+
+[node name="Offset" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.271, -0.352, -0.899)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Offset"]
+transform = Transform3D(1.15325, 0, 0, 0, 1.34624, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = ExtResource("2_72y8y")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_mbfk8")
+surface_material_override/1 = SubResource("StandardMaterial3D_145l2")
+surface_material_override/2 = SubResource("StandardMaterial3D_buin5")
+surface_material_override/3 = SubResource("StandardMaterial3D_ornid")
+surface_material_override/8 = SubResource("StandardMaterial3D_jid8r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8uuii")
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_31rpf")
