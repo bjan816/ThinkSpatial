@@ -1,0 +1,515 @@
+[gd_scene load_steps=20 format=3 uid="uid://bhpkb8me38jf"]
+
+[ext_resource type="Script" path="res://scenes/Jamie/scripts/3DLevel.gd" id="1_adykv"]
+[ext_resource type="PackedScene" uid="uid://d4k5er881yygp" path="res://scenes/Jamie/player/Player.tscn" id="1_en333"]
+[ext_resource type="PackedScene" uid="uid://xanvybi2rb5w" path="res://scenes/Jamie/interface/menu/FinalMenu.tscn" id="3_xyihg"]
+[ext_resource type="Script" path="res://scenes/Jamie/scripts/DifficultyMenu.gd" id="4_d0587"]
+[ext_resource type="Texture2D" uid="uid://bkbp0q2p3t186" path="res://scenes/Jamie/icon/background.png" id="4_yrq2y"]
+[ext_resource type="FontFile" uid="uid://b74wj7a61oel6" path="res://scenes/Jamie/interface/fonts/Montserrat-ExtraBold.ttf" id="5_jyl02"]
+[ext_resource type="Texture2D" uid="uid://biggrvfoio4nb" path="res://scenes/Jamie/icon/game_logo.png" id="6_gld7u"]
+[ext_resource type="Script" path="res://scenes/Jamie/scripts/Timer.gd" id="7_qb6fi"]
+[ext_resource type="Script" path="res://scenes/Jamie/scripts/Scoreboard.gd" id="8_5m3r7"]
+[ext_resource type="Texture2D" uid="uid://bstkvm0dlli1g" path="res://scenes/Jamie/maps/hard_level_map1.png" id="9_0nipa"]
+[ext_resource type="PackedScene" uid="uid://b6jfiywsongok" path="res://scenes/Jamie/world/Goal.tscn" id="9_sfovk"]
+[ext_resource type="Texture2D" uid="uid://dr4oh7gvjo0pe" path="res://scenes/Jamie/maps/hard_level_map2.png" id="10_pwtep"]
+[ext_resource type="Texture2D" uid="uid://c5p7iyjq5bm6w" path="res://scenes/Jamie/maps/hard_level_map3.png" id="11_j2i2d"]
+[ext_resource type="Texture2D" uid="uid://b64s2vf0ctnh1" path="res://scenes/Jamie/maps/normal_level_map1.png" id="12_0tk4q"]
+[ext_resource type="Texture2D" uid="uid://sphdbbwnkjmj" path="res://scenes/Jamie/maps/normal_level_map2.png" id="13_o44vg"]
+[ext_resource type="Texture2D" uid="uid://cnj4nhmh04m0d" path="res://scenes/Jamie/maps/normal_level_map3.png" id="14_1ed3j"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oe43y"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_8crvg"]
+sky_material = SubResource("ProceduralSkyMaterial_oe43y")
+
+[sub_resource type="Environment" id="Environment_mx3ex"]
+background_mode = 2
+sky = SubResource("Sky_8crvg")
+tonemap_mode = 2
+glow_enabled = true
+adjustment_enabled = true
+adjustment_brightness = 1.4
+adjustment_contrast = 1.2
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_adykv")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mx3ex")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_en333")]
+transform = Transform3D(-0.00130906, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00130906, 14.7119, 1.08666, 38.3666)
+
+[node name="Goal" parent="." instance=ExtResource("9_sfovk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9638, 1.72622, -34.117)
+
+[node name="DifficultyMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_d0587")
+
+[node name="Background" type="TextureRect" parent="DifficultyMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_yrq2y")
+
+[node name="MiroMenu" type="CenterContainer" parent="DifficultyMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Column" type="VBoxContainer" parent="DifficultyMenu/MiroMenu"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Logo" type="TextureRect" parent="DifficultyMenu/MiroMenu/Column"]
+layout_mode = 2
+texture = ExtResource("6_gld7u")
+
+[node name="Play" type="Button" parent="DifficultyMenu/MiroMenu/Column"]
+modulate = Color(0.882353, 1, 1, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="About" type="Button" parent="DifficultyMenu/MiroMenu/Column"]
+modulate = Color(0.882353, 1, 1, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 50
+text = "About
+"
+
+[node name="Menu" type="Button" parent="DifficultyMenu/MiroMenu/Column"]
+modulate = Color(0.882353, 1, 1, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 50
+text = " Back to Menu "
+
+[node name="InstructionPage1" type="CenterContainer" parent="DifficultyMenu"]
+visible = false
+layout_mode = 2
+offset_left = 136.0
+offset_top = 86.0
+offset_right = 1784.0
+offset_bottom = 996.0
+
+[node name="Title" type="Label" parent="DifficultyMenu/InstructionPage1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 50
+text = "Miro Instruction
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+
+[node name="Description" type="Label" parent="DifficultyMenu/InstructionPage1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 40
+text = "Welcome to Miro! In this game, you'll embark on a journey through a series
+ of challenging mazes. Your goal is to find your location within the maze and
+make your way to the purple circle representing the exit. To help you
+navigate, you'll have access to a map.
+
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="InstructionPage2" type="HBoxContainer" parent="DifficultyMenu"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -826.5
+offset_top = -352.5
+offset_right = 826.5
+offset_bottom = 352.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="DifficultyMenu/InstructionPage2"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Title" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 50
+text = "Stage Progression
+
+"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 30
+text = "There are a total of 6 stages in
+the game."
+horizontal_alignment = 1
+
+[node name="Description2" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 30
+text = "For the first 3 stages, you'll
+ start facing the top of the map."
+horizontal_alignment = 1
+
+[node name="Description3" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 30
+text = "Once you've successfully located 
+your position on the map, your 
+task is to navigate to the purple 
+circle, which marks the exit."
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="DifficultyMenu/InstructionPage2"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Title" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 50
+text = "Controls
+
+"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 30
+text = "Use the arrow keys (Up, Down, 
+Left, Right) to move within
+ the maze."
+horizontal_alignment = 1
+
+[node name="Description2" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 30
+text = "Press the 'b' key to reset your 
+position. Beware that each 
+reset costs you 100 points!"
+horizontal_alignment = 1
+
+[node name="Description3" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 30
+text = "Press the 'space' key at any 
+time to return to the main 
+menu"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DifficultyMenu/InstructionPage2"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Title" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 50
+text = "Scoring System
+
+"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 30
+text = "You can earn a maximum of 
+1000 points in each of the
+ following categories:"
+horizontal_alignment = 1
+
+[node name="Description2" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 30
+text = "Level Score: Each time you 
+reset your position ('b' key), 
+you lose 100 points"
+horizontal_alignment = 1
+
+[node name="Description3" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 30
+text = "Distance Score: The less you 
+move and backtrack, the higher
+ your score."
+horizontal_alignment = 1
+
+[node name="Description4" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 30
+text = "Time Score: The faster you 
+complete each stage, the higher
+your score."
+horizontal_alignment = 1
+
+[node name="InstructionPage3" type="HBoxContainer" parent="DifficultyMenu"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -538.5
+offset_top = -324.5
+offset_right = 538.5
+offset_bottom = 324.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="DifficultyMenu/InstructionPage3"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Title" type="Label" parent="DifficultyMenu/InstructionPage3/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 50
+text = "Tip for Success
+
+"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="DifficultyMenu/InstructionPage3/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 30
+text = "Carefully examine the maze walls around 
+you and use the map to guess your location"
+horizontal_alignment = 1
+
+[node name="Description2" type="Label" parent="DifficultyMenu/InstructionPage3/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 30
+text = "Be strategic in your movements to minimize 
+backtracking and save on the Distance Score"
+horizontal_alignment = 1
+
+[node name="Description3" type="Label" parent="DifficultyMenu/InstructionPage3/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 30
+text = "Try to complete each stage as quickly as 
+possible to maximize your Time Score"
+horizontal_alignment = 1
+
+[node name="Description4" type="Label" parent="DifficultyMenu/InstructionPage3/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 30
+text = "Use resets sparingly, as they deduct points from 
+your Reset Score."
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="DifficultyMenu/InstructionPage3"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Title" type="Label" parent="DifficultyMenu/InstructionPage3/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 50
+text = "Game Progression
+
+"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="DifficultyMenu/InstructionPage3/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 30
+text = "The first 3 stages will gradually introduce you 
+to the game mechanics."
+horizontal_alignment = 1
+
+[node name="Description2" type="Label" parent="DifficultyMenu/InstructionPage3/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 30
+text = "Starting from the 4th stage, the game becomes
+ more challenging as you may face any direction on 
+the map. You'll need to rotate the map to guess 
+your current location accurately."
+horizontal_alignment = 1
+
+[node name="FinalMenu" parent="." instance=ExtResource("3_xyihg")]
+visible = false
+
+[node name="Timer" type="Panel" parent="."]
+visible = false
+offset_left = 9.0
+offset_top = 344.0
+offset_right = 297.0
+offset_bottom = 377.0
+script = ExtResource("7_qb6fi")
+
+[node name="Minutes" type="Label" parent="Timer"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 5.0
+offset_right = 142.0
+offset_bottom = 60.0
+text = "00:"
+horizontal_alignment = 1
+
+[node name="Seconds" type="Label" parent="Timer"]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 5.0
+offset_right = 160.0
+offset_bottom = 31.0
+text = "00:"
+horizontal_alignment = 1
+
+[node name="Msecs" type="Label" parent="Timer"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 5.0
+offset_right = 188.0
+offset_bottom = 31.0
+text = "00:"
+horizontal_alignment = 1
+
+[node name="Scoreboard" type="Panel" parent="."]
+visible = false
+offset_left = 9.0
+offset_top = 301.0
+offset_right = 297.0
+offset_bottom = 334.0
+script = ExtResource("8_5m3r7")
+
+[node name="Score" type="Label" parent="Scoreboard"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 4.0
+offset_right = 204.0
+offset_bottom = 30.0
+text = "Score:"
+
+[node name="Maps" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 305.0
+offset_bottom = 290.0
+
+[node name="Hard1" type="Sprite2D" parent="Maps"]
+visible = false
+position = Vector2(151.05, 144.226)
+scale = Vector2(0.39882, 0.376524)
+texture = ExtResource("9_0nipa")
+
+[node name="Hard2" type="Sprite2D" parent="Maps"]
+visible = false
+position = Vector2(150.917, 144.305)
+scale = Vector2(0.399169, 0.376319)
+texture = ExtResource("10_pwtep")
+
+[node name="Hard3" type="Sprite2D" parent="Maps"]
+visible = false
+position = Vector2(151.214, 145.109)
+scale = Vector2(0.398388, 0.37683)
+texture = ExtResource("11_j2i2d")
+
+[node name="Normal1" type="Sprite2D" parent="Maps"]
+visible = false
+position = Vector2(151.364, 143.997)
+scale = Vector2(0.437622, 0.417274)
+texture = ExtResource("12_0tk4q")
+
+[node name="Normal2" type="Sprite2D" parent="Maps"]
+visible = false
+position = Vector2(151.124, 143.479)
+scale = Vector2(0.438315, 0.415888)
+texture = ExtResource("13_o44vg")
+
+[node name="Normal3" type="Sprite2D" parent="Maps"]
+visible = false
+position = Vector2(151.261, 144.298)
+scale = Vector2(0.43792, 0.416407)
+texture = ExtResource("14_1ed3j")
+
+[connection signal="pressed" from="DifficultyMenu/MiroMenu/Column/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="DifficultyMenu/MiroMenu/Column/About" to="DifficultyMenu" method="_on_about_pressed"]
+[connection signal="pressed" from="DifficultyMenu/MiroMenu/Column/Menu" to="DifficultyMenu" method="_on_menu_pressed"]
+[connection signal="gui_input" from="DifficultyMenu/InstructionPage1" to="DifficultyMenu" method="_on_instruction_page_1_gui_input"]
+[connection signal="gui_input" from="DifficultyMenu/InstructionPage2" to="DifficultyMenu" method="_on_instruction_page_2_gui_input"]
+[connection signal="gui_input" from="DifficultyMenu/InstructionPage3" to="DifficultyMenu" method="_on_instruction_page_3_gui_input"]
+[connection signal="exit" from="FinalMenu" to="." method="_on_final_menu_exit"]
+[connection signal="next" from="FinalMenu" to="." method="_on_final_menu_next"]
+[connection signal="retried" from="FinalMenu" to="." method="_on_final_menu_retried"]

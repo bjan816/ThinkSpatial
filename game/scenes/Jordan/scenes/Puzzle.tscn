@@ -1,0 +1,415 @@
+[gd_scene load_steps=49 format=3 uid="uid://dbg7pthmiyomc"]
+
+[ext_resource type="Script" path="res://scenes/Jordan/scripts/Puzzle.gd" id="1_8mpvj"]
+[ext_resource type="PackedScene" uid="uid://dd5yqxho3sgkk" path="res://scenes/Jordan/scenes/Player.tscn" id="1_bii0i"]
+[ext_resource type="ArrayMesh" uid="uid://c1m2lj5ys7f3w" path="res://scenes/Jordan/assets/golf ball.obj" id="3_tm4cg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w5bh7"]
+sun_angle_max = 360.0
+sun_curve = 2.08932
+
+[sub_resource type="Sky" id="Sky_m7ax0"]
+sky_material = SubResource("ProceduralSkyMaterial_w5bh7")
+
+[sub_resource type="Environment" id="Environment_npkoq"]
+background_mode = 2
+sky = SubResource("Sky_m7ax0")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kscfq"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ypsgd"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwwo6"]
+albedo_color = Color(0.588235, 0.67451, 0.717647, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vrppo"]
+data = PackedVector3Array(-0.1625, -0.8507, 0.5, 0, -1, 0, 0.4253, -0.8507, 0.309, 0.8506, -0.5257, 0, 0.7236, -0.4472, 0.5257, 0.4253, -0.8507, 0.309, -0.5257, -0.8507, 0, 0, -1, 0, -0.1625, -0.8507, 0.5, -0.1625, -0.8507, -0.5, 0, -1, 0, -0.5257, -0.8507, 0, 0.4253, -0.8507, -0.309, 0, -1, 0, -0.1625, -0.8507, -0.5, 0.9511, 0, 0.309, 0.7236, -0.4472, 0.5257, 0.8506, -0.5257, 0, 0, 0, 1, -0.2764, -0.4472, 0.8506, 0.2629, -0.5257, 0.809, -0.9511, 0, 0.309, -0.8944, -0.4472, 0, -0.6882, -0.5257, 0.5, -0.5878, 0, -0.809, -0.2764, -0.4472, -0.8506, -0.6882, -0.5257, -0.5, 0.5878, 0, -0.809, 0.7236, -0.4472, -0.5257, 0.2629, -0.5257, -0.809, 0.5878, 0, 0.809, 0.7236, -0.4472, 0.5257, 0.9511, 0, 0.309, -0.5878, 0, 0.809, -0.2764, -0.4472, 0.8506, 0, 0, 1, -0.9511, 0, -0.309, -0.8944, -0.4472, 0, -0.9511, 0, 0.309, 0, 0, -1, -0.2764, -0.4472, -0.8506, -0.5878, 0, -0.809, 0.9511, 0, -0.309, 0.7236, -0.4472, -0.5257, 0.5878, 0, -0.809, 0.1625, 0.8507, 0.5, 0.2764, 0.4472, 0.8506, 0.6882, 0.5257, 0.5, -0.4253, 0.8507, 0.309, -0.7236, 0.4472, 0.5257, -0.2629, 0.5257, 0.809, -0.4253, 0.8507, -0.309, -0.7236, 0.4472, -0.5257, -0.8506, 0.5257, 0, 0.1625, 0.8507, -0.5, 0.2764, 0.4472, -0.8506, -0.2629, 0.5257, -0.809, 0.5257, 0.8507, 0, 0.8944, 0.4472, 0, 0.6882, 0.5257, -0.5, 0, 1, 0, 0.5257, 0.8507, 0, 0.1625, 0.8507, -0.5, 0.1625, 0.8507, -0.5, 0.5257, 0.8507, 0, 0.6882, 0.5257, -0.5, 0.1625, 0.8507, -0.5, 0.6882, 0.5257, -0.5, 0.2764, 0.4472, -0.8506, 0, 1, 0, 0.1625, 0.8507, -0.5, -0.4253, 0.8507, -0.309, -0.4253, 0.8507, -0.309, 0.1625, 0.8507, -0.5, -0.2629, 0.5257, -0.809, -0.4253, 0.8507, -0.309, -0.2629, 0.5257, -0.809, -0.7236, 0.4472, -0.5257, 0, 1, 0, -0.4253, 0.8507, -0.309, -0.4253, 0.8507, 0.309, -0.4253, 0.8507, 0.309, -0.4253, 0.8507, -0.309, -0.8506, 0.5257, 0, -0.4253, 0.8507, 0.309, -0.8506, 0.5257, 0, -0.7236, 0.4472, 0.5257, 0, 1, 0, -0.4253, 0.8507, 0.309, 0.1625, 0.8507, 0.5, 0.1625, 0.8507, 0.5, -0.4253, 0.8507, 0.309, -0.2629, 0.5257, 0.809, 0.1625, 0.8507, 0.5, -0.2629, 0.5257, 0.809, 0.2764, 0.4472, 0.8506, 0, 1, 0, 0.1625, 0.8507, 0.5, 0.5257, 0.8507, 0, 0.5257, 0.8507, 0, 0.1625, 0.8507, 0.5, 0.6882, 0.5257, 0.5, 0.5257, 0.8507, 0, 0.6882, 0.5257, 0.5, 0.8944, 0.4472, 0, 0.8944, 0.4472, 0, 0.9511, 0, -0.309, 0.6882, 0.5257, -0.5, 0.6882, 0.5257, -0.5, 0.9511, 0, -0.309, 0.5878, 0, -0.809, 0.6882, 0.5257, -0.5, 0.5878, 0, -0.809, 0.2764, 0.4472, -0.8506, 0.2764, 0.4472, -0.8506, 0, 0, -1, -0.2629, 0.5257, -0.809, -0.2629, 0.5257, -0.809, 0, 0, -1, -0.5878, 0, -0.809, -0.2629, 0.5257, -0.809, -0.5878, 0, -0.809, -0.7236, 0.4472, -0.5257, -0.7236, 0.4472, -0.5257, -0.9511, 0, -0.309, -0.8506, 0.5257, 0, -0.8506, 0.5257, 0, -0.9511, 0, -0.309, -0.9511, 0, 0.309, -0.8506, 0.5257, 0, -0.9511, 0, 0.309, -0.7236, 0.4472, 0.5257, -0.7236, 0.4472, 0.5257, -0.5878, 0, 0.809, -0.2629, 0.5257, 0.809, -0.2629, 0.5257, 0.809, -0.5878, 0, 0.809, 0, 0, 1, -0.2629, 0.5257, 0.809, 0, 0, 1, 0.2764, 0.4472, 0.8506, 0.2764, 0.4472, 0.8506, 0.5878, 0, 0.809, 0.6882, 0.5257, 0.5, 0.6882, 0.5257, 0.5, 0.5878, 0, 0.809, 0.9511, 0, 0.309, 0.6882, 0.5257, 0.5, 0.9511, 0, 0.309, 0.8944, 0.4472, 0, 0.2764, 0.4472, -0.8506, 0.5878, 0, -0.809, 0, 0, -1, 0, 0, -1, 0.5878, 0, -0.809, 0.2629, -0.5257, -0.809, 0, 0, -1, 0.2629, -0.5257, -0.809, -0.2764, -0.4472, -0.8506, -0.7236, 0.4472, -0.5257, -0.5878, 0, -0.809, -0.9511, 0, -0.309, -0.9511, 0, -0.309, -0.5878, 0, -0.809, -0.6882, -0.5257, -0.5, -0.9511, 0, -0.309, -0.6882, -0.5257, -0.5, -0.8944, -0.4472, 0, -0.7236, 0.4472, 0.5257, -0.9511, 0, 0.309, -0.5878, 0, 0.809, -0.5878, 0, 0.809, -0.9511, 0, 0.309, -0.6882, -0.5257, 0.5, -0.5878, 0, 0.809, -0.6882, -0.5257, 0.5, -0.2764, -0.4472, 0.8506, 0.2764, 0.4472, 0.8506, 0, 0, 1, 0.5878, 0, 0.809, 0.5878, 0, 0.809, 0, 0, 1, 0.2629, -0.5257, 0.809, 0.5878, 0, 0.809, 0.2629, -0.5257, 0.809, 0.7236, -0.4472, 0.5257, 0.8944, 0.4472, 0, 0.9511, 0, 0.309, 0.9511, 0, -0.309, 0.9511, 0, -0.309, 0.9511, 0, 0.309, 0.8506, -0.5257, 0, 0.9511, 0, -0.309, 0.8506, -0.5257, 0, 0.7236, -0.4472, -0.5257, 0.7236, -0.4472, -0.5257, 0.4253, -0.8507, -0.309, 0.2629, -0.5257, -0.809, 0.2629, -0.5257, -0.809, 0.4253, -0.8507, -0.309, -0.1625, -0.8507, -0.5, 0.2629, -0.5257, -0.809, -0.1625, -0.8507, -0.5, -0.2764, -0.4472, -0.8506, -0.2764, -0.4472, -0.8506, -0.1625, -0.8507, -0.5, -0.6882, -0.5257, -0.5, -0.6882, -0.5257, -0.5, -0.1625, -0.8507, -0.5, -0.5257, -0.8507, 0, -0.6882, -0.5257, -0.5, -0.5257, -0.8507, 0, -0.8944, -0.4472, 0, -0.8944, -0.4472, 0, -0.5257, -0.8507, 0, -0.6882, -0.5257, 0.5, -0.6882, -0.5257, 0.5, -0.5257, -0.8507, 0, -0.1625, -0.8507, 0.5, -0.6882, -0.5257, 0.5, -0.1625, -0.8507, 0.5, -0.2764, -0.4472, 0.8506, 0.7236, -0.4472, -0.5257, 0.8506, -0.5257, 0, 0.4253, -0.8507, -0.309, 0.4253, -0.8507, -0.309, 0.8506, -0.5257, 0, 0.4253, -0.8507, 0.309, 0.4253, -0.8507, -0.309, 0.4253, -0.8507, 0.309, 0, -1, 0, -0.2764, -0.4472, 0.8506, -0.1625, -0.8507, 0.5, 0.2629, -0.5257, 0.809, 0.2629, -0.5257, 0.809, -0.1625, -0.8507, 0.5, 0.4253, -0.8507, 0.309, 0.2629, -0.5257, 0.809, 0.4253, -0.8507, 0.309, 0.7236, -0.4472, 0.5257)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brx43"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_gmd7t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nmyj5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ogvto"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_pvxqs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0mtkn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sstl2"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4wj6v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_try0m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57sxa"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_it35y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y82d1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0f0v"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_bh822"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mn72p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dnv4a"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ig721"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nfwv1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iu6ag"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_pxeoy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vm5wc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f6qea"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_84e1m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ngqo"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ot3r3"]
+viewport_path = NodePath("Cameras")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ou6kr"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dvxse"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_osf3m"]
+dof_blur_amount = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nxje"]
+albedo_color = Color(0.345098, 0.392157, 0.486275, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_egwu1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8xkm"]
+albedo_color = Color(0.345098, 0.392157, 0.486275, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5yjf5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_myeoj"]
+albedo_color = Color(0.345098, 0.392157, 0.486275, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xniec"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y7mfl"]
+albedo_color = Color(0.345098, 0.392157, 0.486275, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_yq604"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tq6ri"]
+albedo_color = Color(0.345098, 0.392157, 0.486275, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_xfd5e"]
+
+[node name="Puzzle" type="Node3D"]
+script = ExtResource("1_8mpvj")
+
+[node name="Light" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_bii0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -16)
+visible = false
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_npkoq")
+
+[node name="Floor" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 0, 0, 0)
+visible = false
+mesh = SubResource("PlaneMesh_kscfq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ypsgd")
+
+[node name="Enclosure" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_fwwo6")
+cast_shadow = 0
+mesh = ExtResource("3_tm4cg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/Enclosure"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Enclosure/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_vrppo")
+
+[node name="Targets" type="Node3D" parent="."]
+
+[node name="Target1" type="MeshInstance3D" parent="Targets"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
+material_override = SubResource("StandardMaterial3D_brx43")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_gmd7t")
+skeleton = NodePath("../../Cameras/Camera")
+
+[node name="StaticBody3D1" type="StaticBody3D" parent="Targets/Target1" groups=["Targets"]]
+transform = Transform3D(1, 0, 0, 0, 1, -8.97729e-16, 0, -8.97729e-16, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target1/StaticBody3D1"]
+transform = Transform3D(1, 0, 0, 0, 1, -8.97729e-16, 0, -8.97729e-16, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_nmyj5")
+
+[node name="Target2" type="MeshInstance3D" parent="Targets"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
+material_override = SubResource("StandardMaterial3D_ogvto")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_pvxqs")
+skeleton = NodePath("")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Targets/Target2" groups=["Targets"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target2/StaticBody3D2"]
+shape = SubResource("BoxShape3D_0mtkn")
+
+[node name="Target3" type="MeshInstance3D" parent="Targets"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
+material_override = SubResource("StandardMaterial3D_sstl2")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_4wj6v")
+skeleton = NodePath("")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Targets/Target3" groups=["Targets"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target3/StaticBody3D3"]
+shape = SubResource("BoxShape3D_try0m")
+
+[node name="Target4" type="MeshInstance3D" parent="Targets"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
+material_override = SubResource("StandardMaterial3D_57sxa")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_it35y")
+skeleton = NodePath("")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Targets/Target4" groups=["Targets"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target4/StaticBody3D4"]
+shape = SubResource("BoxShape3D_y82d1")
+
+[node name="Target5" type="MeshInstance3D" parent="Targets"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
+material_override = SubResource("StandardMaterial3D_e0f0v")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_bh822")
+skeleton = NodePath("")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Targets/Target5" groups=["Targets"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target5/StaticBody3D5"]
+shape = SubResource("BoxShape3D_mn72p")
+
+[node name="Target6" type="MeshInstance3D" parent="Targets"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
+material_override = SubResource("StandardMaterial3D_dnv4a")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_ig721")
+skeleton = NodePath("")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="Targets/Target6" groups=["Targets"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target6/StaticBody3D6"]
+shape = SubResource("BoxShape3D_nfwv1")
+
+[node name="Target7" type="MeshInstance3D" parent="Targets"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
+material_override = SubResource("StandardMaterial3D_iu6ag")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_pxeoy")
+skeleton = NodePath("")
+
+[node name="StaticBody3D7" type="StaticBody3D" parent="Targets/Target7" groups=["Targets"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target7/StaticBody3D7"]
+shape = SubResource("BoxShape3D_vm5wc")
+
+[node name="Target8" type="MeshInstance3D" parent="Targets"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+layers = 2
+material_override = SubResource("StandardMaterial3D_f6qea")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_84e1m")
+skeleton = NodePath("")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="Targets/Target8" groups=["Targets"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target8/StaticBody3D8"]
+shape = SubResource("BoxShape3D_2ngqo")
+
+[node name="Screen" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.38147, -24.9375)
+layers = 2
+cast_shadow = 0
+transparent = false
+double_sided = false
+texture = SubResource("ViewportTexture_ot3r3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Screen"]
+transform = Transform3D(5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, 0, 0, -0.01)
+visible = false
+mesh = SubResource("PlaneMesh_ou6kr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Screen/MeshInstance3D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Screen/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dvxse")
+
+[node name="Cameras" type="SubViewport" parent="."]
+size = Vector2i(1000, 1000)
+render_target_update_mode = 4
+
+[node name="Camera" type="Camera3D" parent="Cameras" groups=["Cameras"]]
+cull_mask = 1048573
+attributes = SubResource("CameraAttributesPractical_osf3m")
+
+[node name="SpawnableObjects" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.50347, 0)
+visible = false
+
+[node name="MeshInstance3D1" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
+transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_7nxje")
+cast_shadow = 0
+mesh = SubResource("BoxMesh_egwu1")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
+transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_i8xkm")
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_5yjf5")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
+transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_myeoj")
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_xniec")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
+transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_y7mfl")
+cast_shadow = 0
+mesh = SubResource("PrismMesh_yq604")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
+transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_tq6ri")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_xfd5e")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Time" type="Label" parent="UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MovementTime" type="Label" parent="UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Level" type="Label" parent="UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lives" type="Label" parent="UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Modifier" type="Label" parent="UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Crosshair" type="Label" parent="UI/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PuzzleTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="timeout" from="PuzzleTimer" to="." method="_on_puzzle_timer_timeout"]

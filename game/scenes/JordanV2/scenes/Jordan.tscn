@@ -1,0 +1,76 @@
+[gd_scene load_steps=13 format=3 uid="uid://b0qvm47l32adt"]
+
+[ext_resource type="PackedScene" uid="uid://b68oiaawr18cp" path="res://scenes/Player.tscn" id="1_j773x"]
+[ext_resource type="Script" path="res://scenes/JordanV2/scripts/Spawn.gd" id="1_vhtod"]
+[ext_resource type="Shape3D" uid="uid://unmb0li3vxi2" path="res://scenes/JordanV2/assets/IcoSphereCollision.tres" id="2_1j827"]
+[ext_resource type="Script" path="res://scenes/JordanV2/scripts/Shoot.gd" id="2_24bsj"]
+[ext_resource type="ArrayMesh" uid="uid://c7u7xdcvu76lm" path="res://scenes/JordanV2/assets/IcoSphereMesh.tres" id="3_ug776"]
+[ext_resource type="PackedScene" uid="uid://bvjsumvppm76p" path="res://scenes/UI.tscn" id="6_gia1l"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_se5qd"]
+
+[sub_resource type="Sky" id="Sky_pal1w"]
+sky_material = SubResource("ProceduralSkyMaterial_se5qd")
+
+[sub_resource type="Environment" id="Environment_dsr78"]
+sky = SubResource("Sky_pal1w")
+ambient_light_source = 3
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7wjdk"]
+viewport_path = NodePath("Shoot/SubViewport")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ne73k"]
+radius = 0.05
+
+[sub_resource type="SphereMesh" id="SphereMesh_rjwvf"]
+radius = 0.05
+height = 0.1
+
+[node name="Node" type="Node"]
+
+[node name="Control" parent="." instance=ExtResource("6_gia1l")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dsr78")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_j773x")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = ExtResource("2_1j827")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("3_ug776")
+
+[node name="Spawn" type="Node3D" parent="."]
+script = ExtResource("1_vhtod")
+
+[node name="Shoot" type="Node3D" parent="."]
+script = ExtResource("2_24bsj")
+
+[node name="Sprite3D" type="Sprite3D" parent="Shoot"]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, -1.5)
+layers = 2
+texture = SubResource("ViewportTexture_7wjdk")
+
+[node name="SubViewport" type="SubViewport" parent="Shoot"]
+size = Vector2i(2000, 2000)
+render_target_update_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="Shoot/SubViewport"]
+cull_mask = 1048573
+size = 2.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Shoot/SubViewport/Camera3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Shoot/SubViewport/Camera3D/StaticBody3D"]
+shape = SubResource("SphereShape3D_ne73k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Shoot/SubViewport/Camera3D/StaticBody3D"]
+mesh = SubResource("SphereMesh_rjwvf")
