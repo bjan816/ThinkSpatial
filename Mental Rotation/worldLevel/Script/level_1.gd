@@ -7,7 +7,7 @@ extends Node3D
 func _on_same_button_area_entered(area):
 	if area.is_in_group("bullet") and NEXT_LEVEL != "":
 		get_tree().change_scene_to_file(NEXT_LEVEL)
-		area.get_parent().material_override.albedo_color = Color(0,1,0)
+		#area.get_parent().material_override.albedo_color = Color(0,1,0)
 		await get_tree().create_timer(2).timeout
 		print("next level")
 

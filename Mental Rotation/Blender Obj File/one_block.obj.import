@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://682jfohdapy8"
+path="res://.godot/imported/one_block.obj-31cd0b392b4cb83159a82df54dfa007e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/one_block.obj-31cd0b392b4cb83159a82df54dfa007e.mesh"]
+
+source_file="res://Blender Obj File/one_block.obj"
+dest_files=["res://.godot/imported/one_block.obj-31cd0b392b4cb83159a82df54dfa007e.mesh", "res://.godot/imported/one_block.obj-31cd0b392b4cb83159a82df54dfa007e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

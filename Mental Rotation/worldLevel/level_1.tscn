@@ -98,7 +98,7 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_422g7")
 
 [node name="Tetris_block_1" parent="." instance=ExtResource("1_7am4y")]
-transform = Transform3D(1, 0, 0, 0, -0.312899, 0.949787, 0, -0.949787, -0.312899, -9.83388, 9.20375, -14.3976)
+transform = Transform3D(0.850875, 0.498987, 0.164387, 0, -0.312899, 0.949787, 0.525368, -0.80815, -0.266238, -9.83388, 9.20375, -14.3976)
 
 [node name="Tetris_block_1_same" parent="." instance=ExtResource("2_3y2qm")]
 transform = Transform3D(-0.921335, 0.162584, 0.353141, -0.358528, -0.00408402, -0.93351, -0.150332, -0.986686, 0.0620537, 10.0282, 14.4312, -14.5702)
