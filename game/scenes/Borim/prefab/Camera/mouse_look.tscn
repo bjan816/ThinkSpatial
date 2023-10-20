@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://kk88u0bwf6xw"]
 
-[ext_resource type="Script" path="res://think_spatial/scripts/csharp/camera/MouseLook.cs" id="1_6vdfc"]
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/camera/MouseLook.cs" id="1_6vdfc"]
 
 [node name="MouseLook" type="Node3D" node_paths=PackedStringArray("_cameraPivot", "_camera")]
 script = ExtResource("1_6vdfc")

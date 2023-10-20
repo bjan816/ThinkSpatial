@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bhbgwjar260o8"
-path="res://.godot/imported/Raleway-Black.ttf-e62091f7ad26e4da5b5ce32117383670.fontdata"
+path="res://.godot/imported/Raleway-Black.ttf-d1ab1af77d8be0e9cf47b5dcc0ab3e7a.fontdata"
 
 [deps]
 
-source_file="res://think_spatial/prefab/ui/spatial_memory/Raleway-Black.ttf"
-dest_files=["res://.godot/imported/Raleway-Black.ttf-e62091f7ad26e4da5b5ce32117383670.fontdata"]
+source_file="res://scenes/Borim/prefab/ui/spatial_memory/Raleway-Black.ttf"
+dest_files=["res://.godot/imported/Raleway-Black.ttf-d1ab1af77d8be0e9cf47b5dcc0ab3e7a.fontdata"]
 
 [params]
 

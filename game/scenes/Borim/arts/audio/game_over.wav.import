@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bw546idbynbj"
-path="res://.godot/imported/game_over.wav-6aabdf7d50aecd51d9b42f2d1c4147f6.sample"
+path="res://.godot/imported/game_over.wav-dd21aeb5b1a8888d425127915121df9f.sample"
 
 [deps]
 
-source_file="res://think_spatial/arts/audio/game_over.wav"
-dest_files=["res://.godot/imported/game_over.wav-6aabdf7d50aecd51d9b42f2d1c4147f6.sample"]
+source_file="res://scenes/Borim/arts/audio/game_over.wav"
+dest_files=["res://.godot/imported/game_over.wav-dd21aeb5b1a8888d425127915121df9f.sample"]
 
 [params]
 

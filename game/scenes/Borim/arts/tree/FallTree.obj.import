@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://cgkli20sygyu0"
-path="res://.godot/imported/FallTree.obj-774a268fbd41c2ba2919b13dacc3ff46.mesh"
+path="res://.godot/imported/FallTree.obj-ae55c29e402f8648a7d8afb70956b789.mesh"
 
 [deps]
 
-files=["res://.godot/imported/FallTree.obj-774a268fbd41c2ba2919b13dacc3ff46.mesh"]
+files=["res://.godot/imported/FallTree.obj-ae55c29e402f8648a7d8afb70956b789.mesh"]
 
-source_file="res://think_spatial/arts/tree/FallTree.obj"
-dest_files=["res://.godot/imported/FallTree.obj-774a268fbd41c2ba2919b13dacc3ff46.mesh", "res://.godot/imported/FallTree.obj-774a268fbd41c2ba2919b13dacc3ff46.mesh"]
+source_file="res://scenes/Borim/arts/tree/FallTree.obj"
+dest_files=["res://.godot/imported/FallTree.obj-ae55c29e402f8648a7d8afb70956b789.mesh", "res://.godot/imported/FallTree.obj-ae55c29e402f8648a7d8afb70956b789.mesh"]
 
 [params]
 

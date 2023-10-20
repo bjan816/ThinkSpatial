@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d4d7ka7j2807l"
-path="res://.godot/imported/pop.wav-6d18ace52b4d232cd8a60b1e0517fe6d.sample"
+path="res://.godot/imported/pop.wav-63b1aaebcba64eb95d4a59ac3209c2e0.sample"
 
 [deps]
 
-source_file="res://think_spatial/arts/audio/pop.wav"
-dest_files=["res://.godot/imported/pop.wav-6d18ace52b4d232cd8a60b1e0517fe6d.sample"]
+source_file="res://scenes/Borim/arts/audio/pop.wav"
+dest_files=["res://.godot/imported/pop.wav-63b1aaebcba64eb95d4a59ac3209c2e0.sample"]
 
 [params]
 

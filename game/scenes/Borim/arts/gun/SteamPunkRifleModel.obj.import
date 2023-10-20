@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://01o5n67piqb3"
-path="res://.godot/imported/SteamPunkRifleModel.obj-c37ea8b4df46fbdcaf1ea23974d00f05.mesh"
+path="res://.godot/imported/SteamPunkRifleModel.obj-45d7a31756770d1982d6c5066b1c7b4b.mesh"
 
 [deps]
 
-files=["res://.godot/imported/SteamPunkRifleModel.obj-c37ea8b4df46fbdcaf1ea23974d00f05.mesh"]
+files=["res://.godot/imported/SteamPunkRifleModel.obj-45d7a31756770d1982d6c5066b1c7b4b.mesh"]
 
-source_file="res://think_spatial/arts/gun/SteamPunkRifleModel.obj"
-dest_files=["res://.godot/imported/SteamPunkRifleModel.obj-c37ea8b4df46fbdcaf1ea23974d00f05.mesh", "res://.godot/imported/SteamPunkRifleModel.obj-c37ea8b4df46fbdcaf1ea23974d00f05.mesh"]
+source_file="res://scenes/Borim/arts/gun/SteamPunkRifleModel.obj"
+dest_files=["res://.godot/imported/SteamPunkRifleModel.obj-45d7a31756770d1982d6c5066b1c7b4b.mesh", "res://.godot/imported/SteamPunkRifleModel.obj-45d7a31756770d1982d6c5066b1c7b4b.mesh"]
 
 [params]
 

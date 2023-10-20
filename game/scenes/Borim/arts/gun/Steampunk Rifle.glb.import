@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://827egeb8ffcf"
-path="res://.godot/imported/Steampunk Rifle.glb-e57a8d8195c4841b9e901917c9a9d8d8.scn"
+path="res://.godot/imported/Steampunk Rifle.glb-ec4b0da3dc12e22ff86a4465d8c156c6.scn"
 
 [deps]
 
-source_file="res://think_spatial/arts/gun/Steampunk Rifle.glb"
-dest_files=["res://.godot/imported/Steampunk Rifle.glb-e57a8d8195c4841b9e901917c9a9d8d8.scn"]
+source_file="res://scenes/Borim/arts/gun/Steampunk Rifle.glb"
+dest_files=["res://.godot/imported/Steampunk Rifle.glb-ec4b0da3dc12e22ff86a4465d8c156c6.scn"]
 
 [params]
 

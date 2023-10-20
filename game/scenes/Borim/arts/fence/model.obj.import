@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://dyiycfn3j26e8"
-path="res://.godot/imported/model.obj-4b95f36a7bd66dfb1b80c3aef1700c4d.mesh"
+path="res://.godot/imported/model.obj-c07db37f70e8fb7edaf7b7248f54a421.mesh"
 
 [deps]
 
-files=["res://.godot/imported/model.obj-4b95f36a7bd66dfb1b80c3aef1700c4d.mesh"]
+files=["res://.godot/imported/model.obj-c07db37f70e8fb7edaf7b7248f54a421.mesh"]
 
-source_file="res://think_spatial/arts/fence/model.obj"
-dest_files=["res://.godot/imported/model.obj-4b95f36a7bd66dfb1b80c3aef1700c4d.mesh", "res://.godot/imported/model.obj-4b95f36a7bd66dfb1b80c3aef1700c4d.mesh"]
+source_file="res://scenes/Borim/arts/fence/model.obj"
+dest_files=["res://.godot/imported/model.obj-c07db37f70e8fb7edaf7b7248f54a421.mesh", "res://.godot/imported/model.obj-c07db37f70e8fb7edaf7b7248f54a421.mesh"]
 
 [params]
 

@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://cebhhql56m0l"
-path="res://.godot/imported/BulbFlower.obj-78dfa5f81093821893018d2895f2652d.mesh"
+path="res://.godot/imported/BulbFlower.obj-233497ebca3487258590b54d53bf33c0.mesh"
 
 [deps]
 
-files=["res://.godot/imported/BulbFlower.obj-78dfa5f81093821893018d2895f2652d.mesh"]
+files=["res://.godot/imported/BulbFlower.obj-233497ebca3487258590b54d53bf33c0.mesh"]
 
-source_file="res://think_spatial/arts/tree/BulbFlower.obj"
-dest_files=["res://.godot/imported/BulbFlower.obj-78dfa5f81093821893018d2895f2652d.mesh", "res://.godot/imported/BulbFlower.obj-78dfa5f81093821893018d2895f2652d.mesh"]
+source_file="res://scenes/Borim/arts/tree/BulbFlower.obj"
+dest_files=["res://.godot/imported/BulbFlower.obj-233497ebca3487258590b54d53bf33c0.mesh", "res://.godot/imported/BulbFlower.obj-233497ebca3487258590b54d53bf33c0.mesh"]
 
 [params]
 

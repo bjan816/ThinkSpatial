@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bie1p6tojfbl1"
-path.s3tc="res://.godot/imported/texture.png-7cbf545da4cf7fb686658a0c2f4fa766.s3tc.ctex"
+path.s3tc="res://.godot/imported/texture.png-3c37de8d35f5f47aa4b83b6a2c960a93.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://think_spatial/arts/texture.png"
-dest_files=["res://.godot/imported/texture.png-7cbf545da4cf7fb686658a0c2f4fa766.s3tc.ctex"]
+source_file="res://scenes/Borim/arts/texture.png"
+dest_files=["res://.godot/imported/texture.png-3c37de8d35f5f47aa4b83b6a2c960a93.s3tc.ctex"]
 
 [params]
 

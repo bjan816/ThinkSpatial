@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://0jpk2a7sj4m1"
-path="res://.godot/imported/background.ogg-366b489549a3bd5f6753d08eb4a1d3ad.oggvorbisstr"
+path="res://.godot/imported/background.ogg-db33c35980b490b7c4dd4e896b9c6daf.oggvorbisstr"
 
 [deps]
 
-source_file="res://think_spatial/arts/audio/background.ogg"
-dest_files=["res://.godot/imported/background.ogg-366b489549a3bd5f6753d08eb4a1d3ad.oggvorbisstr"]
+source_file="res://scenes/Borim/arts/audio/background.ogg"
+dest_files=["res://.godot/imported/background.ogg-db33c35980b490b7c4dd4e896b9c6daf.oggvorbisstr"]
 
 [params]
 

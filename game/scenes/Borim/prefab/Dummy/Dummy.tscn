@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://dl8r5oqex8wmc"]
 
-[ext_resource type="Script" path="res://think_spatial/scripts/csharp/event_system/behavior/EntityBehavior.cs" id="1_u0qvs"]
-[ext_resource type="Script" path="res://think_spatial/scripts/csharp/event_system/event_handler/EntityEventHandler.cs" id="2_mtesv"]
-[ext_resource type="Script" path="res://think_spatial/scripts/csharp/event_system/misc/EntityDeathHandler.cs" id="3_7hp7b"]
-[ext_resource type="Script" path="res://think_spatial/scripts/csharp/damage_system/EntityVitals.cs" id="4_fbo2c"]
-[ext_resource type="Script" path="res://think_spatial/scripts/csharp/damage_system/HitBox.cs" id="5_xcljc"]
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/event_system/behavior/EntityBehavior.cs" id="1_u0qvs"]
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/event_system/event_handler/EntityEventHandler.cs" id="2_mtesv"]
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/event_system/misc/EntityDeathHandler.cs" id="3_7hp7b"]
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/damage_system/EntityVitals.cs" id="4_fbo2c"]
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/damage_system/HitBox.cs" id="5_xcljc"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_htrr1"]
 
