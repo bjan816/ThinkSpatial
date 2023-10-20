@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://co3kmwd3lex7h"]
+[gd_scene load_steps=41 format=3 uid="uid://co3kmwd3lex7h"]
 
 [ext_resource type="PackedScene" uid="uid://bvjsumvppm76p" path="res://scenes/UI.tscn" id="1_hikvv"]
 [ext_resource type="Material" uid="uid://blf16jpvdnknl" path="res://assets/material/PaynesGray.tres" id="2_c3wly"]
@@ -6,9 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://uww8t3t8a8jx" path="res://scenes/Sun/scenes/Demo.tscn" id="4_2sqrc"]
 [ext_resource type="PackedScene" uid="uid://d087p72mrm060" path="res://scenes/Quit.tscn" id="4_5wmn3"]
 [ext_resource type="PackedScene" uid="uid://bhpkb8me38jf" path="res://scenes/Jamie/world/3DLevel.tscn" id="5_rg2ho"]
+[ext_resource type="PackedScene" uid="uid://davlunk7onym5" path="res://scenes/Borim/scenes/spatial_memory/spatial_memory.tscn" id="6_mv0xy"]
 [ext_resource type="PackedScene" uid="uid://clppp4avxfvwu" path="res://scenes/Jordan/scenes/TutorialBox.tscn" id="7_ch370"]
 [ext_resource type="Material" uid="uid://b7nqp28jgo0ob" path="res://assets/material/CadetGray.tres" id="8_or0pi"]
 [ext_resource type="ArrayMesh" uid="uid://dhkb6immaeg4n" path="res://scenes/Jordan/assets/menu ball.obj" id="9_64lqo"]
+[ext_resource type="Material" uid="uid://b8vd8l3gl4kr8" path="res://assets/material/SpaceCadet.tres" id="10_2i5ng"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sf5xj"]
 
@@ -90,6 +92,10 @@ albedo_color = Color(0, 0.121569, 0.247059, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gico6"]
 material = SubResource("StandardMaterial3D_0hesr")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jubv3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8o6kp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7fuq"]
 albedo_color = Color(0, 0.121569, 0.247059, 1)
@@ -241,6 +247,18 @@ shape = SubResource("BoxShape3D_a3h8b")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Sun"]
 mesh = SubResource("BoxMesh_gico6")
 
+[node name="Borim" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.9, -3.5)
+script = ExtResource("3_7fxw7")
+path = ExtResource("6_mv0xy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Borim"]
+shape = SubResource("BoxShape3D_jubv3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Borim"]
+material_override = ExtResource("10_2i5ng")
+mesh = SubResource("BoxMesh_8o6kp")
+
 [node name="Jamie" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
 script = ExtResource("3_7fxw7")
@@ -270,6 +288,8 @@ mesh = ExtResource("9_64lqo")
 [connection signal="mouse_exited" from="Door" to="Door" method="_on_mouse_exited" flags=18]
 [connection signal="mouse_entered" from="Sun" to="Sun" method="_on_mouse_entered" flags=18]
 [connection signal="mouse_exited" from="Sun" to="Sun" method="_on_mouse_exited" flags=18]
+[connection signal="mouse_entered" from="Borim" to="Borim" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Borim" to="Borim" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Jamie" to="Jamie" method="_on_mouse_entered" flags=18]
 [connection signal="mouse_exited" from="Jamie" to="Jamie" method="_on_mouse_exited" flags=18]
 [connection signal="mouse_entered" from="Jordan" to="Jordan" method="_on_mouse_entered" flags=18]
