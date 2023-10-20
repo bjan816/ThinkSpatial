@@ -9,9 +9,9 @@ const RAY_LENGTH = 100
 var target
 var level = 1
 var lives = 3
-var puzzle_time = 60
+var puzzle_time = 180
 var is_moving
-var movement_time = 15
+var movement_time = 20
 
 var mirror_mod
 var ghost_mod
@@ -99,9 +99,9 @@ func reset_puzzle():
 	set_objects()
 	set_level_text(level)
 	set_lives_text(lives)
-	puzzle_time = 60
+	puzzle_time = 180
 	set_time_text(puzzle_time)
-	movement_time = 15
+	movement_time = 20
 	set_movement_time_text(movement_time)
 	
 	$Player.transform.origin = Vector3(0, 1, -16)
@@ -244,17 +244,17 @@ func set_lives_text(lives_num):
 	
 func set_time_text(time_num):
 	
-	$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Time.text = " " + str(time_num)
+	$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Time.text = str(time_num)
 	
 func set_movement_time_text(time_num):
 	
-	$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MovementTime.text = " " + str(time_num)
+	$UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MovementTime.text = str(time_num)
 
 func _on_puzzle_timer_timeout():
 	
 	puzzle_time -= 0.1
 	var puzzle_time_label = $UI/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Time
-	set_time_text(" %.1f" % puzzle_time)
+	set_time_text("%.1f" % puzzle_time)
 		
 	if puzzle_time <= 10:
 		
