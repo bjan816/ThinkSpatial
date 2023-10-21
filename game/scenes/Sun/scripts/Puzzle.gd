@@ -3,7 +3,6 @@ extends StaticBody3D
 
 
 @export var to:Node3D
-
 @export var pieces:Array[MeshInstance3D]
 
 var animate:= false
@@ -22,7 +21,7 @@ func check(your_cam:Vector3):
   if my_cam.distance_to(your_cam) < 1:
     animate = true
     show()
-    for piece in pieces: piece.hide()
     to.hide()
+    for piece in pieces: piece.hide()
     return true
   return false
