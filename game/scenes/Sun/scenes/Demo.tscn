@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://uww8t3t8a8jx"]
+[gd_scene load_steps=47 format=3 uid="uid://uww8t3t8a8jx"]
 
 [ext_resource type="Script" path="res://scenes/Sun/scripts/Demo.gd" id="1_xyglf"]
 [ext_resource type="ArrayMesh" uid="uid://dui5dve2o0wjo" path="res://scenes/Sun/assets/Stump.obj" id="2_lsqud"]
@@ -16,6 +16,10 @@
 [ext_resource type="ArrayMesh" uid="uid://c85j11bflc8rt" path="res://scenes/Sun/assets/PistolAxe.obj" id="11_pwge8"]
 [ext_resource type="Material" uid="uid://bvvrnvhc0aqyh" path="res://scenes/Sun/assets/EvergreenMaterial.tres" id="11_yqdpe"]
 [ext_resource type="Script" path="res://scenes/Sun/scripts/Player.gd" id="12_5xffj"]
+[ext_resource type="Shader" path="res://scenes/Sun/assets/Crack.gdshader" id="16_ut6i7"]
+[ext_resource type="Texture2D" uid="uid://c4bh8u215qn0t" path="res://scenes/Sun/assets/crack1.png" id="17_cg37g"]
+[ext_resource type="Texture2D" uid="uid://4aj07812i4v6" path="res://scenes/Sun/assets/crack2.png" id="18_33m1t"]
+[ext_resource type="Texture2D" uid="uid://whwc1k8wdisg" path="res://scenes/Sun/assets/crack3.png" id="19_182cj"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_7pv4r"]
 top_radius = 1.0
@@ -50,6 +54,18 @@ func _process(delta:float):
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2xmd2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4wk87"]
+shader = ExtResource("16_ut6i7")
+shader_parameter/rad = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yhgad"]
+shader = ExtResource("16_ut6i7")
+shader_parameter/rad = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n77d3"]
+shader = ExtResource("16_ut6i7")
+shader_parameter/rad = 1.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_yg8fc"]
 flip_faces = true
@@ -289,6 +305,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
+
+[node name="Crack1" type="Sprite2D" parent="Control"]
+visible = false
+material = SubResource("ShaderMaterial_4wk87")
+rotation = 0.785398
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_cg37g")
+offset = Vector2(200, 0)
+
+[node name="Crack2" type="Sprite2D" parent="Control"]
+visible = false
+material = SubResource("ShaderMaterial_yhgad")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_33m1t")
+centered = false
+offset = Vector2(0, 1200)
+
+[node name="Crack3" type="Sprite2D" parent="Control"]
+visible = false
+material = SubResource("ShaderMaterial_n77d3")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("19_182cj")
+centered = false
+offset = Vector2(2000, 200)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 

@@ -3,7 +3,7 @@ extends Node3D
 
 @onready var ui:Control = get_node("../Control")
 
-var health:= 5
+var misses:= 0
 
 
 # INPUT
@@ -19,15 +19,11 @@ func _input(event:InputEvent):
     var from = cam.project_ray_origin(event.position)
     var to   = cam.project_ray_normal(event.position) * 10 + from
     var query = PhysicsRayQueryParameters3D.create(from, to)
-    # Check query
-    if collide(query):
-      # Incorrect transformation
-      if not collide(query).collider.check(cam.global_position):
-        health -= 1
-    else:
-      health -= 1
-    ui.update(health)
-    if health < 1: Global.to_home()
+    # Check query and transformation
+    # IF no collision || incorrect transformation
+    if not collide(query) || not collide(query).collider.check(cam.global_position): misses += 1
+    if misses > 3: Global.to_home()
+    ui.update(misses)
   
   # Move
   if event is InputEventMouseMotion and Input.is_action_pressed("M2"):
