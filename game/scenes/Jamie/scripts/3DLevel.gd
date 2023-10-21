@@ -114,8 +114,6 @@ var distanceMoved = 0.0
 var switch = false
 
 func _process(delta):
-	print(player.global_transform.origin.x)
-	print(player.global_transform.origin.z)
 	#Calculates player's movement
 	currentPos = player.global_transform.origin
 	distanceMoved = currentPos.distance_to(playerStartPosition)

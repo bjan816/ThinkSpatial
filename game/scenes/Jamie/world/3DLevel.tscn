@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bhpkb8me38jf"]
+[gd_scene load_steps=24 format=3 uid="uid://bhpkb8me38jf"]
 
 [ext_resource type="Script" path="res://scenes/Jamie/scripts/3DLevel.gd" id="1_adykv"]
 [ext_resource type="PackedScene" uid="uid://d4k5er881yygp" path="res://scenes/Jamie/player/Player.tscn" id="1_en333"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://biggrvfoio4nb" path="res://scenes/Jamie/icon/game_logo.png" id="6_gld7u"]
 [ext_resource type="Script" path="res://scenes/Jamie/scripts/Timer.gd" id="7_qb6fi"]
 [ext_resource type="Script" path="res://scenes/Jamie/scripts/Scoreboard.gd" id="8_5m3r7"]
+[ext_resource type="Texture2D" uid="uid://bkryf271hlck6" path="res://scenes/Jamie/instruction/instruction1.png" id="8_coqeb"]
 [ext_resource type="Texture2D" uid="uid://bstkvm0dlli1g" path="res://scenes/Jamie/maps/hard_level_map1.png" id="9_0nipa"]
 [ext_resource type="PackedScene" uid="uid://b6jfiywsongok" path="res://scenes/Jamie/world/Goal.tscn" id="9_sfovk"]
 [ext_resource type="Texture2D" uid="uid://dr4oh7gvjo0pe" path="res://scenes/Jamie/maps/hard_level_map2.png" id="10_pwtep"]
@@ -113,46 +114,38 @@ text = " Back to Menu "
 visible = false
 layout_mode = 2
 offset_left = 136.0
-offset_top = 86.0
+offset_top = 3.0
 offset_right = 1784.0
-offset_bottom = 996.0
+offset_bottom = 1078.0
 
-[node name="Title" type="Label" parent="DifficultyMenu/InstructionPage1"]
+[node name="VBoxContainer" type="VBoxContainer" parent="DifficultyMenu/InstructionPage1"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Title" type="Label" parent="DifficultyMenu/InstructionPage1/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_jyl02")
 theme_override_font_sizes/font_size = 50
 text = "Miro Instruction
-
-
-
-
-
-
-
-
-
-
-
-
-
 "
+horizontal_alignment = 1
 
-[node name="Description" type="Label" parent="DifficultyMenu/InstructionPage1"]
+[node name="Description" type="Label" parent="DifficultyMenu/InstructionPage1/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_jyl02")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 34
 text = "Welcome to Miro! In this game, you'll embark on a journey through a series
  of challenging mazes. Your goal is to find your location within the maze and
 make your way to the purple circle representing the exit. To help you
-navigate, you'll have access to a map.
-
-
-
-
-"
+navigate, you'll have access to a map."
 horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="DifficultyMenu/InstructionPage1/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_coqeb")
+stretch_mode = 3
 
 [node name="InstructionPage2" type="HBoxContainer" parent="DifficultyMenu"]
 visible = false
@@ -189,7 +182,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_jyl02")
 theme_override_font_sizes/font_size = 30
-text = "There are a total of 6 stages in
+text = "There are a total of 9 stages in
 the game."
 horizontal_alignment = 1
 
@@ -198,7 +191,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_jyl02")
 theme_override_font_sizes/font_size = 30
-text = "For the first 3 stages, you'll
+text = "For the first 6 stages, you'll
  start facing the top of the map."
 horizontal_alignment = 1
 
@@ -406,8 +399,9 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_jyl02")
 theme_override_font_sizes/font_size = 30
 text = "Starting from the 4th stage, the game becomes
- more challenging as you may face any direction on 
-the map. You'll need to rotate the map to guess 
+ more challenging and  from the 7th stage 
+you may face any direction on the map. 
+You'll need to rotate the map to guess 
 your current location accurately."
 horizontal_alignment = 1
 
