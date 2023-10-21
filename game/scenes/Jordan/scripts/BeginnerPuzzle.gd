@@ -169,7 +169,7 @@ func set_targets():
 			0
 		)
 		
-		var parent_rotation = i * 45
+		var parent_rotation = i * 90
 		
 		$Targets.rotation_degrees.y = parent_rotation
 		var pos = target.global_transform.origin
@@ -183,7 +183,7 @@ func set_light():
 func set_objects():
 	
 	var objects = get_tree().get_nodes_in_group("ToSpawn")
-	var num = random.randi_range(6, 10)
+	var num = random.randi_range(3, 5)
 	
 	for i in range(num):
 		

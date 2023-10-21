@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cpk7pjx6u2dwy"]
+[gd_scene load_steps=37 format=3 uid="uid://cpk7pjx6u2dwy"]
 
 [ext_resource type="Script" path="res://scenes/Jordan/scripts/BeginnerPuzzle.gd" id="1_00qh4"]
 [ext_resource type="PackedScene" uid="uid://dd5yqxho3sgkk" path="res://scenes/Jordan/scenes/Player.tscn" id="2_4j3bb"]
@@ -49,30 +49,6 @@ data = PackedVector3Array(-0.1625, -0.8507, 0.5, 0, -1, 0, 0.4253, -0.8507, 0.30
 [sub_resource type="SphereMesh" id="SphereMesh_lj44l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fu0pu"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hn08e"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_l4rna"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ui6td"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmtcy"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_cm8jt"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_rxlpv"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nf1qw"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_og4ew"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ody2l"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_je5u8"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_mv6yd"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_w1jry"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_jjr1f"]
 viewport_path = NodePath("Cameras")
@@ -202,58 +178,6 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target4/StaticBody3D4"]
 shape = SubResource("BoxShape3D_fu0pu")
-
-[node name="Target5" type="MeshInstance3D" parent="Targets"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-layers = 2
-material_override = SubResource("StandardMaterial3D_hn08e")
-cast_shadow = 0
-mesh = SubResource("SphereMesh_l4rna")
-skeleton = NodePath("")
-
-[node name="StaticBody3D5" type="StaticBody3D" parent="Targets/Target5" groups=["Targets"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target5/StaticBody3D5"]
-shape = SubResource("BoxShape3D_ui6td")
-
-[node name="Target6" type="MeshInstance3D" parent="Targets"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-layers = 2
-material_override = SubResource("StandardMaterial3D_bmtcy")
-cast_shadow = 0
-mesh = SubResource("SphereMesh_cm8jt")
-skeleton = NodePath("")
-
-[node name="StaticBody3D6" type="StaticBody3D" parent="Targets/Target6" groups=["Targets"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target6/StaticBody3D6"]
-shape = SubResource("BoxShape3D_rxlpv")
-
-[node name="Target7" type="MeshInstance3D" parent="Targets"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-layers = 2
-material_override = SubResource("StandardMaterial3D_nf1qw")
-cast_shadow = 0
-mesh = SubResource("SphereMesh_og4ew")
-skeleton = NodePath("")
-
-[node name="StaticBody3D7" type="StaticBody3D" parent="Targets/Target7" groups=["Targets"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target7/StaticBody3D7"]
-shape = SubResource("BoxShape3D_ody2l")
-
-[node name="Target8" type="MeshInstance3D" parent="Targets"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-layers = 2
-material_override = SubResource("StandardMaterial3D_je5u8")
-cast_shadow = 0
-mesh = SubResource("SphereMesh_mv6yd")
-skeleton = NodePath("")
-
-[node name="StaticBody3D8" type="StaticBody3D" parent="Targets/Target8" groups=["Targets"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/Target8/StaticBody3D8"]
-shape = SubResource("BoxShape3D_w1jry")
 
 [node name="Screen" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.38147, -24.9375)
@@ -412,3 +336,5 @@ vertical_alignment = 1
 
 [node name="PuzzleTimer" type="Timer" parent="."]
 wait_time = 0.1
+
+[connection signal="timeout" from="PuzzleTimer" to="." method="_on_puzzle_timer_timeout"]
