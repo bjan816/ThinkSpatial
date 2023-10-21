@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bhpkb8me38jf"]
+[gd_scene load_steps=23 format=3 uid="uid://bhpkb8me38jf"]
 
 [ext_resource type="Script" path="res://scenes/Jamie/scripts/3DLevel.gd" id="1_adykv"]
 [ext_resource type="PackedScene" uid="uid://d4k5er881yygp" path="res://scenes/Jamie/player/Player.tscn" id="1_en333"]
@@ -12,8 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://bstkvm0dlli1g" path="res://scenes/Jamie/maps/hard_level_map1.png" id="9_0nipa"]
 [ext_resource type="PackedScene" uid="uid://b6jfiywsongok" path="res://scenes/Jamie/world/Goal.tscn" id="9_sfovk"]
 [ext_resource type="Texture2D" uid="uid://dr4oh7gvjo0pe" path="res://scenes/Jamie/maps/hard_level_map2.png" id="10_pwtep"]
+[ext_resource type="Texture2D" uid="uid://m771ebgxubj6" path="res://scenes/Jamie/maps/easy_level_map1.png" id="11_5nlei"]
 [ext_resource type="Texture2D" uid="uid://c5p7iyjq5bm6w" path="res://scenes/Jamie/maps/hard_level_map3.png" id="11_j2i2d"]
 [ext_resource type="Texture2D" uid="uid://b64s2vf0ctnh1" path="res://scenes/Jamie/maps/normal_level_map1.png" id="12_0tk4q"]
+[ext_resource type="Texture2D" uid="uid://b0tx6k8mo0sjn" path="res://scenes/Jamie/maps/easy_level_map2.png" id="12_4wsbr"]
+[ext_resource type="Texture2D" uid="uid://dg7skwcuv5ych" path="res://scenes/Jamie/maps/easy_level_map3.png" id="13_74l32"]
 [ext_resource type="Texture2D" uid="uid://sphdbbwnkjmj" path="res://scenes/Jamie/maps/normal_level_map2.png" id="13_o44vg"]
 [ext_resource type="Texture2D" uid="uid://cnj4nhmh04m0d" path="res://scenes/Jamie/maps/normal_level_map3.png" id="14_1ed3j"]
 
@@ -463,7 +466,6 @@ offset_bottom = 30.0
 text = "Score:"
 
 [node name="Maps" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 305.0
@@ -471,21 +473,21 @@ offset_bottom = 290.0
 
 [node name="Easy1" type="Sprite2D" parent="Maps"]
 visible = false
-position = Vector2(211.292, 198.531)
-scale = Vector2(0.159057, 0.14177)
-texture = ExtResource("9_0nipa")
+position = Vector2(151, 144)
+scale = Vector2(0.415869, 0.375648)
+texture = ExtResource("11_5nlei")
 
 [node name="Easy2" type="Sprite2D" parent="Maps"]
 visible = false
-position = Vector2(235.317, 218.978)
-scale = Vector2(0.0634353, 0.0533799)
-texture = ExtResource("9_0nipa")
+position = Vector2(151, 144.5)
+scale = Vector2(0.393782, 0.398085)
+texture = ExtResource("12_4wsbr")
 
 [node name="Easy3" type="Sprite2D" parent="Maps"]
 visible = false
-position = Vector2(244.899, 226.676)
-scale = Vector2(0.0252993, 0.0200988)
-texture = ExtResource("9_0nipa")
+position = Vector2(151.5, 144.5)
+scale = Vector2(0.395078, 0.398085)
+texture = ExtResource("13_74l32")
 
 [node name="Hard1" type="Sprite2D" parent="Maps"]
 visible = false

@@ -37,10 +37,10 @@ var hard_level = load("res://scenes/Jamie/world/HardLevel.tscn").instantiate()
 var normal_level = load("res://scenes/Jamie/world/NormalLevel.tscn").instantiate()
 
 #Easy levels setting
-var easy_level_reset_pos = [Vector3(14, 1, -14), Vector3(46, 1, 14), Vector3(6, 1, 2)]
+var easy_level_reset_pos = [Vector3(38, 1, 22), Vector3(46, 1, 14), Vector3(46, 1, 22)]
 var easy_level_reset_angle = [Vector3(0, 180, 0), Vector3(0, 90, 0), Vector3(0, 90, 0)]
 var easy_level_test_pos = [Vector3(-34, 1, 42), Vector3(42, 1, -42), Vector3(-18, 1, 46)]
-var easy_level_goal_pos = [Vector3(-34, 2, 46), Vector3(38, 2, -42), Vector3(-22, 2, 46)]
+var easy_level_goal_pos = [Vector3(14, 2, 46), Vector3(46, 2, 46), Vector3(14, 2, 38)]
 
 #Normal levels setting
 var normal_level_reset_pos = [Vector3(14, 1, -14), Vector3(46, 1, 14), Vector3(6, 1, 2)]
@@ -114,8 +114,8 @@ var distanceMoved = 0.0
 var switch = false
 
 func _process(delta):
-	print(difficulty)
-	print(current_lev)
+	print(player.global_transform.origin.x)
+	print(player.global_transform.origin.z)
 	#Calculates player's movement
 	currentPos = player.global_transform.origin
 	distanceMoved = currentPos.distance_to(playerStartPosition)
@@ -220,17 +220,17 @@ func _on_final_menu_exit():
 func check_goal_lev(lev):
 	if difficulty == 1:
 		if lev == 1:
-			if (player.global_transform.origin.x > -35 and player.global_transform.origin.x < -33) and (player.global_transform.origin.z > 45 and player.global_transform.origin.z < 47):
+			if (player.global_transform.origin.x > 13 and player.global_transform.origin.x < 15) and (player.global_transform.origin.z > 45 and player.global_transform.origin.z < 47):
 				return true
 			else:
 				return false
 		elif lev == 2:
-			if (player.global_transform.origin.x > 37 and player.global_transform.origin.x < 39) and (player.global_transform.origin.z > -43 and player.global_transform.origin.z < -41):
+			if (player.global_transform.origin.x > 45 and player.global_transform.origin.x < 47) and (player.global_transform.origin.z > 45 and player.global_transform.origin.z < 47):
 				return true
 			else:
 				return false
 		elif lev == 3:
-			if (player.global_transform.origin.x > -23 and player.global_transform.origin.x < -21) and (player.global_transform.origin.z > 45 and player.global_transform.origin.z < 47):
+			if (player.global_transform.origin.x > 13 and player.global_transform.origin.x < 15) and (player.global_transform.origin.z > 37 and player.global_transform.origin.z < 39):
 				return true
 			else:
 				return false
@@ -303,10 +303,11 @@ func reload():
 #Make the map related to each level visible by checking difficulty and current_lev
 func map_visible(lev):
 	maps.show()
-	var m = [easy_map1, easy_map2, easy_map3, normal_map1, normal_map2, normal_map3, hard_map1, hard_map2, hard_map3]
-	for map in m:
-		map.visible = false
-	m[difficulty * lev - 1].visible = true
+	var mmm = [[easy_map1, easy_map2, easy_map3], [normal_map1, normal_map2, normal_map3], [hard_map1, hard_map2, hard_map3]]
+	for mm in mmm:
+		for m in mm:
+			m.visible = false
+	mmm[difficulty - 1][lev - 1].visible = true
 
 func stageScore(lev):
 	var s = scoreboard.score
@@ -345,7 +346,7 @@ func stageScore(lev):
 func distanceScore(lev):
 	var distances = [0, 0, 0]
 	if difficulty == 1:
-		distances = [39, 56, 48]
+		distances = [12, 16, 12]
 		if lev == 1:
 			eLev1DistanceScore = round(1000 * (distances[0] / (playerFinalDistance / 4)))
 			if eLev1DistanceScore > 1000:
