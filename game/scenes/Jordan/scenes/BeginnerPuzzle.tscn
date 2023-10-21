@@ -1,8 +1,14 @@
-[gd_scene load_steps=37 format=3 uid="uid://cpk7pjx6u2dwy"]
+[gd_scene load_steps=33 format=3 uid="uid://cpk7pjx6u2dwy"]
 
 [ext_resource type="Script" path="res://scenes/Jordan/scripts/BeginnerPuzzle.gd" id="1_00qh4"]
 [ext_resource type="PackedScene" uid="uid://dd5yqxho3sgkk" path="res://scenes/Jordan/scenes/Player.tscn" id="2_4j3bb"]
 [ext_resource type="ArrayMesh" uid="uid://c1m2lj5ys7f3w" path="res://scenes/Jordan/assets/golf ball.obj" id="3_vpnra"]
+[ext_resource type="ArrayMesh" uid="uid://ehjiso2yce88" path="res://scenes/Jordan/assets/banana.obj" id="4_44pnu"]
+[ext_resource type="ArrayMesh" uid="uid://ccrhvuar1fw7n" path="res://scenes/Jordan/assets/greenApple.obj" id="5_e1uxx"]
+[ext_resource type="ArrayMesh" uid="uid://dynomcqevrjgg" path="res://scenes/Jordan/assets/lemon.obj" id="6_mgdke"]
+[ext_resource type="ArrayMesh" uid="uid://dd6sii0o4pdgs" path="res://scenes/Jordan/assets/orange.obj" id="7_0fbxu"]
+[ext_resource type="ArrayMesh" uid="uid://dlpgy7i4ihmdm" path="res://scenes/Jordan/assets/pear.obj" id="8_yywpf"]
+[ext_resource type="ArrayMesh" uid="uid://cnbdl7407lbie" path="res://scenes/Jordan/assets/redApple.obj" id="9_85jjh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xn2f7"]
 sun_angle_max = 360.0
@@ -60,31 +66,6 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_m14eg"]
 dof_blur_amount = 0.25
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7j1y4"]
-albedo_color = Color(0.345098, 0.392157, 0.486275, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_tey3l"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ql1hy"]
-albedo_color = Color(0.345098, 0.392157, 0.486275, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_nvqkm"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ratfu"]
-albedo_color = Color(0.345098, 0.392157, 0.486275, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_yqonr"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_osou0"]
-albedo_color = Color(0.345098, 0.392157, 0.486275, 1)
-
-[sub_resource type="PrismMesh" id="PrismMesh_gauv1"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_suqqr"]
-albedo_color = Color(0.345098, 0.392157, 0.486275, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_8fywl"]
 
 [node name="BeginnerPuzzle" type="Node3D"]
 script = ExtResource("1_00qh4")
@@ -212,34 +193,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.50347, 0)
 visible = false
 
 [node name="MeshInstance3D1" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
-transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_7j1y4")
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
-mesh = SubResource("BoxMesh_tey3l")
+mesh = ExtResource("4_44pnu")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
-transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_ql1hy")
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
-mesh = SubResource("CapsuleMesh_nvqkm")
+mesh = ExtResource("5_e1uxx")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
-transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_ratfu")
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
-mesh = SubResource("CylinderMesh_yqonr")
+mesh = ExtResource("6_mgdke")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
-transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_osou0")
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
-mesh = SubResource("PrismMesh_gauv1")
+mesh = ExtResource("7_0fbxu")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
-transform = Transform3D(2.25, 0, 0, 0, 2.25, 0, 0, 0, 2.25, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_suqqr")
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 cast_shadow = 0
-mesh = SubResource("SphereMesh_8fywl")
+mesh = ExtResource("8_yywpf")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="SpawnableObjects" groups=["ToSpawn"]]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+cast_shadow = 0
+mesh = ExtResource("9_85jjh")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
