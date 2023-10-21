@@ -19,7 +19,7 @@ func _process(delta:float):
 func update(value:int):
   $Label.text = str(value)
   # Lives left
-  if value <= len(cracks):
+  if 0 < value && value <= len(cracks):
     cracks[value-1].show()
   # No lives left
   else:

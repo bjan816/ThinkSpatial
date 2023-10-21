@@ -17,9 +17,9 @@
 [ext_resource type="Material" uid="uid://bvvrnvhc0aqyh" path="res://scenes/Sun/assets/EvergreenMaterial.tres" id="11_yqdpe"]
 [ext_resource type="Script" path="res://scenes/Sun/scripts/Player.gd" id="12_5xffj"]
 [ext_resource type="Shader" path="res://scenes/Sun/assets/Crack.gdshader" id="16_ut6i7"]
-[ext_resource type="Texture2D" uid="uid://c4bh8u215qn0t" path="res://scenes/Sun/assets/crack1.png" id="17_cg37g"]
-[ext_resource type="Texture2D" uid="uid://4aj07812i4v6" path="res://scenes/Sun/assets/crack2.png" id="18_33m1t"]
-[ext_resource type="Texture2D" uid="uid://whwc1k8wdisg" path="res://scenes/Sun/assets/crack3.png" id="19_182cj"]
+[ext_resource type="Texture2D" uid="uid://c4bh8u215qn0t" path="res://scenes/Sun/assets/Crack1.png" id="17_cg37g"]
+[ext_resource type="Texture2D" uid="uid://4aj07812i4v6" path="res://scenes/Sun/assets/Crack2.png" id="18_33m1t"]
+[ext_resource type="Texture2D" uid="uid://whwc1k8wdisg" path="res://scenes/Sun/assets/Crack3.png" id="19_182cj"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_7pv4r"]
 top_radius = 1.0
@@ -295,7 +295,6 @@ surface_material_override/0 = ExtResource("9_shkyn")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "5"
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 1
