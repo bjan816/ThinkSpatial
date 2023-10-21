@@ -15,6 +15,9 @@
 - Jordan Pisarek
 - Kishora Tono
 
+**Database Design**
+- Jared McDowall
+
 ## Project Information
 Our project is split into two parts, implementing a spatial skills test using Moodle, with the Code-Runner pluggin, and implemententing a prototype spatial skils game using Godot.
 
@@ -32,19 +35,30 @@ Our team used [Jira Software](https://spatial-skills-testing.atlassian.net/jira/
 - Godot
 
 ## Installation and Configuration
+
+### Code-Runner
 To start an attempt of the Code-Runner Quiz, follow the steps below:
 
 Once you are logged into Code-Runner, you will need to navigate to the correct quiz.
 
-To install and run the game, firstly clone the game directory from the GutHub Respository
+### ThinkSpatial Game
+
+For both **Windows** and **macOS**, follow the below instructions for installing and setting up the game.
+
+The game is stored in the GitHub repository, first you will need to clone the repository using the below command - ensure that you have git installed on your machine.
 
 ```
 git clone https://github.com/uoa-compsci399-s2-2023/capstone-project-team-32.git
 ```
+Once you have the files on your machine, follow the steps below for your respective operating system.
+
+**Windows**
 
 Then open the `game` folder and run the executable file. There is nothing but your Windows machine that is needed, so long as you have a a graphics card installed.
 
-*confirm if we can have a mac version of the game or not*
+**macOS**
+
+Open the files, go into the `game` folder and find the `ThinkSpatial` file. Once located, open the file and the game should start running.
 
 ## Usage Examples - Code-Runner Quiz
 To start the quiz, click the attempt quiz button.
@@ -57,7 +71,7 @@ Once clicked, you will then be directed to the start of the quiz.
 ![](./markdown/coderunner3.png)
 
 There are 33 questions, which each new section introduce by an example question that is already done for you. Follow the instructions of the questions and enter the answer into the response field.
-![](./markdown/coderunner4.png).
+![](./markdown/coderunner4.png)
 
 You are able to submit your answer, by clicking the check button. However, there is a penatly for each time you clikc the check button and the answer is wrong. So do not click check unless you are sure that it is the correct answer.
 ![](./markdown/coderunner5.png)
@@ -65,13 +79,15 @@ You are able to submit your answer, by clicking the check button. However, there
 Once you have finished your attempt, then click the submit all button at the end of the quiz. If you do not finish in time, Code-Runner will submit all you have done and mark it automatically.
 ![](./markdown/coderunner6.png)
 
-## Usage Examples - Game
+## Usage Examples - ThinkSpatial Game
 
 *wait until game merge and executable is finished*
 
 ## Future Plans
 
 **Database Addition**
+
+We would like to add a databse to the game, storing all the data collected within the game. Making it simple for the teacher or admin to access player data and analyse and compare across all players. Thus, we have designed a database that we would like to implement in the future. Allowing for teacher and admin access, with data from each minigame stored in seperate tables for each player.
 
 **Game Extension**
 
