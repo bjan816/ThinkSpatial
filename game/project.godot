@@ -23,6 +23,7 @@ GameController="*res://scenes/Borim/prefab/auto_load/game_controller.tscn"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/vsync/vsync_mode=0
 
 [dotnet]
 

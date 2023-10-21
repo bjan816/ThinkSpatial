@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://bhpkb8me38jf"]
+[gd_scene load_steps=27 format=3 uid="uid://bhpkb8me38jf"]
 
 [ext_resource type="Script" path="res://scenes/Jamie/scripts/3DLevel.gd" id="1_adykv"]
 [ext_resource type="PackedScene" uid="uid://d4k5er881yygp" path="res://scenes/Jamie/player/Player.tscn" id="1_en333"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="3_32vm7"]
 [ext_resource type="PackedScene" uid="uid://xanvybi2rb5w" path="res://scenes/Jamie/interface/menu/FinalMenu.tscn" id="3_xyihg"]
 [ext_resource type="Script" path="res://scenes/Jamie/scripts/DifficultyMenu.gd" id="4_d0587"]
 [ext_resource type="Texture2D" uid="uid://bkbp0q2p3t186" path="res://scenes/Jamie/icon/background.png" id="4_yrq2y"]
@@ -21,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://c8g11wxksft3a" path="res://scenes/Jamie/maps/easy1_hint.png" id="13_kl6qy"]
 [ext_resource type="Texture2D" uid="uid://sphdbbwnkjmj" path="res://scenes/Jamie/maps/normal_level_map2.png" id="13_o44vg"]
 [ext_resource type="Texture2D" uid="uid://cnj4nhmh04m0d" path="res://scenes/Jamie/maps/normal_level_map3.png" id="14_1ed3j"]
+[ext_resource type="PackedScene" uid="uid://bvjsumvppm76p" path="res://scenes/UI.tscn" id="23_c7f1t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oe43y"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -50,9 +52,12 @@ shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_en333")]
 transform = Transform3D(-0.00130906, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00130906, 14.7119, 1.08666, 38.3666)
+script = ExtResource("3_32vm7")
 
 [node name="Goal" parent="." instance=ExtResource("9_sfovk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9638, 1.72622, -34.117)
+
+[node name="Control" parent="." instance=ExtResource("23_c7f1t")]
 
 [node name="DifficultyMenu" type="Control" parent="."]
 layout_mode = 3

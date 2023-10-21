@@ -156,6 +156,7 @@ func _process(delta):
 
 #Runs game when play button pressed
 func _on_play_pressed():
+  Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
   difficulty = 1
   self.add_child(easy_level)
   diff.hide()
@@ -169,6 +170,7 @@ func _on_play_pressed():
 
 #When the level completed
 func _on_level_completed():
+  Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
   get_tree().paused = true
   if current_lev == 3 and difficulty == 3:
     final_menu.hide_next_button()
@@ -191,6 +193,7 @@ func _on_final_menu_retried():
 
 #When the player presses 'Next' button
 func _on_final_menu_next():
+  Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
   if current_lev == 3 and difficulty == 1:
     difficulty = 2
     current_lev = 1
