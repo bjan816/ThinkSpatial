@@ -143,8 +143,8 @@ func _process(delta):
 		playerTotalDistance = 0.0
 	
 	#Set the player location infront of the goal by pressing 'V'
-	if Input.is_action_pressed('test'):	
-		test_pos(current_lev)
+	###if Input.is_action_pressed('test'):	
+		###test_pos(current_lev)
 		
 	if Input.is_action_pressed('hint'):
 		hint_visible(current_lev)

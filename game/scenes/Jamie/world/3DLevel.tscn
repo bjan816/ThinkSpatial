@@ -236,9 +236,19 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_jyl02")
 theme_override_font_sizes/font_size = 30
-text = "Press the 'b' key to reset your 
+text = "Press the 'r' key to reset your 
 position. Beware that each 
 reset costs you 100 points!"
+horizontal_alignment = 1
+
+[node name="Description4" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_jyl02")
+theme_override_font_sizes/font_size = 30
+text = "Press the 'h' key to show the 
+hint on the map. Beware that it 
+costs you 500 points!"
 horizontal_alignment = 1
 
 [node name="Description3" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer3"]
@@ -281,8 +291,9 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_jyl02")
 theme_override_font_sizes/font_size = 30
 text = "Level Score: Each time you 
-reset your position ('b' key), 
-you lose 100 points"
+reset your position ('r' key)
+or use the hint ('h' key),  you 
+lose 100 points"
 horizontal_alignment = 1
 
 [node name="Description3" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer"]
@@ -368,7 +379,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_jyl02")
 theme_override_font_sizes/font_size = 30
 text = "Use resets sparingly, as they deduct points from 
-your Reset Score."
+your Reset Score"
 horizontal_alignment = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="DifficultyMenu/InstructionPage3"]
@@ -572,6 +583,7 @@ scale = Vector2(0.43792, 0.416407)
 texture = ExtResource("14_1ed3j")
 
 [node name="Hint" type="Sprite2D" parent="Maps/Normal3"]
+visible = false
 position = Vector2(-0.596191, 23.2993)
 scale = Vector2(0.0435514, 0.0460468)
 texture = ExtResource("13_kl6qy")
