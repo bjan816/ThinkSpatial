@@ -1,4 +1,7 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://b8vd8l3gl4kr8"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b8vd8l3gl4kr8"]
+
+[ext_resource type="Material" uid="uid://cod6754mpl3ue" path="res://assets/material/Highlight.tres" id="1_cqjpb"]
 
 [resource]
+next_pass = ExtResource("1_cqjpb")
 albedo_color = Color(0, 0.121569, 0.247059, 1)
