@@ -6,25 +6,27 @@ var resetButtonPressed = false
 var hintButtonPressed = false
 var hintUsed = false
 
-func _process(delta) -> void:
-	$Score.text = "Score: %01d" % score
-	if Input.is_action_pressed('reset') and !resetButtonPressed:
-		if score > 0:
-			score -= 100
-		resetButtonPressed = true
-	elif !Input.is_action_pressed('reset'):
-		resetButtonPressed = false
-	if Input.is_action_pressed('hint') and !hintButtonPressed:
-		if hintUsed == false:
-			if score > 0:
-				score -= 500
-			hintButtonPressed = true
-			hintUsed = true
-	elif !Input.is_action_pressed('hint'):
-		hintButtonPressed = false
-	
+func _input(_event):
+  if Input.is_action_pressed('reset') and !resetButtonPressed:
+    if score > 0:
+      score -= 100
+    resetButtonPressed = true
+  elif !Input.is_action_pressed('reset'):
+    resetButtonPressed = false
+  if Input.is_action_pressed('hint') and !hintButtonPressed:
+    if hintUsed == false:
+      if score > 0:
+        score -= 500
+      hintButtonPressed = true
+      hintUsed = true
+  elif !Input.is_action_pressed('hint'):
+    hintButtonPressed = false
+
+func _process(_delta) -> void:
+  $Score.text = "Score: %01d" % score
+  
 func hideScore():
-	self.visible = false
+  self.visible = false
 
 func showScore():
-	self.visible = true
+  self.visible = true
