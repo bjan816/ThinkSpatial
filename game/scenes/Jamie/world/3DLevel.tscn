@@ -184,7 +184,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_jyl02")
 theme_override_font_sizes/font_size = 30
 text = "There are a total of 9 stages in
-the game."
+the game (There is No need 
+to play them all!)"
 horizontal_alignment = 1
 
 [node name="Description2" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer2"]
@@ -202,7 +203,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_jyl02")
 theme_override_font_sizes/font_size = 30
 text = "Once you've successfully located 
-your position on the map, your 
+your position in your head, your 
 task is to navigate to the purple 
 circle, which marks the exit."
 horizontal_alignment = 1
@@ -246,9 +247,10 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_jyl02")
 theme_override_font_sizes/font_size = 30
-text = "Press the 'h' key to show the 
-hint on the map. Beware that it 
-costs you 500 points!"
+text = "Press the 'h' key to show your
+start location on the map. 
+Beware that it costs you 500 
+points!"
 horizontal_alignment = 1
 
 [node name="Description3" type="Label" parent="DifficultyMenu/InstructionPage2/VBoxContainer3"]
@@ -413,8 +415,8 @@ theme_override_font_sizes/font_size = 30
 text = "Starting from the 4th stage, the game becomes
  more challenging and  from the 7th stage 
 you may face any direction on the map. 
-You'll need to rotate the map to guess 
-your current location accurately."
+You'll need to rotate the map in your head 
+to guess  your current location accurately."
 horizontal_alignment = 1
 
 [node name="FinalMenu" parent="." instance=ExtResource("3_xyihg")]
