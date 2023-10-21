@@ -22,5 +22,5 @@ func _physics_process(_delta:float):
   v.x = intput("right") - intput("left")
   v.z = intput("backward") - intput("forward")
   v   = v.normalized().rotated(Vector3.UP, rotation.y)
-  velocity = lerp(velocity, v * 3.0, 0.1)
+  velocity = lerp(velocity, v * 5.0, 0.1)
   move_and_slide()
