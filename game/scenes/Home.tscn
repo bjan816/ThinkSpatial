@@ -109,6 +109,19 @@ material = SubResource("StandardMaterial3D_a7fuq")
 
 [node name="Control" parent="." instance=ExtResource("1_hikvv")]
 
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -596.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "ThinkSpatial"
+vertical_alignment = 2
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, 0.25, -0.433013, 0, 0.866025, 0.5, 0.5, -0.433013, 0.75, 0, 0, 0)
 shadow_enabled = true
@@ -248,7 +261,7 @@ shape = SubResource("BoxShape3D_a3h8b")
 mesh = SubResource("BoxMesh_gico6")
 
 [node name="Borim" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.9, -3.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.9, -4)
 script = ExtResource("3_7fxw7")
 path = ExtResource("6_mv0xy")
 
