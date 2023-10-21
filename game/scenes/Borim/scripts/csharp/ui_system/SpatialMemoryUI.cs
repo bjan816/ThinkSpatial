@@ -58,7 +58,7 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.ui_system
 			else if (animationName == CorrectAnimationName)
 			{
 				var soundEffect = GetNode<AudioStreamPlayer>("Correct");
-				soundEffect.Stream = GD.Load<AudioStream>("res://think_spatial/arts/audio/correct.wav");
+				soundEffect.Stream = GD.Load<AudioStream>("res://scenes/Borim/arts/audio/correct.wav");
 				//soundEffect.Play();
 				
 				CorrectAnimationFinished.Send();
@@ -66,7 +66,7 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.ui_system
 			else if (animationName == IncorrectAnimationName)
 			{
 				var soundEffect = GetNode<AudioStreamPlayer>("Game_Over");
-				soundEffect.Stream = GD.Load<AudioStream>("res://think_spatial/arts/audio/game_over.wav");
+				soundEffect.Stream = GD.Load<AudioStream>("res://scenes/Borim/arts/audio/game_over.wav");
 				soundEffect.Play();
 				
 				IncorrectAnimationFinished.Send();

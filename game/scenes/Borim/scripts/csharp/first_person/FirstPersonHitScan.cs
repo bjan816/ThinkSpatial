@@ -31,7 +31,7 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.first_person
 		private void PerformAttack(Camera3D camera)
 		{
 			var soundEffect = GetNode<AudioStreamPlayer>("Pop");
-			soundEffect.Stream = GD.Load<AudioStream>("res://think_spatial/arts/audio/pop.wav");
+			soundEffect.Stream = GD.Load<AudioStream>("res://scenes/Borim/arts/audio/pop.wav");
 			soundEffect.Play();
 			
 			_animationPlayer.Play("Attack");

@@ -17,7 +17,7 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.game_mode
 		{
 			
 			var soundEffect = GetNode<AudioStreamPlayer>("Background");
-			soundEffect.Stream = GD.Load<AudioStream>("res://think_spatial/arts/audio/background.ogg");
+			soundEffect.Stream = GD.Load<AudioStream>("res://scenes/Borim/arts/audio/background.ogg");
 			soundEffect.Play();
 			
 			base._Ready();

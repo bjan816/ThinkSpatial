@@ -90,7 +90,7 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 		public virtual EntityBehavior SpawnEntity()
 		{
 			var soundEffect = GetNode<AudioStreamPlayer>("Bubble");
-			soundEffect.Stream = GD.Load<AudioStream>("res://think_spatial/arts/audio/bubble.wav");
+			soundEffect.Stream = GD.Load<AudioStream>("res://scenes/Borim/arts/audio/bubble.wav");
 			soundEffect.Play();
 			
 			
