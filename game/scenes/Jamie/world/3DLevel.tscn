@@ -463,10 +463,29 @@ offset_bottom = 30.0
 text = "Score:"
 
 [node name="Maps" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 305.0
 offset_bottom = 290.0
+
+[node name="Easy1" type="Sprite2D" parent="Maps"]
+visible = false
+position = Vector2(211.292, 198.531)
+scale = Vector2(0.159057, 0.14177)
+texture = ExtResource("9_0nipa")
+
+[node name="Easy2" type="Sprite2D" parent="Maps"]
+visible = false
+position = Vector2(235.317, 218.978)
+scale = Vector2(0.0634353, 0.0533799)
+texture = ExtResource("9_0nipa")
+
+[node name="Easy3" type="Sprite2D" parent="Maps"]
+visible = false
+position = Vector2(244.899, 226.676)
+scale = Vector2(0.0252993, 0.0200988)
+texture = ExtResource("9_0nipa")
 
 [node name="Hard1" type="Sprite2D" parent="Maps"]
 visible = false

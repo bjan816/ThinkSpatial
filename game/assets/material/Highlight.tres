@@ -5,4 +5,4 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_ppfay")
-shader_parameter/border = 0.1
+shader_parameter/border = 0.03125

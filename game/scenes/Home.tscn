@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://co3kmwd3lex7h"]
+[gd_scene load_steps=51 format=3 uid="uid://co3kmwd3lex7h"]
 
 [ext_resource type="PackedScene" uid="uid://bvjsumvppm76p" path="res://scenes/UI.tscn" id="1_hikvv"]
 [ext_resource type="Material" uid="uid://blf16jpvdnknl" path="res://assets/material/PaynesGray.tres" id="2_c3wly"]
@@ -8,9 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bhpkb8me38jf" path="res://scenes/Jamie/world/3DLevel.tscn" id="5_rg2ho"]
 [ext_resource type="PackedScene" uid="uid://davlunk7onym5" path="res://scenes/Borim/scenes/spatial_memory/spatial_memory.tscn" id="6_mv0xy"]
 [ext_resource type="PackedScene" uid="uid://clppp4avxfvwu" path="res://scenes/Jordan/scenes/TutorialBox.tscn" id="7_ch370"]
-[ext_resource type="Material" uid="uid://b7nqp28jgo0ob" path="res://assets/material/CadetGray.tres" id="8_or0pi"]
 [ext_resource type="ArrayMesh" uid="uid://dhkb6immaeg4n" path="res://scenes/Jordan/assets/menu ball.obj" id="9_64lqo"]
-[ext_resource type="Material" uid="uid://b8vd8l3gl4kr8" path="res://assets/material/SpaceCadet.tres" id="10_2i5ng"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sf5xj"]
 
@@ -78,36 +76,140 @@ size = Vector3(1.5, 1.5, 1.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_c8gxf"]
 size = Vector3(0.25, 6, 2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t0jdq"]
+[sub_resource type="Shader" id="Shader_0n67m"]
+code = "shader_type spatial;
+render_mode unshaded,cull_front,depth_draw_never;
+
+uniform float border = 0.03125;
+
+void vertex() {
+  VERTEX += VERTEX * border;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vil0b"]
+render_priority = 0
+shader = SubResource("Shader_0n67m")
+shader_parameter/border = 0.03125
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1bwx"]
+next_pass = SubResource("ShaderMaterial_vil0b")
 albedo_color = Color(0.345098, 0.392157, 0.486275, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_niigc"]
-material = SubResource("StandardMaterial3D_t0jdq")
+[sub_resource type="BoxMesh" id="BoxMesh_d5mai"]
+material = SubResource("StandardMaterial3D_u1bwx")
 size = Vector3(0.25, 6, 2)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_a3h8b"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0hesr"]
-albedo_color = Color(0, 0.121569, 0.247059, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_gico6"]
-material = SubResource("StandardMaterial3D_0hesr")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jubv3"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_8o6kp"]
+[sub_resource type="Shader" id="Shader_br8u0"]
+code = "shader_type spatial;
+render_mode unshaded,cull_front,depth_draw_never;
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7fuq"]
+uniform float border = 0.03125;
+
+void vertex() {
+  VERTEX += VERTEX * border;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_43i81"]
+render_priority = 0
+shader = SubResource("Shader_br8u0")
+shader_parameter/border = 0.03125
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56uk6"]
+next_pass = SubResource("ShaderMaterial_43i81")
 albedo_color = Color(0, 0.121569, 0.247059, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_66o5t"]
-material = SubResource("StandardMaterial3D_a7fuq")
+[sub_resource type="BoxMesh" id="BoxMesh_8o6kp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a3h8b"]
+
+[sub_resource type="Shader" id="Shader_ybdp7"]
+code = "shader_type spatial;
+render_mode unshaded,cull_front,depth_draw_never;
+
+uniform float border = 0.03125;
+
+void vertex() {
+  VERTEX += VERTEX * border;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cn1w8"]
+render_priority = 0
+shader = SubResource("Shader_ybdp7")
+shader_parameter/border = 0.03125
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fk2lk"]
+next_pass = SubResource("ShaderMaterial_cn1w8")
+albedo_color = Color(0, 0.121569, 0.247059, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ly2ug"]
+material = SubResource("StandardMaterial3D_fk2lk")
+
+[sub_resource type="Shader" id="Shader_qisuo"]
+code = "shader_type spatial;
+render_mode unshaded,cull_front,depth_draw_never;
+
+uniform float border = 0.03125;
+
+void vertex() {
+  VERTEX += VERTEX * border;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_47col"]
+render_priority = 0
+shader = SubResource("Shader_qisuo")
+shader_parameter/border = 0.03125
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kh0xn"]
+next_pass = SubResource("ShaderMaterial_47col")
+albedo_color = Color(0, 0.121569, 0.247059, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vbdic"]
+material = SubResource("StandardMaterial3D_kh0xn")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1ux77"]
+
+[sub_resource type="Shader" id="Shader_chkbv"]
+code = "shader_type spatial;
+render_mode unshaded,cull_front,depth_draw_never;
+
+uniform float border = 0.03125;
+
+void vertex() {
+  VERTEX += VERTEX * border;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gfvc5"]
+render_priority = 0
+shader = SubResource("Shader_chkbv")
+shader_parameter/border = 0.03125
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4mpp2"]
+next_pass = SubResource("ShaderMaterial_gfvc5")
+albedo_color = Color(0.588235, 0.67451, 0.717647, 1)
 
 [node name="Local" type="Node"]
 
 [node name="Control" parent="." instance=ExtResource("1_hikvv")]
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -596.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "ThinkSpatial"
+vertical_alignment = 2
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, 0.25, -0.433013, 0, 0.866025, 0.5, 0.5, -0.433013, 0.75, 0, 0, 0)
@@ -225,7 +327,7 @@ path = ExtResource("4_5wmn3")
 shape = SubResource("BoxShape3D_c8gxf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Door"]
-mesh = SubResource("BoxMesh_niigc")
+mesh = SubResource("BoxMesh_d5mai")
 skeleton = NodePath("../..")
 
 [node name="Label3D" type="Label3D" parent="Door"]
@@ -236,6 +338,18 @@ text = "Quit?"
 font_size = 100
 outline_size = 50
 
+[node name="Borim" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.9, -4)
+script = ExtResource("3_7fxw7")
+path = ExtResource("6_mv0xy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Borim"]
+shape = SubResource("BoxShape3D_jubv3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Borim"]
+material_override = SubResource("StandardMaterial3D_56uk6")
+mesh = SubResource("BoxMesh_8o6kp")
+
 [node name="Sun" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.9, 0)
 script = ExtResource("3_7fxw7")
@@ -245,19 +359,7 @@ path = ExtResource("4_2sqrc")
 shape = SubResource("BoxShape3D_a3h8b")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Sun"]
-mesh = SubResource("BoxMesh_gico6")
-
-[node name="Borim" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.9, -3.5)
-script = ExtResource("3_7fxw7")
-path = ExtResource("6_mv0xy")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Borim"]
-shape = SubResource("BoxShape3D_jubv3")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Borim"]
-material_override = ExtResource("10_2i5ng")
-mesh = SubResource("BoxMesh_8o6kp")
+mesh = SubResource("BoxMesh_ly2ug")
 
 [node name="Jamie" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
@@ -268,7 +370,7 @@ path = ExtResource("5_rg2ho")
 shape = SubResource("BoxShape3D_a3h8b")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Jamie"]
-mesh = SubResource("BoxMesh_66o5t")
+mesh = SubResource("BoxMesh_vbdic")
 
 [node name="Jordan" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.173716, -1.06992, -3.47733)
@@ -281,15 +383,15 @@ shape = SubResource("SphereShape3D_1ux77")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Jordan"]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0.408826, -0.036618)
-material_override = ExtResource("8_or0pi")
+material_override = SubResource("StandardMaterial3D_4mpp2")
 mesh = ExtResource("9_64lqo")
 
 [connection signal="mouse_entered" from="Door" to="Door" method="_on_mouse_entered" flags=18]
 [connection signal="mouse_exited" from="Door" to="Door" method="_on_mouse_exited" flags=18]
-[connection signal="mouse_entered" from="Sun" to="Sun" method="_on_mouse_entered" flags=18]
-[connection signal="mouse_exited" from="Sun" to="Sun" method="_on_mouse_exited" flags=18]
 [connection signal="mouse_entered" from="Borim" to="Borim" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Borim" to="Borim" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Sun" to="Sun" method="_on_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="Sun" to="Sun" method="_on_mouse_exited" flags=18]
 [connection signal="mouse_entered" from="Jamie" to="Jamie" method="_on_mouse_entered" flags=18]
 [connection signal="mouse_exited" from="Jamie" to="Jamie" method="_on_mouse_exited" flags=18]
 [connection signal="mouse_entered" from="Jordan" to="Jordan" method="_on_mouse_entered" flags=18]
