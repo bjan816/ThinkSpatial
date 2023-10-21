@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bhpkb8me38jf"]
+[gd_scene load_steps=25 format=3 uid="uid://bhpkb8me38jf"]
 
 [ext_resource type="Script" path="res://scenes/Jamie/scripts/3DLevel.gd" id="1_adykv"]
 [ext_resource type="PackedScene" uid="uid://d4k5er881yygp" path="res://scenes/Jamie/player/Player.tscn" id="1_en333"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://b64s2vf0ctnh1" path="res://scenes/Jamie/maps/normal_level_map1.png" id="12_0tk4q"]
 [ext_resource type="Texture2D" uid="uid://b0tx6k8mo0sjn" path="res://scenes/Jamie/maps/easy_level_map2.png" id="12_4wsbr"]
 [ext_resource type="Texture2D" uid="uid://dg7skwcuv5ych" path="res://scenes/Jamie/maps/easy_level_map3.png" id="13_74l32"]
+[ext_resource type="Texture2D" uid="uid://c8g11wxksft3a" path="res://scenes/Jamie/maps/easy1_hint.png" id="13_kl6qy"]
 [ext_resource type="Texture2D" uid="uid://sphdbbwnkjmj" path="res://scenes/Jamie/maps/normal_level_map2.png" id="13_o44vg"]
 [ext_resource type="Texture2D" uid="uid://cnj4nhmh04m0d" path="res://scenes/Jamie/maps/normal_level_map3.png" id="14_1ed3j"]
 
@@ -471,11 +472,23 @@ position = Vector2(151, 144)
 scale = Vector2(0.415869, 0.375648)
 texture = ExtResource("11_5nlei")
 
+[node name="Hint" type="Sprite2D" parent="Maps/Easy1"]
+visible = false
+position = Vector2(-131.484, 138.156)
+scale = Vector2(0.121962, 0.126694)
+texture = ExtResource("13_kl6qy")
+
 [node name="Easy2" type="Sprite2D" parent="Maps"]
 visible = false
 position = Vector2(151, 144.5)
 scale = Vector2(0.393782, 0.398085)
 texture = ExtResource("12_4wsbr")
+
+[node name="Hint" type="Sprite2D" parent="Maps/Easy2"]
+visible = false
+position = Vector2(279.342, 262.507)
+scale = Vector2(0.128503, 0.136257)
+texture = ExtResource("13_kl6qy")
 
 [node name="Easy3" type="Sprite2D" parent="Maps"]
 visible = false
@@ -483,11 +496,24 @@ position = Vector2(151.5, 144.5)
 scale = Vector2(0.395078, 0.398085)
 texture = ExtResource("13_74l32")
 
+[node name="Hint" type="Sprite2D" parent="Maps/Easy3"]
+visible = false
+position = Vector2(140.479, 262.507)
+scale = Vector2(0.128503, 0.136257)
+texture = ExtResource("13_kl6qy")
+
 [node name="Hard1" type="Sprite2D" parent="Maps"]
 visible = false
 position = Vector2(151.05, 144.226)
 scale = Vector2(0.39882, 0.376524)
 texture = ExtResource("9_0nipa")
+
+[node name="Hint" type="Sprite2D" parent="Maps/Hard1"]
+visible = false
+position = Vector2(248.107, -82.9326)
+rotation = 3.14159
+scale = Vector2(0.0435514, 0.0460468)
+texture = ExtResource("13_kl6qy")
 
 [node name="Hard2" type="Sprite2D" parent="Maps"]
 visible = false
@@ -495,11 +521,25 @@ position = Vector2(150.917, 144.305)
 scale = Vector2(0.399169, 0.376319)
 texture = ExtResource("10_pwtep")
 
+[node name="Hint" type="Sprite2D" parent="Maps/Hard2"]
+visible = false
+position = Vector2(-84.0448, -223.465)
+rotation = 3.14159
+scale = Vector2(0.0386304, 0.045301)
+texture = ExtResource("13_kl6qy")
+
 [node name="Hard3" type="Sprite2D" parent="Maps"]
 visible = false
 position = Vector2(151.214, 145.109)
 scale = Vector2(0.398388, 0.37683)
 texture = ExtResource("11_j2i2d")
+
+[node name="Hint" type="Sprite2D" parent="Maps/Hard3"]
+visible = false
+position = Vector2(27.5183, 194.553)
+rotation = 1.5708
+scale = Vector2(0.0416728, 0.0442699)
+texture = ExtResource("13_kl6qy")
 
 [node name="Normal1" type="Sprite2D" parent="Maps"]
 visible = false
@@ -507,17 +547,34 @@ position = Vector2(151.364, 143.997)
 scale = Vector2(0.437622, 0.417274)
 texture = ExtResource("12_0tk4q")
 
+[node name="Hint" type="Sprite2D" parent="Maps/Normal1"]
+visible = false
+position = Vector2(-80.2719, 109.776)
+scale = Vector2(0.0435514, 0.0460468)
+texture = ExtResource("13_kl6qy")
+
 [node name="Normal2" type="Sprite2D" parent="Maps"]
 visible = false
 position = Vector2(151.124, 143.479)
 scale = Vector2(0.438315, 0.415888)
 texture = ExtResource("13_o44vg")
 
+[node name="Hint" type="Sprite2D" parent="Maps/Normal2"]
+visible = false
+position = Vector2(-82.416, 304.219)
+scale = Vector2(0.0435514, 0.0460468)
+texture = ExtResource("13_kl6qy")
+
 [node name="Normal3" type="Sprite2D" parent="Maps"]
 visible = false
 position = Vector2(151.261, 144.298)
 scale = Vector2(0.43792, 0.416407)
 texture = ExtResource("14_1ed3j")
+
+[node name="Hint" type="Sprite2D" parent="Maps/Normal3"]
+position = Vector2(-0.596191, 23.2993)
+scale = Vector2(0.0435514, 0.0460468)
+texture = ExtResource("13_kl6qy")
 
 [connection signal="pressed" from="DifficultyMenu/MiroMenu/Column/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="DifficultyMenu/MiroMenu/Column/About" to="DifficultyMenu" method="_on_about_pressed"]

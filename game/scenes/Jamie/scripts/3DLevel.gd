@@ -18,15 +18,27 @@ class_name Game
 
 #Map variables
 @onready var maps : = $Maps
+
 @onready var easy_map1 : = $Maps/Easy1
 @onready var easy_map2 : = $Maps/Easy2
 @onready var easy_map3 : = $Maps/Easy3
+@onready var easy_map1_hint : = $Maps/Easy1/Hint
+@onready var easy_map2_hint : = $Maps/Easy2/Hint
+@onready var easy_map3_hint : = $Maps/Easy3/Hint
+
 @onready var normal_map1 : = $Maps/Normal1
 @onready var normal_map2 : = $Maps/Normal2
 @onready var normal_map3 : = $Maps/Normal3
+@onready var normal_map1_hint : = $Maps/Normal1/Hint
+@onready var normal_map2_hint : = $Maps/Normal2/Hint
+@onready var normal_map3_hint : = $Maps/Normal3/Hint
+
 @onready var hard_map1 : = $Maps/Hard1
 @onready var hard_map2 : = $Maps/Hard2
 @onready var hard_map3 : = $Maps/Hard3
+@onready var hard_map1_hint : = $Maps/Hard1/Hint
+@onready var hard_map2_hint : = $Maps/Hard2/Hint
+@onready var hard_map3_hint : = $Maps/Hard3/Hint
 
 #Goal
 @onready var goal : = $Goal
@@ -133,6 +145,9 @@ func _process(delta):
 	#Set the player location infront of the goal by pressing 'V'
 	if Input.is_action_pressed('test'):	
 		test_pos(current_lev)
+		
+	if Input.is_action_pressed('hint'):
+		hint_visible(current_lev)
 	
 	#Check if the player entered tile where the goal is at
 	if check_goal_lev(current_lev):
@@ -296,6 +311,7 @@ func reload():
 	timer.reset()
 	timer.showTimer()
 	scoreboard.showScore()
+	scoreboard.hintUsed = false
 	map_visible(current_lev)
 
 #Make the map related to each level visible by checking difficulty and current_lev
@@ -306,6 +322,10 @@ func map_visible(lev):
 		for m in mm:
 			m.visible = false
 	mmm[difficulty - 1][lev - 1].visible = true
+	
+func hint_visible(lev):
+	var hints = [[easy_map1_hint, easy_map2_hint, easy_map3_hint], [normal_map1_hint, normal_map2_hint, normal_map3_hint], [hard_map1_hint, hard_map2_hint, hard_map3_hint]]
+	hints[difficulty - 1][lev - 1].visible = true
 
 func stageScore(lev):
 	var s = scoreboard.score
