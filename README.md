@@ -41,6 +41,10 @@ Most of the group planning and collaboration was done through a shared Google dr
 
 We expect that you will have access to the CodeRunner test server, as the quiz is only available on that server. As long as you have been added to the COMPSCI373-S1-2023 course, you will be able to find the quiz. Once logged in, please proceed to COMPSCI 373 course, and find the Team 32's quiz. Alternatively, [click here](https://coderunner.connect.test.amazon.auckland.ac.nz/mod/quiz/view.php?id=666), you will need to open the link in the browser you're logged into the server with. See usage information on how to start the quiz.
 
+Alternatively, if you wish to add our CodeRunner questions to your own server. Download the [test xml file](https://github.com/uoa-compsci399-s2-2023/capstone-project-team-32/blob/main/quiz/test-COMSCI.373.S1.2023-Questions%20Team%2032-20230908-1515.xml), and navigate to the Question bank in the category you wish to add the questions to. Select import and configure the options as shown in the image to import.
+
+![](./markdown/coderunnerImport.png)
+
 ### ThinkSpatial Game Install
 
 For both **Windows** and **macOS**, follow the respective instructions below for installing and setting up the game.
