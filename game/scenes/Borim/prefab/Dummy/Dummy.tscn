@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://dl8r5oqex8wmc"]
+
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/event_system/behavior/EntityBehavior.cs" id="1_u0qvs"]
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/event_system/event_handler/EntityEventHandler.cs" id="2_mtesv"]
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/event_system/misc/EntityDeathHandler.cs" id="3_7hp7b"]
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/damage_system/EntityVitals.cs" id="4_fbo2c"]
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/damage_system/HitBox.cs" id="5_xcljc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_htrr1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4pa5"]
+albedo_color = Color(0.9, 1, 0.953333, 1)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
+emission = Color(0, 0, 0.207843, 1)
+rim_tint = 1.0
+clearcoat_roughness = 1.0
+refraction_scale = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_3jx82"]
+radius = 12.0
+height = 24.0
+
+[node name="Dummy" type="Node3D"]
+script = ExtResource("1_u0qvs")
+
+[node name="EntityEventHandler" type="Node3D" parent="."]
+script = ExtResource("2_mtesv")
+
+[node name="EntityDeathHandler" type="Node3D" parent="."]
+script = ExtResource("3_7hp7b")
+
+[node name="EntityVitals" type="Node3D" parent="."]
+script = ExtResource("4_fbo2c")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+script = ExtResource("5_xcljc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("SphereShape3D_htrr1")
+
+[node name="Orb" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+transform = Transform3D(0.042, 0, 0, 0, 0.042, 0, 0, 0, 0.042, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_b4pa5")
+mesh = SubResource("SphereMesh_3jx82")
+skeleton = NodePath("../../../..")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="StaticBody3D/CollisionShape3D/Orb"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 4, 8)
+visible = false
+size = Vector3(60, 30, 60)
+enable_shadows = true

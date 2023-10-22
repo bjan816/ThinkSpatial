@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b7nqp28jgo0ob"]
+
+[ext_resource type="Material" uid="uid://cod6754mpl3ue" path="res://assets/material/Highlight.tres" id="1_hyogl"]
+
+[resource]
+next_pass = ExtResource("1_hyogl")
+albedo_color = Color(0.588235, 0.67451, 0.717647, 1)
