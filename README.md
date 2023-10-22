@@ -43,7 +43,7 @@ We expect that you will have access to the CodeRunner test server, as the quiz i
 
 Alternatively, if you wish to add our CodeRunner questions to your own server. Download the [test xml file](https://github.com/uoa-compsci399-s2-2023/capstone-project-team-32/blob/main/quiz/test-COMSCI.373.S1.2023-Questions%20Team%2032-20230908-1515.xml), and navigate to the Question bank in the category you wish to add the questions to. Select import and configure the options as shown in the image to import.
 
-![](./markdown/coderunnerImport.PNG)
+![](./markdown/coderunnerImport.png)
 
 ### ThinkSpatial Game Install
 
