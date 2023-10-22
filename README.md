@@ -85,6 +85,9 @@ When you click on the objects, you will be taken to the game. There are four gam
 ![](./markdown/miro.png)
 ![](./markdown/vantage.png)
 ![](./markdown/game-borim.png)
+
+The third game (spatial memory) was developed using C#, while the first, second and last games were developed in GDscript.
+
 ![](./markdown/game-kishoraSun.png)
 
 The first three games have instructions, although the last one does not. *insert directions*.
