@@ -25,7 +25,7 @@ Code-Runner will be using traditional methods of spatial skills testing, using q
 
 The game is a protoype that will be aimed at reinventing spatial skills testing, to make it more fun and enganging. The idea is to be able to test spatial skills without it feeling like a test. 
 
-Our team used [Jira Software](https://spatial-skills-testing.atlassian.net/jira/software/projects/CBSST/boards/1) for our project management, with a majority of group collaboration done through a shared Google drive.
+A majority of group planning and collaboration was done through a shared Google drive. Discussions were held through Discord and in-person.
 
 **Code-Runner Technologies:**
 - Moodle
@@ -36,12 +36,7 @@ Our team used [Jira Software](https://spatial-skills-testing.atlassian.net/jira/
 
 ## Installation and Configuration
 
-### Code-Runner
-To start an attempt of the Code-Runner Quiz, follow the steps below:
-
-Once you are logged into Code-Runner, you will need to navigate to the correct quiz.
-
-### ThinkSpatial Game
+### ThinkSpatial Game Install
 
 For both **Windows** and **macOS**, follow the below instructions for installing and setting up the game.
 
@@ -54,7 +49,7 @@ Once you have the files on your machine, follow the steps below for your respect
 
 **Windows**
 
-Then open the `game` folder and run the executable file. There is nothing but your Windows machine that is needed, so long as you have a a graphics card installed.
+Then open the `game` folder and run the executable file named `ThinkSpatial`. There is nothing but your Windows machine that is needed, so long as you have a a graphics card installed.
 
 **macOS**
 
@@ -81,7 +76,17 @@ Once you have finished your attempt, then click the submit all button at the end
 
 ## Usage Examples - ThinkSpatial Game
 
-*wait until game merge and executable is finished*
+Once you open the game on either Windows or macOS, you will see the below screen. You will see mutliple objects that you can click on, all object on the counters are minigames, select any that you wish to play. To quit, click the door on the left.
+![](./markdown/ThinkSpatial-menu.png)
+
+When you click on the objects, you will be taken to the game. There are four games to choose from, and you will see one of the following when entering the game.
+
+![](./markdown/maze-menu.png)
+![](./markdown/game-Jordan.png)
+![](./markdown/game-borim.png)
+![](./markdown/game-kishoraSun.png)
+
+The first three games have instructions, although the last one does not. *insert directions*.
 
 ## Future Plans
 
@@ -89,7 +94,7 @@ Once you have finished your attempt, then click the submit all button at the end
 
 We would like to add a databse to the game, storing all the data collected within the game. Making it simple for the teacher or admin to access player data and analyse and compare across all players. Thus, we have designed a database that we would like to implement in the future. Allowing for teacher and admin access, with data from each minigame stored in seperate tables for each player.
 
-**Game Extension**
+Database design is in the database folder, and everything is included in the [Database file](https://github.com/uoa-compsci399-s2-2023/capstone-project-team-32/tree/main/database). 
 
-**Code-Runner Extension?**
+**Game Extension**
 
