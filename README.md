@@ -98,3 +98,4 @@ Database design is in the database folder, and everything is included in the [Da
 
 **Game Extension**
 
+Due to the complexitiy of our project, there are many other extensions we would like to implement into the game in the future, that time did not allow us to complete. These include creating a mobile application, and studying the effectivenss of the game and alongside the full implementation and integrationg of the database design.
