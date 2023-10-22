@@ -27,7 +27,7 @@ The game is a prototype that will be aimed at reinventing spatial skills testing
 
 Most of the group planning and collaboration was done through a shared Google drive. Discussions were held through Discord and in-person.
 
-**Code-Runner Technologies: **
+**Code-Runner Technologies:**
 - Moodle
 - Code-Runner plugin for Moodle
 
@@ -49,11 +49,11 @@ Once you have the files on your machine, follow the steps below for your respect
 
 **Windows**
 
-Then open the `game` folder and run the executable file named `ThinkSpatial`. There is nothing but your Windows machine that is needed, so long as you have a a graphics card installed.
+Then open the `game` folder and open the `windows` folder, then you will see the file name `ThinkSpatial`.Open this file and the game should start running. There is nothing but your Windows machine that is needed, so long as you have a a graphics card installed.
 
 **macOS**
 
-Open the files, go into the `game` folder and find the `ThinkSpatial` file. Once located, open the file and the game should start running.
+Then open the `game` folder and open the `macOS` folder, then you will see the file name `ThinkSpatial`.Once located, open the file and the game should start running.
 
 ## Usage Examples - Code-Runner Quiz
 To start the quiz, click the attempt quiz button.
