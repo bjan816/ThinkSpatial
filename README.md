@@ -39,14 +39,7 @@ Most of the group planning and collaboration was done through a shared Google dr
 
 ### ThinkSpatial Game Install
 
-For both **Windows** and **macOS**, follow the below instructions for installing and setting up the game.
-
-The game is stored in the GitHub repository, first you will need to clone the repository using the below command - ensure that you have git installed on your machine.
-
-```
-git clone https://github.com/uoa-compsci399-s2-2023/capstone-project-team-32.git
-```
-Once you have the files on your machine, follow the steps below for your respective operating system.
+For both **Windows** and **macOS**, follow the respective instructions below for installing and setting up the game.
 
 **Windows**
 
