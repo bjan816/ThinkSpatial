@@ -48,7 +48,7 @@ For both **Windows** and **macOS**, follow the respective instructions below for
 **Windows**
 
 To install the windows version of ThinkSpatial, please 
-[click here](https://drive.google.com/drive/folders/1Pgr53H91RY7xu9TXnaEsK2jk9MxzJOl2?usp=share_link).
+[click here](https://github.com/uoa-compsci399-s2-2023/capstone-project-team-32/releases).
 
 Once you have downloaded the zip file, open it and it will extract a file called `ThinkSpatial`. Open this file and the game should start running. There is nothing but your Windows machine that is needed, so long as you have a a graphics card installed.
 
