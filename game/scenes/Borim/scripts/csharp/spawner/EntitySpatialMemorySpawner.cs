@@ -68,7 +68,7 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 				return;
 			}
 
-			if (SpatialMemoryDeveloperSettings.Enabled)
+			if (SpatialMemoryDeveloperSettings.Enabled && SpatialMemoryDeveloperSettings.Win != SpatialMemoryDeveloperSettings.WinMode.Default)
 			{
 				switch (SpatialMemoryDeveloperSettings.Win)
 				{

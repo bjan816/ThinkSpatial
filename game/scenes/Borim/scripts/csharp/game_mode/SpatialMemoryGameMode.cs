@@ -9,12 +9,13 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.game_mode
 	{
 		public enum WinMode
 		{
+			Default,
 			Instant,
 			AlwaysCorrect
 		}
 
 		public static readonly bool Enabled = false;
-		public static readonly WinMode Win = WinMode.Instant;
+		public static readonly WinMode Win = WinMode.Default;
 		public static readonly float SpawnDelay = 0.01f;
 		public static readonly float PlayAnimationSpeed = 5.0f;
 	}
