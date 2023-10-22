@@ -50,11 +50,23 @@ Once you have the files on your machine, follow the steps below for your respect
 
 **Windows**
 
-Then open the `game` folder and open the `windows` folder, then you will see the file name `ThinkSpatial`.Open this file and the game should start running. There is nothing but your Windows machine that is needed, so long as you have a a graphics card installed.
+To install the windows version of ThinkSpatial, please 
+[click here](https://drive.google.com/file/d/1pOHBEYAE82SXFwd2g84fccgc8ECBPKG0/view?usp=share_link).
+
+Once you have downloaded the zip file, open it and it will extract a file called `ThinkSpatial`. Open this file and the game should start running. There is nothing but your Windows machine that is needed, so long as you have a a graphics card installed.
+
+Once you open the zip file, you should see a folder like below. Open it and run the executable file.
+![](./markdown/image2.png)
 
 **macOS**
 
-Then open the `game` folder and open the `macOS` folder, then you will see the file name `ThinkSpatial`.Once located, open the file and the game should start running.
+To download the macOS version, please [click here](https://drive.google.com/file/d/1AL3dd4Vs2stjWE4KVOLkqRDQhmEqaCSp/view?usp=share_link).
+
+Once you have downloaded the zip file, open it and it will extract a file called `ThinkSpatial`. Open the file and the game should start running. The unzipped file should look like below.
+
+You may need to change you security settings to allow the application to run. Follow the usually process for macOS to do this.
+
+![](./markdown/macDownload.png)
 
 ## Usage Examples - CodeRunner Quiz
 To start the quiz, click the attempt quiz button.
@@ -90,7 +102,7 @@ The third game (spatial memory) was developed using C#, while the first, second 
 
 ![](./markdown/game-kishoraSun.png)
 
-The first three games have instructions, although the last one does not. *insert directions*.
+The first three games have instructions, although the last one does not.
 
 ## Future Plans
 
