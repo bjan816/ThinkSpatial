@@ -4,7 +4,7 @@
 
 ## The Team
 
-**Code-Runner Team**
+**CodeRunner Team**
 - Jordan Pisarek
 - Jared McDowall
 
@@ -19,9 +19,9 @@
 - Jared McDowall
 
 ## Project Information
-Our project is split into two parts, implementing a spatial skills test using Moodle, with the Code-Runner plugin, and implementation a prototype spatial skills game using Godot.
+Our project is split into two parts, implementing a spatial skills test using Moodle, with the CodeRunner plugin, and implementation a prototype spatial skills game using Godot.
 
-Code-Runner will be using traditional methods of spatial skills testing, using questions from studies and other tests. The reasoning behind using Code-Runner is the ease of use and the accessibility behind it as it is used by the tertiary sector. 
+CodeRunner will be using traditional methods of spatial skills testing, using questions from studies and other tests. The reasoning behind using CodeRunner is the ease of use and the accessibility behind it as it is used by the tertiary sector. 
 
 The game is a prototype that will be aimed at reinventing spatial skills testing, to make it more fun and engaging. The idea is to be able to test spatial skills without it feeling like a test. 
 
@@ -29,10 +29,11 @@ Most of the group planning and collaboration was done through a shared Google dr
 
 **Code-Runner Technologies:**
 - Moodle
-- Code-Runner plugin for Moodle
+- CodeRunner plugin for Moodle
 
 **Game Technologies:**
 - Godot
+- Blender
 
 ## Installation and Configuration
 
@@ -55,7 +56,7 @@ Then open the `game` folder and open the `windows` folder, then you will see the
 
 Then open the `game` folder and open the `macOS` folder, then you will see the file name `ThinkSpatial`.Once located, open the file and the game should start running.
 
-## Usage Examples - Code-Runner Quiz
+## Usage Examples - CodeRunner Quiz
 To start the quiz, click the attempt quiz button.
 ![](./markdown/coderunner-1.png)
 
@@ -71,7 +72,7 @@ There are 33 questions, which each new section introduces by an example question
 You can submit your answer, by clicking the check button. However, there is a penalty for each time you click the check button, and the answer is wrong. Do not click the check button, unless you are sure your answer is correct.
 ![](./markdown/coderunner5.png)
 
-Once you have finished your attempt, then click the submit all button at the end of the quiz. If you do not finish in time, Code-Runner will submit all you have done and mark it automatically.
+Once you have finished your attempt, then click the submit all button at the end of the quiz. If you do not finish in time, CodeRunner will submit all you have done and mark it automatically.
 ![](./markdown/coderunner6.png)
 
 ## Usage Examples - ThinkSpatial Game
