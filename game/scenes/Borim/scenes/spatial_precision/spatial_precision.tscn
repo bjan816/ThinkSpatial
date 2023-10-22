@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://cev6tflbtbjvb"]
 
-[ext_resource type="PackedScene" uid="uid://diai5ecpte1ei" path="res://think_spatial/prefab/level/shooting_range.tscn" id="1_hjrc7"]
+[ext_resource type="PackedScene" uid="uid://diai5ecpte1ei" path="res://scenes/Borim/prefab/level/shooting_range.tscn" id="1_hjrc7"]
 [ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/game_mode/SpatialPrecisionGameMode.cs" id="1_sirrb"]
-[ext_resource type="PackedScene" uid="uid://caukaolcm2v14" path="res://think_spatial/prefab/spawner/entity_spatial_precision_spawner.tscn" id="2_hiprl"]
-[ext_resource type="PackedScene" uid="uid://kk88u0bwf6xw" path="res://think_spatial/prefab/camera/mouse_look.tscn" id="3_2hj7q"]
-[ext_resource type="PackedScene" uid="uid://2b45wom88153" path="res://think_spatial/prefab/player/player.tscn" id="4_hgbm2"]
-[ext_resource type="PackedScene" uid="uid://deujned5lnja3" path="res://think_spatial/prefab/ui/spatial_memory/spatial_precision_ui.tscn" id="6_7wb4m"]
+[ext_resource type="PackedScene" uid="uid://caukaolcm2v14" path="res://scenes/Borim/prefab/spawner/entity_spatial_precision_spawner.tscn" id="2_hiprl"]
+[ext_resource type="PackedScene" uid="uid://kk88u0bwf6xw" path="res://scenes/Borim/prefab/camera/mouse_look.tscn" id="3_2hj7q"]
+[ext_resource type="PackedScene" uid="uid://2b45wom88153" path="res://scenes/Borim/prefab/player/player.tscn" id="4_hgbm2"]
+[ext_resource type="PackedScene" uid="uid://deujned5lnja3" path="res://scenes/Borim/prefab/ui/spatial_memory/spatial_precision_ui.tscn" id="6_7wb4m"]
 
 [node name="spatial_precision" type="Node3D" node_paths=PackedStringArray("_spatialPrecisionSpawner", "_spatialPrecisionUI")]
 script = ExtResource("1_sirrb")

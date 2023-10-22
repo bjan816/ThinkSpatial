@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://csf8xbvitq8n8"]
 
 [ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/spawner/EntitySpawner.cs" id="1_wcrv7"]
-[ext_resource type="PackedScene" uid="uid://dl8r5oqex8wmc" path="res://think_spatial/prefab/Dummy/Dummy.tscn" id="2_3cpbn"]
+[ext_resource type="PackedScene" uid="uid://dl8r5oqex8wmc" path="res://scenes/Borim/prefab/Dummy/Dummy.tscn" id="2_3cpbn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cyfwv"]
 

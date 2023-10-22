@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://d1gddhbcmtxyt"]
 
 [ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/first_person/FirstPersonHitScan.cs" id="1_k55kx"]
-[ext_resource type="Texture2D" uid="uid://cl5bq872oq538" path="res://think_spatial/arts/gun/crosshair.png" id="2_31rpf"]
-[ext_resource type="ArrayMesh" uid="uid://01o5n67piqb3" path="res://think_spatial/arts/gun/SteamPunkRifleModel.obj" id="2_72y8y"]
+[ext_resource type="Texture2D" uid="uid://cl5bq872oq538" path="res://scenes/Borim/arts/gun/crosshair.png" id="2_31rpf"]
+[ext_resource type="ArrayMesh" uid="uid://01o5n67piqb3" path="res://scenes/Borim/arts/gun/SteamPunkRifleModel.obj" id="2_72y8y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mbfk8"]
 albedo_color = Color(0.682353, 0.635294, 0.941176, 1)
