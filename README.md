@@ -44,11 +44,9 @@ We expect that you will have access to the CodeRunner test server, as the quiz i
 ### ThinkSpatial Game Install
 
 For both **Windows** and **macOS**, follow the respective instructions below for installing and setting up the game.
+To install the application, please download the file for your respective operating system in [Releases](https://github.com/uoa-compsci399-s2-2023/capstone-project-team-32/releases).
 
 **Windows**
-
-To install the windows version of ThinkSpatial, please 
-[click here](https://github.com/uoa-compsci399-s2-2023/capstone-project-team-32/releases).
 
 Once you have downloaded the zip file, open it and it will extract a file called `ThinkSpatial`. Open this file and the game should start running. There is nothing but your Windows machine that is needed, so long as you have a a graphics card installed.
 
@@ -56,8 +54,6 @@ Once you open the zip file, you should see a folder like below. Open it and run 
 ![](./markdown/image2.png)
 
 **macOS**
-
-To download the macOS version, please [click here](https://drive.google.com/drive/folders/1Ju_4mUShzucqVj5Zb53ivJDQgCLmsuzc?usp=share_link).
 
 Once you have downloaded the zip file, open it and it will extract a file called `ThinkSpatial`. Open the file and the game should start running. The unzipped file should look like below.
 
