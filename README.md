@@ -27,7 +27,7 @@ The game is a prototype that will be aimed at reinventing spatial skills testing
 
 Most of the group planning and collaboration was done through a shared Google drive. Discussions were held through Discord and in-person.
 
-**Code-Runner Technologies:**
+**CodeRunner Technologies:**
 - Moodle
 - CodeRunner plugin for Moodle
 
