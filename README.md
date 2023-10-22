@@ -51,7 +51,7 @@ Once you have the files on your machine, follow the steps below for your respect
 **Windows**
 
 To install the windows version of ThinkSpatial, please 
-[click here](https://drive.google.com/file/d/1pOHBEYAE82SXFwd2g84fccgc8ECBPKG0/view?usp=share_link).
+[click here](https://drive.google.com/drive/folders/1Pgr53H91RY7xu9TXnaEsK2jk9MxzJOl2?usp=share_link).
 
 Once you have downloaded the zip file, open it and it will extract a file called `ThinkSpatial`. Open this file and the game should start running. There is nothing but your Windows machine that is needed, so long as you have a a graphics card installed.
 
@@ -60,7 +60,7 @@ Once you open the zip file, you should see a folder like below. Open it and run 
 
 **macOS**
 
-To download the macOS version, please [click here](https://drive.google.com/file/d/1AL3dd4Vs2stjWE4KVOLkqRDQhmEqaCSp/view?usp=share_link).
+To download the macOS version, please [click here](https://drive.google.com/drive/folders/1Ju_4mUShzucqVj5Zb53ivJDQgCLmsuzc?usp=share_link).
 
 Once you have downloaded the zip file, open it and it will extract a file called `ThinkSpatial`. Open the file and the game should start running. The unzipped file should look like below.
 
