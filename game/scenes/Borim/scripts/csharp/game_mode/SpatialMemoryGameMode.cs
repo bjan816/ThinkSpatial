@@ -30,13 +30,12 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.game_mode
 
 		public override void _Ready()
 		{
-			
 			var soundEffect = GetNode<AudioStreamPlayer>("Background");
 			soundEffect.Stream = GD.Load<AudioStream>("res://scenes/Borim/arts/audio/background.ogg");
 			soundEffect.Play();
-			
+
 			base._Ready();
-			
+
 			_spatialMemorySpawner.FinishedSpawningEntities.AddListener(PreInGame);
 			_spatialMemorySpawner.ConsectiveDeath.AddListener(OnConsectiveDeath);
 			_spatialMemorySpawner.SpatialMemoryResult.AddListener(EndGame);
@@ -109,10 +108,30 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.game_mode
 
 		private void EndGame(int spatialMemoryResult)
 		{
-			if (spatialMemoryResult != _spatialMemorySpawner.EntitiesToSpawn)
+			bool success = spatialMemoryResult >= _spatialMemorySpawner.EntitiesToSpawn;
+
+			if (!success)
 			{
 				GameController.Instance.LocalPlayer.MouseInputBlocked.Set(true);
 				GameController.Instance.LocalPlayer.MouseMovementBlocked.Set(true);
+			}
+
+			if (success)
+			{
+				PlayAudio
+				(
+					_spatialMemoryUI.GetNode<AudioStreamPlayer>("Correct"),
+					GD.Load<AudioStream>("res://scenes/Borim/arts/audio/correct.wav"),
+					0.25f
+				);
+			}
+			else
+			{
+				PlayAudio
+				(
+					_spatialMemoryUI.GetNode<AudioStreamPlayer>("Game_Over"),
+					GD.Load<AudioStream>("res://scenes/Borim/arts/audio/game_over.wav")
+				);
 			}
 
 			_spatialMemoryUI.PlayAnimation(spatialMemoryResult == _spatialMemorySpawner.EntitiesToSpawn ? SpatialMemoryUI.CorrectAnimationName : SpatialMemoryUI.IncorrectAnimationName);
@@ -139,6 +158,18 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.game_mode
 		private void PostGame()
 		{
 			InitializeGame();
+		}
+
+
+		private async void PlayAudio(AudioStreamPlayer player, AudioStream stream, float delay = 0.0f)
+		{
+			if (delay > 0.0f)
+			{
+				await ToSignal(GetTree().CreateTimer(delay), "timeout");
+			}
+
+			player.Stream = stream;
+			player.Play();
 		}
 	}
 }

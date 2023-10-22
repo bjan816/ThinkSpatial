@@ -60,18 +60,10 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.ui_system
 			}
 			else if (animationName == CorrectAnimationName)
 			{
-				var soundEffect = GetNode<AudioStreamPlayer>("Correct");
-				soundEffect.Stream = GD.Load<AudioStream>("res://scenes/Borim/arts/audio/correct.wav");
-				//soundEffect.Play();
-
 				CorrectAnimationFinished.Send();
 			}
 			else if (animationName == IncorrectAnimationName)
 			{
-				var soundEffect = GetNode<AudioStreamPlayer>("Game_Over");
-				soundEffect.Stream = GD.Load<AudioStream>("res://scenes/Borim/arts/audio/game_over.wav");
-				soundEffect.Play();
-
 				IncorrectAnimationFinished.Send();
 			}
 			else if (animationName == ScoreAnimationName)
