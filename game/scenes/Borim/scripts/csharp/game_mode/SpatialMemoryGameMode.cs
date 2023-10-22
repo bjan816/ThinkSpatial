@@ -5,6 +5,20 @@ using ThinkSpatial.think_spatial.scripts.csharp.ui_system;
 
 namespace ThinkSpatial.think_spatial.scripts.csharp.game_mode
 {
+	public static class SpatialMemoryDeveloperSettings
+	{
+		public enum WinMode
+		{
+			Instant,
+			AlwaysCorrect
+		}
+
+		public static readonly bool Enabled = false;
+		public static readonly WinMode Win = WinMode.Instant;
+		public static readonly float SpawnDelay = 0.01f;
+		public static readonly float PlayAnimationSpeed = 5.0f;
+	}
+
 	public partial class SpatialMemoryGameMode : Node3D
 	{
 		[Export] private EntitySpatialMemorySpawner _spatialMemorySpawner;

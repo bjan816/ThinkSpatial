@@ -1,6 +1,7 @@
 using Godot;
 using ThinkSpatial.think_spatial.scripts.csharp.event_system.behavior;
 using ThinkSpatial.think_spatial.scripts.csharp.event_system.type;
+using ThinkSpatial.think_spatial.scripts.csharp.game_mode;
 
 namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 {
@@ -36,10 +37,20 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 
 		private async void SpawnEntitiesWithDelay()
 		{
+			if (EntitiesToSpawn > EntityCapacity)
+			{
+				IncreaseDifficulty();
+			}
+
+			Randomize();
+
+			float delay = SpatialMemoryDeveloperSettings.Enabled ? SpatialMemoryDeveloperSettings.SpawnDelay : _spawnDelaySeconds;
+
 			for (int i = 0; i < EntitiesToSpawn; ++i)
 			{
 				SpawnEntity();
-				await ToSignal(GetTree().CreateTimer(_spawnDelaySeconds), "timeout");
+
+				await ToSignal(GetTree().CreateTimer(delay), "timeout");
 			}
 
 			FinishedSpawningEntities.Send();
@@ -54,6 +65,36 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 
 			if (SpawnedEntities.Count <= 0)
 			{
+				return;
+			}
+
+			if (SpatialMemoryDeveloperSettings.Enabled)
+			{
+				switch (SpatialMemoryDeveloperSettings.Win)
+				{
+					case SpatialMemoryDeveloperSettings.WinMode.Instant:
+					{
+						SpatialMemoryResult.Send(EntitiesToSpawn);
+						DestroyAllEntities();
+						break;
+					}
+					case SpatialMemoryDeveloperSettings.WinMode.AlwaysCorrect:
+					{
+						ConsectiveDeath.Send();
+
+						++_numberOfSuccessfulConsectiveDeaths;
+
+						if (_numberOfSuccessfulConsectiveDeaths >= EntitiesToSpawn)
+						{
+							SpatialMemoryResult.Send(EntitiesToSpawn);
+						}
+
+						break;
+					}
+				}
+
+				base.On_Death(entity);
+
 				return;
 			}
 

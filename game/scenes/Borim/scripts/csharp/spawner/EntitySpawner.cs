@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using Godot;
+using Math = ThinkSpatial.think_spatial.scripts.csharp.math.Math;
 using ThinkSpatial.think_spatial.scripts.csharp.event_system.behavior;
 using ThinkSpatial.think_spatial.scripts.csharp.event_system.type;
-using ThinkSpatial.think_spatial.scripts.csharp.math;
 
 namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 {
@@ -21,12 +21,16 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 		public readonly Message<EntityBehavior> EntityDeath = new Message<EntityBehavior>();
 		public Message FinishedSpawningEntities = new Message();
 
-		// New variables for grid and spacing
-		private float spacing = 2;
-		private int gridSize = 4;
-		private int zPosition = -10;
-		private List<Vector2> allPositions = new List<Vector2>();
-		protected int nextPositionIndex = 0;
+		private Vector2 _gridCenter = new Vector2I(0, 3);
+		private Vector2I _gridSpacing = new Vector2I(2, 2);
+		private Vector2I _gridSize = new Vector2I(4, 4);
+		private int _zPosition = -10;
+		private readonly List<Vector2> _spawnSlots = new List<Vector2>();
+
+		private int _difficulty = 0;
+		private int _nextSpawnSlot = 0;
+
+		protected int EntityCapacity => _gridSize.X * _gridSize.Y;
 
 		public override void _Ready()
 		{
@@ -38,10 +42,8 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 				SpawnArea = new Aabb(GlobalPosition - boxShapeSize / 2.0f, boxShapeSize);
 			}
 
-			// Generate all positions
-			GenerateAllPositions();		
-			// Shuffle positions once after generating them
-			ShufflePositions();
+			GenerateSpawnSlots();
+			ShuffleSpawnSlots();
 
 			if (SpawnEntitiesImmediately)
 			{
@@ -49,31 +51,67 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 			}
 		}
 
-		// Generate grid positions
-		private void GenerateAllPositions()
+		private void GenerateSpawnSlots()
 		{
-			for (int y = 0; y < gridSize; ++y)
+			_spawnSlots.Clear();
+
+			Vector2I gridSizeHalf = _gridSize / 2;
+
+			Vector2 topLeftPosition = _gridCenter;
+			topLeftPosition.X -= gridSizeHalf.X * _gridSpacing.X;
+			topLeftPosition.Y -= gridSizeHalf.Y * _gridSpacing.Y;
+
+			Vector2 position = topLeftPosition;
+
+			for (int y = 0; y < _gridSize.Y; ++y)
 			{
-				for (int x = -gridSize; x <= gridSize; ++x)
+				for (int x = 0; x < _gridSize.X; ++x)
 				{
-					Vector2 position = new Vector2(x * spacing, y * spacing);
-					allPositions.Add(position);
+					position.X += _gridSpacing.X;
+
+					_spawnSlots.Add(position);
 				}
+
+				position.X = _gridCenter.X - gridSizeHalf.X * _gridSpacing.X;
+				position.Y += _gridSpacing.Y;
 			}
 		}
 
-		// Shuffle grid positions
-		private void ShufflePositions()
+		private void ShuffleSpawnSlots()
 		{
-			int n = allPositions.Count;
+			int n = _spawnSlots.Count;
 			while (n > 1)
 			{
 				n--;
-				int k = (int)GD.RandRange(0, n + 1);
-				Vector2 value = allPositions[k];
-				allPositions[k] = allPositions[n];
-				allPositions[n] = value;
+				int k = GD.RandRange(0, n);
+				(_spawnSlots[k], _spawnSlots[n]) = (_spawnSlots[n], _spawnSlots[k]);
 			}
+		}
+
+		protected virtual void IncreaseDifficulty()
+		{
+			++_gridSize.X;
+			_gridCenter.X -= 0.25f;
+
+			// Every 3 difficulty, except the first
+			if (_difficulty > 0 && _difficulty % 3 <= 0)
+			{
+				++_gridSize.Y;
+				_gridCenter.Y += 1.0f;
+
+				--_zPosition;
+			}
+
+			GenerateSpawnSlots();
+
+			++_difficulty;
+		}
+
+		protected virtual void Randomize()
+		{
+			ShuffleSpawnSlots();
+
+			_nextSpawnSlot = 0;
 		}
 
 		public virtual void SpawnEntities()
@@ -86,27 +124,25 @@ namespace ThinkSpatial.think_spatial.scripts.csharp.spawner
 			FinishedSpawningEntities.Send();
 		}
 
-		// Modified
 		public virtual EntityBehavior SpawnEntity()
 		{
 			var soundEffect = GetNode<AudioStreamPlayer>("Bubble");
 			soundEffect.Stream = GD.Load<AudioStream>("res://scenes/Borim/arts/audio/bubble.wav");
 			soundEffect.Play();
-			
-			
+
 			EntityBehavior entity = EntityToSpawn.Instantiate<EntityBehavior>();
 			SpawnedEntities.Add(entity);
 
 			entity.Entity.Death.AddListener(() => On_Death(entity));
 
-			// Use the next position from the shuffled list
-			Vector2 entityPosition = allPositions[nextPositionIndex];
-			nextPositionIndex++; // Increment the counter for the next call
-	
-			float x = (float) entityPosition.X;
-			float y = (float) entityPosition.Y;
-			float z = (float) zPosition;
-			
+
+			Vector2 entityPosition = _spawnSlots[_nextSpawnSlot];
+			++_nextSpawnSlot;
+
+			float x = entityPosition.X;
+			float y = entityPosition.Y;
+			float z = _zPosition;
+
 			AddChild(entity);
 
 			// Setting the spawn position to the generated spawn location
