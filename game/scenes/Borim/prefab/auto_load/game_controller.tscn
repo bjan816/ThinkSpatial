@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm47a2rltaput"]
+
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/framework/GameController.cs" id="1_qxuf5"]
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/framework/SceneManager.cs" id="2_1dntu"]
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/camera/CameraManager.cs" id="3_xhl1a"]
+
+[node name="GameController" type="Node" node_paths=PackedStringArray("_sceneManager", "_cameraManager")]
+script = ExtResource("1_qxuf5")
+_sceneManager = NodePath("SceneManager")
+_cameraManager = NodePath("CameraManager")
+
+[node name="SceneManager" type="Node" parent="."]
+script = ExtResource("2_1dntu")
+
+[node name="CameraManager" type="Node" parent="."]
+script = ExtResource("3_xhl1a")

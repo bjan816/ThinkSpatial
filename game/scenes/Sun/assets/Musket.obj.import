@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ce0u8x43u25qm"
+path="res://.godot/imported/Musket.obj-0a45f7d7973396af990424debba6bab2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Musket.obj-0a45f7d7973396af990424debba6bab2.mesh"]
+
+source_file="res://scenes/Sun/assets/Musket.obj"
+dest_files=["res://.godot/imported/Musket.obj-0a45f7d7973396af990424debba6bab2.mesh", "res://.godot/imported/Musket.obj-0a45f7d7973396af990424debba6bab2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

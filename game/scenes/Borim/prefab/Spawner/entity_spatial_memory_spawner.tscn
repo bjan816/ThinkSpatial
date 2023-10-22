@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://70ovs0t6q3ic"]
+
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/spawner/EntitySpatialMemorySpawner.cs" id="1_gnb6r"]
+[ext_resource type="PackedScene" uid="uid://dl8r5oqex8wmc" path="res://think_spatial/prefab/Dummy/Dummy.tscn" id="2_23dcg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cyfwv"]
+
+[node name="EntitySpatialMemorySpawner" type="Node3D" node_paths=PackedStringArray("Shape")]
+script = ExtResource("1_gnb6r")
+EntityToSpawn = ExtResource("2_23dcg")
+Shape = NodePath("ShapeCast3D")
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_cyfwv")
+target_position = Vector3(0, 0, 0)

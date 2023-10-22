@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ehjiso2yce88"
+path="res://.godot/imported/banana.obj-f7ec38436198cc163a1185969d09d9cd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/banana.obj-f7ec38436198cc163a1185969d09d9cd.mesh"]
+
+source_file="res://scenes/Jordan/assets/banana.obj"
+dest_files=["res://.godot/imported/banana.obj-f7ec38436198cc163a1185969d09d9cd.mesh", "res://.godot/imported/banana.obj-f7ec38436198cc163a1185969d09d9cd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
