@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b1j81876h1b5d"]
+[gd_scene load_steps=18 format=3 uid="uid://b1j81876h1b5d"]
 
 [ext_resource type="PackedScene" uid="uid://vf5wgphdhvdx" path="res://TetrisBlock/tetris_block_1.tscn" id="1_7am4y"]
 [ext_resource type="Script" path="res://worldLevel/Script/level_1.gd" id="1_nhnn4"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://lq1yeiasdkfb" path="res://worldLevel/house_close.tscn" id="4_d1l5d"]
 [ext_resource type="PackedScene" uid="uid://cr2uhegrgc701" path="res://worldLevel/same_button.tscn" id="4_ybx2p"]
 [ext_resource type="PackedScene" uid="uid://cog2qek7t51w6" path="res://player/PlayerBody.tscn" id="6_ki5g0"]
+[ext_resource type="PackedScene" uid="uid://cg0kboxhxe3ra" path="res://interface/Scenes/end_menu.tscn" id="10_r8h3y"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q556v"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -37,7 +38,7 @@ data = PackedVector3Array(-0.25, 10, 7.5, 0.25, 10, 7.5, -0.25, -10, 7.5, 0.25, 
 
 [node name="Level 1" type="Node3D"]
 script = ExtResource("1_nhnn4")
-NEXT_LEVEL = "F:/Uni files/CS399/2023/Sem 2/Project/capstone-project-team-32/Mental Rotation/worldLevel/level_1_2.tscn"
+NEXT_LEVEL = "C:/Users/OEM/Documents/Uni Files/CS399/Project/capstone-project-team-32/Mental Rotation/worldLevel/level_1_2.tscn"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -122,6 +123,9 @@ shape = SubResource("ConcavePolygonShape3D_38nrq")
 
 [node name="CharacterBody3D" parent="." groups=["player"] instance=ExtResource("6_ki5g0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.151229, 3.11779)
+
+[node name="EndMenu" parent="." instance=ExtResource("10_r8h3y")]
+visible = false
 
 [connection signal="area_entered" from="MirrorButton" to="." method="_on_mirror_button_area_entered"]
 [connection signal="area_entered" from="SameButton" to="." method="_on_same_button_area_entered"]

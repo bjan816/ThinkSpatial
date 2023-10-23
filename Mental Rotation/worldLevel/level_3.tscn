@@ -37,7 +37,7 @@ data = PackedVector3Array(-0.25, 10, 7.5, 0.25, 10, 7.5, -0.25, -10, 7.5, 0.25, 
 
 [node name="Level 3" type="Node3D"]
 script = ExtResource("1_idmw4")
-NEXT_LEVEL = "F:/Uni files/CS399/2023/Sem 2/Project/capstone-project-team-32/Mental Rotation/worldLevel/level_3_2.tscn"
+NEXT_LEVEL = "C:/Users/OEM/Documents/Uni Files/CS399/Project/capstone-project-team-32/Mental Rotation/worldLevel/level_3_2.tscn"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
