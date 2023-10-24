@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ck02t76dpy1er"]
+[gd_scene load_steps=6 format=3 uid="uid://ck02t76dpy1er"]
 
 [ext_resource type="Script" path="res://3dscene.gd" id="1_kofm5"]
 [ext_resource type="PackedScene" uid="uid://do4cvl4wa636e" path="res://interface/Scenes/main_menu.tscn" id="2_0so7u"]
 [ext_resource type="PackedScene" uid="uid://b1j81876h1b5d" path="res://worldLevel/level_1.tscn" id="2_4tbu2"]
 [ext_resource type="PackedScene" uid="uid://cg0kboxhxe3ra" path="res://interface/Scenes/end_menu.tscn" id="3_jppel"]
+[ext_resource type="PackedScene" uid="uid://bvmhq1klowf7f" path="res://interface/Scenes/finished_menu.tscn" id="4_u46pu"]
 
 [node name="Mental Rotation Game" type="Node3D"]
 script = ExtResource("1_kofm5")
@@ -11,6 +12,9 @@ script = ExtResource("1_kofm5")
 [node name="MainMenu" parent="." instance=ExtResource("2_0so7u")]
 
 [node name="EndMenu" parent="." instance=ExtResource("3_jppel")]
+visible = false
+
+[node name="FinishedMenu" parent="." instance=ExtResource("4_u46pu")]
 visible = false
 
 [node name="Level 1" parent="." instance=ExtResource("2_4tbu2")]

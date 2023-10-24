@@ -1,7 +1,5 @@
 extends Node3D
 
-func _ready():
-  pass
 
 #export files
 @export var NEXT_LEVEL: String = ""

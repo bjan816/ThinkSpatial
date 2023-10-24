@@ -1,7 +1,7 @@
 extends Node3D
 
 #export files
-@export_global_file("*") var NEXT_LEVEL: String = ""
+@export var NEXT_LEVEL: String = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
