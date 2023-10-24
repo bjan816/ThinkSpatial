@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://co3kmwd3lex7h"]
+[gd_scene load_steps=56 format=3 uid="uid://co3kmwd3lex7h"]
 
 [ext_resource type="PackedScene" uid="uid://bvjsumvppm76p" path="res://scenes/UI.tscn" id="1_hikvv"]
 [ext_resource type="Material" uid="uid://blf16jpvdnknl" path="res://assets/material/PaynesGray.tres" id="2_c3wly"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bhpkb8me38jf" path="res://scenes/Jamie/world/3DLevel.tscn" id="5_rg2ho"]
 [ext_resource type="PackedScene" uid="uid://davlunk7onym5" path="res://scenes/Borim/scenes/spatial_memory/spatial_memory.tscn" id="6_mv0xy"]
 [ext_resource type="PackedScene" uid="uid://clppp4avxfvwu" path="res://scenes/Jordan/scenes/TutorialBox.tscn" id="7_ch370"]
+[ext_resource type="PackedScene" uid="uid://ck02t76dpy1er" path="res://scenes/Kishora/3dscene.tscn" id="8_18xf4"]
 [ext_resource type="ArrayMesh" uid="uid://dhkb6immaeg4n" path="res://scenes/Jordan/assets/menu ball.obj" id="9_64lqo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sf5xj"]
@@ -171,6 +172,29 @@ albedo_color = Color(0, 0.121569, 0.247059, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_vbdic"]
 material = SubResource("StandardMaterial3D_kh0xn")
+
+[sub_resource type="Shader" id="Shader_vm1sq"]
+code = "shader_type spatial;
+render_mode unshaded,cull_front,depth_draw_never;
+
+uniform float border = 0.03125;
+
+void vertex() {
+  VERTEX += VERTEX * border;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xpl6s"]
+render_priority = 0
+shader = SubResource("Shader_vm1sq")
+shader_parameter/border = 0.03125
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2gg0f"]
+next_pass = SubResource("ShaderMaterial_xpl6s")
+albedo_color = Color(0, 0.121569, 0.247059, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_18q3b"]
+material = SubResource("StandardMaterial3D_2gg0f")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1ux77"]
 
@@ -383,6 +407,17 @@ shape = SubResource("BoxShape3D_a3h8b")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Jamie"]
 mesh = SubResource("BoxMesh_vbdic")
 
+[node name="Kishora" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.93801, 1.58741, -3.87966)
+script = ExtResource("3_7fxw7")
+path = ExtResource("8_18xf4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kishora"]
+shape = SubResource("BoxShape3D_a3h8b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Kishora"]
+mesh = SubResource("BoxMesh_18q3b")
+
 [node name="Jordan" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.173716, -1.06992, -3.47733)
 script = ExtResource("3_7fxw7")
@@ -405,5 +440,7 @@ mesh = ExtResource("9_64lqo")
 [connection signal="mouse_exited" from="Sun" to="Sun" method="_on_mouse_exited" flags=18]
 [connection signal="mouse_entered" from="Jamie" to="Jamie" method="_on_mouse_entered" flags=18]
 [connection signal="mouse_exited" from="Jamie" to="Jamie" method="_on_mouse_exited" flags=18]
+[connection signal="mouse_entered" from="Kishora" to="Kishora" method="_on_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="Kishora" to="Kishora" method="_on_mouse_exited" flags=18]
 [connection signal="mouse_entered" from="Jordan" to="Jordan" method="_on_mouse_entered" flags=18]
 [connection signal="mouse_exited" from="Jordan" to="Jordan" method="_on_mouse_exited" flags=18]
