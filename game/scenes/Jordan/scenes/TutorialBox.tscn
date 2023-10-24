@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=3 uid="uid://clppp4avxfvwu"]
+
+[ext_resource type="Script" path="res://scenes/Jordan/scripts/TutorialBox.gd" id="1_exrve"]
+[ext_resource type="VideoStream" path="res://scenes/Jordan/assets/TutorialBoxVideo.ogv" id="1_nxxyo"]
+[ext_resource type="ArrayMesh" uid="uid://c1m2lj5ys7f3w" path="res://scenes/Jordan/assets/golf ball.obj" id="3_hsxh0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rljsx"]
+albedo_color = Color(0.588235, 0.67451, 0.717647, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_txfru"]
+sun_angle_max = 360.0
+sun_curve = 2.08932
+
+[sub_resource type="Sky" id="Sky_8kn7g"]
+sky_material = SubResource("ProceduralSkyMaterial_txfru")
+
+[sub_resource type="Environment" id="Environment_pepi4"]
+background_mode = 2
+sky = SubResource("Sky_8kn7g")
+
+[node name="TutorialBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_exrve")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+custom_minimum_size = Vector2(960, 900)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+stream = ExtResource("1_nxxyo")
+autoplay = true
+expand = true
+
+[node name="Label" type="Label" parent="CenterContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "In this game, you are presented with eight cameras, each represented as a sphere. Of these, only one camera is actively projecting its view onto the screen. Using cues from the environment and your spatial skills you goal is to identify the active camera. Once you have identified the active camera, simply click it with your mouse. You have 180 seconds for each level, you're allowed to move for a combined total of 20 seconds. The challenge is randomly enhanced with gameplay modifiers:
+- Decoy : The screen is not an accurate depiction of the scene.
+- Mirror: The screen has been flipped horizonally.
+- Memory: The screen disappears when you look away, commit it to memory."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Play Beginner"
+
+[node name="Button2" type="Button" parent="CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Play Advanced"
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_rljsx")
+cast_shadow = 0
+mesh = ExtResource("3_hsxh0")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D"]
+environment = SubResource("Environment_pepi4")
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+
+[node name="Light" type="DirectionalLight3D" parent="Node3D"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[connection signal="finished" from="CenterContainer/Panel/MarginContainer/VBoxContainer/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]

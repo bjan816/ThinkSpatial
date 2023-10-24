@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://2b45wom88153"]
+
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/event_system/behavior/PlayerBehavior.cs" id="1_26bx5"]
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/event_system/event_handler/PlayerEventHandler.cs" id="1_abte0"]
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/input_system/PlayerInputHandler.cs" id="2_vk3k8"]
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/first_person/FirstPersonManager.cs" id="4_r1kk4"]
+[ext_resource type="PackedScene" uid="uid://d1gddhbcmtxyt" path="res://scenes/Borim/prefab/first_person/first_person_hit_scan.tscn" id="5_1pt3k"]
+[ext_resource type="AudioStream" uid="uid://d4d7ka7j2807l" path="res://scenes/Borim/arts/audio/pop.wav" id="6_a705n"]
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_26bx5")
+
+[node name="PlayerEventHandler" type="Node3D" parent="."]
+script = ExtResource("1_abte0")
+
+[node name="PlayerInputHandler" type="Node3D" parent="."]
+script = ExtResource("2_vk3k8")
+
+[node name="FirstPersonManager" type="Node3D" parent="." node_paths=PackedStringArray("_equippedWeapon")]
+script = ExtResource("4_r1kk4")
+_equippedWeapon = NodePath("../FirstPersonHitScan")
+
+[node name="FirstPersonHitScan" parent="." instance=ExtResource("5_1pt3k")]
+
+[node name="Pop" type="AudioStreamPlayer" parent="FirstPersonHitScan"]
+stream = ExtResource("6_a705n")
+volume_db = -5.0
+pitch_scale = 1.2

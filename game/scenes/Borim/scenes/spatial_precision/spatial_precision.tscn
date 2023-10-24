@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://cev6tflbtbjvb"]
+
+[ext_resource type="PackedScene" uid="uid://diai5ecpte1ei" path="res://scenes/Borim/prefab/level/shooting_range.tscn" id="1_hjrc7"]
+[ext_resource type="Script" path="res://scenes/Borim/scripts/csharp/game_mode/SpatialPrecisionGameMode.cs" id="1_sirrb"]
+[ext_resource type="PackedScene" uid="uid://caukaolcm2v14" path="res://scenes/Borim/prefab/spawner/entity_spatial_precision_spawner.tscn" id="2_hiprl"]
+[ext_resource type="PackedScene" uid="uid://kk88u0bwf6xw" path="res://scenes/Borim/prefab/camera/mouse_look.tscn" id="3_2hj7q"]
+[ext_resource type="PackedScene" uid="uid://2b45wom88153" path="res://scenes/Borim/prefab/player/player.tscn" id="4_hgbm2"]
+[ext_resource type="PackedScene" uid="uid://deujned5lnja3" path="res://scenes/Borim/prefab/ui/spatial_memory/spatial_precision_ui.tscn" id="6_7wb4m"]
+
+[node name="spatial_precision" type="Node3D" node_paths=PackedStringArray("_spatialPrecisionSpawner", "_spatialPrecisionUI")]
+script = ExtResource("1_sirrb")
+_spatialPrecisionSpawner = NodePath("entity_spatial_precision_spawner")
+_spatialPrecisionUI = NodePath("CanvasLayer/spatial_precision_ui")
+
+[node name="ShootingRange" parent="." instance=ExtResource("1_hjrc7")]
+
+[node name="entity_spatial_precision_spawner" parent="." instance=ExtResource("2_hiprl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -10)
+
+[node name="MouseLook" parent="." instance=ExtResource("3_2hj7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85, 0)
+
+[node name="Player" parent="MouseLook" instance=ExtResource("4_hgbm2")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="spatial_precision_ui" parent="CanvasLayer" instance=ExtResource("6_7wb4m")]
