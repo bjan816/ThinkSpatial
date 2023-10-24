@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://ull1jwcqkm5o"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ukb1c"]
+size = Vector3(125, 45, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fkm6w"]
+size = Vector3(125, 45, 1)
+
+[node name="HouseWalls" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00443307, 0, -0.99999, 0, 1, 0, 0.99999, 0, -0.00443307, 62.0908, 22.5085, -0.052102)
+mesh = SubResource("BoxMesh_ukb1c")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_fkm6w")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.00443307, 0, -0.99999, 0, 1, 0, 0.99999, 0, -0.00443307, -61.1636, 22.5085, -0.598502)
+mesh = SubResource("BoxMesh_ukb1c")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_fkm6w")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999999, 0, -0.00167548, 0, 1, 0, 0.00167548, 0, 0.999999, 0.755141, 22.5085, -63.1838)
+mesh = SubResource("BoxMesh_ukb1c")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+shape = SubResource("BoxShape3D_fkm6w")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999999, 0, -0.00167548, 0, 1, 0, 0.00167548, 0, 0.999999, 0.199575, 22.5085, 62.1383)
+mesh = SubResource("BoxMesh_ukb1c")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D"]
+shape = SubResource("BoxShape3D_fkm6w")

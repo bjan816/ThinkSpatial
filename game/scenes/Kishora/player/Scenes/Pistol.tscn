@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkk56ceg4b55e"]
+
+[ext_resource type="PackedScene" uid="uid://b5hi80yan08bb" path="res://3D Assets/9mm_pistol/scene.gltf" id="1_anemf"]
+
+[node name="Node" type="Node3D"]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
+
+[node name="Pistol" parent="." instance=ExtResource("1_anemf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.396429, 0, 0.226809)

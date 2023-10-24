@@ -1,0 +1,11 @@
+Model Information:
+* title:	FN509 Pistol
+* source:	https://sketchfab.com/3d-models/fn509-pistol-fe77cf93173e42bf932d96d91ad1b3a6
+* author:	Lokeig (https://sketchfab.com/lokeig)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "FN509 Pistol" (https://sketchfab.com/3d-models/fn509-pistol-fe77cf93173e42bf932d96d91ad1b3a6) by Lokeig (https://sketchfab.com/lokeig) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

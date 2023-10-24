@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://01je76bkluqo"
+path="res://.godot/imported/Tetris_block_5.obj-e34a6c46a88d0ee2ade08c6c4b5a8faa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Tetris_block_5.obj-e34a6c46a88d0ee2ade08c6c4b5a8faa.mesh"]
+
+source_file="res://scenes/Kishora/Blender Obj File/Tetris_block_5.obj"
+dest_files=["res://.godot/imported/Tetris_block_5.obj-e34a6c46a88d0ee2ade08c6c4b5a8faa.mesh", "res://.godot/imported/Tetris_block_5.obj-e34a6c46a88d0ee2ade08c6c4b5a8faa.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
