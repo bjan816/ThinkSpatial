@@ -14,3 +14,4 @@ script = ExtResource("1_kofm5")
 visible = false
 
 [node name="Level 1" parent="." instance=ExtResource("2_4tbu2")]
+NEXT_LEVEL = "res://worldLevel/level_1_2.tscn"
