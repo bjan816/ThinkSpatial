@@ -1,14 +1,14 @@
 [gd_scene load_steps=17 format=3 uid="uid://fqyi03d5y6nf"]
 
-[ext_resource type="PackedScene" uid="uid://dw730tcpxxrmh" path="res://TetrisBlock/tetris_block_5.tscn" id="1_4wwuc"]
-[ext_resource type="Script" path="res://worldLevel/Script/level_3.gd" id="1_idmw4"]
-[ext_resource type="PackedScene" uid="uid://cuimm2h0rdhye" path="res://TetrisBlock/tetris_block_5_mirror.tscn" id="2_onpsl"]
-[ext_resource type="PackedScene" uid="uid://cf5ijhtrusnix" path="res://worldLevel/mirror_button.tscn" id="3_ejmm0"]
-[ext_resource type="PackedScene" uid="uid://cr2uhegrgc701" path="res://worldLevel/same_button.tscn" id="4_46exa"]
-[ext_resource type="PackedScene" uid="uid://cog2qek7t51w6" path="res://player/PlayerBody.tscn" id="5_43ekh"]
-[ext_resource type="PackedScene" uid="uid://ull1jwcqkm5o" path="res://worldLevel/house_walls.tscn" id="6_jy84d"]
-[ext_resource type="PackedScene" uid="uid://td6blhncf62v" path="res://worldLevel/house_roof.tscn" id="7_ssxw3"]
-[ext_resource type="PackedScene" uid="uid://lq1yeiasdkfb" path="res://worldLevel/house_close.tscn" id="8_rajun"]
+[ext_resource type="PackedScene" uid="uid://dw730tcpxxrmh" path="res://scenes/Kishora/TetrisBlock/tetris_block_5.tscn" id="1_4wwuc"]
+[ext_resource type="Script" path="res://scenes/Kishora/worldLevel/Script/level_3.gd" id="1_idmw4"]
+[ext_resource type="PackedScene" uid="uid://cuimm2h0rdhye" path="res://scenes/Kishora/TetrisBlock/tetris_block_5_mirror.tscn" id="2_onpsl"]
+[ext_resource type="PackedScene" uid="uid://cf5ijhtrusnix" path="res://scenes/Kishora/worldLevel/mirror_button.tscn" id="3_ejmm0"]
+[ext_resource type="PackedScene" uid="uid://cr2uhegrgc701" path="res://scenes/Kishora/worldLevel/same_button.tscn" id="4_46exa"]
+[ext_resource type="PackedScene" uid="uid://cog2qek7t51w6" path="res://scenes/Kishora/player/PlayerBody.tscn" id="5_43ekh"]
+[ext_resource type="PackedScene" uid="uid://ull1jwcqkm5o" path="res://scenes/Kishora/worldLevel/house_walls.tscn" id="6_jy84d"]
+[ext_resource type="PackedScene" uid="uid://td6blhncf62v" path="res://scenes/Kishora/worldLevel/house_roof.tscn" id="7_ssxw3"]
+[ext_resource type="PackedScene" uid="uid://lq1yeiasdkfb" path="res://scenes/Kishora/worldLevel/house_close.tscn" id="8_rajun"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_klfrk"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -37,7 +37,7 @@ data = PackedVector3Array(-0.25, 10, 7.5, 0.25, 10, 7.5, -0.25, -10, 7.5, 0.25, 
 
 [node name="Level 3" type="Node3D"]
 script = ExtResource("1_idmw4")
-NEXT_LEVEL = "res://worldLevel/level_3_2.tscn"
+NEXT_LEVEL = "res://scenes/Kishora/worldLevel/level_3_2.tscn"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)

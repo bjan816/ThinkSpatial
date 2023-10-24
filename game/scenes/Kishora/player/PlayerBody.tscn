@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cog2qek7t51w6"]
 
-[ext_resource type="Script" path="res://player/Script/Player.gd" id="1_doqm6"]
-[ext_resource type="PackedScene" uid="uid://csk5xirq35pni" path="res://player/Scenes/pistolPixel.tscn" id="2_ol345"]
+[ext_resource type="Script" path="res://scenes/Kishora/player/Script/Player.gd" id="1_doqm6"]
+[ext_resource type="PackedScene" uid="uid://csk5xirq35pni" path="res://scenes/Kishora/player/Scenes/pistolPixel.tscn" id="2_ol345"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ueugg"]
 

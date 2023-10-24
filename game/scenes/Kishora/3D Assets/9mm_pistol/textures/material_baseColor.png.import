@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ylce4hdlwelw"
-path.s3tc="res://.godot/imported/material_baseColor.png-2d9d995cab3f16de38b5c871d7b7e928.s3tc.ctex"
+path.s3tc="res://.godot/imported/material_baseColor.png-eb7f3d52a567f461b9119e862fddeb3e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://3D Assets/9mm_pistol/textures/material_baseColor.png"
-dest_files=["res://.godot/imported/material_baseColor.png-2d9d995cab3f16de38b5c871d7b7e928.s3tc.ctex"]
+source_file="res://scenes/Kishora/3D Assets/9mm_pistol/textures/material_baseColor.png"
+dest_files=["res://.godot/imported/material_baseColor.png-eb7f3d52a567f461b9119e862fddeb3e.s3tc.ctex"]
 
 [params]
 

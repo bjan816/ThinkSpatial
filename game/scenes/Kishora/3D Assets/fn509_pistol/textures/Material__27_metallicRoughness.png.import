@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpatfcrtnm254"
-path.s3tc="res://.godot/imported/Material__27_metallicRoughness.png-45b0df0b71e58469c3491feacfccd380.s3tc.ctex"
+path.s3tc="res://.godot/imported/Material__27_metallicRoughness.png-65209a9d50d5d008cf5bb27f74d7891c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://3D Assets/fn509_pistol/textures/Material__27_metallicRoughness.png"
-dest_files=["res://.godot/imported/Material__27_metallicRoughness.png-45b0df0b71e58469c3491feacfccd380.s3tc.ctex"]
+source_file="res://scenes/Kishora/3D Assets/fn509_pistol/textures/Material__27_metallicRoughness.png"
+dest_files=["res://.godot/imported/Material__27_metallicRoughness.png-65209a9d50d5d008cf5bb27f74d7891c.s3tc.ctex"]
 
 [params]
 

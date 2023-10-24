@@ -18,4 +18,4 @@ visible = false
 visible = false
 
 [node name="Level 1" parent="." instance=ExtResource("2_4tbu2")]
-NEXT_LEVEL = "res://scenes/Kishora/worldLevel/level_1_2.tscn"
+NEXT_LEVEL = "res://worldLevel/level_1_2.tscn"

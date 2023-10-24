@@ -16,7 +16,7 @@ const BASE_FOV = 93.0
 const FOV_CHANGE = 1.9
 
 #bullet property
-var bullet = load("res://player/Scenes/bullets.tscn")
+var bullet = load("res://scenes/Kishora/player/Scenes/bullets.tscn")
 var instance
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.

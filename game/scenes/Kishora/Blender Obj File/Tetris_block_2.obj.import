@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://bhcvasdecweu3"
-path="res://.godot/imported/Tetris_block_2.obj-e421cec9c4241e90a7ca75c7905f0bf1.mesh"
+path="res://.godot/imported/Tetris_block_2.obj-28102b48595b7c7193750ee5e1b5c642.mesh"
 
 [deps]
 
-files=["res://.godot/imported/Tetris_block_2.obj-e421cec9c4241e90a7ca75c7905f0bf1.mesh"]
+files=["res://.godot/imported/Tetris_block_2.obj-28102b48595b7c7193750ee5e1b5c642.mesh"]
 
-source_file="res://Blender Obj File/Tetris_block_2.obj"
-dest_files=["res://.godot/imported/Tetris_block_2.obj-e421cec9c4241e90a7ca75c7905f0bf1.mesh", "res://.godot/imported/Tetris_block_2.obj-e421cec9c4241e90a7ca75c7905f0bf1.mesh"]
+source_file="res://scenes/Kishora/Blender Obj File/Tetris_block_2.obj"
+dest_files=["res://.godot/imported/Tetris_block_2.obj-28102b48595b7c7193750ee5e1b5c642.mesh", "res://.godot/imported/Tetris_block_2.obj-28102b48595b7c7193750ee5e1b5c642.mesh"]
 
 [params]
 

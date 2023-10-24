@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://682jfohdapy8"
-path="res://.godot/imported/one_block.obj-31cd0b392b4cb83159a82df54dfa007e.mesh"
+path="res://.godot/imported/one_block.obj-06fe4f208c7763c27aa6fc8ad5176f46.mesh"
 
 [deps]
 
-files=["res://.godot/imported/one_block.obj-31cd0b392b4cb83159a82df54dfa007e.mesh"]
+files=["res://.godot/imported/one_block.obj-06fe4f208c7763c27aa6fc8ad5176f46.mesh"]
 
-source_file="res://Blender Obj File/one_block.obj"
-dest_files=["res://.godot/imported/one_block.obj-31cd0b392b4cb83159a82df54dfa007e.mesh", "res://.godot/imported/one_block.obj-31cd0b392b4cb83159a82df54dfa007e.mesh"]
+source_file="res://scenes/Kishora/Blender Obj File/one_block.obj"
+dest_files=["res://.godot/imported/one_block.obj-06fe4f208c7763c27aa6fc8ad5176f46.mesh", "res://.godot/imported/one_block.obj-06fe4f208c7763c27aa6fc8ad5176f46.mesh"]
 
 [params]
 

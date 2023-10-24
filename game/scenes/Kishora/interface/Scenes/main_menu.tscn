@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://do4cvl4wa636e"]
 
-[ext_resource type="Script" path="res://interface/Scripts/main_menu.gd" id="1_hkiis"]
+[ext_resource type="Script" path="res://scenes/Kishora/interface/Scripts/main_menu.gd" id="1_hkiis"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

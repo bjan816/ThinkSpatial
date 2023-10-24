@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://j4vcrfxbx51d"
-path.s3tc="res://.godot/imported/Material_4_baseColor.png-d74d76d79ba84d7ad5e3df9c9f3b17b9.s3tc.ctex"
+path.s3tc="res://.godot/imported/Material_4_baseColor.png-54f47395ca0d11aa4de1afbf728f52de.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://3D Assets/fn509_pistol/textures/Material_4_baseColor.png"
-dest_files=["res://.godot/imported/Material_4_baseColor.png-d74d76d79ba84d7ad5e3df9c9f3b17b9.s3tc.ctex"]
+source_file="res://scenes/Kishora/3D Assets/fn509_pistol/textures/Material_4_baseColor.png"
+dest_files=["res://.godot/imported/Material_4_baseColor.png-54f47395ca0d11aa4de1afbf728f52de.s3tc.ctex"]
 
 [params]
 

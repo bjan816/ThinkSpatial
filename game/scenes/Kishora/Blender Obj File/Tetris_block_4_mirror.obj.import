@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://u1wjboh1j2lj"
-path="res://.godot/imported/Tetris_block_4_mirror.obj-f68e0b8592c109470f7532d35d5b4c37.mesh"
+path="res://.godot/imported/Tetris_block_4_mirror.obj-b4ed309157e5850d33e0029cd6e41a9d.mesh"
 
 [deps]
 
-files=["res://.godot/imported/Tetris_block_4_mirror.obj-f68e0b8592c109470f7532d35d5b4c37.mesh"]
+files=["res://.godot/imported/Tetris_block_4_mirror.obj-b4ed309157e5850d33e0029cd6e41a9d.mesh"]
 
-source_file="res://Blender Obj File/Tetris_block_4_mirror.obj"
-dest_files=["res://.godot/imported/Tetris_block_4_mirror.obj-f68e0b8592c109470f7532d35d5b4c37.mesh", "res://.godot/imported/Tetris_block_4_mirror.obj-f68e0b8592c109470f7532d35d5b4c37.mesh"]
+source_file="res://scenes/Kishora/Blender Obj File/Tetris_block_4_mirror.obj"
+dest_files=["res://.godot/imported/Tetris_block_4_mirror.obj-b4ed309157e5850d33e0029cd6e41a9d.mesh", "res://.godot/imported/Tetris_block_4_mirror.obj-b4ed309157e5850d33e0029cd6e41a9d.mesh"]
 
 [params]
 

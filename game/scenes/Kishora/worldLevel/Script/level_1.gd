@@ -19,6 +19,6 @@ func _on_mirror_button_area_entered(area):
     queue_free()
     
 func show_game_over_screen():
-  var game_over_screen = preload("res://interface/Scenes/end_menu.tscn").instantiate()
+  var game_over_screen = preload("res://scenes/Kishora/interface/Scenes/end_menu.tscn").instantiate()
   get_tree().get_root().add_child(game_over_screen)
   
