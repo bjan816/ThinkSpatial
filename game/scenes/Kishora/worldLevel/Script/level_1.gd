@@ -14,11 +14,12 @@ func _on_same_button_area_entered(area):
 
 
 func _on_mirror_button_area_entered(area):
+  return
   if area.is_in_group("bullet"):
     show_game_over_screen()
     queue_free()
     
 func show_game_over_screen():
   var game_over_screen = preload("res://scenes/Kishora/interface/Scenes/end_menu.tscn").instantiate()
-  get_tree().get_root().add_child(game_over_screen)
+  add_child(game_over_screen)
   
