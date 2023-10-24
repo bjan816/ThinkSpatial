@@ -9,9 +9,9 @@ var ResetButton = false
 
 # Called when the node enters the scene tree for the first time.
 func _initialize():
-	var scoreNum = "Score: %s" % [score]
-	Finalscore.text = scoreNum
-	show()
+  var scoreNum = "Score: %s" % [score]
+  Finalscore.text = scoreNum
+  show()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,8 +25,8 @@ func _initialize():
 
 
 func _on_try_again_pressed():
-	emit_signal("retried")
+  emit_signal("retried")
 
 
 func _on_quit_pressed():
-	get_tree().quit()
+  get_tree().quit()
